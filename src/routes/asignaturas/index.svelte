@@ -108,7 +108,7 @@
 
 	td {
 		border: 1px solid black;
-  		text-align: center;
+  		text-align: left;
   		padding: 3px;
 	}
 
@@ -181,7 +181,6 @@
     <th>TÍTULO</th>
     <th>IDIOMA</th>
 	<th>ECTS</th>
-	<th>PLAN DE ESTUDIOS</th>
   </tr>
   {#each asignaturas as a}
   <tr>

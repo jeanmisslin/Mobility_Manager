@@ -30,8 +30,7 @@
 		estado: ''
 	}
 
-    let message;
-
+	let message;
 
     function añadirestudiante() {
         fetch(`nuevoestudiante.json`, {
@@ -73,6 +72,24 @@
 		añadiracuerdo();		
 	}
 
+	function myFunction() {
+  		var input, filter, table, tr, td, i, txtValue;
+  			input = document.getElementById("myInput");
+  			filter = input.value.toUpperCase();
+  			table = document.getElementById("tabla");
+  			tr = table.getElementsByTagName("tr");
+  				for (i = 0; i < tr.length; i++) {
+    				td = tr[i].getElementsByTagName("td")[0];
+					if (td) {
+						txtValue = td.textContent || td.innerText;
+					if (txtValue.toUpperCase().indexOf(filter) > -1) {
+						tr[i].style.display = "";
+					} else {
+						tr[i].style.display = "none";
+					}
+					}       
+  				}
+	}
 
 </script>
 
@@ -169,6 +186,11 @@
 
 <div id="contenido"> ESTUDIANTES</div>
 
+<div>
+	<input type="text" id="myInput" onkeyup="myFunction()" 
+	placeholder="Search for names.." title="Type in a name">
+</div>
+
 {#if nuevoestudiante.open}
     <div class="request-box">
         <div id="textfield">
@@ -218,3 +240,4 @@
   </tr>
   {/each}
 </table>
+
