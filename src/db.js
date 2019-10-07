@@ -1,6 +1,4 @@
 
 import sqlite3 from 'sqlite3';
-
-const dbfile = 'C:/Users/Jean/Desktop/TFG/database/tfg.db'
-
-export const db = new sqlite3.Database(dbfile)
+require('dotenv').config();
+export const db = new sqlite3.Database(process.env.DB_FILENAME)
