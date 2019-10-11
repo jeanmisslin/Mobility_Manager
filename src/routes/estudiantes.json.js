@@ -7,7 +7,7 @@ export function get(req, res, next) {
         res.end(JSON.stringify(obj))
     }
 
-    db.all(`SELECT estudiantes.*, universidades.universidad 
+    db.all(`SELECT estudiantes.*, universidades.universidad, universidades.pais 
             FROM estudiantes, universidades
             WHERE estudiantes.universidad = universidades.codigo`, (err, rows)=> {
         if(err) {

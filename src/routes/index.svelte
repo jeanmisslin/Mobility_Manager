@@ -13,14 +13,17 @@
   export let estudiantes;
 
   let filtro = "";
+  let persona ="";
+  let centro ="";
+  let origen ="";
 
   $: estudiantesFiltrados = estudiantes.filter(e => {
     let strIn = (a, b) => a.toLowerCase().indexOf(b.toLowerCase()) != -1;
     return (
-      strIn(e.nombre, filtro) ||
-      strIn(e.apellidos, filtro) ||
-			strIn(e.universidad, filtro) ||
-			strIn(e.email, filtro)
+      strIn(e.nombre, persona) ||
+	  strIn(e.apellidos, persona) ||
+	  strIn(e.universidad, centro) ||
+	  strIn(e.pais, origen)
     );
   });
 
@@ -108,7 +111,7 @@
     align-items: center;
     justify-content: center;
     margin-top: 25px;
-    margin-bottom: 17px;
+    margin-bottom: 10px;
     height: 40px;
     width: 200px;
     font-weight: 650;
@@ -176,12 +179,22 @@
 
 <div id="contenido">ESTUDIANTES</div>
 
-<div>
-  <input
-    type="text"
-    bind:value={filtro}
-    placeholder="Search for names.."
-    title="Type in a name" />
+<div id="options">
+  <div id="data">
+    <p>FILTROS</p>
+  </div>
+</div>
+
+<div id="filtro">
+  <p>ESTUDIANTE: <input type="text" bind:value={persona} placeholder="persona" title="Type in a name" /></p>
+</div>
+
+<div id="filtro">
+  <p>UNIVERSIDAD: <input type="text" bind:value={centro} placeholder="centro" title="Type in a name" /></p>
+</div>
+
+<div id="filtro">
+  <p>PAÍS: <input type="text" bind:value={origen} placeholder="origen" title="Type in a name" /></p>
 </div>
 
 {#if nuevoestudiante.open}
@@ -246,6 +259,7 @@
     <th>APELLIDOS</th>
     <th>NOMBRE</th>
     <th>UNIVERSIDAD</th>
+	<th>PAÍS</th>
     <th>EMAIL</th>
   </tr>
   {#each estudiantesFiltrados as e}
@@ -255,6 +269,7 @@
       </td>
       <td>{e.nombre}</td>
       <td>{e.universidad}</td>
+	  <td>{e.pais}</td>
       <td>{e.email}</td>
     </tr>
   {/each}
