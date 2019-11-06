@@ -19,7 +19,7 @@
         codigo: '',
 		nombre_catalan: '',
 		nombre_castellano: '',
-		nombre_castellano: '',
+		nombre_ingles: '',
 		idioma: '',
 		ects:'',
 		plan_de_estudios_catalan:'',

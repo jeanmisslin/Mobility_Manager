@@ -10,20 +10,18 @@
 </script>
 
 <script>
+
   export let estudiantes;
 
   let filtro = "";
-  let persona ="";
-  let centro ="";
-  let origen ="";
 
   $: estudiantesFiltrados = estudiantes.filter(e => {
     let strIn = (a, b) => a.toLowerCase().indexOf(b.toLowerCase()) != -1;
     return (
-      strIn(e.nombre, persona) ||
-	  strIn(e.apellidos, persona) ||
-	  strIn(e.universidad, centro) ||
-	  strIn(e.pais, origen)
+      strIn(e.nombre, filtro) ||
+	  strIn(e.apellidos, filtro) ||
+	  strIn(e.universidad, filtro) ||
+	  strIn(e.pais, filtro)
     );
   });
 
@@ -186,15 +184,7 @@
 </div>
 
 <div id="filtro">
-  <p>ESTUDIANTE: <input type="text" bind:value={persona} placeholder="persona" title="Type in a name" /></p>
-</div>
-
-<div id="filtro">
-  <p>UNIVERSIDAD: <input type="text" bind:value={centro} placeholder="centro" title="Type in a name" /></p>
-</div>
-
-<div id="filtro">
-  <p>PAÍS: <input type="text" bind:value={origen} placeholder="origen" title="Type in a name" /></p>
+  <p>BUSCADOR: <input type="text" bind:value={filtro} placeholder="Introduce la palabra clave" title="Type in a name" /></p>
 </div>
 
 {#if nuevoestudiante.open}
