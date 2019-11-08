@@ -1,7 +1,7 @@
 <script context="module">
 	export function preload({ params, query }) {
         const id = params.id;
-		return this.fetch(`/estudiante/${id}.json`)
+    return this.fetch(`/estudiante/${id}.json`)
 			.then(body => body.json())
 			.then(json => json)
 	}
@@ -16,7 +16,9 @@
     export let pais;
     export let email;
     export let titulacion;
+    export let id_acuerdo;
     export let acuerdos;
+    export let asignaturas;
 
 </script>
 
@@ -143,7 +145,7 @@
 </div>
 
 <div id="options">
-    <div id="data"><a href="../">ESTUDIANTES</a></div>
+    <div id="data"><a href="../">ESTUDIANTES</a>  <a href="/asignaturas/">ASIGNATURAS</a></div>
 </div>
 
 <div id="contenido">DATOS PERSONALES</div>
@@ -155,20 +157,42 @@
 
 <div id="acuerdos">ACUERDOS ACADEMICOS</div>
 
-<table id="tabla">
+{#each acuerdos as a}
+  <table id="tabla">
   <tr>
     <th>AÑO</th>
     <th>CUATRIMESTRE</th>
     <th>TITULACIÓN</th>
+    <th>ESTADO</th>
   </tr>
-  {#each acuerdos as a}
-    <tr>
+  <tr>
       <td>{a.año}-{a.año+1}</td>
       <td>{a.cuatrimestre}</td>
       <td>{a.nombre_castellano}</td>
+      <td>{a.estado}</td>
     </tr>
-  {/each}
-</table>
+  </table>
 
+<div id="options">
+    <div id="data">ASIGNATURAS SOLICITADAS</div>
+</div>
 
-
+  <table id="tabla">
+      <tr>
+        <th>CODIGO</th>
+        <th>TÍTULO</th>
+        <th>IDIOMA</th>
+        <th>ECTS</th>
+        <th>ESTADO</th>
+      </tr>
+      {#each asignaturas as s}
+      <tr>
+        <td>{s.codigo}</td>
+        <td>{s.nombre_ingles}</td>
+        <td>{s.idioma}</td>
+        <td>{s.ects}</td>
+        <td>{s.estado_solicitud}</td>
+      </tr>
+      {/each}
+    </table>
+{/each}

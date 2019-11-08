@@ -12,7 +12,20 @@
 
 <script>
 
-    export let asignaturas;
+	export let asignaturas;
+	
+	let filtro = "";
+
+  	$: asignaturasFiltradas = asignaturas.filter(e => {
+    let strIn = (a, b) => a.toLowerCase().indexOf(b.toLowerCase()) != -1;
+    return (
+      strIn(e.codigo, filtro) ||
+	  strIn(e.nombre_catalan, filtro) ||
+	  strIn(e.nombre_castellano, filtro) ||
+	  strIn(e.nombre_ingles, filtro) ||
+	  strIn(e.idioma, filtro)
+      );
+  	});
     
     let nuevaasignatura = {
         open: false,
@@ -140,6 +153,10 @@
 
 <div id="contenido"> ASIGNATURAS</div>
 
+<div id="filtro">
+  <p>BUSCADOR: <input type="text" bind:value={filtro} placeholder="Introduce la palabra clave" title="Type in a name" /></p>
+</div>
+
 {#if nuevaasignatura.open}
     <div class="request-box">
         <div id="textfield">
@@ -182,7 +199,7 @@
     <th>IDIOMA</th>
 	<th>ECTS</th>
   </tr>
-  {#each asignaturas as a}
+  {#each asignaturasFiltradas as a}
   <tr>
 	<td><a href="/asignatura/{a.codigo}"> {a.codigo} </a></td>
 	<td><a href="{a.plan_de_estudios_ingles}"> {a.nombre_ingles} </a></td>

@@ -3,7 +3,6 @@
     return this.fetch(`estudiantes.json`)
       .then(body => body.json())
       .then(json => {
-        console.log(json);
         return { estudiantes: json };
       });
   }
@@ -19,9 +18,9 @@
     let strIn = (a, b) => a.toLowerCase().indexOf(b.toLowerCase()) != -1;
     return (
       strIn(e.nombre, filtro) ||
-	  strIn(e.apellidos, filtro) ||
-	  strIn(e.universidad, filtro) ||
-	  strIn(e.pais, filtro)
+	    strIn(e.apellidos, filtro) ||
+	    strIn(e.universidad, filtro) ||
+	    strIn(e.pais, filtro)
     );
   });
 
@@ -177,12 +176,6 @@
 
 <div id="contenido">ESTUDIANTES</div>
 
-<div id="options">
-  <div id="data">
-    <p>FILTROS</p>
-  </div>
-</div>
-
 <div id="filtro">
   <p>BUSCADOR: <input type="text" bind:value={filtro} placeholder="Introduce la palabra clave" title="Type in a name" /></p>
 </div>
@@ -254,12 +247,10 @@
   </tr>
   {#each estudiantesFiltrados as e}
     <tr>
-      <td>
-        <a href="/estudiante/{e.email}">{e.apellidos}</a>
-      </td>
+      <td><a href="/estudiante/{e.email}">{e.apellidos}</a></td>
       <td>{e.nombre}</td>
       <td>{e.universidad}</td>
-	  <td>{e.pais}</td>
+	    <td>{e.pais}</td>
       <td>{e.email}</td>
     </tr>
   {/each}

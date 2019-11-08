@@ -21,6 +21,17 @@ export function get(req, res, next) {
                 return
         }      
         estudiante.acuerdos = rows;
+    })
+        db.all(`SELECT asignaturas.*, ofertas.*, asignaciones.*, acuerdos_academicos.* FROM asignaturas, ofertas, asignaciones,
+            acuerdos_academicos WHERE acuerdos_academicos.estudiante = ? AND asignaciones.acuerdo_academico = acuerdos_academicos.id_acuerdo
+            AND asignaciones.oferta = ofertas.id_oferta AND ofertas.asignatura = asignaturas.codigo`, [id],
+        (err, rows) => {
+            if(err) {
+                console.log(err)
+                jsonResponse(500, { error: `Cannot get subject ${id}: ${err}` })
+                return
+        }      
+        estudiante.asignaturas = rows;
         jsonResponse(200, estudiante);
     })
     })
