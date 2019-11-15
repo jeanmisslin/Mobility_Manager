@@ -2,15 +2,14 @@
   export function preload({ params, query }) {
     return this.fetch(`estudiantes.json`)
       .then(body => body.json())
-      .then(json => {
-        return { estudiantes: json };
-      });
+      .then(json => json);
   }
 </script>
 
 <script>
 
   export let estudiantes;
+  export let universidades;
 
   let filtro = "";
 
@@ -168,6 +167,7 @@
   <div id="title">ESEIAAT INCOMING STUDENTS</div>
 </div>
 
+
 <div id="options">
   <div id="data">
     <a href="/asignaturas/">ASIGNATURAS</a>
@@ -199,7 +199,11 @@
         </p>
         <p>
           universidad:
-          <input type="text" bind:value={nuevoestudiante.universidad} />
+          <select name="uni" bind:value={nuevoestudiante.universidad}>
+            {#each universidades as u}
+              <option value="{u.codigo_universidad}">{u.universidad}</option>
+            {/each}
+          </select>
         </p>
         <p>
           titulacion:
