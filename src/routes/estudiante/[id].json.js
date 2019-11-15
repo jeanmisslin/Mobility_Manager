@@ -9,11 +9,11 @@ export function get(req, res, next) {
         res.end(JSON.stringify(obj))
     }
 
-    db.get(`SELECT estudiantes.*, universidades.universidad, universidades.pais 
-            FROM estudiantes, universidades WHERE estudiantes.universidad = universidades.codigo AND email = ?`, [id], (err, row) => {
+    db.get(`SELECT estudiantes.*, universidades.universidad, universidades.pais, universidades.codigo_universidad 
+            FROM estudiantes, universidades WHERE estudiantes.universidad = universidades.codigo_universidad AND email = ?`, [id], (err, row) => {
         const estudiante = row;
         db.all(`SELECT acuerdos_academicos.*, periodos_academicos.año, periodos_academicos.cuatrimestre, titulaciones.nombre_catalan, titulaciones.nombre_castellano, titulaciones.nombre_ingles 
-            FROM acuerdos_academicos, periodos_academicos, titulaciones WHERE acuerdos_academicos.titulacion = titulaciones.codigo AND estudiante = ?`, [id],
+            FROM acuerdos_academicos, periodos_academicos, titulaciones WHERE acuerdos_academicos.periodo_academico = periodos_academicos.id_periodo AND acuerdos_academicos.titulacion = titulaciones.codigo_titulacion AND acuerdos_academicos.estudiante = ?`, [id],
         (err, rows) => {
             if(err) {
                 console.log(err)
@@ -22,9 +22,10 @@ export function get(req, res, next) {
         }      
         estudiante.acuerdos = rows;
     })
-        db.all(`SELECT asignaturas.*, ofertas.*, asignaciones.*, acuerdos_academicos.* FROM asignaturas, ofertas, asignaciones,
-            acuerdos_academicos WHERE acuerdos_academicos.estudiante = ? AND asignaciones.acuerdo_academico = acuerdos_academicos.id_acuerdo
-            AND asignaciones.oferta = ofertas.id_oferta AND ofertas.asignatura = asignaturas.codigo`, [id],
+        db.all(`SELECT asignaturas.*, ofertas.*, asignaciones.*, acuerdos_academicos.* 
+                FROM asignaturas INNER JOIN ofertas, asignaciones, acuerdos_academicos 
+                ON acuerdos_academicos.estudiante = ? AND acuerdos_academicos.id_acuerdo = asignaciones.acuerdo_academico 
+                AND asignaciones.oferta = ofertas.id_oferta AND ofertas.asignatura = asignaturas.codigo_asignatura`, [id],
         (err, rows) => {
             if(err) {
                 console.log(err)

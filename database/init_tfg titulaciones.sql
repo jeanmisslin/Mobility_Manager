@@ -1,6 +1,6 @@
 
 
-INSERT INTO titulaciones (codigo, nombre_catalan, nombre_castellano, nombre_ingles, ciclo) VALUES(
+INSERT INTO titulaciones (codigo_titulacion, nombre_catalan, nombre_castellano, nombre_ingles, ciclo) VALUES(
     '320GRESAUD',
     'Grau en Enginyeria de Sistemes Audiovisuals',
     'Grado en Ingeniería de Sistemas Audiovisuales',
@@ -8,7 +8,7 @@ INSERT INTO titulaciones (codigo, nombre_catalan, nombre_castellano, nombre_ingl
     1
 );
 
-INSERT INTO titulaciones (codigo, nombre_catalan, nombre_castellano, nombre_ingles, ciclo) VALUES(
+INSERT INTO titulaciones (codigo_titulacion, nombre_catalan, nombre_castellano, nombre_ingles, ciclo) VALUES(
     '320GREMECA',
     'Grau en Enginyeria Mecànica',
     'Grado en Ingeniería Mecánica',
@@ -16,7 +16,7 @@ INSERT INTO titulaciones (codigo, nombre_catalan, nombre_castellano, nombre_ingl
     1
 );
 
-INSERT INTO titulaciones (codigo, nombre_catalan, nombre_castellano, nombre_ingles, ciclo) VALUES(
+INSERT INTO titulaciones (codigo_titulacion, nombre_catalan, nombre_castellano, nombre_ingles, ciclo) VALUES(
     '320GREQUIM',
     'Grau en Enginyeria Química',
     'Grado en Ingeniería Química',
@@ -24,7 +24,7 @@ INSERT INTO titulaciones (codigo, nombre_catalan, nombre_castellano, nombre_ingl
     1
 );
 
-INSERT INTO titulaciones (codigo, nombre_catalan, nombre_castellano, nombre_ingles, ciclo) VALUES(
+INSERT INTO titulaciones (codigo_titulacion, nombre_catalan, nombre_castellano, nombre_ingles, ciclo) VALUES(
     '320GREELEC',
     'Grau en Enginyeria Elèctrica',
     'Grado en Ingeniería Eléctrica',
@@ -32,7 +32,7 @@ INSERT INTO titulaciones (codigo, nombre_catalan, nombre_castellano, nombre_ingl
     1
 );
 
-INSERT INTO titulaciones (codigo, nombre_catalan, nombre_castellano, nombre_ingles, ciclo) VALUES(
+INSERT INTO titulaciones (codigo_titulacion, nombre_catalan, nombre_castellano, nombre_ingles, ciclo) VALUES(
     '320GREDIDP',
     'Grau en Enginyeria de Disseny Industrial i Desenvolupament del Producte',
     'Grado en Ingeniería de Diseño Industrial y Desarrollo del Producto',
@@ -40,7 +40,7 @@ INSERT INTO titulaciones (codigo, nombre_catalan, nombre_castellano, nombre_ingl
     1
 );
 
-INSERT INTO titulaciones (codigo, nombre_catalan, nombre_castellano, nombre_ingles, ciclo) VALUES(
+INSERT INTO titulaciones (codigo_titulacion, nombre_catalan, nombre_castellano, nombre_ingles, ciclo) VALUES(
     '320GREEIA',
     'Grau en Enginyeria en Electrònica Industrial i Automàtica',
     'Grado en Ingeniería Electrónica Industrial y Automática',
@@ -48,7 +48,7 @@ INSERT INTO titulaciones (codigo, nombre_catalan, nombre_castellano, nombre_ingl
     1
 );
 
-INSERT INTO titulaciones (codigo, nombre_catalan, nombre_castellano, nombre_ingles, ciclo) VALUES(
+INSERT INTO titulaciones (codigo_titulacion, nombre_catalan, nombre_castellano, nombre_ingles, ciclo) VALUES(
     '320GRETDT',
     'Grau en Enginyeria de Tecnologia i Disseny Tèxtil',
     'Grado en Ingeniería de Tecnología y Diseño Textil',
@@ -56,7 +56,7 @@ INSERT INTO titulaciones (codigo, nombre_catalan, nombre_castellano, nombre_ingl
     1
 );
 
-INSERT INTO titulaciones (codigo, nombre_catalan, nombre_castellano, nombre_ingles, ciclo) VALUES(
+INSERT INTO titulaciones (codigo_titulacion, nombre_catalan, nombre_castellano, nombre_ingles, ciclo) VALUES(
     '220GRETIND',
     'Grau en Enginyeria en Tecnologies Industrials',
     'Grado en Ingeniería en Tecnologías Industriales',
@@ -64,7 +64,7 @@ INSERT INTO titulaciones (codigo, nombre_catalan, nombre_castellano, nombre_ingl
     1
 );
 
-INSERT INTO titulaciones (codigo, nombre_catalan, nombre_castellano, nombre_ingles, ciclo) VALUES(
+INSERT INTO titulaciones (codigo_titulacion, nombre_catalan, nombre_castellano, nombre_ingles, ciclo) VALUES(
     '220GRETAER',
     'Grau en Enginyeria en Tecnologies Aeroespacials',
     'Grado en Ingeniería en Tecnologías Aeroespaciales',
@@ -72,7 +72,7 @@ INSERT INTO titulaciones (codigo, nombre_catalan, nombre_castellano, nombre_ingl
     1
 );
 
-INSERT INTO titulaciones (codigo, nombre_catalan, nombre_castellano, nombre_ingles, ciclo) VALUES(
+INSERT INTO titulaciones (codigo_titulacion, nombre_catalan, nombre_castellano, nombre_ingles, ciclo) VALUES(
     '220GREVAER',
     'Grau en Enginyeria en Vehicles Aeroespacials',
     'Grado en Ingeniería en Vehículos Aeroespaciales',
@@ -80,7 +80,7 @@ INSERT INTO titulaciones (codigo, nombre_catalan, nombre_castellano, nombre_ingl
     1
 );
 
-INSERT INTO titulaciones (codigo, nombre_catalan, nombre_castellano, nombre_ingles, ciclo) VALUES(
+INSERT INTO titulaciones (codigo_titulacion, nombre_catalan, nombre_castellano, nombre_ingles, ciclo) VALUES(
     '220MEI',
     'Màster Universitari en Enginyeria Industrial',
     'Máster Universitario en Ingeniería Industrial',
@@ -88,7 +88,7 @@ INSERT INTO titulaciones (codigo, nombre_catalan, nombre_castellano, nombre_ingl
     2
 );
 
-INSERT INTO titulaciones (codigo, nombre_catalan, nombre_castellano, nombre_ingles, ciclo) VALUES(
+INSERT INTO titulaciones (codigo_titulacion, nombre_catalan, nombre_castellano, nombre_ingles, ciclo) VALUES(
     '220MUESAI',
     'Màster Universitari en Enginyeria de Sistemes Automàtics i Electrònica Industrial',
     'Máster universitario en Ingeniería de Sistemas Automáticos y Electrónica Industrial',
@@ -96,7 +96,7 @@ INSERT INTO titulaciones (codigo, nombre_catalan, nombre_castellano, nombre_ingl
     2
 );
 
-INSERT INTO titulaciones (codigo, nombre_catalan, nombre_castellano, nombre_ingles, ciclo) VALUES(
+INSERT INTO titulaciones (codigo_titulacion, nombre_catalan, nombre_castellano, nombre_ingles, ciclo) VALUES(
     '220MUAERON',
     'Màster Universitari en Enginyeria Aeronàutica',
     'Máster Universitario en Ingeniería Aeronáutica',
@@ -104,7 +104,7 @@ INSERT INTO titulaciones (codigo, nombre_catalan, nombre_castellano, nombre_ingl
     2
 );
 
-INSERT INTO titulaciones (codigo, nombre_catalan, nombre_castellano, nombre_ingles, ciclo) VALUES(
+INSERT INTO titulaciones (codigo_titulacion, nombre_catalan, nombre_castellano, nombre_ingles, ciclo) VALUES(
     '220MEORSEM',
     "'Màster Universitari en Enginyeria d'Organització'",
     'Máster Universitario en Ingeniería de Organización',
@@ -112,7 +112,7 @@ INSERT INTO titulaciones (codigo, nombre_catalan, nombre_castellano, nombre_ingl
     2
 );
 
-INSERT INTO titulaciones (codigo, nombre_catalan, nombre_castellano, nombre_ingles, ciclo) VALUES(
+INSERT INTO titulaciones (codigo_titulacion, nombre_catalan, nombre_castellano, nombre_ingles, ciclo) VALUES(
     '205MEM',
     "'Master's Degree in Technology and Engineering Management'",
     "'Master's Degree in Technology and Engineering Management'",
@@ -120,7 +120,7 @@ INSERT INTO titulaciones (codigo, nombre_catalan, nombre_castellano, nombre_ingl
     2
 );
 
-INSERT INTO titulaciones (codigo, nombre_catalan, nombre_castellano, nombre_ingles, ciclo) VALUES(
+INSERT INTO titulaciones (codigo_titulacion, nombre_catalan, nombre_castellano, nombre_ingles, ciclo) VALUES(
     '205MASE',
     "Master's degree in Space and Aeronautical Engineering",
     "Master's degree in Space and Aeronautical Engineering",
@@ -128,7 +128,7 @@ INSERT INTO titulaciones (codigo, nombre_catalan, nombre_castellano, nombre_ingl
     2
 );
 
-INSERT INTO titulaciones (codigo, nombre_catalan, nombre_castellano, nombre_ingles, ciclo) VALUES(
+INSERT INTO titulaciones (codigo_titulacion, nombre_catalan, nombre_castellano, nombre_ingles, ciclo) VALUES(
     '205METEXPA',
     'Màster Universitari en Enginyeria Tèxtil i Paperera',
     'Máster Universitario en Ingeniería Textil y Papelera',

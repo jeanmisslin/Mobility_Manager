@@ -7,7 +7,7 @@ export function get(req, res, next) {
         res.end(JSON.stringify(obj))
     }
 
-    db.all(`SELECT * FROM asignaturas ORDER BY codigo`, (err, rows)=> {
+    db.all(`SELECT * FROM asignaturas ORDER BY codigo_asignatura`, (err, rows)=> {
         if(err) {
             console.log(err)
             jsonResponse(500, { error: `No se puede realizar la consulta: ${err}` })

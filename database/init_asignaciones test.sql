@@ -100,3 +100,82 @@ INSERT INTO asignaciones (acuerdo_academico, oferta, estado_solicitud) VALUES(
     54,
     'C'
 );
+
+INSERT INTO asignaciones (acuerdo_academico, oferta, estado_solicitud) VALUES( 
+    2,
+    55,
+    'C'
+);
+
+INSERT INTO asignaciones (acuerdo_academico, oferta, estado_solicitud) VALUES( 
+    2,
+    57,
+    'C'
+);
+
+INSERT INTO asignaciones (acuerdo_academico, oferta, estado_solicitud) VALUES( 
+    2,
+    58,
+    'C'
+);
+
+INSERT INTO asignaciones (acuerdo_academico, oferta, estado_solicitud) VALUES( 
+    2,
+    59,
+    'EAM'
+);
+
+INSERT INTO asignaciones (acuerdo_academico, oferta, estado_solicitud) VALUES( 
+    2,
+    63,
+    'C'
+);
+
+INSERT INTO asignaciones (acuerdo_academico, oferta, estado_solicitud) VALUES( 
+    2,
+    5,
+    'EAM'
+);
+
+INSERT INTO asignaciones (acuerdo_academico, oferta, estado_solicitud) VALUES( 
+    2,
+    25,
+    'EAM'
+);
+
+INSERT INTO asignaciones (acuerdo_academico, oferta, estado_solicitud) VALUES( 
+    2,
+    66,
+    'D'
+);
+
+INSERT INTO asignaciones (acuerdo_academico, oferta, estado_solicitud) VALUES( 
+    3,
+    76,
+    'EAM'
+);
+
+INSERT INTO asignaciones (acuerdo_academico, oferta, estado_solicitud) VALUES( 
+    3,
+    77,
+    'C'
+);
+
+INSERT INTO asignaciones (acuerdo_academico, oferta, estado_solicitud) VALUES( 
+    3,
+    79,
+    'EAM'
+);
+
+INSERT INTO asignaciones (acuerdo_academico, oferta, estado_solicitud) VALUES( 
+    3,
+    81,
+    'C'
+);
+
+INSERT INTO asignaciones (acuerdo_academico, oferta, estado_solicitud) VALUES( 
+    3,
+    61,
+    'C'
+);
+

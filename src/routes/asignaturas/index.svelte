@@ -19,7 +19,7 @@
   	$: asignaturasFiltradas = asignaturas.filter(e => {
     let strIn = (a, b) => a.toLowerCase().indexOf(b.toLowerCase()) != -1;
     return (
-      strIn(e.codigo, filtro) ||
+      strIn(e.codigo_asignatura, filtro) ||
 	  strIn(e.nombre_catalan, filtro) ||
 	  strIn(e.nombre_castellano, filtro) ||
 	  strIn(e.nombre_ingles, filtro) ||
@@ -29,7 +29,7 @@
     
     let nuevaasignatura = {
         open: false,
-        codigo: '',
+        codigo_asignatura: '',
 		nombre_catalan: '',
 		nombre_castellano: '',
 		nombre_ingles: '',
@@ -161,7 +161,7 @@
     <div class="request-box">
         <div id="textfield">
             <div id="field">
-                <p>codigo:		 <input type="text" bind:value={nuevaasignatura.codigo} /><p> 
+                <p>codigo:		 <input type="text" bind:value={nuevaasignatura.codigo_asignatura} /><p> 
 				<p>nombre_catalan:	 <input type="text" bind:value={nuevaasignatura.nombre_catalan} /></p>
 				<p>nombre_castellano:		 <input type="text" bind:value={nuevaasignatura.nombre_castellano} /></p>
 				<p>nombre_ingles:	 <input type="text" bind:value={nuevaasignatura.nombre_ingles} /></p>
@@ -201,7 +201,7 @@
   </tr>
   {#each asignaturasFiltradas as a}
   <tr>
-	<td><a href="/asignatura/{a.codigo}"> {a.codigo} </a></td>
+	<td><a href="/asignatura/{a.codigo_asignatura}"> {a.codigo_asignatura} </a></td>
 	<td><a href="{a.plan_de_estudios_ingles}"> {a.nombre_ingles} </a></td>
 	<td>{a.idioma}</td>
 	<td>{a.ects}</td>

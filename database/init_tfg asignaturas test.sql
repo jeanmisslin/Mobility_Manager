@@ -3,7 +3,7 @@ DROP TABLE IF EXISTS asignaturas;
 DROP TABLE IF EXISTS ofertas;
 
 CREATE TABLE asignaturas(
-    codigo TEXT PRIMARY KEY,
+    codigo_asignatura TEXT PRIMARY KEY,
     nombre_catalan TEXT,
     nombre_castellano TEXT,
     nombre_ingles TEXT,
@@ -22,13 +22,13 @@ CREATE TABLE ofertas(
     plazas_ofertadas int,
     plazas_disponibles int,
     plazas_concedidas int,
-    FOREIGN KEY (asignatura) REFERENCES asignaturas (codigo),
+    FOREIGN KEY (asignatura) REFERENCES asignaturas (codigo_asignatura),
     FOREIGN KEY (periodo_academico) REFERENCES periodos_academicos (id_periodo),
-    FOREIGN KEY (titulacion) REFERENCES titulaciones (codigo),
+    FOREIGN KEY (titulacion) REFERENCES titulaciones (codigo_titulacion),
     CONSTRAINT UC_OFERTA UNIQUE (asignatura,periodo_academico,titulacion)
 );
 
-INSERT INTO asignaturas (codigo, nombre_catalan, 
+INSERT INTO asignaturas (codigo_asignatura, nombre_catalan, 
 nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan, 
 plan_de_estudios_castellano, plan_de_estudios_ingles) VALUES(
     '220322',
@@ -62,7 +62,7 @@ VALUES(
     0
 );
 
-INSERT INTO asignaturas (codigo, nombre_catalan, 
+INSERT INTO asignaturas (codigo_asignatura, nombre_catalan, 
 nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan, 
 plan_de_estudios_castellano, plan_de_estudios_ingles) VALUES(
     '220331',
@@ -96,7 +96,7 @@ VALUES(
     0
 );
 
-INSERT INTO asignaturas (codigo, nombre_catalan, 
+INSERT INTO asignaturas (codigo_asignatura, nombre_catalan, 
 nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan, 
 plan_de_estudios_castellano, plan_de_estudios_ingles) VALUES(
     '220353',
@@ -130,7 +130,7 @@ VALUES(
     0
 );
 
-INSERT INTO asignaturas (codigo, nombre_catalan, 
+INSERT INTO asignaturas (codigo_asignatura, nombre_catalan, 
 nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan, 
 plan_de_estudios_castellano, plan_de_estudios_ingles) VALUES(
     '205001',
@@ -154,7 +154,7 @@ VALUES(
     0
 );
 
-INSERT INTO asignaturas (codigo, nombre_catalan, 
+INSERT INTO asignaturas (codigo_asignatura, nombre_catalan, 
 nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan, 
 plan_de_estudios_castellano, plan_de_estudios_ingles) VALUES(
     '220332',
@@ -188,7 +188,7 @@ VALUES(
     0
 );
 
-INSERT INTO asignaturas (codigo, nombre_catalan, 
+INSERT INTO asignaturas (codigo_asignatura, nombre_catalan, 
 nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan, 
 plan_de_estudios_castellano, plan_de_estudios_ingles) VALUES(
     '220625',
@@ -212,7 +212,7 @@ VALUES(
     0
 );
 
-INSERT INTO asignaturas (codigo, nombre_catalan, 
+INSERT INTO asignaturas (codigo_asignatura, nombre_catalan, 
 nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan, 
 plan_de_estudios_castellano, plan_de_estudios_ingles) VALUES(
     '220669',
@@ -236,7 +236,7 @@ VALUES(
     0
 );
 
-INSERT INTO asignaturas (codigo, nombre_catalan, 
+INSERT INTO asignaturas (codigo_asignatura, nombre_catalan, 
 nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan, 
 plan_de_estudios_castellano, plan_de_estudios_ingles) VALUES(
     '220683',
@@ -260,7 +260,7 @@ VALUES(
     0
 );
 
-INSERT INTO asignaturas (codigo, nombre_catalan, 
+INSERT INTO asignaturas (codigo_asignatura, nombre_catalan, 
 nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan, 
 plan_de_estudios_castellano, plan_de_estudios_ingles) VALUES(
     '205055',
@@ -304,7 +304,7 @@ VALUES(
     0
 );
 
-INSERT INTO asignaturas (codigo, nombre_catalan, 
+INSERT INTO asignaturas (codigo_asignatura, nombre_catalan, 
 nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan, 
 plan_de_estudios_castellano, plan_de_estudios_ingles) VALUES(
     '220070',
@@ -348,7 +348,7 @@ VALUES(
     0
 );
 
-INSERT INTO asignaturas (codigo, nombre_catalan, 
+INSERT INTO asignaturas (codigo_asignatura, nombre_catalan, 
 nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan, 
 plan_de_estudios_castellano, plan_de_estudios_ingles) VALUES(
     '220072',
@@ -412,7 +412,7 @@ VALUES(
     0
 );
 
-INSERT INTO asignaturas (codigo, nombre_catalan, 
+INSERT INTO asignaturas (codigo_asignatura, nombre_catalan, 
 nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan, 
 plan_de_estudios_castellano, plan_de_estudios_ingles) VALUES(
     '220142',
@@ -526,7 +526,7 @@ VALUES(
     0
 );
 
-INSERT INTO asignaturas (codigo, nombre_catalan, 
+INSERT INTO asignaturas (codigo_asignatura, nombre_catalan, 
 nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan, 
 plan_de_estudios_castellano, plan_de_estudios_ingles) VALUES(
     '220038',
@@ -570,7 +570,7 @@ VALUES(
     0
 );
 
-INSERT INTO asignaturas (codigo, nombre_catalan, 
+INSERT INTO asignaturas (codigo_asignatura, nombre_catalan, 
 nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan, 
 plan_de_estudios_castellano, plan_de_estudios_ingles) VALUES(
     '205086',
@@ -594,7 +594,7 @@ VALUES(
     0
 );
 
-INSERT INTO asignaturas (codigo, nombre_catalan, 
+INSERT INTO asignaturas (codigo_asignatura, nombre_catalan, 
 nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan, 
 plan_de_estudios_castellano, plan_de_estudios_ingles) VALUES(
     '205052',
@@ -638,7 +638,7 @@ VALUES(
     0
 );
 
-INSERT INTO asignaturas (codigo, nombre_catalan, 
+INSERT INTO asignaturas (codigo_asignatura, nombre_catalan, 
 nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan, 
 plan_de_estudios_castellano, plan_de_estudios_ingles) VALUES(
     '220333',
@@ -672,7 +672,7 @@ VALUES(
     0
 );
 
-INSERT INTO asignaturas (codigo, nombre_catalan, 
+INSERT INTO asignaturas (codigo_asignatura, nombre_catalan, 
 nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan, 
 plan_de_estudios_castellano, plan_de_estudios_ingles) VALUES(
     '220146',
@@ -786,7 +786,7 @@ VALUES(
     0
 );
 
-INSERT INTO asignaturas (codigo, nombre_catalan, 
+INSERT INTO asignaturas (codigo_asignatura, nombre_catalan, 
 nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan, 
 plan_de_estudios_castellano, plan_de_estudios_ingles) VALUES(
     '205114',
@@ -810,7 +810,7 @@ VALUES(
     0
 );
 
-INSERT INTO asignaturas (codigo, nombre_catalan, 
+INSERT INTO asignaturas (codigo_asignatura, nombre_catalan, 
 nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan, 
 plan_de_estudios_castellano, plan_de_estudios_ingles) VALUES(
     '220330',
@@ -831,5 +831,439 @@ VALUES(
     '205MEM',
     0,
     0,
+    0
+);
+
+INSERT INTO asignaturas (codigo_asignatura, nombre_catalan, 
+nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan, 
+plan_de_estudios_castellano, plan_de_estudios_ingles) VALUES(
+    '220023',
+    'Circuits Electrònics',
+    'Circuitos Electrónicos',
+    'Electronic Circuits',
+    'CAT/CAST',
+    6,
+    'https://www.upc.edu/content/master/guiadocent/pdf/cat/220023',
+    'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220023',
+    'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220023'
+);
+
+INSERT INTO ofertas (asignatura, periodo_academico, titulacion, plazas_ofertadas, plazas_disponibles, plazas_concedidas)
+VALUES(
+    '220023',
+    1,
+    '220GRETAER',
+    4,
+    4,
+    0
+);
+
+INSERT INTO ofertas (asignatura, periodo_academico, titulacion, plazas_ofertadas, plazas_disponibles, plazas_concedidas)
+VALUES(
+    '220023',
+    1,
+    '220GREVAER',
+    4,
+    4,
+    0
+);
+
+INSERT INTO asignaturas (codigo_asignatura, nombre_catalan, 
+nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan, 
+plan_de_estudios_castellano, plan_de_estudios_ingles) VALUES(
+    '220032',
+    "Disseny d'Avions",
+    'Diseño de Aviones',
+    'Aeroplane Design',
+    'CAT/CAST',
+    4.5,
+    'https://www.upc.edu/content/master/guiadocent/pdf/cat/220032',
+    'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220032',
+    'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220032'
+);
+
+INSERT INTO ofertas (asignatura, periodo_academico, titulacion, plazas_ofertadas, plazas_disponibles, plazas_concedidas)
+VALUES(
+    '220032',
+    1,
+    '220GREVAER',
+    4,
+    4,
+    0
+);
+
+INSERT INTO asignaturas (codigo_asignatura, nombre_catalan, 
+nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan, 
+plan_de_estudios_castellano, plan_de_estudios_ingles) VALUES(
+    '220057',
+    'Enginyeria Espacial',
+    'Ingeniería Espacial',
+    'Space Engineering',
+    'CAST/ING',
+    6,
+    'https://www.upc.edu/content/master/guiadocent/pdf/cat/220057',
+    'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220057',
+    'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220057'
+);
+
+INSERT INTO ofertas (asignatura, periodo_academico, titulacion, plazas_ofertadas, plazas_disponibles, plazas_concedidas)
+VALUES(
+    '220057',
+    1,
+    '220GRETAER',
+    5,
+    5,
+    0
+);
+
+INSERT INTO asignaturas (codigo_asignatura, nombre_catalan, 
+nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan, 
+plan_de_estudios_castellano, plan_de_estudios_ingles) VALUES(
+    '220028',
+    'Projectes',
+    'Proyectos',
+    'Projects',
+    'ING',
+    6,
+    'https://www.upc.edu/content/master/guiadocent/pdf/cat/220028',
+    'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220028',
+    'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220028'
+);
+
+INSERT INTO ofertas (asignatura, periodo_academico, titulacion, plazas_ofertadas, plazas_disponibles, plazas_concedidas)
+VALUES(
+    '220028',
+    1,
+    '220GRETAER',
+    2,
+    2,
+    0
+);
+
+INSERT INTO ofertas (asignatura, periodo_academico, titulacion, plazas_ofertadas, plazas_disponibles, plazas_concedidas)
+VALUES(
+    '220028',
+    1,
+    '220GREVAER',
+    2,
+    2,
+    0
+);
+
+INSERT INTO ofertas (asignatura, periodo_academico, titulacion, plazas_ofertadas, plazas_disponibles, plazas_concedidas)
+VALUES(
+    '220028',
+    2,
+    '220GRETAER',
+    2,
+    2,
+    0
+);
+
+INSERT INTO ofertas (asignatura, periodo_academico, titulacion, plazas_ofertadas, plazas_disponibles, plazas_concedidas)
+VALUES(
+    '220028',
+    2,
+    '220GREVAER',
+    2,
+    2,
+    0
+);
+
+INSERT INTO asignaturas (codigo_asignatura, nombre_catalan, 
+nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan, 
+plan_de_estudios_castellano, plan_de_estudios_ingles) VALUES(
+    '220352',
+    'Aerodinàmica Avançada',
+    'Aerodinámica Avanzada',
+    'Advanced Aerodynamics',
+    'ING',
+    5,
+    'https://www.upc.edu/content/master/guiadocent/pdf/cat/220352',
+    'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220352',
+    'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220352'
+);
+
+INSERT INTO ofertas (asignatura, periodo_academico, titulacion, plazas_ofertadas, plazas_disponibles, plazas_concedidas)
+VALUES(
+    '220352',
+    1,
+    '220MUAERON',
+    0,
+    0,
+    0
+);
+
+INSERT INTO ofertas (asignatura, periodo_academico, titulacion, plazas_ofertadas, plazas_disponibles, plazas_concedidas)
+VALUES(
+    '220352',
+    1,
+    '205MASE',
+    0,
+    0,
+    0
+);
+
+INSERT INTO asignaturas (codigo_asignatura, nombre_catalan, 
+nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan, 
+plan_de_estudios_castellano, plan_de_estudios_ingles) VALUES(
+    '205202',
+    'Sistemes de Producció Altament Automatitzats',
+    'Sistemas de Producción Altamente Automatizados',
+    'Highly Automated Production Systems',
+    'ING',
+    3,
+    'https://www.upc.edu/content/master/guiadocent/pdf/cat/205202',
+    'https://www.upc.edu/content/grau/guiadocent/pdf/esp/205202',
+    'https://www.upc.edu/content/grau/guiadocent/pdf/ing/205202'
+);
+
+INSERT INTO ofertas (asignatura, periodo_academico, titulacion, plazas_ofertadas, plazas_disponibles, plazas_concedidas)
+VALUES(
+    '205202',
+    1,
+    '220GRETIND',
+    7,
+    7,
+    0
+);
+
+INSERT INTO ofertas (asignatura, periodo_academico, titulacion, plazas_ofertadas, plazas_disponibles, plazas_concedidas)
+VALUES(
+    '205202',
+    1,
+    '220GRETAER',
+    7,
+    7,
+    0
+);
+
+INSERT INTO ofertas (asignatura, periodo_academico, titulacion, plazas_ofertadas, plazas_disponibles, plazas_concedidas)
+VALUES(
+    '205202',
+    1,
+    '220GREVAER',
+    7,
+    7,
+    0
+);
+
+INSERT INTO ofertas (asignatura, periodo_academico, titulacion, plazas_ofertadas, plazas_disponibles, plazas_concedidas)
+VALUES(
+    '205202',
+    1,
+    '320GRESAUD',
+    7,
+    7,
+    0
+);
+
+INSERT INTO ofertas (asignatura, periodo_academico, titulacion, plazas_ofertadas, plazas_disponibles, plazas_concedidas)
+VALUES(
+    '205202',
+    1,
+    '320GREMECA',
+    7,
+    7,
+    0
+);
+
+INSERT INTO ofertas (asignatura, periodo_academico, titulacion, plazas_ofertadas, plazas_disponibles, plazas_concedidas)
+VALUES(
+    '205202',
+    1,
+    '320GREQUIM',
+    7,
+    7,
+    0
+);
+
+INSERT INTO ofertas (asignatura, periodo_academico, titulacion, plazas_ofertadas, plazas_disponibles, plazas_concedidas)
+VALUES(
+    '205202',
+    1,
+    '320GREELEC',
+    7,
+    7,
+    0
+);
+
+INSERT INTO ofertas (asignatura, periodo_academico, titulacion, plazas_ofertadas, plazas_disponibles, plazas_concedidas)
+VALUES(
+    '205202',
+    1,
+    '320GREDIDP',
+    7,
+    7,
+    0
+);
+
+INSERT INTO ofertas (asignatura, periodo_academico, titulacion, plazas_ofertadas, plazas_disponibles, plazas_concedidas)
+VALUES(
+    '205202',
+    1,
+    '320GREEIA',
+    7,
+    7,
+    0
+);
+
+INSERT INTO ofertas (asignatura, periodo_academico, titulacion, plazas_ofertadas, plazas_disponibles, plazas_concedidas)
+VALUES(
+    '205202',
+    1,
+    '320GRETDT',
+    7,
+    7,
+    0
+);
+
+INSERT INTO asignaturas (codigo_asignatura, nombre_catalan, 
+nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan, 
+plan_de_estudios_castellano, plan_de_estudios_ingles) VALUES(
+    '220053',
+    'Aviònica',
+    'Aviónica',
+    'Avionics',
+    'CAT/CAST',
+    4.5,
+    'https://www.upc.edu/content/master/guiadocent/pdf/cat/220053',
+    'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220053',
+    'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220053'
+);
+
+INSERT INTO ofertas (asignatura, periodo_academico, titulacion, plazas_ofertadas, plazas_disponibles, plazas_concedidas)
+VALUES(
+    '220053',
+    2,
+    '220GRETAER',
+    4,
+    4,
+    0
+);
+
+INSERT INTO asignaturas (codigo_asignatura, nombre_catalan, 
+nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan, 
+plan_de_estudios_castellano, plan_de_estudios_ingles) VALUES(
+    '220052',
+    'Propulsió',
+    'Propulsión',
+    'Propulsion',
+    'CAT/CAST/ING',
+    6,
+    'https://www.upc.edu/content/master/guiadocent/pdf/cat/220052',
+    'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220052',
+    'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220052'
+);
+
+INSERT INTO ofertas (asignatura, periodo_academico, titulacion, plazas_ofertadas, plazas_disponibles, plazas_concedidas)
+VALUES(
+    '220052',
+    2,
+    '220GRETAER',
+    2,
+    2,
+    0
+);
+
+INSERT INTO asignaturas (codigo_asignatura, nombre_catalan, 
+nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan, 
+plan_de_estudios_castellano, plan_de_estudios_ingles) VALUES(
+    '220027',
+    'Mecànica de Vol',
+    'Mecánica de Vuelo',
+    'Flight Mechanics',
+    'CAST',
+    6,
+    'https://www.upc.edu/content/master/guiadocent/pdf/cat/220027',
+    'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220027',
+    'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220027'
+);
+
+INSERT INTO ofertas (asignatura, periodo_academico, titulacion, plazas_ofertadas, plazas_disponibles, plazas_concedidas)
+VALUES(
+    '220027',
+    2,
+    '220GRETAER',
+    2,
+    2,
+    0
+);
+
+INSERT INTO ofertas (asignatura, periodo_academico, titulacion, plazas_ofertadas, plazas_disponibles, plazas_concedidas)
+VALUES(
+    '220027',
+    2,
+    '220GREVAER',
+    2,
+    2,
+    0
+);
+
+INSERT INTO asignaturas (codigo_asignatura, nombre_catalan, 
+nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan, 
+plan_de_estudios_castellano, plan_de_estudios_ingles) VALUES(
+    '220143',
+    'Uav Hardware i Programació',
+    'Uav Hardware y Programación',
+    'Uav Hardware & Programming',
+    'ING',
+    3,
+    'https://www.upc.edu/content/master/guiadocent/pdf/cat/220143',
+    'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220143',
+    'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220143'
+);
+
+INSERT INTO ofertas (asignatura, periodo_academico, titulacion, plazas_ofertadas, plazas_disponibles, plazas_concedidas)
+VALUES(
+    '220143',
+    2,
+    '220GRETAER',
+    4,
+    4,
+    0
+);
+
+INSERT INTO ofertas (asignatura, periodo_academico, titulacion, plazas_ofertadas, plazas_disponibles, plazas_concedidas)
+VALUES(
+    '220143',
+    2,
+    '220GREVAER',
+    4,
+    4,
+    0
+);
+
+INSERT INTO asignaturas (codigo_asignatura, nombre_catalan, 
+nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan, 
+plan_de_estudios_castellano, plan_de_estudios_ingles) VALUES(
+    '320174',
+    'CAD Mecànic',
+    'CAD Mecánico',
+    'Mechanical CAD',
+    'CAT/CAST',
+    6,
+    'https://www.upc.edu/content/master/guiadocent/pdf/cat/320174',
+    'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320174',
+    'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320174'
+);
+
+INSERT INTO ofertas (asignatura, periodo_academico, titulacion, plazas_ofertadas, plazas_disponibles, plazas_concedidas)
+VALUES(
+    '320174',
+    2,
+    '320GREMECA',
+    3,
+    3,
+    0
+);
+
+INSERT INTO ofertas (asignatura, periodo_academico, titulacion, plazas_ofertadas, plazas_disponibles, plazas_concedidas)
+VALUES(
+    '320174',
+    2,
+    '320GREQUIM',
+    3,
+    3,
     0
 );

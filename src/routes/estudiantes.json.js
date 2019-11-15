@@ -9,7 +9,7 @@ export function get(req, res, next) {
 
     db.all(`SELECT estudiantes.*, universidades.universidad, universidades.pais 
             FROM estudiantes, universidades
-            WHERE estudiantes.universidad = universidades.codigo`, (err, rows)=> {
+            WHERE estudiantes.universidad = universidades.codigo_universidad`, (err, rows)=> {
         if(err) {
             console.log(err)
             jsonResponse(500, { error: `No se puede realizar la consulta: ${err}` })
