@@ -1,15 +1,21 @@
 <script context="module">
-  export function preload({ params, query }) {
-    return this.fetch(`estudiantes.json`)
-      .then(body => body.json())
-      .then(json => json);
+  export async function preload({ params, query }) {
+    let fetch_endpoints = [
+      this.fetch(`estudiantes.json`).then(body => body.json()),
+      this.fetch(`universidades.json`).then(body => body.json())
+    ];
+    let [{ estudiantes }, { universidades }] = await Promise.all(fetch_endpoints);
+    return {
+      estudiantes,
+      universidades
+    };
   }
 </script>
 
 <script>
-
   export let estudiantes;
   export let universidades;
+  export let hola;
 
   let filtro = "";
 
@@ -17,9 +23,9 @@
     let strIn = (a, b) => a.toLowerCase().indexOf(b.toLowerCase()) != -1;
     return (
       strIn(e.nombre, filtro) ||
-	    strIn(e.apellidos, filtro) ||
-	    strIn(e.universidad, filtro) ||
-	    strIn(e.pais, filtro)
+      strIn(e.apellidos, filtro) ||
+      strIn(e.universidad, filtro) ||
+      strIn(e.pais, filtro)
     );
   });
 
@@ -79,7 +85,6 @@
     añadirestudiante();
     añadiracuerdo();
   }
-
 </script>
 
 <style>
@@ -167,7 +172,6 @@
   <div id="title">ESEIAAT INCOMING STUDENTS</div>
 </div>
 
-
 <div id="options">
   <div id="data">
     <a href="/asignaturas/">ASIGNATURAS</a>
@@ -177,7 +181,14 @@
 <div id="contenido">ESTUDIANTES</div>
 
 <div id="filtro">
-  <p>BUSCADOR: <input type="text" bind:value={filtro} placeholder="Introduce la palabra clave" title="Type in a name" /></p>
+  <p>
+    BUSCADOR:
+    <input
+      type="text"
+      bind:value={filtro}
+      placeholder="Introduce la palabra clave"
+      title="Type in a name" />
+  </p>
 </div>
 
 {#if nuevoestudiante.open}
@@ -201,7 +212,7 @@
           universidad:
           <select name="uni" bind:value={nuevoestudiante.universidad}>
             {#each universidades as u}
-              <option value="{u.codigo_universidad}">{u.universidad}</option>
+              <option value={u.codigo_universidad}>{u.universidad}</option>
             {/each}
           </select>
         </p>
@@ -246,15 +257,17 @@
     <th>APELLIDOS</th>
     <th>NOMBRE</th>
     <th>UNIVERSIDAD</th>
-	<th>PAÍS</th>
+    <th>PAÍS</th>
     <th>EMAIL</th>
   </tr>
   {#each estudiantesFiltrados as e}
     <tr>
-      <td><a href="/estudiante/{e.email}">{e.apellidos}</a></td>
+      <td>
+        <a href="/estudiante/{e.email}">{e.apellidos}</a>
+      </td>
       <td>{e.nombre}</td>
       <td>{e.universidad}</td>
-	    <td>{e.pais}</td>
+      <td>{e.pais}</td>
       <td>{e.email}</td>
     </tr>
   {/each}
