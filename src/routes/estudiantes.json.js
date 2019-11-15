@@ -15,16 +15,8 @@ export function get(req, res, next) {
             jsonResponse(500, { error: `No se pueden consultar estudiantes: ${err}` })
             return
         }
-        db.all(`SELECT universidades.* FROM universidades`, (err, universidades) => {
-            if (err) {
-                console.log(err)
-                jsonResponse(500, { error: `No se pueden consultar universidades: ${err}` })
-                return
-            }
-            jsonResponse(200, {
-                estudiantes,
-                universidades,
-            });
+        jsonResponse(200, {
+            estudiantes,
         });
     })
 }
