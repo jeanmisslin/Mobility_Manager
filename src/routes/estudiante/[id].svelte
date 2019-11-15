@@ -178,10 +178,7 @@
 
 <div id="contenido">DATOS PERSONALES</div>
 
-<div id="datos">
-  <p>Apellidos: {apellidos}<br>Nombre: {nombre}<br>
-    Universidad: {universidad}<br>País: {pais}<br>Email: {email}</p>
-</div>
+
 
 {#if modificaestudiante.open}
   <div class="request-box">
@@ -219,6 +216,10 @@
     {/if}
   </div>
 {:else}
+<div id="datos">
+  <p>Apellidos: {apellidos}<br>Nombre: {nombre}<br>
+    Universidad: {universidad}<br>País: {pais}<br>Email: {email}</p>
+</div>
   <div id="buttons">
     <div id="field">
       <button on:click={() => modificaestudiante.open = true}>Modificar</button>
