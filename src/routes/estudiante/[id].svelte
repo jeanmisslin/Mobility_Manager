@@ -1,27 +1,26 @@
 <script context="module">
-	export function preload({ params, query }) {
-        const id = params.id;
+  export function preload({ params, query }) {
+    const id = params.id;
     return this.fetch(`/estudiante/${id}.json`)
-			.then(body => body.json())
-			.then(json => json)
-	}
+      .then(body => body.json())
+      .then(json => json);
+  }
 </script>
 
 <script>
+  export let estudiante;
+  export let apellidos;
+  export let nombre;
+  export let universidad;
+  export let codigo_universidad;
+  export let pais;
+  export let email;
+  export let titulacion;
+  export let id_acuerdo;
+  export let acuerdos;
+  export let asignaturas;
 
-    export let estudiante;
-    export let apellidos;
-    export let nombre;
-    export let universidad;
-    export let codigo_universidad;
-    export let pais;
-    export let email;
-    export let titulacion;
-    export let id_acuerdo;
-    export let acuerdos;
-    export let asignaturas;
-
-    let modificaestudiante = {
+  let modificaestudiante = {
     open: false,
     estudiante: email,
     email: email,
@@ -47,9 +46,7 @@
         }
       });
   }
-
 </script>
-
 
 <style>
   #cabecera {
@@ -173,12 +170,13 @@
 </div>
 
 <div id="options">
-    <div id="data"><a href="../">ESTUDIANTES</a>  <a href="/asignaturas/">ASIGNATURAS</a></div>
+  <div id="data">
+    <a href="../">ESTUDIANTES</a>
+    <a href="/asignaturas/">ASIGNATURAS</a>
+  </div>
 </div>
 
 <div id="contenido">DATOS PERSONALES</div>
-
-
 
 {#if modificaestudiante.open}
   <div class="request-box">
@@ -186,20 +184,20 @@
       <div id="field">
         <p>
           email:
-          <input type="text" bind:value={modificaestudiante.email}/>
+          <input type="text" bind:value={modificaestudiante.email} />
         </p>
         <p />
         <p>
           apellidos:
-          <input type="text" bind:value={modificaestudiante.apellidos}/>
+          <input type="text" bind:value={modificaestudiante.apellidos} />
         </p>
         <p>
           nombre:
-          <input type="text" bind:value={modificaestudiante.nombre}/>
+          <input type="text" bind:value={modificaestudiante.nombre} />
         </p>
         <p>
           universidad:
-          <input type="text" bind:value={modificaestudiante.universidad}/>
+          <input type="text" bind:value={modificaestudiante.universidad} />
         </p>
       </div>
     </div>
@@ -207,7 +205,9 @@
       <div id="buttons">
         <div id="field">
           <button on:click={modificarestudiante}>Salvar</button>
-          <button on:click={() => modificaestudiante.open = false}>Cancelar</button>
+          <button on:click={() => (modificaestudiante.open = false)}>
+            Cancelar
+          </button>
         </div>
       </div>
     </div>
@@ -216,13 +216,24 @@
     {/if}
   </div>
 {:else}
-<div id="datos">
-  <p>Apellidos: {apellidos}<br>Nombre: {nombre}<br>
-    Universidad: {universidad}<br>País: {pais}<br>Email: {email}</p>
-</div>
+  <div id="datos">
+    <p>
+      Apellidos: {apellidos}
+      <br />
+      Nombre: {nombre}
+      <br />
+      Universidad: {universidad}
+      <br />
+      País: {pais}
+      <br />
+      Email: {email}
+    </p>
+  </div>
   <div id="buttons">
     <div id="field">
-      <button on:click={() => modificaestudiante.open = true}>Modificar</button>
+      <button on:click={() => (modificaestudiante.open = true)}>
+        Modificar
+      </button>
     </div>
   </div>
 {/if}
@@ -231,42 +242,42 @@
 
 {#each acuerdos as a}
   <table id="tabla">
-  <tr>
-    <th>AÑO</th>
-    <th>CUATRIMESTRE</th>
-    <th>TITULACIÓN</th>
-    <th>ESTADO</th>
-  </tr>
-  <tr>
-      <td>{a.año}-{a.año+1}</td>
+    <tr>
+      <th>AÑO</th>
+      <th>CUATRIMESTRE</th>
+      <th>TITULACIÓN</th>
+      <th>ESTADO</th>
+    </tr>
+    <tr>
+      <td>{a.año}-{a.año + 1}</td>
       <td>{a.cuatrimestre}</td>
       <td>{a.nombre_castellano}</td>
       <td>{a.estado}</td>
     </tr>
   </table>
 
-<div id="options">
+  <div id="options">
     <div id="data">ASIGNATURAS SOLICITADAS</div>
-</div>
+  </div>
 
   <table id="tabla">
-      <tr>
-        <th>CODIGO</th>
-        <th>TÍTULO</th>
-        <th>IDIOMA</th>
-        <th>ECTS</th>
-        <th>ESTADO</th>
-      </tr>
-      {#each asignaturas as s}
-        {#if s.acuerdo_academico == a.id_acuerdo}
-          <tr>
-            <td>{s.codigo_asignatura}</td>
-            <td>{s.nombre_ingles}</td>
-            <td>{s.idioma}</td>
-            <td>{s.ects}</td>
-            <td>{s.estado_solicitud}</td>
-          </tr>
-        {/if}
-      {/each}
-    </table>
+    <tr>
+      <th>CODIGO</th>
+      <th>TÍTULO</th>
+      <th>IDIOMA</th>
+      <th>ECTS</th>
+      <th>ESTADO</th>
+    </tr>
+    {#each asignaturas as s}
+      {#if s.acuerdo_academico == a.id_acuerdo}
+        <tr>
+          <td>{s.codigo_asignatura}</td>
+          <td>{s.nombre_ingles}</td>
+          <td>{s.idioma}</td>
+          <td>{s.ects}</td>
+          <td>{s.estado_solicitud}</td>
+        </tr>
+      {/if}
+    {/each}
+  </table>
 {/each}
