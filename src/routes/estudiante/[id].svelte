@@ -1,24 +1,35 @@
 <script context="module">
-  export function preload({ params, query }) {
+  export async function preload({ params, query }) {
     const id = params.id;
-    return this.fetch(`/estudiante/${id}.json`)
-      .then(body => body.json())
-      .then(json => json);
+    let estudiante = await this.fetch(`/estudiante/${id}.json`).then(body =>
+      body.json()
+    );
+    let { universidades } = await this.fetch(`universidades.json`).then(body =>
+      body.json()
+    );
+    return {
+      estudiante,
+      universidades
+    };
   }
 </script>
 
 <script>
   export let estudiante;
-  export let apellidos;
-  export let nombre;
-  export let universidad;
-  export let codigo_universidad;
-  export let pais;
-  export let email;
-  export let titulacion;
-  export let id_acuerdo;
-  export let acuerdos;
-  export let asignaturas;
+  export let universidades;
+
+  let {
+    apellidos,
+    nombre,
+    universidad,
+    codigo_universidad,
+    pais,
+    email,
+    titulacion,
+    id_acuerdo,
+    acuerdos,
+    asignaturas
+  } = estudiante;
 
   let modificaestudiante = {
     open: false,
@@ -197,7 +208,12 @@
         </p>
         <p>
           universidad:
-          <input type="text" bind:value={modificaestudiante.universidad} />
+          <select name="uni" bind:value={modificaestudiante.universidad}>
+            {#each universidades as u}
+              <option value={u.codigo_universidad}>{u.universidad}</option>
+            {/each}
+          </select>
+          <!-- <input type="text" bind:value={modificaestudiante.universidad} /> -->
         </p>
       </div>
     </div>
