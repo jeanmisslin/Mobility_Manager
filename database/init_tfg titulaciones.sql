@@ -1,4 +1,13 @@
 
+DROP TABLE IF EXISTS titulaciones;
+
+CREATE TABLE titulaciones(
+    codigo_titulacion TEXT PRIMARY KEY,
+    nombre_catalan TEXT,
+    nombre_castellano TEXT,
+    nombre_ingles TEXT,
+    ciclo int
+);
 
 INSERT INTO titulaciones (codigo_titulacion, nombre_catalan, nombre_castellano, nombre_ingles, ciclo) VALUES(
     '320GRESAUD',
@@ -106,7 +115,7 @@ INSERT INTO titulaciones (codigo_titulacion, nombre_catalan, nombre_castellano, 
 
 INSERT INTO titulaciones (codigo_titulacion, nombre_catalan, nombre_castellano, nombre_ingles, ciclo) VALUES(
     '220MEORSEM',
-    "'Màster Universitari en Enginyeria d'Organització'",
+    "Màster Universitari en Enginyeria d'Organització",
     'Máster Universitario en Ingeniería de Organización',
     "Master's degree in Management Engineering",
     2
@@ -114,9 +123,9 @@ INSERT INTO titulaciones (codigo_titulacion, nombre_catalan, nombre_castellano, 
 
 INSERT INTO titulaciones (codigo_titulacion, nombre_catalan, nombre_castellano, nombre_ingles, ciclo) VALUES(
     '205MEM',
-    "'Master's Degree in Technology and Engineering Management'",
-    "'Master's Degree in Technology and Engineering Management'",
-    "'Master's Degree in Technology and Engineering Management'",
+    "Master's Degree in Technology and Engineering Management",
+    "Master's Degree in Technology and Engineering Management",
+    "Master's Degree in Technology and Engineering Management",
     2
 );
 

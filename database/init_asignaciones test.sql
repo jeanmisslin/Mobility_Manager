@@ -14,168 +14,168 @@ CREATE TABLE asignaciones(
 INSERT INTO asignaciones (acuerdo_academico, oferta, estado_solicitud) VALUES( 
     1,
     7,
-    'D'
+    'denegada'
 );
 
 INSERT INTO asignaciones (acuerdo_academico, oferta, estado_solicitud) VALUES( 
     1,
     10,
-    'D'
+    'denegada'
 );
 
 INSERT INTO asignaciones (acuerdo_academico, oferta, estado_solicitud) VALUES( 
     1,
     11,
-    'EDM'
+    'eliminada'
 );
 
 INSERT INTO asignaciones (acuerdo_academico, oferta, estado_solicitud) VALUES( 
     1,
     12,
-    'EAM'
+    'descartada'
 );
 
 INSERT INTO asignaciones (acuerdo_academico, oferta, estado_solicitud) VALUES( 
     1,
     13,
-    'D'
+    'denegada'
 );
 
 INSERT INTO asignaciones (acuerdo_academico, oferta, estado_solicitud) VALUES( 
     1,
     16,
-    'EDM'
+    'eliminada'
 );
 
 INSERT INTO asignaciones (acuerdo_academico, oferta, estado_solicitud) VALUES( 
     1,
     19,
-    'EDM'
+    'eliminada'
 );
 
 INSERT INTO asignaciones (acuerdo_academico, oferta, estado_solicitud) VALUES( 
     1,
     24,
-    'C'
+    'concedida'
 );
 
 INSERT INTO asignaciones (acuerdo_academico, oferta, estado_solicitud) VALUES( 
     1,
     34,
-    'EAM'
+    'descartada'
 );
 
 INSERT INTO asignaciones (acuerdo_academico, oferta, estado_solicitud) VALUES( 
     1,
     37,
-    'EDM'
+    'eliminada'
 );
 
 INSERT INTO asignaciones (acuerdo_academico, oferta, estado_solicitud) VALUES( 
     1,
     38,
-    'C'
+    'concedida'
 );
 
 INSERT INTO asignaciones (acuerdo_academico, oferta, estado_solicitud) VALUES( 
     1,
     41,
-    'C'
+    'concedida'
 );
 
 INSERT INTO asignaciones (acuerdo_academico, oferta, estado_solicitud) VALUES( 
     1,
     43,
-    'C'
+    'concedida'
 );
 
 INSERT INTO asignaciones (acuerdo_academico, oferta, estado_solicitud) VALUES( 
     1,
     53,
-    'C'
+    'concedida'
 );
 
 INSERT INTO asignaciones (acuerdo_academico, oferta, estado_solicitud) VALUES( 
     1,
     54,
-    'C'
+    'concedida'
 );
 
 INSERT INTO asignaciones (acuerdo_academico, oferta, estado_solicitud) VALUES( 
     2,
     55,
-    'C'
+    'concedida'
 );
 
 INSERT INTO asignaciones (acuerdo_academico, oferta, estado_solicitud) VALUES( 
     2,
     57,
-    'C'
+    'concedida'
 );
 
 INSERT INTO asignaciones (acuerdo_academico, oferta, estado_solicitud) VALUES( 
     2,
     58,
-    'C'
+    'concedida'
 );
 
 INSERT INTO asignaciones (acuerdo_academico, oferta, estado_solicitud) VALUES( 
     2,
     59,
-    'EAM'
+    'descartada'
 );
 
 INSERT INTO asignaciones (acuerdo_academico, oferta, estado_solicitud) VALUES( 
     2,
     63,
-    'C'
+    'concedida'
 );
 
 INSERT INTO asignaciones (acuerdo_academico, oferta, estado_solicitud) VALUES( 
     2,
     5,
-    'EAM'
+    'descartada'
 );
 
 INSERT INTO asignaciones (acuerdo_academico, oferta, estado_solicitud) VALUES( 
     2,
     25,
-    'EAM'
+    'descartada'
 );
 
 INSERT INTO asignaciones (acuerdo_academico, oferta, estado_solicitud) VALUES( 
     2,
     66,
-    'D'
+    'denegada'
 );
 
 INSERT INTO asignaciones (acuerdo_academico, oferta, estado_solicitud) VALUES( 
     3,
     76,
-    'EAM'
+    'descartada'
 );
 
 INSERT INTO asignaciones (acuerdo_academico, oferta, estado_solicitud) VALUES( 
     3,
     77,
-    'C'
+    'concedida'
 );
 
 INSERT INTO asignaciones (acuerdo_academico, oferta, estado_solicitud) VALUES( 
     3,
     79,
-    'EAM'
+    'descartada'
 );
 
 INSERT INTO asignaciones (acuerdo_academico, oferta, estado_solicitud) VALUES( 
     3,
     81,
-    'C'
+    'concedida'
 );
 
 INSERT INTO asignaciones (acuerdo_academico, oferta, estado_solicitud) VALUES( 
     3,
     61,
-    'C'
+    'concedida'
 );
 
