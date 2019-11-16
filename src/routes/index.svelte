@@ -2,12 +2,21 @@
   export async function preload({ params, query }) {
     let fetch_endpoints = [
       this.fetch(`estudiantes.json`).then(body => body.json()),
-      this.fetch(`universidades.json`).then(body => body.json())
+      this.fetch(`universidades.json`).then(body => body.json()),
+      this.fetch(`titulaciones.json`).then(body => body.json()),
+      this.fetch(`periodos.json`).then(body => body.json())
     ];
-    let [{ estudiantes }, { universidades }] = await Promise.all(fetch_endpoints);
+    let [
+      { estudiantes },
+      { universidades },
+      { titulaciones },
+      { periodos }
+    ] = await Promise.all(fetch_endpoints);
     return {
       estudiantes,
-      universidades
+      universidades,
+      titulaciones,
+      periodos
     };
   }
 </script>
@@ -15,7 +24,10 @@
 <script>
   export let estudiantes;
   export let universidades;
-  export let hola;
+  export let titulaciones;
+  export let periodos;
+
+  let estados = [`Nominado/a`, `Matriculado/a`, `Eliminado`];
 
   let filtro = "";
 
@@ -138,6 +150,31 @@
     margin-top: 10px;
   }
 
+  #datos {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    height: 180px;
+    width: 100%;
+    font-weight: 650;
+    background-color: rgb(230, 245, 255);
+    color: black;
+    border: 1px solid black;
+  }
+
+  #contenido_datos {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin-left: 20px;
+    height: 140px;
+    width: 600px;
+    font-weight: 650;
+    background-color: rgb(230, 245, 255);
+  }
+
   #tabla {
     border-collapse: collapse;
     width: 100%;
@@ -160,7 +197,7 @@
   }
 
   tr:nth-child(even) {
-    background-color: rgb(229, 186, 151);
+    background-color: rgb(255, 246, 239);
   }
 </style>
 
@@ -191,43 +228,72 @@
   </p>
 </div>
 
+<table id="tabla">
+  <tr>
+    <th>APELLIDOS</th>
+    <th>NOMBRE</th>
+    <th>UNIVERSIDAD</th>
+    <th>PAÍS</th>
+    <th>EMAIL</th>
+  </tr>
+  {#each estudiantesFiltrados as e}
+    <tr>
+      <td>
+        <a href="/estudiante/{e.email}">{e.apellidos}</a>
+      </td>
+      <td>{e.nombre}</td>
+      <td>{e.universidad}</td>
+      <td>{e.pais}</td>
+      <td>{e.email}</td>
+    </tr>
+  {/each}
+</table>
+
 {#if nuevoestudiante.open}
   <div class="request-box">
     <div id="textfield">
-      <div id="field">
-        <p>
-          email:
-          <input type="text" bind:value={nuevoestudiante.email} />
-        </p>
-        <p />
-        <p>
-          apellidos:
-          <input type="text" bind:value={nuevoestudiante.apellidos} />
-        </p>
-        <p>
-          nombre:
-          <input type="text" bind:value={nuevoestudiante.nombre} />
-        </p>
-        <p>
-          universidad:
-          <select name="uni" bind:value={nuevoestudiante.universidad}>
-            {#each universidades as u}
-              <option value={u.codigo_universidad}>{u.universidad}</option>
-            {/each}
-          </select>
-        </p>
-        <p>
-          titulacion:
-          <input type="text" bind:value={nuevoacuerdo.titulacion} />
-        </p>
-        <p>
-          periodo academico:
-          <input type="text" bind:value={nuevoacuerdo.periodo_academico} />
-        </p>
-        <p>
-          estado:
-          <input type="text" bind:value={nuevoacuerdo.estado} />
-        </p>
+      <div id="datos">
+        <div id="contenido_datos">
+          <p>
+            Apellidos:
+            <input type="text" bind:value={nuevoestudiante.apellidos} />
+            <br />
+            Nombre:
+            <input type="text" bind:value={nuevoestudiante.nombre} />
+            <br />
+            Universidad:
+            <select name="uni" bind:value={nuevoestudiante.universidad}>
+              {#each universidades as u}
+                <option value={u.codigo_universidad}>{u.universidad}</option>
+              {/each}
+            </select>
+            <br />
+            Titulación:
+            <select name="titu" bind:value={nuevoacuerdo.titulacion}>
+              {#each titulaciones as t}
+                <option value={t.codigo_titulacion}>{t.nombre_catalan}</option>
+              {/each}
+            </select>
+            <br />
+            Email:
+            <input type="text" bind:value={nuevoestudiante.email} />
+            <br />
+            Periodo Académico:
+            <select name="per" bind:value={nuevoacuerdo.periodo_academico}>
+              {#each periodos as p}
+                <option value={p.id_periodo}>{p.año}-{p.año + 1}, Q{p.cuatrimestre}</option>
+              {/each}
+            </select>
+            <br />
+            Estado:
+            <select name="est" bind:value={nuevoacuerdo.estado}>
+              {#each estados as e}
+                <option value={e}>{e}</option>
+              {/each}
+            </select>
+            <br />
+          </p>
+        </div>
       </div>
     </div>
     <div>
@@ -251,24 +317,3 @@
     </div>
   </div>
 {/if}
-
-<table id="tabla">
-  <tr>
-    <th>APELLIDOS</th>
-    <th>NOMBRE</th>
-    <th>UNIVERSIDAD</th>
-    <th>PAÍS</th>
-    <th>EMAIL</th>
-  </tr>
-  {#each estudiantesFiltrados as e}
-    <tr>
-      <td>
-        <a href="/estudiante/{e.email}">{e.apellidos}</a>
-      </td>
-      <td>{e.nombre}</td>
-      <td>{e.universidad}</td>
-      <td>{e.pais}</td>
-      <td>{e.email}</td>
-    </tr>
-  {/each}
-</table>
