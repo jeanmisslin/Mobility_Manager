@@ -93,14 +93,6 @@
     border: 1px solid black;
   }
 
-  #acuerdo {
-    display: flex;
-    font-weight: 650;
-    font-size: 13pt;
-    color: black;
-    text-transform: uppercase;
-  }
-
   #contenido {
     display: flex;
     align-items: center;
@@ -118,15 +110,26 @@
   #datos {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
     margin-top: 25px;
     margin-bottom: 10px;
     height: 150px;
-    width: 300px;
+    width: 100%;
     font-weight: 650;
-    background-color: rgb(117, 182, 226);
+    background-color: rgb(230, 245, 255);
     color: black;
     border: 1px solid black;
+  }
+
+  #contenido_datos {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin-left: 20px;
+    height: 140px;
+    width: 500px;
+    font-weight: 650;
+    background-color: rgb(230, 245, 255);
   }
 
   #options {
@@ -168,7 +171,7 @@
   }
 
   tr:nth-child(even) {
-    background-color: rgb(229, 186, 151);
+    background-color: rgb(255, 246, 239);
   }
 </style>
 
@@ -192,29 +195,28 @@
 {#if modificaestudiante.open}
   <div class="request-box">
     <div id="textfield">
-      <div id="field">
-        <p>
-          email:
-          <input type="text" bind:value={modificaestudiante.email} />
-        </p>
-        <p />
-        <p>
-          apellidos:
-          <input type="text" bind:value={modificaestudiante.apellidos} />
-        </p>
-        <p>
-          nombre:
-          <input type="text" bind:value={modificaestudiante.nombre} />
-        </p>
-        <p>
-          universidad:
-          <select name="uni" bind:value={modificaestudiante.universidad}>
-            {#each universidades as u}
-              <option value={u.codigo_universidad}>{u.universidad}</option>
-            {/each}
-          </select>
-          <!-- <input type="text" bind:value={modificaestudiante.universidad} /> -->
-        </p>
+      <div id="datos">
+        <div id="contenido_datos">
+          <p>
+            Apellidos:
+            <input type="text" bind:value={modificaestudiante.apellidos} />
+            <br />
+            Nombre:
+            <input type="text" bind:value={modificaestudiante.nombre} />
+            <br />
+            Universidad:
+            <select name="uni" bind:value={modificaestudiante.universidad}>
+              {#each universidades as u}
+                <option value={u.codigo_universidad}>{u.universidad}</option>
+              {/each}
+            </select>
+            <br />
+            País: {pais}
+            <br />
+            Email:
+            <input type="text" bind:value={modificaestudiante.email} />
+          </p>
+        </div>
       </div>
     </div>
     <div>
@@ -233,17 +235,19 @@
   </div>
 {:else}
   <div id="datos">
-    <p>
-      Apellidos: {apellidos}
-      <br />
-      Nombre: {nombre}
-      <br />
-      Universidad: {universidad}
-      <br />
-      País: {pais}
-      <br />
-      Email: {email}
-    </p>
+    <div id="contenido_datos">
+      <p>
+        Apellidos: {apellidos}
+        <br />
+        Nombre: {nombre}
+        <br />
+        Universidad: {universidad}
+        <br />
+        País: {pais}
+        <br />
+        Email: {email}
+      </p>
+    </div>
   </div>
   <div id="buttons">
     <div id="field">
