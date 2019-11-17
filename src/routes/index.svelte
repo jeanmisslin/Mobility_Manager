@@ -263,6 +263,7 @@
             <br />
             Universidad:
             <select name="uni" bind:value={nuevoestudiante.universidad}>
+              <option value="">Selecciona una universidad...</option>
               {#each universidades as u}
                 <option value={u.codigo_universidad}>{u.universidad}</option>
               {/each}
@@ -270,6 +271,7 @@
             <br />
             Titulación:
             <select name="titu" bind:value={nuevoacuerdo.titulacion}>
+              <option value="">Selecciona una titulación...</option>
               {#each titulaciones as t}
                 <option value={t.codigo_titulacion}>{t.nombre_catalan}</option>
               {/each}
@@ -280,6 +282,7 @@
             <br />
             Periodo Académico:
             <select name="per" bind:value={nuevoacuerdo.periodo_academico}>
+              <option value="">Selecciona un periodo académico...</option>
               {#each periodos as p}
                 <option value={p.id_periodo}>{p.año}-{p.año + 1}, Q{p.cuatrimestre}</option>
               {/each}
@@ -287,6 +290,7 @@
             <br />
             Estado:
             <select name="est" bind:value={nuevoacuerdo.estado}>
+              <option value="">Selecciona un estado...</option>
               {#each estados as e}
                 <option value={e}>{e}</option>
               {/each}
