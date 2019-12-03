@@ -15,7 +15,7 @@
 </script>
 
 <script>
-  import Acuerdo from '../../components/Acuerdo.svelte';
+  import Acuerdo from "../../components/Acuerdo.svelte";
 
   export let estudiante;
   export let universidades;
@@ -43,8 +43,6 @@
   };
 
   let message;
-  
-
 
   function modificarestudiante() {
     fetch(`/estudiante/modificaestudiante.json`, {
@@ -239,6 +237,8 @@
 
 <div id="acuerdos">ACUERDOS ACADEMICOS</div>
 
-{#each acuerdos as a}
-  <Acuerdo asignaturas={asignaturas} a={a} />
+{#each acuerdos as acuerdo}
+  <Acuerdo
+    {acuerdo}
+    asignaturas={asignaturas.filter(assig => assig.acuerdo_academico === acuerdo.id_acuerdo)} />
 {/each}
