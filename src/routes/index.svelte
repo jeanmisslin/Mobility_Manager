@@ -22,24 +22,15 @@
 </script>
 
 <script>
+  import Test from "../components/Test.svelte";
+  import Buscador from "../components/Buscador.svelte";
+
   export let estudiantes;
   export let universidades;
   export let titulaciones;
   export let periodos;
 
   let estados = [`Nominado/a`, `Matriculado/a`, `Eliminado`];
-
-  let filtro = "";
-
-  $: estudiantesFiltrados = estudiantes.filter(e => {
-    let strIn = (a, b) => a.toLowerCase().indexOf(b.toLowerCase()) != -1;
-    return (
-      strIn(e.nombre, filtro) ||
-      strIn(e.apellidos, filtro) ||
-      strIn(e.universidad, filtro) ||
-      strIn(e.pais, filtro)
-    );
-  });
 
   let nuevoestudiante = {
     open: false,
@@ -217,37 +208,7 @@
 
 <div id="contenido">ESTUDIANTES</div>
 
-<div id="filtro">
-  <p>
-    BUSCADOR:
-    <input
-      type="text"
-      bind:value={filtro}
-      placeholder="Introduce la palabra clave"
-      title="Type in a name" />
-  </p>
-</div>
-
-<table id="tabla">
-  <tr>
-    <th>APELLIDOS</th>
-    <th>NOMBRE</th>
-    <th>UNIVERSIDAD</th>
-    <th>PAÍS</th>
-    <th>EMAIL</th>
-  </tr>
-  {#each estudiantesFiltrados as e}
-    <tr>
-      <td>
-        <a href="/estudiante/{e.email}">{e.apellidos}</a>
-      </td>
-      <td>{e.nombre}</td>
-      <td>{e.universidad}</td>
-      <td>{e.pais}</td>
-      <td>{e.email}</td>
-    </tr>
-  {/each}
-</table>
+<Buscador tabla="estudiantes" estudiantes = {estudiantes} />
 
 {#if nuevoestudiante.open}
   <div class="request-box">
@@ -284,7 +245,9 @@
             <select name="per" bind:value={nuevoacuerdo.periodo_academico}>
               <option value="">Selecciona un periodo académico...</option>
               {#each periodos as p}
-                <option value={p.id_periodo}>{p.año}-{p.año + 1}, Q{p.cuatrimestre}</option>
+                <option value={p.id_periodo}>
+                  {p.año}-{p.año + 1}, Q{p.cuatrimestre}
+                </option>
               {/each}
             </select>
             <br />
