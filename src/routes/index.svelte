@@ -22,14 +22,13 @@
 </script>
 
 <script>
-  import Test from "../components/Test.svelte";
   import Buscador from "../components/Buscador.svelte";
 
   export let estudiantes;
   export let universidades;
   export let titulaciones;
   export let periodos;
-
+  
   let estados = [`Nominado/a`, `Matriculado/a`, `Eliminado`];
 
   let nuevoestudiante = {
@@ -203,12 +202,13 @@
 <div id="options">
   <div id="data">
     <a href="/asignaturas/">ASIGNATURAS</a>
+    <a href="/titulaciones/">TITULACIONES</a>
   </div>
 </div>
 
 <div id="contenido">ESTUDIANTES</div>
 
-<Buscador tabla="estudiantes" estudiantes = {estudiantes} />
+<Buscador tabla="estudiantes" estudiantes = {estudiantes}/>
 
 {#if nuevoestudiante.open}
   <div class="request-box">

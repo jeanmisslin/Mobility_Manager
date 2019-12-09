@@ -9,20 +9,10 @@
 </script>
 
 <script>
+
+  import BuscadorAsignaturas from "../../components/BuscadorAsignaturas.svelte";
+
   export let asignaturas;
-
-  let filtro = "";
-
-  $: asignaturasFiltradas = asignaturas.filter(e => {
-    let strIn = (a, b) => a.toLowerCase().indexOf(b.toLowerCase()) != -1;
-    return (
-      strIn(e.codigo_asignatura, filtro) ||
-      strIn(e.nombre_catalan, filtro) ||
-      strIn(e.nombre_castellano, filtro) ||
-      strIn(e.nombre_ingles, filtro) ||
-      strIn(e.idioma, filtro)
-    );
-  });
 
   let nuevaasignatura = {
     open: false,
@@ -149,17 +139,6 @@
 
 <div id="contenido">ASIGNATURAS</div>
 
-<div id="filtro">
-  <p>
-    BUSCADOR:
-    <input
-      type="text"
-      bind:value={filtro}
-      placeholder="Introduce la palabra clave"
-      title="Type in a name" />
-  </p>
-</div>
-
 {#if nuevaasignatura.open}
   <div class="request-box">
     <div id="textfield">
@@ -233,23 +212,4 @@
   </div>
 {/if}
 
-<table id="tabla">
-  <tr>
-    <th>CODIGO</th>
-    <th>TÍTULO</th>
-    <th>IDIOMA</th>
-    <th>ECTS</th>
-  </tr>
-  {#each asignaturasFiltradas as a}
-    <tr>
-      <td>
-        <a href="/asignatura/{a.codigo_asignatura}">{a.codigo_asignatura}</a>
-      </td>
-      <td>
-        <a href={a.plan_de_estudios_ingles}>{a.nombre_ingles}</a>
-      </td>
-      <td>{a.idioma}</td>
-      <td>{a.ects}</td>
-    </tr>
-  {/each}
-</table>
+<BuscadorAsignaturas tabla="asignaturas" asignaturas = {asignaturas}/>
