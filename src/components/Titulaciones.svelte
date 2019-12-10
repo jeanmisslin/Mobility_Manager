@@ -11,9 +11,9 @@
 
 <Titulacion {ofertas} {titulaciones} codigo ='320GREMECA'/>
 
-<Titulacion {ofertas} {titulaciones} codigo ='320GREQUIM	'/>
+<Titulacion {ofertas} {titulaciones} codigo ='320GREQUIM'/>
 
-<Titulacion {ofertas} {titulaciones} codigo ='320GREELEC	'/>
+<Titulacion {ofertas} {titulaciones} codigo ='320GREELEC'/>
 
 <Titulacion {ofertas} {titulaciones} codigo ='320GREDIDP'/>
 

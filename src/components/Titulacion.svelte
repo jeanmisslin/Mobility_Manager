@@ -53,28 +53,27 @@
     <div id="titulacion">
       <p>{t.nombre_ingles}</p>
     </div>
+    <table id="tabla">
+      <tr>
+        <th>CODIGO</th>
+        <th>TÍTULO</th>
+        <th>IDIOMA</th>
+        <th>ECTS</th>
+        <th>DISPONIBLES</th>
+        <th>CONCEDIDAS</th>
+      </tr>
+      {#each ofertas as o}
+        {#if o.titulacion === codigo}
+          <tr>
+            <td>{o.codigo_asignatura}</td>
+            <td>{o.nombre_ingles}</td>
+            <td>{o.idioma}</td>
+            <td>{o.ects}</td>
+            <td>{o.plazas_disponibles}</td>
+            <td>{o.plazas_concedidas}</td>
+          </tr>
+        {/if}
+      {/each}
+    </table>
   {/if}
 {/each}
-
-<table id="tabla">
-  <tr>
-    <th>CODIGO</th>
-    <th>TÍTULO</th>
-    <th>IDIOMA</th>
-    <th>ECTS</th>
-    <th>DISPONIBLES</th>
-    <th>CONCEDIDAS</th>
-  </tr>
-  {#each ofertas as o}
-    {#if o.titulacion === codigo}
-      <tr>
-        <td>{o.codigo_asignatura}</td>
-        <td>{o.nombre_ingles}</td>
-        <td>{o.idioma}</td>
-        <td>{o.ects}</td>
-        <td>{o.plazas_disponibles}</td>
-        <td>{o.plazas_concedidas}</td>
-      </tr>
-    {/if}
-  {/each}
-</table>
