@@ -1,53 +1,18 @@
 <script>
   import TablaOcultableAsignaturas from "./TablaOcultableAsignaturas.svelte";
+  import ModificaAcuerdo from "./ModificaAcuerdo.svelte";
 
   export let asignaturas;
   export let acuerdo;
+  export let titulaciones;
+  export let periodos;
 </script>
 
-<style>
-  #acuerdo {
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    margin-top: 25px;
-    margin-bottom: 10px;
-    height: 120px;
-    width: 100%;
-    font-weight: 650;
-    background-color: rgb(230, 245, 255);
-    color: black;
-    border: 1px solid black;
-  }
-
-  #contenido_acuerdo {
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    margin-left: 20px;
-    height: 110px;
-    width: 500px;
-    font-weight: 650;
-    background-color: rgb(230, 245, 255);
-  }
-</style>
-
-<div id="acuerdo">
-  <div id="contenido_acuerdo">
-    <p>
-      Año: {acuerdo.año}-{acuerdo.año + 1}
-      <br />
-      Cuatrimestre: {acuerdo.cuatrimestre}
-      <br />
-      Titulación: {acuerdo.nombre_castellano}
-      <br />
-      Estado: {acuerdo.estado}
-    </p>
-  </div>
-</div>
+<ModificaAcuerdo {periodos} {acuerdo} {titulaciones} />
+<br>
 
 <TablaOcultableAsignaturas
-  asignaturas={asignaturas}
+  {asignaturas}
   button_text="Mostrar Todas las Asignaturas" />
 
 <TablaOcultableAsignaturas
@@ -65,4 +30,3 @@
 <TablaOcultableAsignaturas
   asignaturas={asignaturas.filter(s => s.estado_solicitud === 'descartada')}
   button_text="Mostrar Descartadas" />
-
