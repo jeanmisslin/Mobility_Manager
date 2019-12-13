@@ -22,13 +22,13 @@
 </script>
 
 <script>
-  import Buscador from "../components/Buscador.svelte";
+  import TablaFiltrable from "../components/TablaFiltrable.svelte";
 
   export let estudiantes;
   export let universidades;
   export let titulaciones;
   export let periodos;
-  
+
   let estados = [`Nominado/a`, `Matriculado/a`, `Eliminado`];
 
   let nuevoestudiante = {
@@ -208,7 +208,15 @@
 
 <div id="contenido">ESTUDIANTES</div>
 
-<Buscador tabla="estudiantes" estudiantes = {estudiantes}/>
+<TablaFiltrable
+  tabla={estudiantes}
+  campos={[
+    { name: 'nombre', filter: true }, 
+    { name: 'apellidos', filter: true }, 
+    { name: 'universidad', filter: true }, 
+    { name: 'pais', filter: true },
+    { name: 'email', render: (obj) => `<a href="/estudiante/${obj.email}">${obj.email}</a>` }
+  ]} />
 
 {#if nuevoestudiante.open}
   <div class="request-box">
