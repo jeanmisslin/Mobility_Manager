@@ -12,7 +12,12 @@
   $: tablaFiltrada = tabla.filter(obj => {
     for (let c of campos) {
       if (!(c.name in obj)) {
-        console.error(`${c.name} no está en ${JSON.stringify(obj)}`)
+        console.error(`${c.name} no está en ${JSON.stringify(obj)}`);
+      }
+      if (c.nombre) {
+        {
+          c.nombre.toUpperCase();
+        }
       }
       if (c.filter) {
         if (strIn(obj[c.name], filtro)) return true;
@@ -63,19 +68,25 @@
 <table id="tabla">
   <tr>
     {#each campos as c}
-      <th>{c.name.toUpperCase()}</th>
+      {#if c.show}
+        <th>
+          {#if c.nombre}
+            {c.nombre.toUpperCase()}
+          {:else}{c.name.toUpperCase()}{/if}
+        </th>
+      {/if}
     {/each}
   </tr>
   {#each tablaFiltrada as obj}
     <tr>
       {#each campos as c}
-        <td>
-          {#if c.render}
-            {@html c.render(obj)}
-          {:else}
-            {obj[c.name]}
-          {/if} 
-        </td>
+        {#if c.show}
+          <td>
+            {#if c.render}
+              {@html c.render(obj)}
+            {:else}{obj[c.name]}{/if}
+          </td>
+        {/if}
       {/each}
     </tr>
   {/each}
