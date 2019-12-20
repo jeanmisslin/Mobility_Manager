@@ -10,13 +10,18 @@
     let { titulaciones } = await this.fetch(`titulaciones.json`).then(body =>
       body.json()
     );
+    let { ofertas } = await this.fetch(`../titulaciones/ofertas.json`).then(body =>
+      body.json()
+    );
     let { periodos } = await this.fetch(`periodos.json`).then(body =>
       body.json()
     );
+    console.log(ofertas);
     return {
       estudiante,
       universidades,
       titulaciones,
+      ofertas,
       periodos
     };
   }
@@ -29,6 +34,7 @@
   export let estudiante;
   export let universidades;
   export let titulaciones;
+  export let ofertas;
   export let periodos;
 
   let {
@@ -137,5 +143,6 @@
     {titulaciones}
     {periodos}
     {acuerdo}
+    ofertas={ofertas.filter(ofer => ofer.periodo_academico === acuerdo.periodo_academico)}
     asignaturas={asignaturas.filter(assig => assig.acuerdo_academico === acuerdo.id_acuerdo)} />
 {/each}
