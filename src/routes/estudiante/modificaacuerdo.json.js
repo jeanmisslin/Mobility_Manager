@@ -12,7 +12,7 @@ export function post(req, res, next) {
     req.on('end', () => {
         const modificaacuerdo = JSON.parse(body)
         db.run(`UPDATE acuerdos_academicos 
-                SET titulacion = ?, periodo_academico = ?, estado = ? WHERE acuerdos.id_acuerdo = ?`, [
+                SET titulacion = ?, periodo_academico = ?, estado = ? WHERE acuerdos_academicos.id_acuerdo = ?`, [
                     modificaacuerdo.titulacion,
                     modificaacuerdo.periodo_academico,
                     modificaacuerdo.estado,
