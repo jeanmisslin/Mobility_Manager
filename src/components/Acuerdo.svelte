@@ -2,6 +2,7 @@
   import TablaOcultableAsignaturas from "./TablaOcultableAsignaturas.svelte";
   import ModificaAcuerdo from "./ModificaAcuerdo.svelte";
   import TablaFiltrable from "./TablaFiltrable.svelte";
+  import MostrarOferta from "./MostrarOferta.svelte";
 
   export let asignaturas;
   export let acuerdo;
@@ -11,7 +12,7 @@
 </script>
 
 <ModificaAcuerdo {periodos} {acuerdo} {titulaciones} />
-<br>
+<br />
 
 <TablaOcultableAsignaturas
   {asignaturas}
@@ -33,11 +34,12 @@
   asignaturas={asignaturas.filter(s => s.estado_solicitud === 'descartada')}
   button_text="Mostrar Descartadas" />
 
-  <TablaFiltrable
+<!-- <TablaFiltrable
   tabla={ofertas.filter(ofer => ofer.plazas_disponibles > 0 && ofer.titulacion === acuerdo.titulacion)}
-  campos={[
-    { name: 'codigo_asignatura', show: true, filter: true },
-    { name: 'nombre_ingles', nombre: 'Título', show: true, filter: true, render: (obj) => `<a href="${obj.plan_de_estudios_ingles}">${obj.nombre_ingles}</a>` },  
-    { name: 'idioma', show: true, filter: true }, 
-    { name: 'ects', show: true, filter: false }
-  ]} />
+  campos={[{ name: 'codigo_asignatura', nombre: 'Codigo', show: true, filter: true }, { name: 'nombre_ingles', nombre: 'Título', show: true, filter: true, render: obj => `<a href="${obj.plan_de_estudios_ingles}">${obj.nombre_ingles}</a>` }, { name: 'idioma', show: true, filter: true }, { name: 'ects', show: true, filter: false }]} />
+-->
+{#each ofertas as o}
+  {#if o.plazas_disponibles > 0 && o.titulacion === acuerdo.titulacion}
+    <MostrarOferta oferta={o} {acuerdo} />
+  {/if}
+{/each}
