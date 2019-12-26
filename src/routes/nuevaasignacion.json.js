@@ -10,20 +10,19 @@ export function post(req, res, next) {
     let body = '';
     req.on('data', data => body += data)
     req.on('end', () => {
-        const modificacion = JSON.parse(body)
-        db.run(`UPDATE ofertas SET plazas_disponibles = ?, plazas_concedidas = ? 
-                WHERE ofertas.asignatura = ?`, [
-                    parseInt(modificacion.disponibles) -1,
-                    parseInt(modificacion.concedidas) +1,
-                    modificacion.asignatura
+        const asignacion = JSON.parse(body)
+        db.run(`INSERT INTO asignaciones (acuerdo_academico, oferta, estado_solicitud)
+                VALUES(?, ?, ?)`, [
+                    parseInt(asignacion.acuerdo),
+                    parseInt(asignacion.oferta),
+                    asignacion.estado
                 ], (err) => {
             if (err) {
                 jsonResponse(500, { 
-                    error: `Cannot updates: ${err}`
+                    error: `Cannot insert the new asignacion: ${err}`
                 })
                 return
             }
-            console.log(modificacion.disponibles, modificacion.concedidas, modificacion.asignatura)
             jsonResponse(200, {
                 error: null,
             })

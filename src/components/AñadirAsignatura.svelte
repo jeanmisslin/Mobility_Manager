@@ -8,16 +8,31 @@
 
   let message;
 
+  let {
+    id_oferta,
+    codigo_asignatura,
+    nombre_catalan,
+    nombre_castellano,
+    nombre_ingles,
+    idioma,
+    ects,
+    plan_de_estudios_catalan,
+    plan_de_estudios_castellano,
+    plan_de_estudios_ingles,
+    plazas_disponibles,
+    plazas_concedidas
+  } = oferta;
+
   let asignacion = {
     acuerdo: acuerdo,
-    oferta: oferta,
+    oferta: id_oferta,
     estado: ""
   };
 
   let modificacion = {
-    disponibles: oferta.plazas_disponibles - 1,
-    concedidas: oferta.plazas_concedidas + 1,
-    asignatura: oferta.asignatura
+    disponibles: plazas_disponibles,
+    concedidas: plazas_concedidas,
+    asignatura: codigo_asignatura
   };
 
   function asignar() {
@@ -47,7 +62,7 @@
         if (json.error) {
           message = json.error;
         } else {
-          message = "modificacion guardada";
+          message = "oferta guardada";
         }
       });
   }
