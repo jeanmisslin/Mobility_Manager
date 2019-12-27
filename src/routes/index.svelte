@@ -164,31 +164,6 @@
     font-weight: 650;
     background-color: rgb(230, 245, 255);
   }
-
-  #tabla {
-    border-collapse: collapse;
-    width: 100%;
-    margin-bottom: 10px;
-    margin-top: 25px;
-  }
-
-  td {
-    border: 1px solid black;
-    text-align: center;
-    padding: 3px;
-  }
-
-  th {
-    border: 1px solid black;
-    text-align: center;
-    padding: 3px;
-    background-color: rgb(117, 182, 226);
-    color: black;
-  }
-
-  tr:nth-child(even) {
-    background-color: rgb(255, 246, 239);
-  }
 </style>
 
 <svelte:head>
@@ -211,11 +186,11 @@
 <TablaFiltrable
   tabla={estudiantes}
   campos={[
-    { name: 'nombre', filter: true }, 
-    { name: 'apellidos', filter: true }, 
-    { name: 'universidad', filter: true }, 
-    { name: 'pais', filter: true },
-    { name: 'email', render: (obj) => `<a href="/estudiante/${obj.email}">${obj.email}</a>` }
+    { name: 'apellidos', show: true, filter: true },
+    { name: 'nombre', show: true, filter: true },  
+    { name: 'universidad', show: true, filter: true }, 
+    { name: 'pais', show: true, filter: true },
+    { name: 'email', show: true, render: (obj) => `<a href="/estudiante/${obj.email}">${obj.email}</a>` }
   ]} />
 
 {#if nuevoestudiante.open}
