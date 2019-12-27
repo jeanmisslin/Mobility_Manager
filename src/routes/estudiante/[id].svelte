@@ -16,7 +16,6 @@
     let { periodos } = await this.fetch(`periodos.json`).then(body =>
       body.json()
     );
-    console.log(ofertas);
     return {
       estudiante,
       universidades,
@@ -78,7 +77,7 @@
     margin-top: 25px;
     margin-bottom: 10px;
     height: 40px;
-    width: 300px;
+    width: 100%;
     font-weight: 650;
     background-color: rgb(233, 158, 97);
     color: black;
@@ -92,7 +91,7 @@
     margin-top: 25px;
     margin-bottom: 10px;
     height: 40px;
-    width: 300px;
+    width: 100%;
     font-weight: 650;
     background-color: rgb(233, 158, 97);
     color: black;
