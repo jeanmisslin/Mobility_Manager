@@ -17,7 +17,7 @@ export function get(req, res, next) {
                 jsonResponse(500, { error: `No he podido consultar el estudiante (${id}): ${err}` })
                 return
             }
-            db.all(`SELECT a.*, p.año, p.cuatrimestre, t.nombre_catalan, t.nombre_castellano, t.nombre_ingles 
+            db.all(`SELECT a.*, p.año, p.cuatrimestre, t.titulacion_catalan, t.titulacion_castellano, t.titulacion_ingles 
                   FROM acuerdos_academicos as a, periodos_academicos as p, titulaciones as t 
                 WHERE a.periodo_academico = p.id_periodo 
                   AND a.titulacion = t.codigo_titulacion 

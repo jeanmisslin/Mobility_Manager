@@ -97,31 +97,6 @@
     margin-bottom: 10px;
     margin-top: 10px;
   }
-
-  #tabla {
-    border-collapse: collapse;
-    width: 100%;
-    margin-bottom: 10px;
-    margin-top: 25px;
-  }
-
-  td {
-    border: 1px solid black;
-    text-align: left;
-    padding: 3px;
-  }
-
-  th {
-    border: 1px solid black;
-    text-align: center;
-    padding: 3px;
-    background-color: rgb(117, 182, 226);
-    color: black;
-  }
-
-  tr:nth-child(even) {
-    background-color: rgb(255, 246, 239);
-  }
 </style>
 
 <svelte:head>
