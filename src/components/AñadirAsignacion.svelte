@@ -2,8 +2,6 @@
   export let oferta;
   export let acuerdo;
 
-  import RestarPlazaDisponible from "./RestarPlazaDisponible.svelte";
-
   let estados = [`Concedida`, `Denegada`, `Solicitada`];
 
   let message;

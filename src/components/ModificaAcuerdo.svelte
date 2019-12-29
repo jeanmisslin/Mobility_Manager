@@ -87,7 +87,7 @@
             <select name="titu" bind:value={modificaacuerdo.titulacion}>
               <option value="">Selecciona una titulación...</option>
               {#each titulaciones as t}
-                <option value={t.codigo_titulacion}>{t.nombre_catalan}</option>
+                <option value={t.codigo_titulacion}>{t.titulacion_catalan}</option>
               {/each}
             </select>
             <br />
@@ -125,7 +125,7 @@
         <br />
         Cuatrimestre: {acuerdo.cuatrimestre}
         <br />
-        Titulación: {acuerdo.nombre_castellano}
+        Titulación: {acuerdo.titulacion_castellano}
         <br />
         Estado: {acuerdo.estado}
       </p>
