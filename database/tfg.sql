@@ -29,9 +29,9 @@ CREATE TABLE estudiantes(
 
 CREATE TABLE titulaciones(
     codigo_titulacion TEXT PRIMARY KEY,
-    nombre_catalan TEXT,
-    nombre_castellano TEXT,
-    nombre_ingles TEXT,
+    titulacion_catalan TEXT,
+    titulacion_castellano TEXT,
+    titulacion_ingles TEXT,
     ciclo int
 );
 

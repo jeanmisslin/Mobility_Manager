@@ -1,7 +1,7 @@
 
 
 
-INSERT INTO asignaturas (codigo, nombre_catalan, 
+INSERT INTO asignaturas (codigo_asignatura, nombre_catalan, 
 nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan, 
 plan_de_estudios_castellano, plan_de_estudios_ingles) VALUES(
     '3200961',
@@ -15,7 +15,7 @@ plan_de_estudios_castellano, plan_de_estudios_ingles) VALUES(
     'https://www.upc.edu/content/grau/guiadocent/pdf/ing/3200961'
 );
 
-INSERT INTO asignaturas (codigo, nombre_catalan, 
+INSERT INTO asignaturas (codigo_asignatura, nombre_catalan, 
 nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan, 
 plan_de_estudios_castellano, plan_de_estudios_ingles) VALUES(
     '320092',
@@ -29,7 +29,7 @@ plan_de_estudios_castellano, plan_de_estudios_ingles) VALUES(
     'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320092'
 );
 
-INSERT INTO asignaturas (codigo, nombre_catalan, 
+INSERT INTO asignaturas (codigo_asignatura, nombre_catalan, 
 nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan, 
 plan_de_estudios_castellano, plan_de_estudios_ingles) VALUES(
     '320093',
@@ -43,7 +43,7 @@ plan_de_estudios_castellano, plan_de_estudios_ingles) VALUES(
     'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320093'
 );
 
-INSERT INTO asignaturas (codigo, nombre_catalan, 
+INSERT INTO asignaturas (codigo_asignatura, nombre_catalan, 
 nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan, 
 plan_de_estudios_castellano, plan_de_estudios_ingles) VALUES(
     '320094',
@@ -57,7 +57,7 @@ plan_de_estudios_castellano, plan_de_estudios_ingles) VALUES(
     'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320094'
 );
 
-INSERT INTO asignaturas (codigo, nombre_catalan, 
+INSERT INTO asignaturas (codigo_asignatura, nombre_catalan, 
 nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan, 
 plan_de_estudios_castellano, plan_de_estudios_ingles) VALUES(
     '320095',
@@ -71,7 +71,7 @@ plan_de_estudios_castellano, plan_de_estudios_ingles) VALUES(
     'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320095'
 );
 
-INSERT INTO asignaturas (codigo, nombre_catalan, 
+INSERT INTO asignaturas (codigo_asignatura, nombre_catalan, 
 nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan, 
 plan_de_estudios_castellano, plan_de_estudios_ingles) VALUES(
     '3200962',
@@ -85,7 +85,7 @@ plan_de_estudios_castellano, plan_de_estudios_ingles) VALUES(
     'https://www.upc.edu/content/grau/guiadocent/pdf/ing/3200962'
 );
 
-INSERT INTO asignaturas (codigo, nombre_catalan, 
+INSERT INTO asignaturas (codigo_asignatura, nombre_catalan, 
 nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan, 
 plan_de_estudios_castellano, plan_de_estudios_ingles) VALUES(
     '320097',
@@ -99,7 +99,7 @@ plan_de_estudios_castellano, plan_de_estudios_ingles) VALUES(
     'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320097'
 );
 
-INSERT INTO asignaturas (codigo, nombre_catalan, 
+INSERT INTO asignaturas (codigo_asignatura, nombre_catalan, 
 nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan, 
 plan_de_estudios_castellano, plan_de_estudios_ingles) VALUES(
     '320098',
@@ -113,7 +113,7 @@ plan_de_estudios_castellano, plan_de_estudios_ingles) VALUES(
     'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320098'
 );
 
-INSERT INTO asignaturas (codigo, nombre_catalan, 
+INSERT INTO asignaturas (codigo_asignatura, nombre_catalan, 
 nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan, 
 plan_de_estudios_castellano, plan_de_estudios_ingles) VALUES(
     '320099',
@@ -127,7 +127,7 @@ plan_de_estudios_castellano, plan_de_estudios_ingles) VALUES(
     'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320099'
 );
 
-INSERT INTO asignaturas (codigo, nombre_catalan, 
+INSERT INTO asignaturas (codigo_asignatura, nombre_catalan, 
 nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan, 
 plan_de_estudios_castellano, plan_de_estudios_ingles) VALUES(
     '320100',
