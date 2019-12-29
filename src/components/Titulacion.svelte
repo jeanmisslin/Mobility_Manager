@@ -3,7 +3,7 @@
   export let titulaciones;
   export let codigo;
 
-  let { codigo_titulacion, nombre_ingles } = titulaciones;
+  let { codigo_titulacion, titulacion_ingles } = titulaciones;
 </script>
 
 <style>
@@ -51,7 +51,7 @@
 {#each titulaciones as t}
   {#if t.codigo_titulacion === codigo}
     <div id="titulacion">
-      <p>{t.nombre_ingles}</p>
+      <p>{t.titulacion_ingles}</p>
     </div>
     <table id="tabla">
       <tr>

@@ -217,7 +217,7 @@
             <select name="titu" bind:value={nuevoacuerdo.titulacion}>
               <option value="">Selecciona una titulación...</option>
               {#each titulaciones as t}
-                <option value={t.codigo_titulacion}>{t.nombre_catalan}</option>
+                <option value={t.codigo_titulacion}>{t.titulacion_catalan}</option>
               {/each}
             </select>
             <br />

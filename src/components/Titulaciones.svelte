@@ -4,7 +4,7 @@
   export let ofertas;
   export let titulaciones;
 
-  let { codigo_titulacion, nombre_ingles } = titulaciones;
+  let { codigo_titulacion, titulacion_ingles } = titulaciones;
 </script>
 
 {#each titulaciones as T}
