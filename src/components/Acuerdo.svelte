@@ -4,6 +4,7 @@
   import TablaFiltrable from "./TablaFiltrable.svelte";
   import MostrarOferta from "./MostrarOferta.svelte";
   import MostrarAsignacion from "./MostrarAsignacion.svelte";
+  import MostrarOfertas from "./MostrarOfertas.svelte";
 
   export let asignaturas;
   export let acuerdo;
@@ -211,6 +212,9 @@
     <MostrarAsignacion asignatura={a} {acuerdo} />
   {/if}
 {/each}
+
+<MostrarOfertas {ofertas} {acuerdo} />
+
 
 <!-- <TablaOcultableAsignaturas
   {asignaturas}
