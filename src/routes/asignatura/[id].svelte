@@ -30,6 +30,7 @@
 
   import ModificaAsignatura from "../../components/ModificaAsignatura.svelte";
   import ModificaOferta from "../../components/ModificaOferta.svelte";
+  import AñadirOferta from "../../components/AñadirOferta.svelte";
 
   let {
     codigo_asignatura,
@@ -144,6 +145,8 @@
 <ModificaAsignatura {asignatura} />
 
 <div id="ofertas">OFERTAS</div>
+
+<AñadirOferta asignatura={codigo_asignatura} {titulaciones} {periodos}/>
 
 {#each periodos as p}
   <div id="periodo">AÑO: {p.año} CUATRIMESTRE: {p.cuatrimestre}</div>
