@@ -14,7 +14,7 @@ export function post(req, res, next) {
         db.run(`UPDATE ofertas 
                 SET periodo_academico = ?, titulacion = ?, plazas_ofertadas = ?, plazas_disponibles = ?
                 WHERE ofertas.id_oferta = ?`, [
-                    parseInt(modificaoferta.periodo_academico),
+                    parseInt(modificaoferta.periodo),
                     modificaoferta.titulacion,
                     parseInt(modificaoferta.plazas_ofertadas),
                     parseInt(modificaoferta.plazas_ofertadas)-parseInt(modificaoferta.plazas_concedidas),
@@ -26,6 +26,7 @@ export function post(req, res, next) {
                 })
                 return
             }
+            console.log(modificaoferta)
             jsonResponse(200, {
                 error: null,
             })
