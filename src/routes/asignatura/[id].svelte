@@ -31,6 +31,7 @@
   import ModificaAsignatura from "../../components/ModificaAsignatura.svelte";
   import ModificaOferta from "../../components/ModificaOferta.svelte";
   import AñadirOferta from "../../components/AñadirOferta.svelte";
+  import MostrarPlazasOfertas from "../../components/MostrarPlazasOfertas.svelte";
 
   let {
     codigo_asignatura,
@@ -146,13 +147,8 @@
 
 <div id="ofertas">OFERTAS</div>
 
-<AñadirOferta asignatura={codigo_asignatura} {titulaciones} {periodos}/>
+<AñadirOferta asignatura={codigo_asignatura} {titulaciones} {periodos} />
 
 {#each periodos as p}
-  <div id="periodo">AÑO: {p.año} CUATRIMESTRE: {p.cuatrimestre}</div>
-  {#each ofertas as o}
-    {#if o.periodo_academico === p.id_periodo && o.asignatura === codigo_asignatura}
-      <ModificaOferta oferta={o} {titulaciones} {periodos} />
-    {/if}
-  {/each}
+  <MostrarPlazasOfertas {ofertas} asignatura={codigo_asignatura} periodo={p} {titulaciones}/>
 {/each}
