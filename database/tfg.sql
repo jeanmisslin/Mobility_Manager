@@ -73,6 +73,7 @@ CREATE TABLE ofertas(
     plazas_ofertadas int,
     plazas_disponibles int,
     plazas_concedidas int,
+    plazas_solicitadas int,
     FOREIGN KEY (asignatura) REFERENCES asignaturas (codigo_asignatura),
     FOREIGN KEY (periodo_academico) REFERENCES periodos_academicos (id_periodo),
     FOREIGN KEY (titulacion) REFERENCES titulaciones (codigo_titulacion),
