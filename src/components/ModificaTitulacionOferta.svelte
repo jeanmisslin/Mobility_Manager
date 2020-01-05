@@ -46,31 +46,6 @@
 </script>
 
 <style>
-  #datos {
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    margin-top: 25px;
-    margin-bottom: 10px;
-    height: 110px;
-    width: 85%;
-    font-weight: 650;
-    background-color: rgb(230, 245, 255);
-    color: black;
-    border: 1px solid black;
-  }
-
-  #contenido_datos {
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    margin-left: 20px;
-    margin-right: 1px;
-    height: 100px;
-    width: 780px;
-    font-weight: 650;
-    background-color: rgb(230, 245, 255);
-  }
 </style>
 
 {#if modificaoferta.open}

@@ -96,16 +96,6 @@
     width: 55px;
   }
 
-  #estado {
-    display: flex;
-    text-align: center;
-    align-items: center;
-    margin-left: 8px;
-    font-weight: 650;
-    height: 55px;
-    width: 80px;
-  }
-
   #recomendadas {
     display: flex;
     align-items: center;

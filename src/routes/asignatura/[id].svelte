@@ -110,20 +110,6 @@
     margin-bottom: 10px;
     margin-top: 10px;
   }
-
-  #periodo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 25px;
-    margin-bottom: 10px;
-    height: 30px;
-    width: 85%;
-    font-weight: 650;
-    background-color: rgb(240, 204, 175);
-    color: black;
-    border: 1px solid black;
-  }
 </style>
 
 <svelte:head>
