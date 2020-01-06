@@ -1,11 +1,11 @@
 <script>
   export let asignatura;
   export let titulaciones;
-  export let periodos;
+  export let periodo;
 
   let nuevaoferta = {
     asignatura: asignatura,
-    periodo: "",
+    periodo: periodo,
     titulacion: "",
     plazas_ofertadas: ""
   };
@@ -36,7 +36,7 @@
     justify-content: left;
     margin-top: 25px;
     margin-bottom: 10px;
-    height: 110px;
+    height: 60px;
     width: 85%;
     font-weight: 650;
     background-color: rgb(230, 245, 255);
@@ -50,8 +50,8 @@
     justify-content: left;
     margin-left: 20px;
     margin-right: 1px;
-    height: 100px;
-    width: 780px;
+    height: 50px;
+    width: 85%;
     font-weight: 650;
     background-color: rgb(230, 245, 255);
   }
@@ -63,16 +63,6 @@
       <div id="datos">
         <div id="contenido_datos">
           <p>
-            Periodo Académico:
-            <select name="per" bind:value={nuevaoferta.periodo_academico}>
-              <option value="">Selecciona un periodo académico...</option>
-              {#each periodos as p}
-                <option value={p.id_periodo}>
-                  {p.año}-{p.año + 1}, Q{p.cuatrimestre}
-                </option>
-              {/each}
-            </select>
-            <br />
             Titulación:
             <select name="titu" bind:value={nuevaoferta.titulacion}>
               <option value="">Selecciona una titulación...</option>

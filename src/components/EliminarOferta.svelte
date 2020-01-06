@@ -1,9 +1,12 @@
 <script>
   export let oferta;
+  export let asignaciones;
 
   let eliminaoferta = {
     oferta: oferta
   };
+
+  let asignacion = asignaciones.find(element => element.oferta === oferta);
 
   let message;
 
@@ -25,6 +28,7 @@
 </script>
 
 <style>
+
 </style>
 
 {#if eliminaoferta.open}
@@ -44,9 +48,19 @@
     {/if}
   </div>
 {:else}
-  <div id="buttons">
-    <div id="field">
-      <button on:click={() => (eliminaoferta.open = true)}>Eliminar</button>
+  {#if asignacion === null || asignacion === undefined}
+    <div id="buttons">
+      <div id="field">
+        <button on:click={() => (eliminaoferta.open = true)}>
+          Eliminar Oferta
+        </button>
+      </div>
     </div>
-  </div>
+  {:else}
+    <div id="buttons">
+      <div id="field">
+        <button>Oferta Asignada</button>
+      </div>
+    </div>
+  {/if}
 {/if}

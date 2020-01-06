@@ -3,8 +3,11 @@
   export let periodo;
   export let asignatura;
   export let titulaciones;
+  export let asignaciones;
 
   import MostrarTitulacionesOfertas from "./MostrarTitulacionesOfertas.svelte";
+  import AñadirOferta from "./AñadirOferta.svelte";
+  import ModificarPlazasOferta from "./ModificarPlazasOferta.svelte";
 
   let oferta = ofertas.find(
     element =>
@@ -12,9 +15,7 @@
       element.periodo_academico === periodo.id_periodo
   );
 
-  let {
-    id_periodo
-  } = periodo;
+  let { id_periodo } = periodo;
 
   let message;
 </script>
@@ -74,7 +75,7 @@
   <div id="periodo">
     <div>Q{periodo.cuatrimestre}, {periodo.año}</div>
   </div>
-  <div id="no_se_oferta">NO SE OFERTA</div>
+  <AñadirOferta {asignatura} {titulaciones} periodo={id_periodo} />
 {:else}
   <div id="periodo">
     <div>Q{periodo.cuatrimestre}, {periodo.año}</div>
@@ -93,5 +94,11 @@
       <td>{oferta.plazas_concedidas}</td>
     </tr>
   </table>
-  <MostrarTitulacionesOfertas {ofertas} {asignatura} periodo={id_periodo} {titulaciones} />
+  <ModificarPlazasOferta {oferta}/>
+  <MostrarTitulacionesOfertas
+    {ofertas}
+    {asignatura}
+    periodo={id_periodo}
+    {titulaciones}
+    {asignaciones} />
 {/if}

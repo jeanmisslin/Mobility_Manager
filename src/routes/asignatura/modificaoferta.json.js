@@ -12,13 +12,11 @@ export function post(req, res, next) {
     req.on('end', () => {
         const modificaoferta = JSON.parse(body)
         db.run(`UPDATE ofertas 
-                SET periodo_academico = ?, titulacion = ?, plazas_ofertadas = ?, plazas_disponibles = ?
-                WHERE ofertas.id_oferta = ?`, [
-                    parseInt(modificaoferta.periodo),
-                    modificaoferta.titulacion,
+                SET plazas_ofertadas = ?, plazas_disponibles = ?
+                WHERE ofertas.asignatura = ?`, [
                     parseInt(modificaoferta.plazas_ofertadas),
                     parseInt(modificaoferta.plazas_ofertadas)-parseInt(modificaoferta.plazas_concedidas),
-                    modificaoferta.oferta
+                    modificaoferta.asignatura
                 ], (err) => {
             if (err) {
                 jsonResponse(500, { 

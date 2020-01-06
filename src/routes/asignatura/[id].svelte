@@ -13,10 +13,14 @@
     let { titulaciones } = await this.fetch(`titulaciones.json`).then(body =>
       body.json()
     );
+    let { asignaciones } = await this.fetch(`asignaciones.json`).then(body =>
+      body.json()
+    );
     return {
       asignatura,
       ofertas,
       periodos,
+      asignaciones,
       titulaciones
     };
   }
@@ -27,6 +31,7 @@
   export let ofertas;
   export let periodos;
   export let titulaciones;
+  export let asignaciones;
 
   import ModificaAsignatura from "../../components/ModificaAsignatura.svelte";
   import ModificaOferta from "../../components/ModificaOferta.svelte";
@@ -133,8 +138,11 @@
 
 <div id="ofertas">OFERTAS</div>
 
-<AñadirOferta asignatura={codigo_asignatura} {titulaciones} {periodos} />
-
 {#each periodos as p}
-  <MostrarPlazasOfertas {ofertas} asignatura={codigo_asignatura} periodo={p} {titulaciones}/>
+  <MostrarPlazasOfertas
+    {ofertas}
+    asignatura={codigo_asignatura}
+    periodo={p}
+    {titulaciones}
+    {asignaciones} />
 {/each}

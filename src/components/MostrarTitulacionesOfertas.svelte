@@ -3,6 +3,7 @@
   export let periodo;
   export let asignatura;
   export let titulaciones;
+  export let asignaciones;
 
   import ModificaTitulacionOferta from "./ModificaTitulacionOferta.svelte";
   import EliminarOferta from "./EliminarOferta.svelte";
@@ -38,16 +39,14 @@
 
 <table id="tabla">
     <tr>
-      <th>TITULACION</th>
-      <th>MODIFICAR</th>
-      <th>ELIMINAR</th>
+      <th>TITULACIONES QUE LA OFERTAN</th>
+      <th>ELIMINAR OFERTA</th>
     </tr>
     {#each ofertas as o}
     <tr>
     {#if o.periodo_academico === periodo && o.asignatura === asignatura}
       <td>{o.titulacion_ingles}</td>
-      <td><ModificaTitulacionOferta oferta={o} {titulaciones}/></td>
-      <td><EliminarOferta oferta={o.id_oferta}/></td>
+      <td><EliminarOferta oferta={o.id_oferta} {asignaciones}/></td>
       {/if}
       </tr>
     {/each}
