@@ -80,16 +80,16 @@
         <div id="contenido_datos">
           <p>
             Codigo:
-            <input type="text" bind:value={modificaasignatura.codigo} />
+            <input type="text" size="4" maxlength="7" bind:value={modificaasignatura.codigo} />
             <br />
             Nombre en Catalán:
-            <input type="text" bind:value={modificaasignatura.ncat} />
+            <input type="text" size="60" bind:value={modificaasignatura.ncat} />
             <br />
             Nombre en Catellano:
-            <input type="text" bind:value={modificaasignatura.ncast} />
+            <input type="text" size="58" bind:value={modificaasignatura.ncast} />
             <br />
             Nombre en Inglés:
-            <input type="text" bind:value={modificaasignatura.ning} />
+            <input type="text" size="62" bind:value={modificaasignatura.ning} />
             <br />
             Idioma:
             <select name="idi" bind:value={modificaasignatura.idioma}>
@@ -100,16 +100,16 @@
             </select>
             <br />
             ECTS:
-            <input type="text" bind:value={modificaasignatura.ects} />
+            <input type="text" size="1" maxlength="4" bind:value={modificaasignatura.ects} />
             <br />
             Plan de estudios en Catalán:
-            <input type="text" bind:value={modificaasignatura.pscat} />
+            <input type="text" size="54" bind:value={modificaasignatura.pscat} />
             <br />
             Plan de estudios en Castellano:
-            <input type="text" bind:value={modificaasignatura.pscast} />
+            <input type="text" size="51" bind:value={modificaasignatura.pscast} />
             <br />
             Plan de estudios en Inglés:
-            <input type="text" bind:value={modificaasignatura.psing} />
+            <input type="text" size="56" bind:value={modificaasignatura.psing} />
           </p>
         </div>
       </div>
