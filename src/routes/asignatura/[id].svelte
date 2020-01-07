@@ -36,7 +36,7 @@
   import ModificaAsignatura from "../../components/ModificaAsignatura.svelte";
   import ModificaOferta from "../../components/ModificaOferta.svelte";
   import AñadirOferta from "../../components/AñadirOferta.svelte";
-  import MostrarPlazasOfertas from "../../components/MostrarPlazasOfertas.svelte";
+  import MostrarOfertasAsignatura from "../../components/MostrarOfertasAsignatura.svelte";
 
   let {
     codigo_asignatura,
@@ -66,7 +66,7 @@
   #title {
     display: flex;
     font-weight: 500;
-    font-size: 20pt;
+    font-size: 18pt;
     color: black;
     text-transform: uppercase;
   }
@@ -139,7 +139,7 @@
 <div id="ofertas">OFERTAS</div>
 
 {#each periodos as p}
-  <MostrarPlazasOfertas
+  <MostrarOfertasAsignatura
     {ofertas}
     asignatura={codigo_asignatura}
     periodo={p}
