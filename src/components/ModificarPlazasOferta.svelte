@@ -1,16 +1,13 @@
 <script>
   export let oferta;
 
-  let {
-    asignatura,
-    plazas_ofertadas,
-    plazas_concedidas
-  } = oferta;
+  let { asignatura, plazas_ofertadas, plazas_concedidas, periodo_academico } = oferta;
 
   let modificaoferta = {
     asignatura: asignatura,
     plazas_ofertadas: plazas_ofertadas,
-    plazas_concedidas: plazas_concedidas
+    plazas_concedidas: plazas_concedidas,
+    periodo_academico: periodo_academico
   };
 
   let message;
@@ -33,46 +30,65 @@
 </script>
 
 <style>
-  #datos {
+  #periodo {
     display: flex;
     align-items: center;
-    justify-content: left;
+    justify-content: space-around;
     margin-top: 25px;
     margin-bottom: 10px;
-    height: 40px;
-    width: 360px;
+    height: 30px;
+    width: 25%;
     font-weight: 650;
-    background-color: rgb(230, 245, 255);
+    background-color: rgb(240, 204, 175);
     color: black;
     border: 1px solid black;
   }
 
-  #contenido_datos {
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    margin-left: 20px;
-    margin-right: 1px;
-    height: 30px;
-    width: 360px;
-    font-weight: 650;
-    background-color: rgb(230, 245, 255);
+  #tabla {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 25px;
+  }
+
+  td {
+    border: 1px solid black;
+    text-align: center;
+    padding: 3px;
+  }
+
+  th {
+    border: 1px solid black;
+    text-align: center;
+    padding: 3px;
+    background-color: rgb(117, 182, 226);
+    color: black;
+  }
+
+  tr:nth-child(even) {
+    background-color: rgb(255, 246, 239);
   }
 </style>
 
 {#if modificaoferta.open}
   <div class="request-box">
-    <div id="textfield">
-      <div id="datos">
-        <div id="contenido_datos">
-          <p>
-            Plazas Ofertadas:
-            <input type="text" bind:value={modificaoferta.plazas_ofertadas} />
-            <br />
-          </p>
-        </div>
-      </div>
+    <div id="periodo">
+      <div>Q{oferta.cuatrimestre}, {oferta.año}</div>
     </div>
+    <table id="tabla">
+      <tr>
+        <th>PLAZAS OFERTADAS</th>
+        <th>PLAZAS DISPONIBLES</th>
+        <th>PLAZAS SOLICITADAS</th>
+        <th>PLAZAS CONCEDIDAS</th>
+      </tr>
+      <tr>
+        <td><input type="text" size="1" maxlength="2" bind:value={modificaoferta.plazas_ofertadas} /></td>
+        <td>{oferta.plazas_disponibles}</td>
+        <td>{oferta.plazas_solicitadas}</td>
+        <td>{oferta.plazas_concedidas}</td>
+      </tr>
+    </table>
     <div>
       <div id="buttons">
         <div id="field">
@@ -88,9 +104,30 @@
     {/if}
   </div>
 {:else}
+  <div id="periodo">
+    <div>Q{oferta.cuatrimestre}, {oferta.año}</div>
+  </div>
+  <table id="tabla">
+    <tr>
+      <th>PLAZAS OFERTADAS</th>
+      <th>PLAZAS DISPONIBLES</th>
+      <th>PLAZAS SOLICITADAS</th>
+      <th>PLAZAS CONCEDIDAS</th>
+    </tr>
+    <tr>
+      <td>{oferta.plazas_ofertadas}</td>
+      <td>{oferta.plazas_disponibles}</td>
+      <td>{oferta.plazas_solicitadas}</td>
+      <td>{oferta.plazas_concedidas}</td>
+    </tr>
+  </table>
   <div id="buttons">
     <div id="field">
-      <button on:click={() => (modificaoferta.open = true)}>Modificar Plazas Ofertadas</button>
+      <button on:click={() => (modificaoferta.open = true)}>
+        Modificar Plazas Ofertadas
+      </button>
     </div>
   </div>
 {/if}
+
+
