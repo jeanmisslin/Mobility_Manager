@@ -16,11 +16,15 @@
     let { periodos } = await this.fetch(`periodos.json`).then(body =>
       body.json()
     );
+    let { asignaciones } = await this.fetch(`asignaciones.json`).then(body =>
+      body.json()
+    );
     return {
       estudiante,
       universidades,
       titulaciones,
       ofertas,
+      asignaciones,
       periodos
     };
   }
@@ -35,6 +39,7 @@
   export let titulaciones;
   export let ofertas;
   export let periodos;
+  export let asignaciones;
 
   let {
     apellidos,
@@ -139,6 +144,7 @@
 
 {#each acuerdos as acuerdo}
   <Acuerdo
+    {asignaciones}
     {titulaciones}
     {periodos}
     {acuerdo}

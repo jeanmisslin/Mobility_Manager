@@ -32,7 +32,8 @@
   let modificacion = {
     disponibles: plazas_disponibles,
     concedidas: plazas_concedidas,
-    asignatura: codigo_asignatura
+    asignatura: codigo_asignatura,
+    periodo: acuerdo.periodo_academico
   };
 
   function modificarasignacion() {
