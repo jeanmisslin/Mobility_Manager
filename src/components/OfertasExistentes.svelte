@@ -1,0 +1,110 @@
+<script>
+  export let ofertas;
+  export let acuerdo;
+
+  let { id_acuerdo } = acuerdo;
+
+  import SolicitarAsignatura from "./SolicitarAsignatura.svelte";
+
+  let filtro = "";
+
+  $: ofertasFiltradas = ofertas.filter(e => {
+    let strIn = (a, b) => a.toLowerCase().indexOf(b.toLowerCase()) != -1;
+    return (
+      strIn(e.codigo_asignatura, filtro) ||
+      strIn(e.nombre_catalan, filtro) ||
+      strIn(e.nombre_castellano, filtro) ||
+      strIn(e.nombre_ingles, filtro) ||
+      strIn(e.titulacion_catalan, filtro) ||
+      strIn(e.titulacion_castellano, filtro) ||
+      strIn(e.titulacion_ingles, filtro) ||
+      strIn(e.idioma, filtro)
+    );
+  });
+</script>
+
+<style>
+  #tabla {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 0px;
+    margin-top: 0px;
+  }
+
+  td {
+    border: 1px solid black;
+    text-align: center;
+    padding: 3px;
+  }
+
+  th {
+    border: 1px solid black;
+    text-align: center;
+    padding: 3px;
+    background-color: rgb(117, 182, 226);
+    color: black;
+  }
+
+  tr:nth-child(even) {
+    background-color: rgb(255, 246, 239);
+  }
+
+  #existentes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    height: 30px;
+    width: 50%;
+    font-weight: 650;
+    background-color: rgb(240, 204, 175);
+    color: black;
+    border: 1px solid black;
+  }
+
+  #scroll {
+    overflow: scroll;
+    margin-top: 20px;
+    height: 211px;
+    width: 100%;
+    border: 1px solid black;
+  }
+</style>
+
+<div id="existentes">ASIGNATURAS OFERTADAS</div>
+<div>
+BUSCADOR:
+  <input
+    type="text"
+    bind:value={filtro}
+    placeholder="Introduce la palabra clave"
+    title="Type in a name" />
+</div>
+
+<div id="scroll">
+  <table id="tabla">
+    <tr>
+      <th>CÓDIGO</th>
+      <th>TÍTULO</th>
+      <th>TITULACIÓN</th>
+      <th>IDIOMA</th>
+      <th>ECTS</th>
+      <th>VACANTES</th>
+      <th>AÑADIR</th>
+    </tr>
+    {#each ofertasFiltradas as o}
+      <tr>
+        <td>{o.codigo_asignatura}</td>
+        <td>{o.nombre_ingles}</td>
+        <td>{o.titulacion_ingles}</td>
+        <td>{o.idioma}</td>
+        <td>{o.ects}</td>
+        <td>{o.plazas_disponibles}</td>
+        <td>
+          <SolicitarAsignatura acuerdo={id_acuerdo} oferta={o} />
+        </td>
+      </tr>
+    {/each}
+  </table>
+</div>
