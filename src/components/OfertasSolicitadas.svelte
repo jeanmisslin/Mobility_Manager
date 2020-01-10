@@ -15,9 +15,6 @@
       strIn(e.nombre_catalan, filtro) ||
       strIn(e.nombre_castellano, filtro) ||
       strIn(e.nombre_ingles, filtro) ||
-      strIn(e.titulacion_catalan, filtro) ||
-      strIn(e.titulacion_castellano, filtro) ||
-      strIn(e.titulacion_ingles, filtro) ||
       strIn(e.idioma, filtro)
     );
   });
@@ -92,7 +89,7 @@ BUSCADOR:
     <th>ESTADO</th>
     <th>SOLICITAR</th>
   </tr>
-  {#each asignaturas as a}
+  {#each asignaturasFiltradas as a}
     <tr>
         <td>{a.codigo_asignatura}</td>
         <td>{a.nombre_ingles}</td>
