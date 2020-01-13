@@ -34,8 +34,6 @@
   export let asignaciones;
 
   import ModificaAsignatura from "../../components/ModificaAsignatura.svelte";
-  import ModificaOferta from "../../components/ModificaOferta.svelte";
-  import AñadirOferta from "../../components/AñadirOferta.svelte";
   import MostrarOfertasAsignatura from "../../components/MostrarOfertasAsignatura.svelte";
 
   let {

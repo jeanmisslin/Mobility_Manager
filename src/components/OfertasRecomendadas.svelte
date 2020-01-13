@@ -2,8 +2,6 @@
   export let ofertas;
   export let acuerdo;
 
-  let { id_acuerdo } = acuerdo;
-
   import SolicitarAsignatura from "./SolicitarAsignatura.svelte";
 
   let filtro = "";
@@ -72,7 +70,7 @@
 <div id="recomendadas">ASIGNATURAS RECOMENDADAS</div>
 
 <div>
-  BUSCADOR: 
+  BUSCADOR:
   <input
     type="text"
     bind:value={filtro}
@@ -80,7 +78,6 @@
     title="Type in a name" />
 </div>
 
-<!--{#if filtro !== ''}-->
 <div id="scroll">
   <table id="tabla">
     <tr>
@@ -100,11 +97,10 @@
           <td>{o.ects}</td>
           <td>{o.plazas_disponibles}</td>
           <td>
-            <SolicitarAsignatura acuerdo={id_acuerdo} oferta={o} />
+            <SolicitarAsignatura acuerdo={acuerdo.id_acuerdo} oferta={o} />
           </td>
         {/if}
       </tr>
     {/each}
   </table>
-  </div>
-<!--{/if}-->
+</div>

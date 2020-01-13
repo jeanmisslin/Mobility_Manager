@@ -10,8 +10,8 @@
     let { titulaciones } = await this.fetch(`titulaciones.json`).then(body =>
       body.json()
     );
-    let { ofertas } = await this.fetch(`../titulaciones/ofertas.json`).then(body =>
-      body.json()
+    let { ofertas } = await this.fetch(`../titulaciones/ofertas.json`).then(
+      body => body.json()
     );
     let { periodos } = await this.fetch(`periodos.json`).then(body =>
       body.json()
@@ -31,8 +31,11 @@
 </script>
 
 <script>
-  import Acuerdo from "../../components/Acuerdo.svelte";
   import ModificaEstudiante from "../../components/ModificaEstudiante.svelte";
+  import ModificaAcuerdo from "../../components/ModificaAcuerdo.svelte";
+  import OfertasExistentes from "../../components/OfertasExistentes.svelte"
+  import OfertasRecomendadas from "../../components/OfertasRecomendadas.svelte"
+  import OfertasSolicitadas from "../../components/OfertasSolicitadas.svelte";
 
   export let estudiante;
   export let universidades;
@@ -138,11 +141,11 @@
 
 <div id="contenido">DATOS PERSONALES</div>
 
-<ModificaEstudiante {estudiante} {universidades}/>
+<ModificaEstudiante {estudiante} {universidades} />
 
 <div id="acuerdos">ACUERDOS ACADEMICOS</div>
 
-{#each acuerdos as acuerdo}
+<!--{#each acuerdos as acuerdo}
   <Acuerdo
     {asignaciones}
     {titulaciones}
@@ -150,4 +153,10 @@
     {acuerdo}
     ofertas={ofertas.filter(ofer => ofer.periodo_academico === acuerdo.periodo_academico)}
     asignaturas={asignaturas.filter(assig => assig.acuerdo_academico === acuerdo.id_acuerdo)} />
+{/each}-->
+
+{#each acuerdos as acuerdo}
+  <ModificaAcuerdo {periodos} {acuerdo} {titulaciones} />
+  <OfertasSolicitadas {asignaturas} {acuerdo}/>
+  <OfertasRecomendadas {ofertas} {acuerdo}/>
 {/each}

@@ -10,7 +10,6 @@
 
 <script>
 
-  import BuscadorAsignaturas from "../../components/BuscadorAsignaturas.svelte";
   import TablaFiltrable from "../../components/TablaFiltrable.svelte";
 
   export let asignaturas;

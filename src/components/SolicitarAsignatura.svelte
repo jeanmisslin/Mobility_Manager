@@ -2,11 +2,9 @@
   export let oferta;
   export let acuerdo;
 
-  let estados = [`Concedida`, `Denegada`, `Solicitada`];
-
   let message;
 
-  let { id_oferta } = oferta;
+  let { id_oferta, asignatura, plazas_solicitadas, periodo_academico } = oferta;
 
   let asignacion = {
     acuerdo: acuerdo,
@@ -16,7 +14,7 @@
 
   let modificacion = {
     solicitadas: plazas_solicitadas,
-    asignatura: codigo_asignatura,
+    asignatura: asignatura,
     periodo: periodo_academico
   };
 
