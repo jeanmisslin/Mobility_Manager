@@ -13,7 +13,7 @@
       element.periodo_academico === periodo
   );
 
-  let nuevaoferta = {
+  let añadirtitulacion = {
     asignatura: asignatura,
     periodo: periodo,
     titulacion: "",
@@ -26,7 +26,7 @@
     fetch(`/asignatura/añadiroferta.json`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(nuevaoferta)
+      body: JSON.stringify(añadirtitulacion)
     })
       .then(body => body.json())
       .then(json => {
@@ -81,14 +81,14 @@
     {/each}
   </table>
   
-  {#if nuevaoferta.open}
+  {#if añadirtitulacion.open}
   <div class="request-box">
     <div id="textfield">
       <div id="datos">
         <div id="contenido_datos">
           <p>
             Titulación:
-            <select name="titu" bind:value={nuevaoferta.titulacion}>
+            <select name="titu" bind:value={añadirtitulacion.titulacion}>
               <option value="">Selecciona una titulación...</option>
               {#each titulaciones as t}
                 <option value={t.codigo_titulacion}>{t.titulacion_catalan}</option>
@@ -102,7 +102,7 @@
       <div id="buttons">
         <div id="field">
           <button on:click={añadiroferta}>Salvar</button>
-          <button on:click={() => (nuevaoferta.open = false)}>
+          <button on:click={() => (añadirtitulacion.open = false)}>
             Cancelar
           </button>
         </div>
@@ -115,7 +115,7 @@
 {:else}
   <div id="buttons">
     <div id="field">
-      <button on:click={() => (nuevaoferta.open = true)}>Añadir Titulación</button>
+      <button on:click={() => (añadirtitulacion.open = true)}>Añadir Titulación</button>
     </div>
   </div>
 {/if}
