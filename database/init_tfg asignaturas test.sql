@@ -4388,3 +4388,322 @@ VALUES(
         0,
         0
 );
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '205250',
+        'Robòtica Avançada i Sistemes de Producció Altament Automatitzats',
+        'Robótica Avanzada y Sistemas de Producción Altamente Automatizados',
+        'Advanced Robotics & Highly Automation Production Systems',
+        'ING',
+        6,
+        'https://www.upc.edu/content/master/guiadocent/pdf/cat/205250',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/205250',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/205250'
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '205250',
+        1,
+        '320GREEIA',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '320035',
+        'Automatització Industrial',
+        'Automatización Industrial',
+        'Industrial Automation',
+        'CAT/CAST',
+        6,
+        'https://www.upc.edu/content/master/guiadocent/pdf/cat/320035',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320035',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320035'
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '320035',
+        1,
+        '320GREEIA',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '320036',
+        'Electrònica Digital',
+        'Electrónica Digital',
+        'Digital Electronics',
+        'CAT/CAST',
+        6,
+        'https://www.upc.edu/content/master/guiadocent/pdf/cat/320036',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320036',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320036'
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '320036',
+        1,
+        '320GREEIA',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '320038',
+        'Electrònica Analògica',
+        'Electrónica Analógica',
+        'Analogue Electronics',
+        'CAT/CAST',
+        6,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/320038',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320038',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320038'
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '320038',
+        1,
+        '320GREEIA',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '320041',
+        'Instrumentació Electrònica',
+        'Instrumentación Electrónica',
+        'Electronic Instrumentation',
+        'CAT/CAST',
+        6,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/320041',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320041',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320041'
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '320041',
+        1,
+        '320GREEIA',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '320044',
+        'Control i Guiatge de Robots Mòbils',
+        'Control y Guiado de Robots Móviles',
+        'Control and Guidance of Mobile Robots',
+        'CAT',
+        6,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/320044',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320044',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320044'
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '320044',
+        1,
+        '320GREEIA',
+        1,
+        1,
+        0,
+        0
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '320129',
+        'Aplicacions i Control de Sistemes Electrònics de Potència',
+        'Aplicaciones y Control de Sistemas Electrónicos de Potencia',
+        'Applications and Control of Power Electronic Systems',
+        'CAT',
+        6,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/320129',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320129',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320129'
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '320129',
+        1,
+        '320GREEIA',
+        1,
+        1,
+        0,
+        0
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '320182',
+        'Accionament i Control de Vehicles Elèctrics',
+        'Accionamiento y Control de Vehículos Eléctricos',
+        'Operation and Control of Electric Vehicles',
+        'ING',
+        6,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/320182',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320182',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320182'
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '320182',
+        1,
+        '320GREEIA',
+        5,
+        5,
+        0,
+        0
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '320183',
+        'Introducció als Sistemes de Control Avançats',
+        'Introducción a los Sistemas de Control Avanzados',
+        'Introduction to Advanced Control Systems',
+        'ING',
+        6,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/320183',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320183',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320183'
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '320183',
+        1,
+        '320GREEIA',
+        5,
+        5,
+        0,
+        0
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '3200331',
+        'Modelització i Anàlisi de Sistemes Dinàmics I',
+        'Modelización y Análisis de los Sistemas Dinámicos I',
+        'Modelling and Analysis of Dinamic Systems I',
+        'CAT',
+        4.5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/3200331',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/3200331',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/3200331'
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '3200331',
+        1,
+        '320GREEIA',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '3200371',
+        'Electrònica de Potència I',
+        'Electrónica de Potencia I',
+        'Power Electronics I',
+        'CAT/CAST',
+        4.5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/3200371',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/3200371',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/3200371'
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '3200371',
+        1,
+        '320GREEIA',
+        0,
+        0,
+        0,
+        0
+);
