@@ -33,9 +33,7 @@
 <script>
   import ModificaEstudiante from "../../components/ModificaEstudiante.svelte";
   import ModificaAcuerdo from "../../components/ModificaAcuerdo.svelte";
-  import OfertasExistentes from "../../components/OfertasExistentes.svelte"
-  import OfertasRecomendadas from "../../components/OfertasRecomendadas.svelte"
-  import OfertasSolicitadas from "../../components/OfertasSolicitadas.svelte";
+  import TablaFiltrableComponentes from "../../components/TablaFiltrableComponentes.svelte";
 
   export let estudiante;
   export let universidades;
@@ -122,6 +120,48 @@
     margin-bottom: 10px;
     margin-top: 10px;
   }
+
+  #solicitadas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    height: 30px;
+    width: 50%;
+    font-weight: 650;
+    background-color: rgb(240, 204, 175);
+    color: black;
+    border: 1px solid black;
+  }
+
+  #recomendadas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    height: 30px;
+    width: 50%;
+    font-weight: 650;
+    background-color: rgb(240, 204, 175);
+    color: black;
+    border: 1px solid black;
+  }
+
+  #ofertadas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    height: 30px;
+    width: 50%;
+    font-weight: 650;
+    background-color: rgb(240, 204, 175);
+    color: black;
+    border: 1px solid black;
+  }
 </style>
 
 <svelte:head>
@@ -145,18 +185,30 @@
 
 <div id="acuerdos">ACUERDOS ACADEMICOS</div>
 
-<!--{#each acuerdos as acuerdo}
-  <Acuerdo
-    {asignaciones}
-    {titulaciones}
-    {periodos}
-    {acuerdo}
-    ofertas={ofertas.filter(ofer => ofer.periodo_academico === acuerdo.periodo_academico)}
-    asignaturas={asignaturas.filter(assig => assig.acuerdo_academico === acuerdo.id_acuerdo)} />
-{/each}-->
-
 {#each acuerdos as acuerdo}
   <ModificaAcuerdo {periodos} {acuerdo} {titulaciones} />
-  <OfertasSolicitadas {asignaturas} {acuerdo}/>
-  <OfertasRecomendadas {ofertas} {acuerdo}/>
+
+  <div id="solicitadas">ASIGNATURAS SOLICITADAS</div>
+
+  <TablaFiltrableComponentes
+    tabla={asignaturas}
+    {acuerdo}
+    componente="modificar"
+    campos={[{ name: 'codigo_asignatura', show: true, filter: true, render: obj => `<a href="/asignatura/${obj.codigo_asignatura}">${obj.codigo_asignatura}</a>` }, { name: 'nombre_ingles', nombre: 'titulo', show: true, filter: true, render: obj => `<a href="${obj.plan_de_estudios_ingles}">${obj.nombre_ingles}</a>` }, { name: 'nombre_catalan', filter: true }, { name: 'nombre_castellano', filter: true }, { name: 'idioma', show: true, filter: true }, { name: 'ects', show: true }, { name: 'estado_solicitud', nombre: 'estado', show: true }]} />
+
+  <div id="recomendadas">ASIGNATURAS RECOMENDADAS</div>
+
+  <TablaFiltrableComponentes
+    tabla={ofertas.filter(ofer => ofer.periodo_academico === acuerdo.periodo_academico && ofer.titulacion === acuerdo.titulacion)}
+    {acuerdo}
+    componente="solicitar"
+    campos={[{ name: 'codigo_asignatura', nombre: 'código', show: true, filter: true, render: obj => `<a href="/asignatura/${obj.codigo_asignatura}">${obj.codigo_asignatura}</a>` }, { name: 'nombre_ingles', nombre: 'titulo', show: true, filter: true, render: obj => `<a href="${obj.plan_de_estudios_ingles}">${obj.nombre_ingles}</a>` }, { name: 'nombre_catalan', filter: true }, { name: 'nombre_castellano', filter: true }, { name: 'idioma', show: true, filter: true }, { name: 'ects', show: true }, { name: 'plazas_disponibles', nombre: 'plazas', show: true }]} />
+
+  <div id="ofertadas">ASIGNATURAS OFERTADAS</div>
+
+  <TablaFiltrableComponentes
+    tabla={ofertas.filter(ofer => ofer.periodo_academico === acuerdo.periodo_academico)}
+    {acuerdo}
+    componente="solicitar"
+    campos={[{ name: 'codigo_asignatura', nombre: 'código', show: true, filter: true, render: obj => `<a href="/asignatura/${obj.codigo_asignatura}">${obj.codigo_asignatura}</a>` }, { name: 'nombre_ingles', nombre: 'titulo', show: true, filter: true, render: obj => `<a href="${obj.plan_de_estudios_ingles}">${obj.nombre_ingles}</a>` }, { name: 'nombre_catalan', filter: true }, { name: 'nombre_castellano', filter: true }, { name: 'titulacion_ingles', nombre: 'titulación', show: true, filter: true }, { name: 'idioma', show: true, filter: true }, { name: 'ects', show: true }, { name: 'plazas_disponibles', nombre: 'plazas', show: true }]} />
 {/each}
