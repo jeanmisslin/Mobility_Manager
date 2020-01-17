@@ -11,7 +11,7 @@ export function get(req, res, next) {
     FROM asignaturas INNER JOIN ofertas, periodos_academicos, titulaciones
     ON asignaturas.codigo_asignatura = ofertas.asignatura
     AND periodos_academicos.id_periodo = ofertas.periodo_academico
-    AND titulaciones.codigo_titulacion = ofertas.titulacion`, (err, ofertas) => {
+    AND titulaciones.codigo_titulacion = ofertas.titulacion ORDER BY ofertas.asignatura`, (err, ofertas) => {
         if (err) {
             console.log(err)
             jsonResponse(500, { error: `No se pueden consultar ofertas: ${err}` })
