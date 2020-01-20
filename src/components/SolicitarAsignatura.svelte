@@ -3,19 +3,22 @@
   export let acuerdo;
 
   let message;
+  let asignacion;
+  let modificacion;
 
-  let { id_oferta, asignatura, plazas_solicitadas, periodo_academico } = oferta;
+  $: console.log("Id: ", oferta.id_oferta, ", Asignatura: ", oferta.asignatura);
 
-  let asignacion = {
+  $: asignacion = {
+    open: false,
     acuerdo: acuerdo,
-    oferta: id_oferta,
+    oferta: oferta.id_oferta,
     estado: "Solicitada"
   };
 
-  let modificacion = {
-    solicitadas: plazas_solicitadas,
-    asignatura: asignatura,
-    periodo: periodo_academico
+  $: modificacion = {
+    solicitadas: oferta.plazas_solicitadas,
+    asignatura: oferta.asignatura,
+    periodo: oferta.periodo_academico
   };
 
   function asignar() {
@@ -51,8 +54,17 @@
   }
 
   function ejecutarambas() {
+    console.log("Click!!");
     asignar();
     solicitar();
+  }
+
+  function abrir() {
+    asignacion = { ...asignacion, open: true };
+  }
+
+  function cerrar() {
+    asignacion = { ...asignacion, open: false };
   }
 </script>
 
@@ -63,7 +75,7 @@
 {#if asignacion.open}
   <div id="buttons">
     <button on:click={ejecutarambas}>Salvar</button>
-    <button on:click={() => (asignacion.open = false)}>Cancelar</button>
+    <button on:click={cerrar}>Cancelar</button>
   </div>
   <div>
     {#if message}
@@ -73,7 +85,7 @@
 {:else}
   <div id="buttons">
     <div id="field">
-      <button on:click={() => (asignacion.open = true)}>Solicitar</button>
+      <button on:click={abrir}>Solicitar</button>
     </div>
   </div>
 {/if}
