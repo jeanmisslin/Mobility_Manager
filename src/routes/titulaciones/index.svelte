@@ -5,7 +5,6 @@
       this.fetch(`titulaciones.json`).then(body => body.json())
     ];
     let [{ ofertas }, { titulaciones }] = await Promise.all(fetch_endpoints);
-    console.log(ofertas);
     return {
       ofertas,
       titulaciones
