@@ -24,7 +24,6 @@ export function post(req, res, next) {
                 })
                 return
             }
-            console.log(modificacion.disponibles, modificacion.concedidas, modificacion.asignatura)
             jsonResponse(200, {
                 error: null,
             })

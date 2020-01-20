@@ -25,7 +25,6 @@ export function post(req, res, next) {
                 })
                 return
             }
-            console.log(modificaoferta)
             jsonResponse(200, {
                 error: null,
             })

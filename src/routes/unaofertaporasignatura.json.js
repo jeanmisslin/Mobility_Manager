@@ -20,7 +20,6 @@ export function get(req, res, next) {
             jsonResponse(500, { error: `No se pueden consultar ofertas: ${err}` })
             return
         }
-        console.log(unaofertaporasignatura)
         jsonResponse(200, {
             unaofertaporasignatura,
         });
