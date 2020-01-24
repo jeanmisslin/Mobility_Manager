@@ -1,17 +1,15 @@
 <script>
-  export let ofertas;
+  export let oferta;
   export let periodo;
   export let asignatura;
   export let titulaciones;
   export let asignaciones;
 
-  import EliminarOferta from "./EliminarOferta.svelte";
+  import EliminarTitulacionOferta from "./EliminarTitulacionOferta.svelte";
+  import AñadirTitulacionOferta from "./AñadirTitulacionOferta.svelte";
 
-  let oferta = ofertas.find(
-    element =>
-      element.asignatura === asignatura &&
-      element.periodo_academico === periodo
-  );
+  let array = oferta.titulacion.split(",");
+  let titulacion;
 
   let añadirtitulacion = {
     asignatura: asignatura,
@@ -67,55 +65,22 @@
 </style>
 
 <table id="tabla">
-    <tr>
-      <th>TITULACIONES QUE LA OFERTAN</th>
-      <th>ELIMINAR OFERTA</th>
-    </tr>
-    {#each ofertas as o}
-    <tr>
-    {#if o.periodo_academico === periodo && o.asignatura === asignatura}
-      <td>{o.titulacion_ingles}</td>
-      <td><EliminarOferta oferta={o.id_oferta} {asignaciones}/></td>
+  <tr>
+    <th>TITULACIONES QUE LA OFERTAN</th>
+    <th>ELIMINAR OFERTA</th>
+  </tr>
+  {#each array as a}
+    {#each titulaciones as t}
+      {#if t.codigo_titulacion === a}
+        <tr>
+          <td>{t.titulacion_ingles}</td>
+          <td>
+            <EliminarTitulacionOferta {oferta} elimina={a} />
+          </td>
+        </tr>
       {/if}
-      </tr>
     {/each}
-  </table>
-  
-  {#if añadirtitulacion.open}
-  <div class="request-box">
-    <div id="textfield">
-      <div id="datos">
-        <div id="contenido_datos">
-          <p>
-            Titulación:
-            <select name="titu" bind:value={añadirtitulacion.titulacion}>
-              <option value="">Selecciona una titulación...</option>
-              {#each titulaciones as t}
-                <option value={t.codigo_titulacion}>{t.titulacion_catalan}</option>
-              {/each}
-            </select>
-          </p>
-        </div>
-      </div>
-    </div>
-    <div>
-      <div id="buttons">
-        <div id="field">
-          <button on:click={añadiroferta}>Salvar</button>
-          <button on:click={() => (añadirtitulacion.open = false)}>
-            Cancelar
-          </button>
-        </div>
-      </div>
-    </div>
-    {#if message}
-      <p>{message}</p>
-    {/if}
-  </div>
-{:else}
-  <div id="buttons">
-    <div id="field">
-      <button on:click={() => (añadirtitulacion.open = true)}>Añadir Titulación</button>
-    </div>
-  </div>
-{/if}
+  {/each}
+</table>
+
+<AñadirTitulacionOferta {titulaciones} {oferta} />
