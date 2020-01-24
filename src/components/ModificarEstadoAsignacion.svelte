@@ -6,33 +6,16 @@
 
   let message;
 
-  let {
-    id_oferta,
-    id_asignacion,
-    codigo_asignatura,
-    nombre_catalan,
-    nombre_castellano,
-    nombre_ingles,
-    idioma,
-    ects,
-    plan_de_estudios_catalan,
-    plan_de_estudios_castellano,
-    plan_de_estudios_ingles,
-    plazas_disponibles,
-    plazas_concedidas,
-    estado_solicitud
-  } = asignatura;
-
   let asignacion = {
-    id: id_asignacion,
-    previo: estado_solicitud,
-    estado: estado_solicitud
+    id: asignatura.id_asignacion,
+    previo: asignatura.estado_solicitud,
+    estado: asignatura.estado_solicitud
   };
 
   let modificacion = {
-    disponibles: plazas_disponibles,
-    concedidas: plazas_concedidas,
-    asignatura: codigo_asignatura,
+    disponibles: asignatura.plazas_disponibles,
+    concedidas: asignatura.plazas_concedidas,
+    asignatura: asignatura.codigo_asignatura,
     periodo: acuerdo.periodo_academico
   };
 
