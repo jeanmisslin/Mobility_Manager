@@ -160,7 +160,7 @@
     justify-content: left;
     margin-left: 20px;
     height: 140px;
-    width: 600px;
+    width: 800px;
     font-weight: 650;
     background-color: rgb(230, 245, 255);
   }
