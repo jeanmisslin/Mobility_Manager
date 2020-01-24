@@ -6,8 +6,6 @@
   let asignacion;
   let modificacion;
 
-  $: console.log("Id: ", oferta.id_oferta, ", Asignatura: ", oferta.asignatura);
-
   $: asignacion = {
     open: false,
     acuerdo: acuerdo,
