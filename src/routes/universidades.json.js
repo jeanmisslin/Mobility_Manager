@@ -6,7 +6,7 @@ export function get(req, res, next) {
     res.end(JSON.stringify(obj))
   }
 
-  db.all(`SELECT universidades.* FROM universidades`, (err, universidades) => {
+  db.all(`SELECT universidades.* FROM universidades ORDER BY universidad`, (err, universidades) => {
     if (err) {
       console.log(err)
       jsonResponse(500, { error: `No se pueden consultar universidades: ${err}` })
