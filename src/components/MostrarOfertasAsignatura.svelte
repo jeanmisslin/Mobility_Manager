@@ -42,9 +42,9 @@
   </div>
   <AñadirOferta {asignatura} {titulaciones} periodo={id_periodo} {ofertas} {asignaciones}/>
 {:else}
-  <ModificarPlazasOferta {oferta} {ofertas}/>
+  <ModificarPlazasOferta {oferta}/>
   <MostrarTitulacionesOfertas
-    {ofertas}
+    {oferta}
     {asignatura}
     periodo={id_periodo}
     {titulaciones}
