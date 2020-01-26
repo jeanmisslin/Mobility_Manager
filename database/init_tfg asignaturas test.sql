@@ -1,6 +1,5 @@
 
 DROP TABLE IF EXISTS asignaturas;
-DROP TABLE IF EXISTS ofertas;
 
 CREATE TABLE asignaturas
 (
@@ -13,22 +12,6 @@ CREATE TABLE asignaturas
     plan_de_estudios_catalan TEXT,
     plan_de_estudios_castellano TEXT,
     plan_de_estudios_ingles TEXT
-);
-
-CREATE TABLE ofertas
-(
-    id_oferta INTEGER PRIMARY KEY,
-    asignatura TEXT,
-    periodo_academico int,
-    titulacion TEXT,
-    plazas_ofertadas int,
-    plazas_disponibles int,
-    plazas_concedidas int,
-    plazas_solicitadas int,
-    FOREIGN KEY (asignatura) REFERENCES asignaturas (codigo_asignatura),
-    FOREIGN KEY (periodo_academico) REFERENCES periodos_academicos (id_periodo),
-    FOREIGN KEY (titulacion) REFERENCES titulaciones (codigo_titulacion),
-    CONSTRAINT UC_OFERTA UNIQUE (asignatura,periodo_academico,titulacion)
 );
 
 INSERT INTO asignaturas
@@ -47,32 +30,6 @@ VALUES(
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220322'
 );
 
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220322',
-        1,
-        '220MUAERON',
-        8,
-        8,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220322',
-        1,
-        '205MASE',
-        8,
-        8,
-        0,
-        0
-);
-
 INSERT INTO asignaturas
     (codigo_asignatura, nombre_catalan,
     nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
@@ -87,32 +44,6 @@ VALUES(
         'https://www.upc.edu/content/master/guiadocent/pdf/cat/220331',
         'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220331',
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220331'
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220331',
-        1,
-        '220MUAERON',
-        8,
-        8,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220331',
-        1,
-        '205MASE',
-        8,
-        8,
-        0,
-        0
 );
 
 INSERT INTO asignaturas
@@ -131,32 +62,6 @@ VALUES(
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220353'
 );
 
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220353',
-        1,
-        '220MUAERON',
-        8,
-        8,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220353',
-        1,
-        '205MASE',
-        8,
-        8,
-        0,
-        0
-);
-
 INSERT INTO asignaturas
     (codigo_asignatura, nombre_catalan,
     nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
@@ -171,19 +76,6 @@ VALUES(
         'https://www.upc.edu/content/master/guiadocent/pdf/cat/205001',
         'https://www.upc.edu/content/grau/guiadocent/pdf/esp/205001',
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/205001'
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205001',
-        1,
-        '205MASE',
-        8,
-        8,
-        0,
-        0
 );
 
 INSERT INTO asignaturas
@@ -202,32 +94,6 @@ VALUES(
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220332'
 );
 
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220332',
-        1,
-        '220MUAERON',
-        8,
-        8,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220332',
-        1,
-        '205MASE',
-        8,
-        8,
-        0,
-        0
-);
-
 INSERT INTO asignaturas
     (codigo_asignatura, nombre_catalan,
     nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
@@ -242,19 +108,6 @@ VALUES(
         'https://www.upc.edu/content/master/guiadocent/pdf/cat/220625',
         'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220625',
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220625'
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220625',
-        1,
-        '220MUESAI',
-        0,
-        0,
-        0,
-        0
 );
 
 INSERT INTO asignaturas
@@ -273,19 +126,6 @@ VALUES(
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220669'
 );
 
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220669',
-        1,
-        '220MEORSEM',
-        11,
-        11,
-        0,
-        0
-);
-
 INSERT INTO asignaturas
     (codigo_asignatura, nombre_catalan,
     nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
@@ -300,19 +140,6 @@ VALUES(
         'https://www.upc.edu/content/master/guiadocent/pdf/cat/220683',
         'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220683',
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220683'
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220683',
-        1,
-        '220MEORSEM',
-        11,
-        11,
-        0,
-        0
 );
 
 INSERT INTO asignaturas
@@ -331,45 +158,6 @@ VALUES(
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/205055'
 );
 
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205055',
-        1,
-        '220MEI',
-        10,
-        10,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205055',
-        1,
-        '220MUAERON',
-        10,
-        10,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205055',
-        1,
-        '205MASE',
-        10,
-        10,
-        0,
-        0
-);
-
 INSERT INTO asignaturas
     (codigo_asignatura, nombre_catalan,
     nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
@@ -384,45 +172,6 @@ VALUES(
         'https://www.upc.edu/content/master/guiadocent/pdf/cat/220070',
         'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220070',
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220070'
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220070',
-        1,
-        '220GRETIND',
-        11,
-        11,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220070',
-        1,
-        '220GRETAER',
-        11,
-        11,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220070',
-        1,
-        '220GREVAER',
-        11,
-        11,
-        0,
-        0
 );
 
 INSERT INTO asignaturas
@@ -441,71 +190,6 @@ VALUES(
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220072'
 );
 
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220072',
-        1,
-        '220GRETIND',
-        10,
-        10,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220072',
-        1,
-        '220GRETAER',
-        10,
-        10,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220072',
-        1,
-        '220GREVAER',
-        10,
-        10,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220072',
-        1,
-        '320GREELEC',
-        10,
-        10,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220072',
-        1,
-        '320GREEIA',
-        10,
-        10,
-        0,
-        0
-);
-
 INSERT INTO asignaturas
     (codigo_asignatura, nombre_catalan,
     nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
@@ -520,136 +204,6 @@ VALUES(
         'https://www.upc.edu/content/master/guiadocent/pdf/cat/220142',
         'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220142',
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220142'
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220142',
-        1,
-        '220GRETIND',
-        5,
-        5,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220142',
-        1,
-        '220GRETAER',
-        5,
-        5,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220142',
-        1,
-        '220GREVAER',
-        5,
-        5,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220142',
-        1,
-        '320GRESAUD',
-        5,
-        5,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220142',
-        1,
-        '320GREMECA',
-        5,
-        5,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220142',
-        1,
-        '320GREQUIM',
-        5,
-        5,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220142',
-        1,
-        '320GREELEC',
-        5,
-        5,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220142',
-        1,
-        '320GREDIDP',
-        5,
-        5,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220142',
-        1,
-        '320GREEIA',
-        5,
-        5,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220142',
-        1,
-        '320GRETDT',
-        5,
-        5,
-        0,
-        0
 );
 
 INSERT INTO asignaturas
@@ -668,45 +222,6 @@ VALUES(
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220038'
 );
 
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220038',
-        1,
-        '220GRETIND',
-        12,
-        12,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220038',
-        1,
-        '220GRETAER',
-        12,
-        12,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220038',
-        1,
-        '220GREVAER',
-        12,
-        12,
-        0,
-        0
-);
-
 INSERT INTO asignaturas
     (codigo_asignatura, nombre_catalan,
     nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
@@ -721,19 +236,6 @@ VALUES(
         'https://www.upc.edu/content/master/guiadocent/pdf/cat/205086',
         'https://www.upc.edu/content/grau/guiadocent/pdf/esp/205086',
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/205086'
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205086',
-        1,
-        '220MUESAI',
-        3,
-        3,
-        0,
-        0
 );
 
 INSERT INTO asignaturas
@@ -752,45 +254,6 @@ VALUES(
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/205052'
 );
 
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205052',
-        1,
-        '220MEI',
-        5,
-        5,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205052',
-        1,
-        '220MUAERON',
-        5,
-        5,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205052',
-        1,
-        '205MASE',
-        5,
-        5,
-        0,
-        0
-);
-
 INSERT INTO asignaturas
     (codigo_asignatura, nombre_catalan,
     nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
@@ -805,32 +268,6 @@ VALUES(
         'https://www.upc.edu/content/master/guiadocent/pdf/cat/220333',
         'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220333',
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220333'
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220333',
-        1,
-        '220MUAERON',
-        8,
-        8,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220333',
-        1,
-        '205MASE',
-        8,
-        8,
-        0,
-        0
 );
 
 INSERT INTO asignaturas
@@ -849,136 +286,6 @@ VALUES(
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220146'
 );
 
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220146',
-        1,
-        '220GRETIND',
-        1,
-        1,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220146',
-        1,
-        '220GRETAER',
-        1,
-        1,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220146',
-        1,
-        '220GREVAER',
-        1,
-        1,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220146',
-        1,
-        '320GRESAUD',
-        1,
-        1,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220146',
-        1,
-        '320GREMECA',
-        1,
-        1,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220146',
-        1,
-        '320GREQUIM',
-        1,
-        1,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220146',
-        1,
-        '320GREELEC',
-        1,
-        1,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220146',
-        1,
-        '320GREDIDP',
-        1,
-        1,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220146',
-        1,
-        '320GREEIA',
-        1,
-        1,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220146',
-        1,
-        '320GRETDT',
-        1,
-        1,
-        0,
-        0
-);
-
 INSERT INTO asignaturas
     (codigo_asignatura, nombre_catalan,
     nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
@@ -993,19 +300,6 @@ VALUES(
         'https://www.upc.edu/content/master/guiadocent/pdf/cat/205114',
         'https://www.upc.edu/content/grau/guiadocent/pdf/esp/205114',
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/205114'
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205114',
-        1,
-        '205MEM',
-        6,
-        6,
-        0,
-        0
 );
 
 INSERT INTO asignaturas
@@ -1024,19 +318,6 @@ VALUES(
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220330'
 );
 
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220330',
-        1,
-        '205MEM',
-        0,
-        0,
-        0,
-        0
-);
-
 INSERT INTO asignaturas
     (codigo_asignatura, nombre_catalan,
     nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
@@ -1051,32 +332,6 @@ VALUES(
         'https://www.upc.edu/content/master/guiadocent/pdf/cat/220023',
         'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220023',
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220023'
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220023',
-        1,
-        '220GRETAER',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220023',
-        1,
-        '220GREVAER',
-        4,
-        4,
-        0,
-        0
 );
 
 INSERT INTO asignaturas
@@ -1095,19 +350,6 @@ VALUES(
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220032'
 );
 
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220032',
-        1,
-        '220GREVAER',
-        4,
-        4,
-        0,
-        0
-);
-
 INSERT INTO asignaturas
     (codigo_asignatura, nombre_catalan,
     nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
@@ -1122,19 +364,6 @@ VALUES(
         'https://www.upc.edu/content/master/guiadocent/pdf/cat/220057',
         'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220057',
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220057'
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220057',
-        1,
-        '220GRETAER',
-        5,
-        5,
-        0,
-        0
 );
 
 INSERT INTO asignaturas
@@ -1153,58 +382,6 @@ VALUES(
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220028'
 );
 
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220028',
-        1,
-        '220GRETAER',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220028',
-        1,
-        '220GREVAER',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220028',
-        2,
-        '220GRETAER',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220028',
-        2,
-        '220GREVAER',
-        2,
-        2,
-        0,
-        0
-);
-
 INSERT INTO asignaturas
     (codigo_asignatura, nombre_catalan,
     nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
@@ -1219,32 +396,6 @@ VALUES(
         'https://www.upc.edu/content/master/guiadocent/pdf/cat/220352',
         'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220352',
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220352'
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220352',
-        1,
-        '220MUAERON',
-        0,
-        0,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220352',
-        1,
-        '205MASE',
-        0,
-        0,
-        0,
-        0
 );
 
 INSERT INTO asignaturas
@@ -1263,136 +414,6 @@ VALUES(
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/205202'
 );
 
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205202',
-        1,
-        '220GRETIND',
-        7,
-        7,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205202',
-        1,
-        '220GRETAER',
-        7,
-        7,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205202',
-        1,
-        '220GREVAER',
-        7,
-        7,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205202',
-        1,
-        '320GRESAUD',
-        7,
-        7,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205202',
-        1,
-        '320GREMECA',
-        7,
-        7,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205202',
-        1,
-        '320GREQUIM',
-        7,
-        7,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205202',
-        1,
-        '320GREELEC',
-        7,
-        7,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205202',
-        1,
-        '320GREDIDP',
-        7,
-        7,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205202',
-        1,
-        '320GREEIA',
-        7,
-        7,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205202',
-        1,
-        '320GRETDT',
-        7,
-        7,
-        0,
-        0
-);
-
 INSERT INTO asignaturas
     (codigo_asignatura, nombre_catalan,
     nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
@@ -1407,19 +428,6 @@ VALUES(
         'https://www.upc.edu/content/master/guiadocent/pdf/cat/220053',
         'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220053',
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220053'
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220053',
-        2,
-        '220GRETAER',
-        4,
-        4,
-        0,
-        0
 );
 
 INSERT INTO asignaturas
@@ -1438,19 +446,6 @@ VALUES(
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220052'
 );
 
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220052',
-        2,
-        '220GRETAER',
-        2,
-        2,
-        0,
-        0
-);
-
 INSERT INTO asignaturas
     (codigo_asignatura, nombre_catalan,
     nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
@@ -1465,32 +460,6 @@ VALUES(
         'https://www.upc.edu/content/master/guiadocent/pdf/cat/220027',
         'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220027',
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220027'
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220027',
-        2,
-        '220GRETAER',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220027',
-        2,
-        '220GREVAER',
-        2,
-        2,
-        0,
-        0
 );
 
 INSERT INTO asignaturas
@@ -1509,32 +478,6 @@ VALUES(
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220143'
 );
 
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220143',
-        2,
-        '220GRETAER',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220143',
-        2,
-        '220GREVAER',
-        4,
-        4,
-        0,
-        0
-);
-
 INSERT INTO asignaturas
     (codigo_asignatura, nombre_catalan,
     nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
@@ -1549,32 +492,6 @@ VALUES(
         'https://www.upc.edu/content/master/guiadocent/pdf/cat/320174',
         'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320174',
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320174'
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320174',
-        2,
-        '320GREMECA',
-        3,
-        3,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320174',
-        2,
-        '320GREQUIM',
-        3,
-        3,
-        0,
-        0
 );
 
 INSERT INTO asignaturas
@@ -1593,123 +510,6 @@ VALUES(
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220039'
 );
 
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220039',
-        1,
-        '320GRESAUD',
-        10,
-        10,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220039',
-        1,
-        '320GREMECA',
-        10,
-        10,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220039',
-        1,
-        '320GREQUIM',
-        10,
-        10,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220039',
-        1,
-        '320GREELEC',
-        10,
-        10,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220039',
-        1,
-        '320GREDIDP',
-        10,
-        10,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220039',
-        1,
-        '320GREEIA',
-        10,
-        10,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220039',
-        1,
-        '320GRETDT',
-        10,
-        10,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220039',
-        1,
-        '220GRETAER',
-        10,
-        10,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220039',
-        1,
-        '220GREVAER',
-        10,
-        10,
-        0,
-        0
-);
-
 INSERT INTO asignaturas
     (codigo_asignatura, nombre_catalan,
     nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
@@ -1724,84 +524,6 @@ VALUES(
         'https://www.upc.edu/content/master/guiadocent/pdf/cat/320004',
         'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320004',
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320004'
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320004',
-        1,
-        '320GREMECA',
-        3,
-        3,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320004',
-        1,
-        '320GREQUIM',
-        3,
-        3,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320004',
-        1,
-        '320GREELEC',
-        3,
-        3,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320004',
-        1,
-        '320GREDIDP',
-        3,
-        3,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320004',
-        1,
-        '320GREEIA',
-        3,
-        3,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320004',
-        1,
-        '320GRETDT',
-        3,
-        3,
-        0,
-        0
 );
 
 INSERT INTO asignaturas
@@ -1820,84 +542,6 @@ VALUES(
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320005'
 );
 
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320005',
-        1,
-        '320GREMECA',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320005',
-        1,
-        '320GREQUIM',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320005',
-        1,
-        '320GREELEC',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320005',
-        1,
-        '320GREDIDP',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320005',
-        1,
-        '320GREEIA',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320005',
-        1,
-        '320GRETDT',
-        4,
-        4,
-        0,
-        0
-);
-
 INSERT INTO asignaturas
     (codigo_asignatura, nombre_catalan,
     nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
@@ -1912,84 +556,6 @@ VALUES(
         'https://www.upc.edu/content/master/guiadocent/pdf/cat/320006',
         'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320006',
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320006'
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320006',
-        1,
-        '320GREMECA',
-        5,
-        5,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320006',
-        1,
-        '320GREQUIM',
-        5,
-        5,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320006',
-        1,
-        '320GREELEC',
-        5,
-        5,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320006',
-        1,
-        '320GREDIDP',
-        5,
-        5,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320006',
-        1,
-        '320GREEIA',
-        5,
-        5,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320006',
-        1,
-        '320GRETDT',
-        5,
-        5,
-        0,
-        0
 );
 
 INSERT INTO asignaturas
@@ -2008,71 +574,6 @@ VALUES(
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320008'
 );
 
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320008',
-        1,
-        '320GREMECA',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320008',
-        1,
-        '320GREQUIM',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320008',
-        1,
-        '320GREELEC',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320008',
-        1,
-        '320GREEIA',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320008',
-        1,
-        '320GRETDT',
-        2,
-        2,
-        0,
-        0
-);
-
 INSERT INTO asignaturas
     (codigo_asignatura, nombre_catalan,
     nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
@@ -2087,71 +588,6 @@ VALUES(
         'https://www.upc.edu/content/master/guiadocent/pdf/cat/320010',
         'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320010',
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320010'
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320010',
-        1,
-        '320GREMECA',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320010',
-        1,
-        '320GREQUIM',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320010',
-        1,
-        '320GREELEC',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320010',
-        1,
-        '320GREEIA',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320010',
-        1,
-        '320GRETDT',
-        2,
-        2,
-        0,
-        0
 );
 
 INSERT INTO asignaturas
@@ -2170,71 +606,6 @@ VALUES(
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320011'
 );
 
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320011',
-        1,
-        '320GREMECA',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320011',
-        1,
-        '320GREQUIM',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320011',
-        1,
-        '320GREELEC',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320011',
-        1,
-        '320GREEIA',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320011',
-        1,
-        '320GRETDT',
-        4,
-        4,
-        0,
-        0
-);
-
 INSERT INTO asignaturas
     (codigo_asignatura, nombre_catalan,
     nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
@@ -2249,71 +620,6 @@ VALUES(
         'https://www.upc.edu/content/master/guiadocent/pdf/cat/320012',
         'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320012',
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320012'
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320012',
-        1,
-        '320GREMECA',
-        3,
-        3,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320012',
-        1,
-        '320GREQUIM',
-        3,
-        3,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320012',
-        1,
-        '320GREELEC',
-        3,
-        3,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320012',
-        1,
-        '320GREEIA',
-        3,
-        3,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320012',
-        1,
-        '320GRETDT',
-        3,
-        3,
-        0,
-        0
 );
 
 INSERT INTO asignaturas
@@ -2332,84 +638,6 @@ VALUES(
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320013'
 );
 
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320013',
-        1,
-        '320GREMECA',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320013',
-        1,
-        '320GREQUIM',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320013',
-        1,
-        '320GREELEC',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320013',
-        1,
-        '320GREEIA',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320013',
-        1,
-        '320GRETDT',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320013',
-        1,
-        '320GREDIDP',
-        2,
-        2,
-        0,
-        0
-);
-
 INSERT INTO asignaturas
     (codigo_asignatura, nombre_catalan,
     nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
@@ -2424,71 +652,6 @@ VALUES(
         'https://www.upc.edu/content/master/guiadocent/pdf/cat/320017',
         'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320017',
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320017'
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320017',
-        1,
-        '320GREMECA',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320017',
-        1,
-        '320GREQUIM',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320017',
-        1,
-        '320GREELEC',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320017',
-        1,
-        '320GREEIA',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320017',
-        1,
-        '320GRETDT',
-        4,
-        4,
-        0,
-        0
 );
 
 INSERT INTO asignaturas
@@ -2507,84 +670,6 @@ VALUES(
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320018'
 );
 
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320018',
-        1,
-        '320GREMECA',
-        8,
-        8,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320018',
-        1,
-        '320GREQUIM',
-        8,
-        8,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320018',
-        1,
-        '320GREELEC',
-        8,
-        8,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320018',
-        1,
-        '320GREEIA',
-        8,
-        8,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320018',
-        1,
-        '320GRETDT',
-        8,
-        8,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320018',
-        1,
-        '320GREDIDP',
-        8,
-        8,
-        0,
-        0
-);
-
 INSERT INTO asignaturas
     (codigo_asignatura, nombre_catalan,
     nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
@@ -2599,97 +684,6 @@ VALUES(
         'https://www.upc.edu/content/master/guiadocent/pdf/cat/320030',
         'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320030',
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320030'
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320030',
-        1,
-        '320GRESAUD',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320030',
-        1,
-        '320GREMECA',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320030',
-        1,
-        '320GREQUIM',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320030',
-        1,
-        '320GREELEC',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320030',
-        1,
-        '320GREEIA',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320030',
-        1,
-        '320GRETDT',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320030',
-        1,
-        '320GREDIDP',
-        2,
-        2,
-        0,
-        0
 );
 
 INSERT INTO asignaturas
@@ -2708,136 +702,6 @@ VALUES(
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320164'
 );
 
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320164',
-        1,
-        '220GRETIND',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320164',
-        1,
-        '220GRETAER',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320164',
-        1,
-        '220GREVAER',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320164',
-        1,
-        '320GRESAUD',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320164',
-        1,
-        '320GREMECA',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320164',
-        1,
-        '320GREQUIM',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320164',
-        1,
-        '320GREELEC',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320164',
-        1,
-        '320GREEIA',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320164',
-        1,
-        '320GRETDT',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320164',
-        1,
-        '320GREDIDP',
-        2,
-        2,
-        0,
-        0
-);
-
 INSERT INTO asignaturas
     (codigo_asignatura, nombre_catalan,
     nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
@@ -2852,136 +716,6 @@ VALUES(
         'https://www.upc.edu/content/master/guiadocent/pdf/cat/320166',
         'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320166',
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320166'
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320166',
-        1,
-        '220GRETIND',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320166',
-        1,
-        '220GRETAER',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320166',
-        1,
-        '220GREVAER',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320166',
-        1,
-        '320GRESAUD',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320166',
-        1,
-        '320GREMECA',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320166',
-        1,
-        '320GREQUIM',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320166',
-        1,
-        '320GREELEC',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320166',
-        1,
-        '320GREEIA',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320166',
-        1,
-        '320GRETDT',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320166',
-        1,
-        '320GREDIDP',
-        2,
-        2,
-        0,
-        0
 );
 
 INSERT INTO asignaturas
@@ -3000,136 +734,6 @@ VALUES(
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320192'
 );
 
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320192',
-        1,
-        '220GRETIND',
-        1,
-        1,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320192',
-        1,
-        '220GRETAER',
-        1,
-        1,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320192',
-        1,
-        '220GREVAER',
-        1,
-        1,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320192',
-        1,
-        '320GRESAUD',
-        1,
-        1,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320192',
-        1,
-        '320GREMECA',
-        1,
-        1,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320192',
-        1,
-        '320GREQUIM',
-        1,
-        1,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320192',
-        1,
-        '320GREELEC',
-        1,
-        1,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320192',
-        1,
-        '320GREEIA',
-        1,
-        1,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320192',
-        1,
-        '320GRETDT',
-        1,
-        1,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320192',
-        1,
-        '320GREDIDP',
-        1,
-        1,
-        0,
-        0
-);
-
 INSERT INTO asignaturas
     (codigo_asignatura, nombre_catalan,
     nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
@@ -3144,84 +748,6 @@ VALUES(
         'https://www.upc.edu/content/master/guiadocent/pdf/cat/3200011',
         'https://www.upc.edu/content/grau/guiadocent/pdf/esp/3200011',
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/3200011'
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '3200011',
-        1,
-        '320GREMECA',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '3200011',
-        1,
-        '320GREQUIM',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '3200011',
-        1,
-        '320GREELEC',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '3200011',
-        1,
-        '320GREEIA',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '3200011',
-        1,
-        '320GRETDT',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '3200011',
-        1,
-        '320GREDIDP',
-        4,
-        4,
-        0,
-        0
 );
 
 INSERT INTO asignaturas
@@ -3240,84 +766,6 @@ VALUES(
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/3200031'
 );
 
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '3200031',
-        1,
-        '320GREMECA',
-        3,
-        3,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '3200031',
-        1,
-        '320GREQUIM',
-        3,
-        3,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '3200031',
-        1,
-        '320GREELEC',
-        3,
-        3,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '3200031',
-        1,
-        '320GREEIA',
-        3,
-        3,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '3200031',
-        1,
-        '320GRETDT',
-        3,
-        3,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '3200031',
-        1,
-        '320GREDIDP',
-        3,
-        3,
-        0,
-        0
-);
-
 INSERT INTO asignaturas
     (codigo_asignatura, nombre_catalan,
     nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
@@ -3332,136 +780,6 @@ VALUES(
         'https://www.upc.edu/content/master/guiadocent/pdf/cat/205220',
         'https://www.upc.edu/content/grau/guiadocent/pdf/esp/205220',
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/205220'
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205220',
-        1,
-        '220GRETIND',
-        0,
-        0,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205220',
-        1,
-        '220GRETAER',
-        0,
-        0,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205220',
-        1,
-        '220GREVAER',
-        0,
-        0,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205220',
-        1,
-        '320GRESAUD',
-        0,
-        0,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205220',
-        1,
-        '320GREMECA',
-        0,
-        0,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205220',
-        1,
-        '320GREQUIM',
-        0,
-        0,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205220',
-        1,
-        '320GREELEC',
-        0,
-        0,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205220',
-        1,
-        '320GREEIA',
-        0,
-        0,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205220',
-        1,
-        '320GRETDT',
-        0,
-        0,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205220',
-        1,
-        '320GREDIDP',
-        0,
-        0,
-        0,
-        0
 );
 
 INSERT INTO asignaturas
@@ -3480,136 +798,6 @@ VALUES(
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/205219'
 );
 
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205219',
-        1,
-        '220GRETIND',
-        0,
-        0,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205219',
-        1,
-        '220GRETAER',
-        0,
-        0,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205219',
-        1,
-        '220GREVAER',
-        0,
-        0,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205219',
-        1,
-        '320GRESAUD',
-        0,
-        0,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205219',
-        1,
-        '320GREMECA',
-        0,
-        0,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205219',
-        1,
-        '320GREQUIM',
-        0,
-        0,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205219',
-        1,
-        '320GREELEC',
-        0,
-        0,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205219',
-        1,
-        '320GREEIA',
-        0,
-        0,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205219',
-        1,
-        '320GRETDT',
-        0,
-        0,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205219',
-        1,
-        '320GREDIDP',
-        0,
-        0,
-        0,
-        0
-);
-
 INSERT INTO asignaturas
     (codigo_asignatura, nombre_catalan,
     nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
@@ -3624,123 +812,6 @@ VALUES(
         'https://www.upc.edu/content/master/guiadocent/pdf/cat/205214',
         'https://www.upc.edu/content/grau/guiadocent/pdf/esp/205214',
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/205214'
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205214',
-        1,
-        '220GRETIND',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205214',
-        1,
-        '220GRETAER',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205214',
-        1,
-        '220GREVAER',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205214',
-        1,
-        '320GREMECA',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205214',
-        1,
-        '320GREQUIM',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205214',
-        1,
-        '320GREELEC',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205214',
-        1,
-        '320GREEIA',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205214',
-        1,
-        '320GRETDT',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205214',
-        1,
-        '320GREDIDP',
-        4,
-        4,
-        0,
-        0
 );
 
 INSERT INTO asignaturas
@@ -3759,136 +830,6 @@ VALUES(
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/205215'
 );
 
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205215',
-        1,
-        '220GRETIND',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205215',
-        1,
-        '220GRETAER',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205215',
-        1,
-        '220GREVAER',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205215',
-        1,
-        '320GRESAUD',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205215',
-        1,
-        '320GREMECA',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205215',
-        1,
-        '320GREQUIM',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205215',
-        1,
-        '320GREELEC',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205215',
-        1,
-        '320GREEIA',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205215',
-        1,
-        '320GRETDT',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205215',
-        1,
-        '320GREDIDP',
-        4,
-        4,
-        0,
-        0
-);
-
 INSERT INTO asignaturas
     (codigo_asignatura, nombre_catalan,
     nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
@@ -3903,84 +844,6 @@ VALUES(
         'https://www.upc.edu/content/master/guiadocent/pdf/cat/320009',
         'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320009',
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320009'
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320009',
-        1,
-        '320GREMECA',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320009',
-        1,
-        '320GREQUIM',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320009',
-        1,
-        '320GREELEC',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320009',
-        1,
-        '320GREEIA',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320009',
-        1,
-        '320GRETDT',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320009',
-        1,
-        '320GREDIDP',
-        4,
-        4,
-        0,
-        0
 );
 
 INSERT INTO asignaturas
@@ -3999,19 +862,6 @@ VALUES(
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/205251'
 );
 
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205251',
-        1,
-        '320GREDIDP',
-        2,
-        2,
-        0,
-        0
-);
-
 INSERT INTO asignaturas
     (codigo_asignatura, nombre_catalan,
     nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
@@ -4026,19 +876,6 @@ VALUES(
         'https://www.upc.edu/content/master/guiadocent/pdf/cat/320134',
         'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320134',
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320134'
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320134',
-        1,
-        '320GREDIDP',
-        3,
-        3,
-        0,
-        0
 );
 
 INSERT INTO asignaturas
@@ -4057,19 +894,6 @@ VALUES(
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320135'
 );
 
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320135',
-        1,
-        '320GREDIDP',
-        2,
-        2,
-        0,
-        0
-);
-
 INSERT INTO asignaturas
     (codigo_asignatura, nombre_catalan,
     nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
@@ -4084,19 +908,6 @@ VALUES(
         'https://www.upc.edu/content/master/guiadocent/pdf/cat/320140',
         'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320140',
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320140'
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320140',
-        1,
-        '320GREDIDP',
-        2,
-        2,
-        0,
-        0
 );
 
 INSERT INTO asignaturas
@@ -4115,19 +926,6 @@ VALUES(
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320141'
 );
 
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320141',
-        1,
-        '320GREDIDP',
-        2,
-        2,
-        0,
-        0
-);
-
 INSERT INTO asignaturas
     (codigo_asignatura, nombre_catalan,
     nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
@@ -4142,19 +940,6 @@ VALUES(
         'https://www.upc.edu/content/master/guiadocent/pdf/cat/320142',
         'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320142',
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320142'
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320142',
-        1,
-        '320GREDIDP',
-        5,
-        5,
-        0,
-        0
 );
 
 INSERT INTO asignaturas
@@ -4173,19 +958,6 @@ VALUES(
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320143'
 );
 
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320143',
-        1,
-        '320GREDIDP',
-        1,
-        1,
-        0,
-        0
-);
-
 INSERT INTO asignaturas
     (codigo_asignatura, nombre_catalan,
     nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
@@ -4200,19 +972,6 @@ VALUES(
         'https://www.upc.edu/content/master/guiadocent/pdf/cat/320144',
         'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320144',
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320144'
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320144',
-        1,
-        '320GREDIDP',
-        2,
-        2,
-        0,
-        0
 );
 
 INSERT INTO asignaturas
@@ -4231,19 +990,6 @@ VALUES(
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320151'
 );
 
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320151',
-        1,
-        '320GREDIDP',
-        4,
-        4,
-        0,
-        0
-);
-
 INSERT INTO asignaturas
     (codigo_asignatura, nombre_catalan,
     nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
@@ -4258,19 +1004,6 @@ VALUES(
         'https://www.upc.edu/content/master/guiadocent/pdf/cat/320152',
         'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320152',
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320152'
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320152',
-        1,
-        '320GREDIDP',
-        4,
-        4,
-        0,
-        0
 );
 
 INSERT INTO asignaturas
@@ -4289,19 +1022,6 @@ VALUES(
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320154'
 );
 
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320154',
-        1,
-        '320GREDIDP',
-        1,
-        1,
-        0,
-        0
-);
-
 INSERT INTO asignaturas
     (codigo_asignatura, nombre_catalan,
     nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
@@ -4316,19 +1036,6 @@ VALUES(
         'https://www.upc.edu/content/master/guiadocent/pdf/cat/320157',
         'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320157',
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320157'
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320157',
-        1,
-        '320GREDIDP',
-        0,
-        0,
-        0,
-        0
 );
 
 INSERT INTO asignaturas
@@ -4347,19 +1054,6 @@ VALUES(
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320159'
 );
 
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320159',
-        1,
-        '320GREDIDP',
-        2,
-        2,
-        0,
-        0
-);
-
 INSERT INTO asignaturas
     (codigo_asignatura, nombre_catalan,
     nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
@@ -4374,19 +1068,6 @@ VALUES(
         'https://www.upc.edu/content/master/guiadocent/pdf/cat/320194',
         'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320194',
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320194'
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320194',
-        1,
-        '320GREDIDP',
-        3,
-        3,
-        0,
-        0
 );
 
 INSERT INTO asignaturas
@@ -4405,19 +1086,6 @@ VALUES(
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/205250'
 );
 
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '205250',
-        1,
-        '320GREEIA',
-        0,
-        0,
-        0,
-        0
-);
-
 INSERT INTO asignaturas
     (codigo_asignatura, nombre_catalan,
     nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
@@ -4432,19 +1100,6 @@ VALUES(
         'https://www.upc.edu/content/master/guiadocent/pdf/cat/320035',
         'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320035',
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320035'
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320035',
-        1,
-        '320GREEIA',
-        0,
-        0,
-        0,
-        0
 );
 
 INSERT INTO asignaturas
@@ -4463,19 +1118,6 @@ VALUES(
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320036'
 );
 
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320036',
-        1,
-        '320GREEIA',
-        0,
-        0,
-        0,
-        0
-);
-
 INSERT INTO asignaturas
     (codigo_asignatura, nombre_catalan,
     nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
@@ -4490,19 +1132,6 @@ VALUES(
         'https://www.upc.edu/content/grau/guiadocent/pdf/cat/320038',
         'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320038',
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320038'
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320038',
-        1,
-        '320GREEIA',
-        0,
-        0,
-        0,
-        0
 );
 
 INSERT INTO asignaturas
@@ -4521,19 +1150,6 @@ VALUES(
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320041'
 );
 
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320041',
-        1,
-        '320GREEIA',
-        0,
-        0,
-        0,
-        0
-);
-
 INSERT INTO asignaturas
     (codigo_asignatura, nombre_catalan,
     nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
@@ -4548,19 +1164,6 @@ VALUES(
         'https://www.upc.edu/content/grau/guiadocent/pdf/cat/320044',
         'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320044',
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320044'
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320044',
-        1,
-        '320GREEIA',
-        1,
-        1,
-        0,
-        0
 );
 
 INSERT INTO asignaturas
@@ -4579,19 +1182,6 @@ VALUES(
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320129'
 );
 
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320129',
-        1,
-        '320GREEIA',
-        1,
-        1,
-        0,
-        0
-);
-
 INSERT INTO asignaturas
     (codigo_asignatura, nombre_catalan,
     nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
@@ -4606,19 +1196,6 @@ VALUES(
         'https://www.upc.edu/content/grau/guiadocent/pdf/cat/320182',
         'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320182',
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320182'
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320182',
-        1,
-        '320GREEIA',
-        5,
-        5,
-        0,
-        0
 );
 
 INSERT INTO asignaturas
@@ -4637,19 +1214,6 @@ VALUES(
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320183'
 );
 
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320183',
-        1,
-        '320GREEIA',
-        5,
-        5,
-        0,
-        0
-);
-
 INSERT INTO asignaturas
     (codigo_asignatura, nombre_catalan,
     nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
@@ -4666,19 +1230,6 @@ VALUES(
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/3200331'
 );
 
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '3200331',
-        1,
-        '320GREEIA',
-        0,
-        0,
-        0,
-        0
-);
-
 INSERT INTO asignaturas
     (codigo_asignatura, nombre_catalan,
     nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
@@ -4693,17 +1244,4 @@ VALUES(
         'https://www.upc.edu/content/grau/guiadocent/pdf/cat/3200371',
         'https://www.upc.edu/content/grau/guiadocent/pdf/esp/3200371',
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/3200371'
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '3200371',
-        1,
-        '320GREEIA',
-        0,
-        0,
-        0,
-        0
 );
