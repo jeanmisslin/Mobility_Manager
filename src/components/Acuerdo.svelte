@@ -4,7 +4,6 @@
   export let titulaciones;
   export let asignaturas;
   export let ofertas;
-  export let unaofertaporasignatura;
 
   import ModificaAcuerdo from "./ModificaAcuerdo.svelte";
   import TablaFiltrableComponentes from "./TablaFiltrableComponentes.svelte";

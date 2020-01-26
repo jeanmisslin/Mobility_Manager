@@ -19,16 +19,12 @@
     let { asignaciones } = await this.fetch(`asignaciones.json`).then(body =>
       body.json()
     );
-    let { unaofertaporasignatura } = await this.fetch(`unaofertaporasignatura.json`).then(body =>
-      body.json()
-    );
     return {
       estudiante,
       universidades,
       titulaciones,
       ofertas,
       asignaciones,
-      unaofertaporasignatura,
       periodos
     };
   }
@@ -44,7 +40,6 @@
   export let universidades;
   export let titulaciones;
   export let ofertas;
-  export let unaofertaporasignatura;
   export let periodos;
   export let asignaciones;
 
@@ -152,6 +147,6 @@
 <div id="acuerdos">ACUERDOS ACADEMICOS</div>
 
 {#each acuerdos as acuerdo}
-<Acuerdo {periodos} {acuerdo} {titulaciones} {asignaturas} {ofertas} {unaofertaporasignatura}/>
+<Acuerdo {periodos} {acuerdo} {titulaciones} {asignaturas} {ofertas} />
 {/each}
 
