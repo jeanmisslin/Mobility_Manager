@@ -26,6 +26,17 @@
 
   let message;
 
+  let filtro = "";
+
+  $: universidadesFiltradas = universidades.filter(e => {
+    let strIn = (a, b) => a.toLowerCase().indexOf(b.toLowerCase()) != -1;
+    return (
+      strIn(e.codigo_universidad, filtro) ||
+      strIn(e.universidad, filtro) ||
+      strIn(e.pais, filtro)
+    );
+  });
+
   function modificarestudiante() {
     fetch(`/estudiante/modificaestudiante.json`, {
       method: "POST",
@@ -64,7 +75,7 @@
     justify-content: left;
     margin-left: 20px;
     height: 140px;
-    width: 500px;
+    width: 99%;
     font-weight: 650;
     background-color: rgb(230, 245, 255);
   }
@@ -84,10 +95,17 @@
             <br />
             Universidad:
             <select name="uni" bind:value={modificaestudiante.universidad}>
-              {#each universidades as u}
+              <option value="">Selecciona una universidad...</option>
+              {#each universidadesFiltradas as u}
                 <option value={u.codigo_universidad}>{u.universidad}</option>
               {/each}
             </select>
+            <input
+              type="text"
+              size="12"
+              bind:value={filtro}
+              placeholder="Buscador"
+              title="Type in a name" />
             <br />
             País: {pais}
             <br />

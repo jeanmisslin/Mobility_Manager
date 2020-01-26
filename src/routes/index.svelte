@@ -48,6 +48,17 @@
 
   let message;
 
+  let filtro = "";
+
+  $: universidadesFiltradas = universidades.filter(e => {
+    let strIn = (a, b) => a.toLowerCase().indexOf(b.toLowerCase()) != -1;
+    return (
+      strIn(e.codigo_universidad, filtro) ||
+      strIn(e.universidad, filtro) ||
+      strIn(e.pais, filtro)
+    );
+  });
+
   function añadirestudiante() {
     fetch(`nuevoestudiante.json`, {
       method: "POST",
@@ -160,7 +171,7 @@
     justify-content: left;
     margin-left: 20px;
     height: 140px;
-    width: 800px;
+    width: 99%;
     font-weight: 650;
     background-color: rgb(230, 245, 255);
   }
@@ -185,13 +196,7 @@
 
 <TablaFiltrable
   tabla={estudiantes}
-  campos={[
-    { name: 'apellidos', show: true, filter: true },
-    { name: 'nombre', show: true, filter: true },  
-    { name: 'universidad', show: true, filter: true }, 
-    { name: 'pais', show: true, filter: true },
-    { name: 'email', show: true, render: (obj) => `<a href="/estudiante/${obj.email}">${obj.email}</a>` }
-  ]} />
+  campos={[{ name: 'apellidos', show: true, filter: true }, { name: 'nombre', show: true, filter: true }, { name: 'universidad', show: true, filter: true }, { name: 'pais', show: true, filter: true }, { name: 'email', show: true, render: obj => `<a href="/estudiante/${obj.email}">${obj.email}</a>` }]} />
 
 {#if nuevoestudiante.open}
   <div class="request-box">
@@ -208,16 +213,24 @@
             Universidad:
             <select name="uni" bind:value={nuevoestudiante.universidad}>
               <option value="">Selecciona una universidad...</option>
-              {#each universidades as u}
+              {#each universidadesFiltradas as u}
                 <option value={u.codigo_universidad}>{u.universidad}</option>
               {/each}
             </select>
+            <input
+              type="text"
+              size="12"
+              bind:value={filtro}
+              placeholder="Buscador"
+              title="Type in a name" />
             <br />
             Titulación:
             <select name="titu" bind:value={nuevoacuerdo.titulacion}>
               <option value="">Selecciona una titulación...</option>
               {#each titulaciones as t}
-                <option value={t.codigo_titulacion}>{t.titulacion_catalan}</option>
+                <option value={t.codigo_titulacion}>
+                  {t.titulacion_catalan}
+                </option>
               {/each}
             </select>
             <br />
