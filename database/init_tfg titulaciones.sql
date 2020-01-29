@@ -10,6 +10,14 @@ CREATE TABLE titulaciones(
 );
 
 INSERT INTO titulaciones (codigo_titulacion, titulacion_catalan, titulacion_castellano, titulacion_ingles, ciclo) VALUES(
+    'GRESEIAAT',
+    'Graus',
+    'Grados',
+    'Bachelors',
+    1
+);
+
+INSERT INTO titulaciones (codigo_titulacion, titulacion_catalan, titulacion_castellano, titulacion_ingles, ciclo) VALUES(
     '320GRESAUD',
     'Grau en Enginyeria de Sistemes Audiovisuals',
     'Grado en Ingeniería de Sistemas Audiovisuales',
@@ -87,6 +95,14 @@ INSERT INTO titulaciones (codigo_titulacion, titulacion_catalan, titulacion_cast
     'Grado en Ingeniería en Vehículos Aeroespaciales',
     "Bachelor's degree in Aerospace Vehicle Engineering",
     1
+);
+
+INSERT INTO titulaciones (codigo_titulacion, titulacion_catalan, titulacion_castellano, titulacion_ingles, ciclo) VALUES(
+    'MUESEIAAT',
+    'Màsters',
+    'Másters',
+    'Masters',
+    2
 );
 
 INSERT INTO titulaciones (codigo_titulacion, titulacion_catalan, titulacion_castellano, titulacion_ingles, ciclo) VALUES(
