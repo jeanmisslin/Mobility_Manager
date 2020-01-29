@@ -91,7 +91,7 @@
 <div id="ofertadas">ASIGNATURAS OFERTADAS</div>
 
 <TablaFiltrableComponentes
-  tabla={ofertas.filter(ofer => ofer.periodo_academico === acuerdo.periodo_academico && (ofer.titulacion.includes('GRE') !== 1 && ofer.plazas_disponibles <= 0) && (asignada(asignaturas, ofer) === null || asignada(asignaturas, ofer) === undefined))}
+  tabla={ofertas.filter(ofer => ofer.periodo_academico === acuerdo.periodo_academico && (ofer.titulacion.includes('GRE') && ofer.plazas_disponibles <= 0) && (asignada(asignaturas, ofer) === null || asignada(asignaturas, ofer) === undefined))}
   {acuerdo}
   componente="solicitar"
   campos={[{ name: 'codigo_asignatura', nombre: 'código', show: true, filter: true, render: obj => `<a href="/asignatura/${obj.codigo_asignatura}">${obj.codigo_asignatura}</a>` }, { name: 'nombre_ingles', nombre: 'titulo', show: true, filter: true, render: obj => `<a href="${obj.plan_de_estudios_ingles}">${obj.nombre_ingles}</a>` }, { name: 'nombre_catalan', filter: true }, { name: 'nombre_castellano', filter: true }, { name: 'ects', show: true }, { name: 'idioma', show: true, filter: true }]} />
