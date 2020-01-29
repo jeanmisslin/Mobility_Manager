@@ -175,6 +175,10 @@
     font-weight: 650;
     background-color: rgb(230, 245, 255);
   }
+
+  #formulario {
+    margin-top: 25px;
+  }
 </style>
 
 <svelte:head>
@@ -196,87 +200,97 @@
 
 <TablaFiltrable
   tabla={estudiantes}
-  campos={[{ name: 'apellidos', show: true, filter: true }, { name: 'nombre', show: true, filter: true }, { name: 'universidad', show: true, filter: true }, { name: 'pais', show: true, filter: true }, { name: 'email', show: true, render: obj => `<a href="/estudiante/${obj.email}">${obj.email}</a>` }]} />
+  campos={[{ name: 'email', show: true, render: obj => `<a href="/estudiante/${obj.email}">${obj.email}</a>` }, { name: 'apellidos', show: true, filter: true }, { name: 'nombre', show: true, filter: true }, { name: 'universidad', show: true, filter: true }, { name: 'pais', show: true, filter: true }]} />
 
-{#if nuevoestudiante.open}
-  <div class="request-box">
-    <div id="textfield">
-      <div id="datos">
-        <div id="contenido_datos">
-          <p>
-            Apellidos:
-            <input type="text" bind:value={nuevoestudiante.apellidos} />
-            <br />
-            Nombre:
-            <input type="text" bind:value={nuevoestudiante.nombre} />
-            <br />
-            Universidad:
-            <select name="uni" bind:value={nuevoestudiante.universidad}>
-              <option value="">Selecciona una universidad...</option>
-              {#each universidadesFiltradas as u}
-                <option value={u.codigo_universidad}>{u.universidad}</option>
-              {/each}
-            </select>
-            <input
-              type="text"
-              size="12"
-              bind:value={filtro}
-              placeholder="Buscador"
-              title="Type in a name" />
-            <br />
-            Titulación:
-            <select name="titu" bind:value={nuevoacuerdo.titulacion}>
-              <option value="">Selecciona una titulación...</option>
-              {#each titulaciones as t}
-                <option value={t.codigo_titulacion}>
-                  {t.titulacion_catalan}
-                </option>
-              {/each}
-            </select>
-            <br />
-            Email:
-            <input type="text" bind:value={nuevoestudiante.email} />
-            <br />
-            Periodo Académico:
-            <select name="per" bind:value={nuevoacuerdo.periodo_academico}>
-              <option value="">Selecciona un periodo académico...</option>
-              {#each periodos as p}
-                <option value={p.id_periodo}>
-                  {p.año}-{p.año + 1}, Q{p.cuatrimestre}
-                </option>
-              {/each}
-            </select>
-            <br />
-            Estado:
-            <select name="est" bind:value={nuevoacuerdo.estado}>
-              <option value="">Selecciona un estado...</option>
-              {#each estados as e}
-                <option value={e}>{e}</option>
-              {/each}
-            </select>
-            <br />
-          </p>
+<div id="formulario">
+  {#if nuevoestudiante.open}
+    <div class="request-box">
+      <div id="textfield">
+        <div id="datos">
+          <div id="contenido_datos">
+            <p>
+              Apellidos:
+              <input type="text" bind:value={nuevoestudiante.apellidos} />
+              <br />
+              Nombre:
+              <input type="text" bind:value={nuevoestudiante.nombre} />
+              <br />
+              Universidad:
+              <select name="uni" bind:value={nuevoestudiante.universidad}>
+                <option value="">Selecciona una universidad...</option>
+                {#each universidadesFiltradas as u}
+                  <option value={u.codigo_universidad}>{u.universidad}</option>
+                {/each}
+              </select>
+              <input
+                type="text"
+                size="12"
+                bind:value={filtro}
+                placeholder="Buscador"
+                title="Type in a name" />
+              <br />
+              Titulación:
+              <select name="titu" bind:value={nuevoacuerdo.titulacion}>
+                <option value="">Selecciona una titulación...</option>
+                {#each titulaciones as t}
+                  <option value={t.codigo_titulacion}>
+                    {t.titulacion_catalan}
+                  </option>
+                {/each}
+              </select>
+              <br />
+              Email:
+              <input type="text" bind:value={nuevoestudiante.email} />
+              <br />
+              Periodo Académico:
+              <select name="per" bind:value={nuevoacuerdo.periodo_academico}>
+                <option value="">Selecciona un periodo académico...</option>
+                {#each periodos as p}
+                  <option value={p.id_periodo}>
+                    {p.año}-{p.año + 1}, Q{p.cuatrimestre}
+                  </option>
+                {/each}
+              </select>
+              <br />
+              Estado:
+              <select name="est" bind:value={nuevoacuerdo.estado}>
+                <option value="">Selecciona un estado...</option>
+                {#each estados as e}
+                  <option value={e}>{e}</option>
+                {/each}
+              </select>
+              <br />
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-    <div>
-      <div id="buttons">
-        <div id="field">
-          <button on:click={añadirambos}>Salvar</button>
-          <button on:click={() => (nuevoestudiante.open = false)}>
-            Cancelar
-          </button>
+      <div>
+        <div id="buttons">
+          <div id="field">
+            {#if nuevoestudiante.apellidos === '' || nuevoestudiante.email === '' || nuevoestudiante.nombre === '' || nuevoestudiante.universidad === '' || nuevoestudiante.estudiante === '' || nuevoacuerdo.titulacion === '' || nuevoacuerdo.periodo_academico === '' || nuevoacuerdo.estado === ''}
+              <button on:click={() => (nuevoestudiante.open = false)}>
+                Cancelar
+              </button>
+            {:else}
+              <button on:click={añadirambos}>Salvar</button>
+              <button on:click={() => (nuevoestudiante.open = false)}>
+                Cancelar
+              </button>
+            {/if}
+          </div>
         </div>
       </div>
+      {#if message}
+        <p>{message}</p>
+      {/if}
     </div>
-    {#if message}
-      <p>{message}</p>
-    {/if}
-  </div>
-{:else}
-  <div id="buttons">
-    <div id="field">
-      <button on:click={() => (nuevoestudiante.open = true)}>Añadir</button>
+  {:else}
+    <div id="buttons">
+      <div id="field">
+        <button on:click={() => (nuevoestudiante.open = true)}>
+          Nuevo Estudiante
+        </button>
+      </div>
     </div>
-  </div>
-{/if}
+  {/if}
+</div>
