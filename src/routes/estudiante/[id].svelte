@@ -35,6 +35,8 @@
   import ModificaAcuerdo from "../../components/ModificaAcuerdo.svelte";
   import TablaFiltrableComponentes from "../../components/TablaFiltrableComponentes.svelte";
   import Acuerdo from "../../components/Acuerdo.svelte";
+  import AcuerdoGrados from "../../components/AcuerdoGrados.svelte";
+  import AcuerdoMasters from "../../components/AcuerdoMasters.svelte";
 
   export let estudiante;
   export let universidades;
@@ -121,8 +123,6 @@
     margin-bottom: 10px;
     margin-top: 10px;
   }
-
-  
 </style>
 
 <svelte:head>
@@ -147,6 +147,21 @@
 <div id="acuerdos">ACUERDOS ACADEMICOS</div>
 
 {#each acuerdos as acuerdo}
-<Acuerdo {periodos} {acuerdo} {titulaciones} {asignaturas} {ofertas} />
+  {#if acuerdo.titulacion === 'GRESEIAAT'}
+    <AcuerdoGrados
+      {periodos}
+      {acuerdo}
+      {titulaciones}
+      {asignaturas}
+      {ofertas} />
+  {:else if acuerdo.titulacion === 'MUESEIAAT'}
+    <AcuerdoMasters
+      {periodos}
+      {acuerdo}
+      {titulaciones}
+      {asignaturas}
+      {ofertas} />
+  {:else}
+    <Acuerdo {periodos} {acuerdo} {titulaciones} {asignaturas} {ofertas} />
+  {/if}
 {/each}
-
