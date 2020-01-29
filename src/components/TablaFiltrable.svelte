@@ -31,8 +31,8 @@
   #tabla {
     border-collapse: collapse;
     width: 100%;
-    margin-bottom: 10px;
-    margin-top: 25px;
+    margin-bottom: 0px;
+    margin-top: 0px;
   }
 
   td {
@@ -52,6 +52,14 @@
   tr:nth-child(even) {
     background-color: rgb(255, 246, 239);
   }
+
+  #scroll {
+    overflow: scroll;
+    margin-top: 20px;
+    height: 204px;
+    width: 100%;
+    border: 1px solid black;
+  }
 </style>
 
 <div id="filtro">
@@ -65,29 +73,31 @@
   </p>
 </div>
 
-<table id="tabla">
-  <tr>
-    {#each campos as c}
-      {#if c.show}
-        <th>
-          {#if c.nombre}
-            {c.nombre.toUpperCase()}
-          {:else}{c.name.toUpperCase()}{/if}
-        </th>
-      {/if}
-    {/each}
-  </tr>
-  {#each tablaFiltrada as obj}
+<div id="scroll">
+  <table id="tabla">
     <tr>
       {#each campos as c}
         {#if c.show}
-          <td>
-            {#if c.render}
-              {@html c.render(obj)}
-            {:else}{obj[c.name]}{/if}
-          </td>
+          <th>
+            {#if c.nombre}
+              {c.nombre.toUpperCase()}
+            {:else}{c.name.toUpperCase()}{/if}
+          </th>
         {/if}
       {/each}
     </tr>
-  {/each}
-</table>
+    {#each tablaFiltrada as obj}
+      <tr>
+        {#each campos as c}
+          {#if c.show}
+            <td>
+              {#if c.render}
+                {@html c.render(obj)}
+              {:else}{obj[c.name]}{/if}
+            </td>
+          {/if}
+        {/each}
+      </tr>
+    {/each}
+  </table>
+</div>
