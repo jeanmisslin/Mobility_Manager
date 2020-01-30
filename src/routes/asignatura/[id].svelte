@@ -4,7 +4,7 @@
     let asignatura = await this.fetch(`/asignatura/${id}.json`).then(body =>
       body.json()
     );
-    let { ofertas } = await this.fetch(`/titulaciones/ofertas.json`).then(
+    let { ofertas } = await this.fetch(`ofertas.json`).then(
       body => body.json()
     );
     let { periodos } = await this.fetch(`periodos.json`).then(body =>

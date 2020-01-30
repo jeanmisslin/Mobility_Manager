@@ -10,7 +10,7 @@
     let { titulaciones } = await this.fetch(`titulaciones.json`).then(body =>
       body.json()
     );
-    let { ofertas } = await this.fetch(`../titulaciones/ofertas.json`).then(
+    let { ofertas } = await this.fetch(`ofertas.json`).then(
       body => body.json()
     );
     let { periodos } = await this.fetch(`periodos.json`).then(body =>
@@ -37,6 +37,7 @@
   import Acuerdo from "../../components/Acuerdo.svelte";
   import AcuerdoGrados from "../../components/AcuerdoGrados.svelte";
   import AcuerdoMasters from "../../components/AcuerdoMasters.svelte";
+  import NuevoAcuerdo from "../../components/NuevoAcuerdo.svelte";
 
   export let estudiante;
   export let universidades;
@@ -145,6 +146,8 @@
 <ModificaEstudiante {estudiante} {universidades} />
 
 <div id="acuerdos">ACUERDOS ACADEMICOS</div>
+
+<NuevoAcuerdo {periodos} {titulaciones} estudiante={email}/>
 
 {#each acuerdos as acuerdo}
   {#if acuerdo.titulacion === 'GRESEIAAT'}
