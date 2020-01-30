@@ -192,7 +192,7 @@
 <div id="options">
   <div id="data">
     <a href="/asignaturas/">ASIGNATURAS</a>
-    <a href="/titulaciones/">TITULACIONES</a>
+    <a href="/ofertas/">OFERTAS DISPONIBLES</a>
   </div>
 </div>
 
