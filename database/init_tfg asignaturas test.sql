@@ -19,22 +19,6 @@ INSERT INTO asignaturas
     nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
     plan_de_estudios_castellano, plan_de_estudios_ingles)
 VALUES(
-        '220322',
-        "Gestió d'Empreses Aeronàutiques",
-        'Gestión de Empresas Aeronáuticas',
-        'Business Management Aeronautics',
-        'ING',
-        5,
-        'https://www.upc.edu/content/master/guiadocent/pdf/cat/220322',
-        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220322',
-        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220322'
-);
-
-INSERT INTO asignaturas
-    (codigo_asignatura, nombre_catalan,
-    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
-    plan_de_estudios_castellano, plan_de_estudios_ingles)
-VALUES(
         '220331',
         'Materials Compostos',
         'Materiales Compuestos',
@@ -3038,3 +3022,2258 @@ VALUES(
         'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320086'
 );
 
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '320092',
+        'Àlgebra',
+        'Álgebra',
+        'Algebra',
+        'CAT',
+        6,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/320092',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320092',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320092'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '320093',
+        'Càlcul',
+        'Cálculo',
+        'Calculus',
+        'CAT/CAST',
+        6,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/320093',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320093',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320093'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '320094',
+        'Tecnologies Ambientals i Sostenibilitat',
+        'Tecnologías Ambientales y Sostenibilidad',
+        'Environmental Technologies and Sustainability',
+        'CAT/CAST',
+        6,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/320094',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320094',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320094'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '320095',
+        "Fonaments d'Informàtica",
+        'Fundamentos de Informática',
+        'Foundations of Computing',
+        'CAT/CAST',
+        6,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/320095',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320095',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320095'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '320101',
+        "Economia i Gestió d'Empresa",
+        'Economía y Gestión de Empresa',
+        'Economics and Business Administration',
+        'CAT/CAST',
+        6,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/320101',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320101',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320101'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '320102',
+        'Senyals i Sistemes',
+        'Señales y Sistemas',
+        'Signals and Systems',
+        'CAT',
+        6,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/320102',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320102',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320102'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '320103',
+        'Bases de Dades',
+        'Bases de Datos',
+        'Data Bases',
+        'CAT/CAST',
+        6,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/320103',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320103',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320103'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '320105',
+        'Electrònica Analògica',
+        'Electrónica Analógica',
+        'Analogue Electronics',
+        'CAT/CAST',
+        6,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/320105',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320105',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320105'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '320106',
+        'Probabilitat i Processos Estocàstics',
+        'Probabilidad y Procesos Estocásticos',
+        'Probability and Stochastic Processes',
+        'CAT',
+        6,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/320106',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320106',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320106'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '320111',
+        "Processament Digital d'Àudio",
+        'Procesado Digital de Audio',
+        'Digital Audio Processing',
+        'CAT',
+        6,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/320111',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320111',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320111'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '320113',
+        'Serveis i Aplicacions Telemàtiques',
+        'Servicios y Aplicaciones Telemáticas',
+        'Telematic Applications and Services',
+        'CAT/CAST',
+        6,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/320113',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320113',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320113'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '320114',
+        "Processament Digital d'Imatge",
+        'Procesamiento Digital de Imagen',
+        'Digital Image Processing',
+        'CAST',
+        6,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/320114',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320114',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320114'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '320115',
+        'Gestió i Distribució de Senyals Audiovisuals',
+        'Gestión y Distribución de Señales Audiovisuales',
+        'Audiovisual Signal Management and Distribution',
+        'CAT',
+        6,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/320115',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320115',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320115'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '320117',
+        'Equips de So',
+        'Equipos de Sonido',
+        'Sound Equipment',
+        'CAST',
+        6,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/320117',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320117',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320117'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '320121',
+        'Continguts Multimèdia',
+        'Contenidos Multimedia',
+        'Multimedia Content',
+        'CAT/CAST',
+        6,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/320121',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320121',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320121'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '320123',
+        'Tecnologia de la Parla',
+        'Tecnología del Habla',
+        'Speech Technology',
+        'CAT/CAST',
+        6,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/320123',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320123',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320123'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '320124',
+        'Instrumentació i Mesura de Qualitat del Senyal Audiovisual',
+        'Instrumentación y Medida de la Calidad de la Señal Audiovisual',
+        'Quality Measurement of Audio-Visual Signals',
+        'CAT/CAST',
+        6,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/320124',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320124',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320124'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '320125',
+        "Projectes d'Enginyeria",
+        'Proyectos de Ingeniería',
+        'Engineering Project Design',
+        'CAT/CAST',
+        6,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/320125',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320125',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320125'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '3200961',
+        'Física I',
+        'Física I',
+        'Physics I',
+        'CAT',
+        6,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/3200961',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/3200961',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/3200961'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '205253',
+        "Producció d'Àudio i Vídeo",
+        'Producción de Audio y Video',
+        'Audio and Video Production',
+        'CAT/CAST',
+        6,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/205253',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/205253',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/205253'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '320049',
+        'Resistència dels Materials',
+        'Resistencia de los Materiales',
+        'Strength of Materials',
+        'CAT/CAST',
+        6,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/320049',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320049',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320049'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '320052',
+        'Enginyeria de Fluids',
+        'Ingeniería de Fluidos',
+        'Fluid Engineering',
+        'CAT',
+        6,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/320052',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320052',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320052'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '320053',
+        'Ciència i Enginyeria de Materials',
+        'Ciencia e Ingeniería de Materiales',
+        'Science and Engineering of Materials',
+        'CAT/CAST/ING',
+        6,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/320053',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320053',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320053'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '320056',
+        'Enginyeria de Processos de Fabricació',
+        'Ingeniería de Procesos de Fabricación',
+        'Engineering of Manufacturing Processes',
+        'CAT/CAST',
+        6,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/320056',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320056',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320056'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '320059',
+        'Projecte de Màquines i Mecanismes',
+        'Proyecto de Máquinas y Mecanismos',
+        'Project of Machines and Mechanisms',
+        'CAT/CAST',
+        6,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/320059',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320059',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320059'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '320060',
+        'Ajustos i Control Numèric',
+        'Ajustes y Control Numérico',
+        'Adjustments and Numerical Control',
+        'CAT/CAST',
+        6,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/320060',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320060',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320060'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '320179',
+        'Mecànica Experimental de Materials i Estructures Avançades',
+        'Mecánica Experimental de Materiales y Estructuras Avanzadas',
+        'Experimental Mechanics of Advanced Materials and Structures',
+        'ING',
+        6,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/320179',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320179',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320179'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '320180',
+        'Industrialització de Projectes Mecànics',
+        'Industrialización de Proyectos Mecánicos',
+        'Industrialization of Mechanical Projects',
+        'CAT',
+        6,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/320180',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320180',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320180'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '3200501',
+        'Sistemes Tèrmics I',
+        'Sistemas Térmicos I',
+        'Thermal Systems I',
+        'CAT',
+        4.5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/3200501',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/3200501',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/3200501'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '3200511',
+        'Teoria i Disseny de Màquines i Mecanismes I',
+        'Teoria y Diseño de Máquinas y Mecanismos I',
+        'Theory and Design of Machines and Mechanisms I',
+        'CAT/CAST',
+        6,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/3200511',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/3200511',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/3200511'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '205017',
+        'Mètodes Numèrics en Transferència de Calor i Massa',
+        'Métodos Numéricos en Transferencia de Calor y Masa',
+        'Numerical Methods in Heat and Mass Transfer',
+        'ING',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/205017',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/205017',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/205017'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '205104',
+        'Finances i Comptabilitat',
+        'Finanzas y Contabilidad',
+        'Finance and Accounting',
+        'ING',
+        7.5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/205104',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/205104',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/205104'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '205105',
+        'Eines per a la Presa de Decisions',
+        'Herramientas para la Toma de Decisiones',
+        'Tools for Decision Making',
+        'ING',
+        7.5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/205105',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/205105',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/205105'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '205108',
+        "Gestió d'Actius i Instal·lacions",
+        'Gestión de Activos e Instalaciones',
+        'Asset and Facility Management',
+        'ING',
+        7.5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/205108',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/205108',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/205108'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '205109',
+        'Tecnologies de la Informació i Anàlisi de Dades',
+        'Tecnologías de la Información Y Análisis de Datos',
+        'Information Technologies & Data Analysis',
+        'ING',
+        7.5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/205109',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/205109',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/205109'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '205110',
+        'Teoria de Jocs',
+        'Teoría de Juegos',
+        'Game Theory',
+        'ING',
+        7.5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/205110',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/205110',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/205110'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '205113',
+        'Liderant Equips',
+        'Liderando Equipos',
+        'Leading Teams',
+        'ING',
+        7.5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/205113',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/205113',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/205113'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '320505',
+        'Avenços en Fibres Tèxtils',
+        'Avances en Fibras Textiles',
+        'Advances in Textile Fibres',
+        'CAST',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/320505',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320505',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320505'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '320506',
+        'Filats, Filaments i Teles No Teixides',
+        'Hilados, Filamentos y Telas No Tejidas',
+        'Yarns, Filaments and Nonwoven Textiles',
+        'CAT/CAST',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/320506',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320506',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320506'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '320507',
+        'Colorimetria, Colorants i Pigments',
+        'Colorimetría, Colorantes y Pigmentos',
+        'Colorimetry, Dyes and Pigments',
+        'CAT/CAST',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/320507',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320507',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320507'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '320516',
+        'Materials Fibrosos per a la Fabricació de Productes Paperers',
+        'Materiales Fibrosos para la Fabricación de Productos Papeleros',
+        'Fibrous Materials for Manufacture of Paper Products',
+        'CAST/ING',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/320516',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320516',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320516'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '320524',
+        'Tecnologia de la Impressió',
+        'Tecnología de la Impresión',
+        'Printing Technology',
+        'CAT/CAST/ING',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/320524',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/320524',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/320524'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '205354',
+        'Tecnologia de la Fabricació de Productes Paperers',
+        'Tecnología de la Fabricación de Productos Papeleros',
+        'Technology of Paper Products Manufacture',
+        'CAT/CAST',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/205354',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/205354',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/205354'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220301',
+        'Aerodinàmica, Mecànica de Vol i Orbital',
+        'Aerodinámica, Mecánica de Vuelo y Orbital',
+        'Aerodynamics, Flight Mechanics and Orbital Mechanics',
+        'CAT/CAST',
+        7.5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220301',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220301',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220301'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220302',
+        'Producció i Disseny Aeroespacial',
+        'Producción y Diseño Aeroespacial',
+        'Production and Design Aerospace',
+        'CAST',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220302',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220302',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220302'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220303',
+        'Materials Aeroespacials',
+        'Materiales Aeroespaciales',
+        'Aerospace Materials',
+        'CAT/CAST',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220303',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220303',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220303'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220304',
+        "Disseny i Construcció d'Aeroports",
+        'Diseño y Construcción de Aeropuertos',
+        'Design and Construction of Airports',
+        'CAT/CAST',
+        7.5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220304',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220304',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220304'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220305',
+        'Combustió i Propulsió de Coets',
+        'Combustión y Propulsión de Cohetes',
+        'Rockets Combustion and Propulsion',
+        'CAT/CAST',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220305',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220305',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220305'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220306',
+        'Vehicles Aeroespacials',
+        'Vehículos Aeroespaciales',
+        'Aerospace Vehicles',
+        'CAT/CAST',
+        7.5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220306',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220306',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220306'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220307',
+        'Sistemes de Radiofreqüència i Comunicació',
+        'Sistemas de Radiofrecuencia y Comunicación',
+        'Radiofrequency and Communication Systems',
+        'CAT/CAST',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220307',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220307',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220307'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220308',
+        "Sistemes de Propulsió d'Aeronaus",
+        'Sistemas de Propulsión de Aeronaves',
+        "(Ang) Sistemes de Propulsius d'Aeronaus",
+        'CAT',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220308',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220308',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220308'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220309',
+        'Transport Aeri i Sistemes de Navegació',
+        'Transporte Aéreo y Sistemas de Navegación',
+        'Air Transport and Navigation Systems',
+        'CAT',
+        7.5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220309',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220309',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220309'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220310',
+        "Direcció de Projectes d'Aeronaus i Vehicles Aeroespacials",
+        'Dirección de Proyectos de Aeronaves y Vehículos Aeroespaciales',
+        "(Ang) Direcció de Projectes d'Aeronaus i Vehicles Aeroespacials",
+        'ING',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220310',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220310',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220310'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220311',
+        'Enginyeria Computacional',
+        'Ingeniería Computacional',
+        'Computational Engineering',
+        'ING',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220311',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220311',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220311'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '205015',
+        'Turbulència: Fenomenologia, Simulació i Aerodinàmica',
+        'Turbulencia: Fenomenología, Simulación y  Aerodinámica',
+        'Turbulence: Phenomenology, Simulation, Aerodynamics',
+        'ING',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/205015',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/205015',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/205015'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '205016',
+        'Curs Avançat en Transferència de Calor i Massa',
+        'Curso Avanzado en Transferencia de Calor y Masa',
+        'Advance Course Heat and Mass Transfer',
+        'ING',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/205016',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/205016',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/205016'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220321',
+        'Operacions Aeroportuàries',
+        'Operaciones Aeroportuarias',
+        'Airport Operations',
+        'ING',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220321',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220321',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220321'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220322',
+        "Gestió d'Empreses Aeronàutiques",
+        'Gestión de Empresas Aeronáuticas',
+        'Business Management Aeronautics',
+        'ING',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220322',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220322',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220322'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220323',
+        'Instal·lacions Aeroportuàries',
+        'Instalaciones Aeroportuarias',
+        'Airport Building Systems',
+        'ING',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220323',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220323',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220323'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220324',
+        "Gestió d'Infraestructures Aeroportuàries",
+        'Gestión de Infraestructuras Aeroportuarias',
+        'Airport Infrastructure Management',
+        'ING',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220324',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220324',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220324'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220325',
+        'Transport Aeri',
+        'Transporte Aéreo',
+        'Air Transport',
+        'ING',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220325',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220325',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220325'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220334',
+        'Propulsió Espacial',
+        'Propulsión Espacial',
+        'Space Propulsion',
+        'ING',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220334',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220334',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220334'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220340',
+        'Ampliació de Motors de Coet',
+        'Ampliación de Motores de Cohete',
+        'Extension of Rocket Engines',
+        'ING',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220340',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220340',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220340'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220341',
+        'Aerodinàmica Interna i Aeroelasticitat de Turbomàquines',
+        'Aerodinámica Interna y Aeroelasticidad de Turbomáquinas',
+        'Internal Aerodynamics and Aeroelasticity of Turbomachines',
+        'ING',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220341',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220341',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220341'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220342',
+        'Ampliació de Motors a Reacció',
+        'Ampliación de Motores a Reacción',
+        'Extension of Jet Engines',
+        'ING',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220342',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220342',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220342'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220343',
+        'Propulsió Avançada',
+        'Propulsión Avanzada',
+        'Advanced Propulsion',
+        'ING',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220343',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220343',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220343'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220350',
+        'Laboratoris Aeroespacials',
+        'Laboratorios Aeroespaciales',
+        'Aerospace Laboratories',
+        'ING',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220350',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220350',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220350'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220351',
+        'Aeroelasticitat Avançada',
+        'Aeroelasticidad Avanzada',
+        'Advanced Aeroelasticity',
+        'ING',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220351',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220351',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220351'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '205400',
+        'Gestió Ambiental i Sostenibilitat en la Indústria Tèxtil',
+        'Gestión Ambiental y Sostenibilidad en la Industria Textil',
+        'Environmental Management and Sustainability in the Textile Industry',
+        'CAST',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/205400',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/205400',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/205400'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '205060',
+        'Instrumentació Biomèdica',
+        'Instrumentación Biomédica',
+        'Biomedical Instrumentation',
+        'ING',
+        3,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/205060',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/205060',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/205060'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '205061',
+        'Introducció al Control de Flux Actiu',
+        'Introducción al Control de Flujo Activo',
+        'Introduction to Active Flow Control',
+        'ING',
+        3,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/205061',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/205061',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/205061'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '205062',
+        'Dissenyant Productes Innovadors i de Negocis',
+        'Diseñando Productos Innovadores y de Negocios',
+        'Designing Innovative Products and Business',
+        'ING',
+        3,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/205062',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/205062',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/205062'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '205063',
+        "Anàlisi Dinàmic d'Estructures",
+        'Análisis Dinámico de Estructuras',
+        'Dynamic Analysis of Structures',
+        'ING',
+        3,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/205063',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/205063',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/205063'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '205079',
+        'Metodologies i Processos Agile per a la Creació de Solucions Innovadores',
+        'Metodologías y Procesos Agile para la Creación de Soluciones Innovadoras',
+        'Agile Methodologies and Processes for the Creation of InnovativeSolutions',
+        'ING',
+        3,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/205079',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/205079',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/205079'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '205252',
+        'Avaluació de la Qualitat dels Teixits',
+        'Evaluación de la Calidad de los Tejidos',
+        'Evaluation of Tissue Quality',
+        'CAT/CAST',
+        6,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/205252',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/205252',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/205252'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220203',
+        'Instrumentació Bàsica',
+        'Instrumentación Básica',
+        'Basic Instrumentation',
+        'CAT',
+        2.5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220203',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220203',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220203'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220204',
+        'Producció Automatitzada i Control Avançat de Processos',
+        'Producción Automatizada y Control Avanzado de Procesos',
+        'Advanced Automation and Control of Industrial Processes',
+        'CAT',
+        2.5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220204',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220204',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220204'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220205',
+        'Disseny i Construcció de Plantes Industrials i Serveis Complementaris',
+        'Diseño y Construcción de Plantas Industriales y Servicios Complementarios',
+        'Design and Construction on Industrial Plants and Related Facilities',
+        'CAT/CAST',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220205',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220205',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220205'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220206',
+        "Direcció d'Operacions",
+        'Dirección de Operaciones',
+        'Operations Management',
+        'CAT',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220206',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220206',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220206'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220207',
+        'Disseny de Màquines i Tecnologia de la Fabricació',
+        'Diseño de Máquinas y Tecnología de la Fabricación',
+        'Machine Design and Manufacturing Technologies',
+        'CAT/CAST',
+        7.5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220207',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220207',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220207'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220208',
+        'Enginyeria Tèrmica i de Fluids',
+        'Ingeniería Térmica y de Fluidos',
+        'Engineering of Thermal and Fluids Systems',
+        'CAT/CAST',
+        7.5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220208',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220208',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220208'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220209',
+        "Sistemes de Generació, Transport i Distribució d'Energia Elèctrica",
+        'Sistemas de Generación, Transporte y Distribución de Energía Eléctrica',
+        'Power Generation, Transmission and Distribution',
+        'CAT/CAST',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220209',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220209',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220209'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220210',
+        'Anàlisi i Disseny de Processos Químics',
+        'Análisis y Diseño de Procesos Químicos',
+        'Analysis and Design of Chemical Processes',
+        'CAT/CAST',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220210',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220210',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220210'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220211',
+        'Tecnologia Energètica',
+        'Tecnología Energética',
+        'Energy Technology',
+        'CAT/CAST',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220211',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220211',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220211'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220212',
+        'Arquitectura, Construcció Industrial i Instal·lacions',
+        'Arquitectura, Construcción Industrial e Instalaciones',
+        'Architecture of Industrial Plants and Building Services',
+        'CAT/CAST',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220212',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220212',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220212'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220213',
+        'Direcció Integrada de Projectes',
+        'Dirección Integrada de Proyectos',
+        'Project Management',
+        'CAT/CAST',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220213',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220213',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220213'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220214',
+        "Càlcul i Disseny d'Estructures",
+        'Cálculo y Diseño de Estructuras',
+        'Project Management',
+        'CAT/CAST',
+        2.5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220214',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220214',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220214'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220215',
+        'Enginyeria del Transport i Manutenció Industrial',
+        'Ingeniería del Transporte y Manutención Industrial',
+        'Transportation and Materials Handling Engineering',
+        'CAT',
+        2.5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220215',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220215',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220215'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220216',
+        "Direcció d'Empreses",
+        'Dirección de Empresas',
+        'Business Management',
+        'CAT/CAST',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220216',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220216',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220216'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220230',
+        'Caracterització Física de Biomaterials i Paper',
+        'Caracterización Física de Biomateriales y Papel',
+        'Physical Characterization of Biomaterials and Paper Products',
+        'CAT/CAST',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220230',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220230',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220230'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220231',
+        'Materials Fibrosos per a la Fabricació de Productes Lignocel·lulòsics',
+        'Materiales Fibrosos para la Fabricación de Productos Lignocelulósicos',
+        'Fibrous Materials for Lignocellulosic Products Manufacturing',
+        'CAT',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220231',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220231',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220231'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220232',
+        'Tecnologia de la Fabricació de Productes Paperers i Derivats',
+        'Tecnología de la Fabricación de Productos Papeleros y Derivados',
+        'Paper Manufacturing Technology and Derivatives',
+        'CAT/CAST',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220232',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220232',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220232'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220233',
+        'Simulació i Fisicoquímica en la Fabricació de Biomaterials, Polpa i Paper',
+        'Simulación y Fisicoquímica en la Fabricación de Biomateriales, Pulpa y Papel',
+        'Simulation and Physicochemical Technology for the Manufacturing of Biomaterials, Pulp and Paper Products',
+        'CAT/CAST',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220233',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220233',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220233'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220234',
+        "Tècniques d'Impressió i Transformació de Productes Paperers",
+        'Técnicas de Impresión y Transformación de Productos Papeleros',
+        'Printing and Converting Technologies of Paper Products',
+        'CAT/CAST',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220234',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220234',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220234'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220236',
+        "Disseny d'Experiments",
+        'Diseño de Experimentos',
+        'Design of Experiments',
+        'CAT',
+        3,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220236',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220236',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220236'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220240',
+        'Estructures de Formigó',
+        'Estructuras de Hormigón',
+        'Concrete Structures',
+        'CAST',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220240',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220240',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220240'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220241',
+        'Estructures Metàl·liques',
+        'Estructuras Metálicas',
+        'Steel Structures',
+        'CAST',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220241',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220241',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220241'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220242',
+        'Estructures Avançades',
+        'Estructuras Avanzadas',
+        'Advanced Structures',
+        'CAST',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220242',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220242',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220242'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220243',
+        'Edificis Intel·ligents',
+        'Edificios Inteligentes',
+        'Smart Buildings',
+        'CAT/CAST/ING',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220243',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220243',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220243'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220244',
+        'Gestió de Projectes de Construcció',
+        'Gestión de Proyectos de Construcción',
+        'Management of Construction Projects',
+        'CAT',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220244',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220244',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220244'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220250',
+        'Sistemes Elèctrics de Potència',
+        'Sistemas Eléctricos de Potencia',
+        'Electrical Power Systems',
+        'CAT',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220250',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220250',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220250'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220251',
+        'Càlcul i Disseny de Màquines i Actuadors Elèctrics',
+        'Càlcul i Disseny de Màquines i Actuadors Elèctrics',
+        'Design of Electrical Machines and Actuators',
+        'CAT',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220251',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220251',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220251'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220252',
+        'Control de Màquines Elèctriques',
+        'Control de Máquinas Eléctricas',
+        'Control of Electrical Machines',
+        'CAT/CAST/ING',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220252',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220252',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220252'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220253',
+        'Projecte de Sistemes Elèctrics amb Energies Renovables',
+        'Proyecto de Sistemas Eléctricos con Energías Renovables',
+        'Design of Electric Systems with Renewable Energy',
+        'CAT/CAST',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220253',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220253',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220253'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220254',
+        'Instrumentació Avançada',
+        'Instrumentación Avanzada',
+        'Advanced Instrumentation',
+        'CAST',
+        2.5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220254',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220254',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220254'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220255',
+        'Control, Gestió i Supervisió de Processos',
+        'Control, Gestión y Supervisión de Procesos',
+        'Control, Management and Monitoring of Processes',
+        'CAST',
+        2.5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220255',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220255',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220255'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220260',
+        'Sistemes de Transmissió de Potència',
+        'Sistemas de Transmisión de Potencia',
+        'Power Transmission Systems',
+        'CAT/CAST',
+        10,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220260',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220260',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220260'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220261',
+        'Sistemes de Fabricació Avançada',
+        'Sistemas de Fabricación Avanzada',
+        'Advanced Machining Systems',
+        'CAST',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220261',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220261',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220261'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220262',
+        'Disseny de Màquines i Vibracions Mecàniques',
+        'Diseño de Máquinas y Vibraciones Mecánicas',
+        'Machine Design and Mechanical Vibrations',
+        'CAT/CAST/ING',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220262',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220262',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220262'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220263',
+        'Disseny Fluidodinàmic Avançat',
+        'Diseño Fluidodinámico Avanzado',
+        'Fluid Systems Design',
+        'ING',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220263',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220263',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220263'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220270',
+        "Estadística Aplicada a l'Organització Industrial",
+        'Estadística Aplicada a la Organización Industrial',
+        'Applied Statistics in Industrial Engineering',
+        'CAT',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220270',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220270',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220270'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220271',
+        "Mètodes Quantitatius d'Organització Industrial",
+        'Métodos Cuantitativos de Organización Industrial',
+        'Quantitative Methods in Industrial Scheduling',
+        'CAT/CAST',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220271',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220271',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220271'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220272',
+        'Disseny de la Cadena de Subministrament',
+        'Diseño de la Cadena de Suministro',
+        'Supply Chain Management',
+        'CAT',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220272',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220272',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220272'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220273',
+        'Re-Enginyeria de Processos',
+        'Re-Ingeniería de Procesos',
+        'Business Process Reengineering',
+        'CAT/CAST/ING',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220273',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220273',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220273'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220274',
+        'Models i Eines de Decisió',
+        'Modelos y Herramientas de Decisión',
+        'Tools for Decision Analysis',
+        'CAT/CAST',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220274',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220274',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220274'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220280',
+        'Transferència de Calor i Massa',
+        'Transferencia de Calor y Masa',
+        'Heat and Mass Transfer',
+        'CAT/CAST',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220280',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220280',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220280'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220281',
+        'Refrigeració i Climatització',
+        'Refrigeration and Air Conditioning',
+        'Refrigeration and Air Conditioning',
+        'CAT',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220281',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220281',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220281'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220282',
+        'Tecnologies de Màquines i Motors Tèrmics',
+        'Tecnologías de Máquinas y Motores Térmicos',
+        'Heat Engines Technology',
+        'CAT',
+        7.5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220282',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220282',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220282'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220283',
+        'Alternatives Energètiques',
+        'Alternativas Energéticas',
+        'Renewable Energy',
+        'CAT/CAST',
+        7.5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220283',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220283',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220283'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220291',
+        'Avenços en Fibres Tèxtils',
+        'Avances en Fibras Textiles',
+        'Advances in Textile Fibers',
+        'CAT/ING',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220291',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220291',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220291'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220292',
+        'Filats, Filaments i Teles No Teixides',
+        'Hilados, Filamentos y Telas No Tejidas',
+        'Yarns, Filaments and Nonwoven Textiles',
+        'CAT',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220292',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220292',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220292'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220293',
+        'Colorimetria, Colorants i Pigments',
+        'Colorimetría, Colorantes y Pigmentos',
+        'Colorimetry, Dyes and Pigments',
+        'CAT/CAST',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220293',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220293',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220293'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '205300',
+        'Gestió de la Qualitat: Tècniques Estadístiques',
+        'Gestión de la Calidad: Técnicas Estadísticas',
+        'Quality Management: Statistics Methods',
+        'CAT/CAST',
+        3,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/205300',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/205300',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/205300'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220550',
+        'Complexos Industrials',
+        'Complejos Industriales',
+        'Industrial Plants',
+        'CAT/CAST',
+        5,
+        'https://www.upc.edu/estudispdf/guia_docent.php?codi=220550&curs=2015&lang=ca',
+        'https://www.upc.edu/estudispdf/guia_docent.php?codi=220550&curs=2015&lang=es',
+        'https://www.upc.edu/estudispdf/guia_docent.php?codi=220550&curs=2015&lang=ang'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220551',
+        'Gestió de la Innovació i la Tecnologia',
+        'Gestión de la Innovación y la Tecnología',
+        'Innovation and Technology Policy',
+        'CAT/CAST',
+        5,
+        'https://www.upc.edu/estudispdf/guia_docent.php?codi=220551&curs=2015&lang=ca',
+        'https://www.upc.edu/estudispdf/guia_docent.php?codi=220551&curs=2015&lang=es',
+        'https://www.upc.edu/estudispdf/guia_docent.php?codi=220551&curs=2015&lang=ang'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220552',
+        'Mètodes Quantitatius en Organització',
+        'Métodos Cuantitativos en Organización',
+        'Quantitative Methods in Management',
+        'CAT/CAST',
+        5,
+        'https://www.upc.edu/estudispdf/guia_docent.php?codi=220552&curs=2015&lang=ca',
+        'https://www.upc.edu/estudispdf/guia_docent.php?codi=220552&curs=2015&lang=es',
+        'https://www.upc.edu/estudispdf/guia_docent.php?codi=220552&curs=2015&lang=ang'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220553',
+        'Direcció Comercial',
+        'Dirección Comercial',
+        'Marketing Management',
+        'CAT/CAST/ING',
+        5,
+        'https://www.upc.edu/estudispdf/guia_docent.php?codi=220553&curs=2015&lang=ca',
+        'https://www.upc.edu/estudispdf/guia_docent.php?codi=220553&curs=2015&lang=es',
+        'https://www.upc.edu/estudispdf/guia_docent.php?codi=220553&curs=2015&lang=ang'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220554',
+        'Direcció de Persones',
+        'Dirección de Personas',
+        'People Management',
+        'CAT/CAST',
+        5,
+        'https://www.upc.edu/estudispdf/guia_docent.php?codi=220554&curs=2015&lang=ca',
+        'https://www.upc.edu/estudispdf/guia_docent.php?codi=220554&curs=2015&lang=es',
+        'https://www.upc.edu/estudispdf/guia_docent.php?codi=220554&curs=2015&lang=ang'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220555',
+        'Automatització de Processos',
+        'Automatización de Procesos',
+        'Process Automation',
+        'CAT/ING',
+        5,
+        'https://www.upc.edu/estudispdf/guia_docent.php?codi=220555&curs=2015&lang=ca',
+        'https://www.upc.edu/estudispdf/guia_docent.php?codi=220555&curs=2015&lang=es',
+        'https://www.upc.edu/estudispdf/guia_docent.php?codi=220555&curs=2015&lang=ang'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220556',
+        'Direcció Financera',
+        'Dirección Financiera',
+        'Financial Management',
+        'CAT/CAST',
+        5,
+        'https://www.upc.edu/estudispdf/guia_docent.php?codi=220556&curs=2015&lang=ca',
+        'https://www.upc.edu/estudispdf/guia_docent.php?codi=220556&curs=2015&lang=es',
+        'https://www.upc.edu/estudispdf/guia_docent.php?codi=220556&curs=2015&lang=ang'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220557',
+        'Estadística Aplicada',
+        'Estadística Aplicada',
+        'Applied Statistics',
+        'CAT',
+        5,
+        'https://www.upc.edu/estudispdf/guia_docent.php?codi=220557&curs=2015&lang=ca',
+        'https://www.upc.edu/estudispdf/guia_docent.php?codi=220557&curs=2015&lang=es',
+        'https://www.upc.edu/estudispdf/guia_docent.php?codi=220557&curs=2015&lang=ang'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220558',
+        'Control de Gestió i Costos',
+        'Control de Gestión y Costes',
+        'Management Accounting',
+        'CAT/CAST',
+        5,
+        'https://www.upc.edu/estudispdf/guia_docent.php?codi=220558&curs=2015&lang=ca',
+        'https://www.upc.edu/estudispdf/guia_docent.php?codi=220558&curs=2015&lang=es',
+        'https://www.upc.edu/estudispdf/guia_docent.php?codi=220558&curs=2015&lang=ang'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220559',
+        "Direcció d'Operacions",
+        'Dirección de Operaciones',
+        'Operations Management',
+        'CAT/CAST',
+        5,
+        'https://www.upc.edu/estudispdf/guia_docent.php?codi=220559&curs=2015&lang=ca',
+        'https://www.upc.edu/estudispdf/guia_docent.php?codi=220559&curs=2015&lang=es',
+        'https://www.upc.edu/estudispdf/guia_docent.php?codi=220559&curs=2015&lang=ang'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220560',
+        "Gestió Ambiental i Energètica en l'Empresa",
+        'Gestión Ambiental y Energética en la Empresa',
+        'Environmental and Energy Management',
+        'CAT/CAST/ING',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220560',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220560',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220560'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220561',
+        'Models i Eines de Decisió',
+        'Modelos y Herramientas de Decisión',
+        'Tools for Decision Analysis',
+        'CAT/CAST/ING',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220561',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220561',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220561'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220562',
+        "Direcció d'Empreses",
+        'Dirección de Empresas',
+        'Business Management',
+        'CAT/CAST',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220562',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220562',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220562'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220563',
+        "Disseny de la Cadena d'Aprovisionament",
+        'Diseño de la Cadena de Suministro',
+        'Supply Chain Management',
+        'CAT/CAST',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220563',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220563',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220563'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220564',
+        'Emprenedoria Tècnica',
+        'Emprendeduría Técnica',
+        'Technical Entrepreneurship',
+        'CAT/CAST',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220564',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220564',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220564'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220565',
+        "Sistemes d'Informació",
+        'Sistemas de Información',
+        'Information System',
+        'CAT/CAST',
+        5,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220565',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220565',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220565'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220566',
+        "Direcció de Projectes d'Organització",
+        'Dirección de Proyectos de Organización',
+        'Project Management',
+        'CAT/CAST',
+        7,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220566',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220566',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220566'
+);
+
+INSERT INTO asignaturas
+    (codigo_asignatura, nombre_catalan,
+    nombre_castellano, nombre_ingles, idioma, ects, plan_de_estudios_catalan,
+    plan_de_estudios_castellano, plan_de_estudios_ingles)
+VALUES(
+        '220567',
+        "Seminaris de Recerca a l'Enginyeria d'Organització",
+        'Seminarios de Investigación en la Ingeniería de Organización',
+        'Research Seminars on Management Engineering',
+        'CAT/CAST',
+        3,
+        'https://www.upc.edu/content/grau/guiadocent/pdf/cat/220567',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/esp/220567',
+        'https://www.upc.edu/content/grau/guiadocent/pdf/ing/220567'
+);

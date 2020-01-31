@@ -20,6 +20,1800 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
+        '220560',
+        1,
+        '220MEORSEM',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220561',
+        1,
+        '220MEORSEM',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220562',
+        1,
+        '220MEORSEM',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220563',
+        1,
+        '220MEORSEM',
+        5,
+        5,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220564',
+        1,
+        '220MEORSEM',
+        3,
+        3,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220565',
+        1,
+        '220MEORSEM',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220566',
+        1,
+        '220MEORSEM',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220567',
+        1,
+        '220MEORSEM',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220550',
+        1,
+        '220MEORSEM',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220551',
+        1,
+        '220MEORSEM',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220552',
+        1,
+        '220MEORSEM',
+        5,
+        5,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220553',
+        1,
+        '220MEORSEM',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220554',
+        1,
+        '220MEORSEM',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220555',
+        1,
+        '220MEORSEM',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220556',
+        1,
+        '220MEORSEM',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220557',
+        1,
+        '220MEORSEM',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220558',
+        1,
+        '220MEORSEM',
+        5,
+        5,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220559',
+        1,
+        '220MEORSEM',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '205300',
+        1,
+        '220MEORSEM',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220291',
+        1,
+        '220MEI',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220292',
+        1,
+        '220MEI',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220293',
+        1,
+        '220MEI',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220280',
+        1,
+        '220MEI',
+        3,
+        3,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220281',
+        1,
+        '220MEI',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220282',
+        1,
+        '220MEI',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220283',
+        1,
+        '220MEI',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220270',
+        1,
+        '220MEI',
+        1,
+        1,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220271',
+        1,
+        '220MEI',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220272',
+        1,
+        '220MEI',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220273',
+        1,
+        '220MEI',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220274',
+        1,
+        '220MEI',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220260',
+        1,
+        '220MEI',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220261',
+        1,
+        '220MEI',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220262',
+        1,
+        '220MEI',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220263',
+        1,
+        '220MEI',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220250',
+        1,
+        '220MEI',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220251',
+        1,
+        '220MEI',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220252',
+        1,
+        '220MEI',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220253',
+        1,
+        '220MEI',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220254',
+        1,
+        '220MEI',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220255',
+        1,
+        '220MEI',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220240',
+        1,
+        '220MEI',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220241',
+        1,
+        '220MEI',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220242',
+        1,
+        '220MEI',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220243',
+        1,
+        '220MEI',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220244',
+        1,
+        '220MEI',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220230',
+        1,
+        '220MEI',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220231',
+        1,
+        '220MEI',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220232',
+        1,
+        '220MEI',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220233',
+        1,
+        '220MEI',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220234',
+        1,
+        '220MEI',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220236',
+        1,
+        '220MEI',
+        3,
+        3,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220203',
+        1,
+        '220MEI',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220204',
+        1,
+        '220MEI',
+        1,
+        1,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220205',
+        1,
+        '220MEI',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220206',
+        1,
+        '220MEI',
+        5,
+        5,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220207',
+        1,
+        '220MEI',
+        3,
+        3,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220208',
+        1,
+        '220MEI',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220209',
+        1,
+        '220MEI',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220210',
+        1,
+        '220MEI',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220211',
+        1,
+        '220MEI',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220212',
+        1,
+        '220MEI',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220213',
+        1,
+        '220MEI',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220214',
+        1,
+        '220MEI',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220215',
+        1,
+        '220MEI',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220216',
+        1,
+        '220MEI',
+        5,
+        5,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '205252',
+        1,
+        '320GREQUIM,320GRETDT',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '205079',
+        1,
+        '220MEI,220MUAERON,205MASE',
+        3,
+        3,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '205060',
+        1,
+        '220MEI,220MUAERON',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '205061',
+        1,
+        '220MEI,220MUAERON,205MASE',
+        5,
+        5,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '205062',
+        1,
+        '220MEI,220MUAERON,205MASE',
+        7,
+        7,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '205063',
+        1,
+        '220MEI,220MUAERON,205MASE',
+        6,
+        6,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '205400',
+        1,
+        '220MEI',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220340',
+        1,
+        '220MUAERON,205MASE',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220341',
+        1,
+        '220MUAERON,205MASE',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220342',
+        1,
+        '220MUAERON,205MASE',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220343',
+        1,
+        '220MUAERON,205MASE',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220344',
+        1,
+        '220MUAERON,205MASE',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220321',
+        1,
+        '220MUAERON,205MASE',
+        8,
+        8,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220322',
+        1,
+        '220MUAERON,205MASE',
+        8,
+        8,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220323',
+        1,
+        '220MUAERON,205MASE',
+        8,
+        8,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220324',
+        1,
+        '220MUAERON,205MASE',
+        8,
+        8,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220325',
+        1,
+        '220MUAERON,205MASE',
+        9,
+        9,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '205015',
+        1,
+        '220MUAERON',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '205016',
+        1,
+        '220MUAERON',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220301',
+        1,
+        '220MUAERON',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220302',
+        1,
+        '220MUAERON',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220303',
+        1,
+        '220MUAERON',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220304',
+        1,
+        '220MUAERON',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220305',
+        1,
+        '220MUAERON',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220306',
+        1,
+        '220MUAERON',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220307',
+        1,
+        '220MUAERON',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220308',
+        1,
+        '220MUAERON',
+        3,
+        3,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220309',
+        1,
+        '220MUAERON',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220310',
+        1,
+        '220MUAERON',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220311',
+        1,
+        '220MUAERON',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '205354',
+        1,
+        '205METEXPA',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '320524',
+        1,
+        '205METEXPA',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '320516',
+        1,
+        '205METEXPA',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '320507',
+        1,
+        '205METEXPA',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '320506',
+        1,
+        '205METEXPA',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '320505',
+        1,
+        '205METEXPA',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '205104',
+        1,
+        '205MEM',
+        6,
+        6,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '205105',
+        1,
+        '205MEM',
+        6,
+        6,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '205108',
+        1,
+        '205MEM',
+        6,
+        6,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '205109',
+        1,
+        '205MEM',
+        9,
+        9,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '205110',
+        1,
+        '205MEM',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '205113',
+        1,
+        '205MEM',
+        6,
+        6,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '205114',
+        1,
+        '205MEM',
+        6,
+        6,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '205017',
+        1,
+        '220MUAERON,205MASE',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '320060',
+        1,
+        '320GREMECA,320GREQUIM',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '320179',
+        1,
+        '320GREMECA,320GREQUIM',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '320180',
+        1,
+        '320GREMECA,320GREQUIM,320GRETDT',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '3200501',
+        1,
+        '320GREMECA',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '3200511',
+        1,
+        '320GREMECA',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '320049',
+        1,
+        '320GREMECA',
+        1,
+        1,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '320052',
+        1,
+        '320GREMECA',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '320053',
+        1,
+        '320GREMECA',
+        1,
+        1,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '320056',
+        1,
+        '320GREMECA',
+        1,
+        1,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '320059',
+        1,
+        '320GREMECA,320GREQUIM',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '205253',
+        1,
+        '320GRESAUD',
+        1,
+        1,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '3200961',
+        1,
+        '320GRESAUD',
+        1,
+        1,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '320121',
+        1,
+        '320GRESAUD',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '320123',
+        1,
+        '320GRESAUD',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '320124',
+        1,
+        '320GRESAUD',
+        1,
+        1,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '320125',
+        1,
+        '320GRESAUD',
+        1,
+        1,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '320111',
+        1,
+        '320GRESAUD',
+        1,
+        1,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '320113',
+        1,
+        '320GRESAUD',
+        1,
+        1,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '320114',
+        1,
+        '320GRESAUD',
+        1,
+        1,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '320115',
+        1,
+        '320GRESAUD',
+        1,
+        1,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '320117',
+        1,
+        '320GRESAUD',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '320101',
+        1,
+        '320GRESAUD',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '320102',
+        1,
+        '320GRESAUD',
+        1,
+        1,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '320103',
+        1,
+        '320GRESAUD',
+        1,
+        1,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '320095',
+        1,
+        '320GRESAUD',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '320094',
+        1,
+        '320GRESAUD',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '320093',
+        1,
+        '320GRESAUD',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '320092',
+        1,
+        '320GRESAUD',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
         '320077',
         1,
         '320GRETDT',
@@ -1502,19 +3296,6 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220322',
-        1,
-        '220MUAERON,205MASE',
-        8,
-        8,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
         '220331',
         1,
         '220MUAERON,205MASE',
@@ -1723,11 +3504,11 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205114',
+        '220330',
         1,
-        '205MEM',
-        6,
-        6,
+        '220MUAERON,205MASE',
+        0,
+        0,
         0,
         0
 );
@@ -1736,9 +3517,9 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220330',
+        '220334',
         1,
-        '205MEM',
+        '220MUAERON,205MASE',
         0,
         0,
         0,
@@ -1780,6 +3561,32 @@ VALUES(
         '220GRETAER,220GREVAER',
         2,
         2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220350',
+        1,
+        '220MUAERON,205MASE',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        '220351',
+        1,
+        '220MUAERON,205MASE',
+        0,
+        0,
         0,
         0
 );
