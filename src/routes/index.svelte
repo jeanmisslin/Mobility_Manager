@@ -272,7 +272,7 @@
                 Cancelar
               </button>
             {:else}
-              <button on:click={añadirambos}><a href="/estudiante/${nuevoestudiante.email}">Salvar</a></button>
+              <button on:click={añadirambos}><a href="/estudiante/{nuevoestudiante.email}">Salvar</a></button>
               <button on:click={() => (nuevoestudiante.open = false)}>
                 Cancelar
               </button>
