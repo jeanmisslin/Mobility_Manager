@@ -23,6 +23,11 @@
 
 <script>
   import TablaFiltrable from "../components/TablaFiltrable.svelte";
+  import Button from '@smui/button';
+  import Fab from '@smui/fab';
+  import Textfield from '@smui/textfield';
+  import HelperText from '@smui/textfield/helper-text';
+  import {Label, Icon} from '@smui/common';
 
   export let estudiantes;
   export let universidades;
@@ -31,7 +36,7 @@
 
   let estados = [`Nominado/a`, `Matriculado/a`, `Eliminado`];
 
-  let nuevoestudiante = {
+  export let nuevoestudiante = {
     open: false,
     email: "",
     apellidos: "",
@@ -39,7 +44,7 @@
     universidad: ""
   };
 
-  let nuevoacuerdo = {
+  export let nuevoacuerdo = {
     estudiante: "",
     titulacion: "",
     periodo_academico: "",
