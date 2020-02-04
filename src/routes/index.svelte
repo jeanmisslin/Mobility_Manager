@@ -23,11 +23,16 @@
 
 <script>
   import TablaFiltrable from "../components/TablaFiltrable.svelte";
-  import Button from '@smui/button';
-  import Fab from '@smui/fab';
-  import Textfield from '@smui/textfield';
-  import HelperText from '@smui/textfield/helper-text';
-  import {Label, Icon} from '@smui/common';
+  import Button, { Label } from "@smui/button";
+  import Card, {
+    Content,
+    PrimaryAction,
+    Media,
+    MediaContent,
+    Actions,
+    ActionButtons,
+    ActionIcons
+  } from "@smui/card";
 
   export let estudiantes;
   export let universidades;
@@ -190,6 +195,20 @@
   <title>ESEIAAT INCOMING STUDENTS</title>
 </svelte:head>
 
+<Button>Hi there, how are you!</Button>
+
+<Card style="width: 320px;">
+  <Content>A card with actions.</Content>
+  <Actions>
+    <Button on:click={() => console.log('click!')}>
+      <Label>Action</Label>
+    </Button>
+    <Button on:click={() => console.log('click!')}>
+      <Label>Another</Label>
+    </Button>
+  </Actions>
+</Card>
+
 <div id="cabecera">
   <div id="title">ESEIAAT INCOMING STUDENTS</div>
 </div>
@@ -277,7 +296,9 @@
                 Cancelar
               </button>
             {:else}
-              <button on:click={añadirambos}><a href="/estudiante/{nuevoestudiante.email}">Salvar</a></button>
+              <button on:click={añadirambos}>
+                <a href="/estudiante/{nuevoestudiante.email}">Salvar</a>
+              </button>
               <button on:click={() => (nuevoestudiante.open = false)}>
                 Cancelar
               </button>
@@ -292,9 +313,9 @@
   {:else}
     <div id="buttons">
       <div id="field">
-        <button on:click={() => (nuevoestudiante.open = true)}>
+        <Button variant="raised" on:click={() => (nuevoestudiante.open = true)}>
           Nuevo Estudiante
-        </button>
+        </Button>
       </div>
     </div>
   {/if}

@@ -12,9 +12,9 @@
 
 <script>
 
-    export let id_periodo;
-    export let año;
-    export let cuatrimestre;
+    let id_periodo;
+    let año;
+    let cuatrimestre;
     export let periodos;
     
     let nuevoperiodo = {

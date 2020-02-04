@@ -44,7 +44,7 @@
   export let titulaciones;
   export let ofertas;
   export let periodos;
-  export let asignaciones;
+  let asignaciones;
 
   let {
     apellidos,

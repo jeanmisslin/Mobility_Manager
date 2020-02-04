@@ -3,7 +3,7 @@
   export let periodo;
   export let asignatura;
   export let titulaciones;
-  export let asignaciones;
+  let asignaciones;
 
   import EliminarTitulacionOferta from "./EliminarTitulacionOferta.svelte";
   import AñadirTitulacionOferta from "./AñadirTitulacionOferta.svelte";

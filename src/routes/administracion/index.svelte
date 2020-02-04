@@ -12,8 +12,7 @@
 </script>
 
 <script>
-
-    export let periodos;
+    let periodos;
     
     let nuevopais = {
         open: false,
