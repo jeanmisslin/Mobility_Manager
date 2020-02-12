@@ -17,7 +17,9 @@
     "polka": "next",
     "sass": "^1.25.0",
     "sirv": "^0.4.0",
-    "sqlite3": "^4.1.1"
+    "sqlite3": "^4.1.1",
+    "svelte-autocomplete": "0.0.4",
+    "svelte-icons": "^1.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
