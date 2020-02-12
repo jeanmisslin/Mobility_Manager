@@ -73,7 +73,7 @@
   </p>
 </div>
 
-<div id="scroll">
+<!--<div id="scroll">-->
   <table id="tabla">
     <tr>
       {#each campos as c}
@@ -100,4 +100,4 @@
       </tr>
     {/each}
   </table>
-</div>
+<!--</div>-->
