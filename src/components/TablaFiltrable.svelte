@@ -2,6 +2,11 @@
   export let campos; // campos que se miran al filtrar
   export let tabla; // Array de objetos javascript con todos los datos
 
+  import Textfield from "@smui/textfield";
+  import Icon from "@smui/textfield/icon/index";
+  import { Icon as CommonIcon } from "@smui/common";
+  import IoIosSearch from "svelte-icons/io/IoIosSearch.svelte";
+
   let filtro = "";
 
   // TODO: Comprobar que todos los objetos tienen los mismos campos
@@ -53,51 +58,51 @@
     background-color: rgb(255, 246, 239);
   }
 
-  #scroll {
-    overflow: scroll;
-    margin-top: 20px;
-    height: 204px;
+  #separacion {
     width: 100%;
-    border: 1px solid black;
+    height: 10px;
   }
 </style>
 
-<div id="filtro">
-  <p>
-    BUSCADOR:
-    <input
-      type="text"
-      bind:value={filtro}
-      placeholder="Introduce la palabra clave"
-      title="Type in a name" />
-  </p>
-</div>
+<div id="separacion" />
 
-<!--<div id="scroll">-->
-  <table id="tabla">
+
+  <div id="filtro">
+    <p>
+      BUSCADOR:
+      <input
+        type="text"
+        bind:value={filtro}
+        placeholder="Introduce la palabra clave"
+        title="Type in a name" />
+    </p>
+  </div>
+
+<div id="separacion" />
+
+<table id="tabla">
+  <tr>
+    {#each campos as c}
+      {#if c.show}
+        <th>
+          {#if c.nombre}
+            {c.nombre.toUpperCase()}
+          {:else}{c.name.toUpperCase()}{/if}
+        </th>
+      {/if}
+    {/each}
+  </tr>
+  {#each tablaFiltrada as obj}
     <tr>
       {#each campos as c}
         {#if c.show}
-          <th>
-            {#if c.nombre}
-              {c.nombre.toUpperCase()}
-            {:else}{c.name.toUpperCase()}{/if}
-          </th>
+          <td>
+            {#if c.render}
+              {@html c.render(obj)}
+            {:else}{obj[c.name]}{/if}
+          </td>
         {/if}
       {/each}
     </tr>
-    {#each tablaFiltrada as obj}
-      <tr>
-        {#each campos as c}
-          {#if c.show}
-            <td>
-              {#if c.render}
-                {@html c.render(obj)}
-              {:else}{obj[c.name]}{/if}
-            </td>
-          {/if}
-        {/each}
-      </tr>
-    {/each}
-  </table>
-<!--</div>-->
+  {/each}
+</table>

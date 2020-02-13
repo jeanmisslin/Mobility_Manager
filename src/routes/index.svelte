@@ -158,7 +158,7 @@
   </div>
 </div>
 
-<div id="contenido">ESTUDIANTES</div>
+<!--<div id="contenido">ESTUDIANTES</div>-->
 
 <NuevoEstudiante {universidades} {periodos} {titulaciones} />
 

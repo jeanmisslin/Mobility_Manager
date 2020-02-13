@@ -146,6 +146,11 @@
     width: 370px;
     margin-left: 13px;
   }
+
+  #boton {
+    margin-top: 15px;
+    margin-bottom: 5px;
+  }
 </style>
 
 <Dialog
@@ -323,6 +328,8 @@
   </Actions>
 </Dialog>
 
-<Button variant="raised" on:click={() => dialog.open()}>
-  <Label>Nuevo Estudiante</Label>
-</Button>
+<div id="boton">
+  <Button variant="raised" on:click={() => dialog.open()}>
+    <Label>Nuevo Estudiante</Label>
+  </Button>
+</div>
