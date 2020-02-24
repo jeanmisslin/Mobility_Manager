@@ -3,16 +3,26 @@
   export let periodos;
   export let titulaciones;
 
+  import MenuSurface, { Anchor } from "@smui/menu-surface";
+  import IconButton from "@smui/icon-button";
+  import Select, { Option } from "@smui/select";
   import Textfield from "@smui/textfield";
+  import HelperText from "@smui/textfield/helper-text/index";
   import Dialog, { Title, Content, Actions, InitialFocus } from "@smui/dialog";
-  import Button, { Group, GroupItem, Label, Icon } from "@smui/button";
+  import Button, {
+    Group,
+    GroupItem,
+    Label,
+    Icon as ButtonIcon
+  } from "@smui/button";
   import List, { Item, Graphic, Text } from "@smui/list";
   import { MDCDialog } from "@material/dialog";
-  import IoIosSearch from "svelte-icons/io/IoIosSearch.svelte";
 
   let dialog;
   let ListUniversidades;
   let ListPeriodos;
+
+  let menuSurface;
 
   function listUniversidades() {}
   function listPeriodos() {}
@@ -24,7 +34,7 @@
     apellidos: "",
     nombre: "",
     universidad: "",
-    nombre_universidad: "Selecciona una universidad"
+    nombre_universidad: ""
   };
 
   export let nuevoacuerdo = {
@@ -32,9 +42,9 @@
     titulacion: "",
     periodo_academico: "",
     estado: "Nominado/a",
-    año: "Selecciona un periodo académico",
+    año: "",
     cuatrimestre: "",
-    nombre_titulacion: "Selecciona una titulación"
+    nombre_titulacion: ""
   };
 
   let message;
@@ -109,47 +119,24 @@
 </script>
 
 <style>
-  #campo {
-    margin-top: 6px;
-    margin-bottom: 6px;
-    margin-left: 6px;
-    margin-right: 6px;
+  .seleccion {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 1.3rem;
   }
-
-  .icon {
-    color: rgb(88, 62, 62);
-    width: 15px;
-    height: 15px;
-    margin-right: 5px;
+  .valor-seleccionado {
+    flex: 1;
+    color: black;
+    font-size: 1.1rem;
   }
-
-  #botones {
-    height: 33px;
-    width: 100%;
-    margin-left: 5px;
+  .actions {
+    margin-top: 2em;
   }
-
-  #contenedorvalores {
-    border: 1px solid rgb(124, 124, 124);
-    justify-content: center;
-    height: 70px;
-    width: 380px;
-    margin-left: 6px;
-    margin-right: 5px;
-    margin-top: 2px;
-  }
-
-  #valorseleccionado {
-    justify-content: center;
-    margin-top: 5px;
-    height: 60px;
-    width: 370px;
-    margin-left: 13px;
-  }
-
-  #boton {
-    margin-top: 15px;
-    margin-bottom: 5px;
+  .empty {
+    color: rgb(156, 156, 156);
+    font-style: italic;
+    font-size: 0.9rem;
   }
 </style>
 
@@ -157,179 +144,178 @@
   bind:this={dialog}
   aria-labelledby="dialog-title"
   aria-describedby="dialog-content">
-  <Title id="dialog-title">
-    <Label>FORMULARIO NUEVO ESTUDIANTE</Label>
+  <Title>
+    <Label>Nuevo Estudiante</Label>
   </Title>
-  <div id="formulariodialog">
-    <div id="camposdetexto">
-      <div id="campo">
-        <Textfield
-          fullwidth
-          textarea
-          class="shaped-outlined"
-          variant="outlined"
-          bind:value={nuevoestudiante.apellidos}
-          label="Apellidos"
-          input$aria-controls="helper-text-shaped-outlined-a"
-          input$aria-describedby="helper-text-shaped-outlined-a" />
-      </div>
-      <div id="campo">
-        <Textfield
-          fullwidth
-          textarea
-          class="shaped-outlined"
-          variant="outlined"
-          bind:value={nuevoestudiante.nombre}
-          label="Nombre"
-          input$aria-controls="helper-text-shaped-outlined-a"
-          input$aria-describedby="helper-text-shaped-outlined-a" />
-      </div>
-      <div id="campo">
-        <Textfield
-          fullwidth
-          textarea
-          class="shaped-outlined"
-          variant="outlined"
-          bind:value={nuevoestudiante.email}
-          label="Email"
-          input$aria-controls="helper-text-shaped-outlined-a"
-          input$aria-describedby="helper-text-shaped-outlined-a" />
+  <Content>
+    <Textfield
+      label="Apellidos"
+      style="width: 100%"
+      bind:value={nuevoestudiante.apellidos} />
+    <Textfield
+      label="Nombre"
+      style="width: 100%"
+      bind:value={nuevoestudiante.nombre} />
+    <Textfield
+      label="Email"
+      type="email"
+      style="width: 100%"
+      updateInvalid
+      bind:value={nuevoestudiante.email}
+      input$autocomplete="email" />
+    <HelperText validationMsg>No es una dirección de email válida.</HelperText>
+
+    <!-- Esto es un separador -->
+    <div style="height: 1em" />
+
+    <!--------------- Universidades ----------------->
+    <Dialog
+      bind:this={listUniversidades}
+      aria-labelledby="list-title"
+      aria-describedby="list-content">
+      <Title id="list-title">
+        <input
+          type="text"
+          size="12"
+          bind:value={filtro}
+          placeholder="Buscador"
+          title="Type in a name" />
+      </Title>
+      <Content component={List} id="list-content">
+        {#each universidadesFiltradas as u}
+          <Item
+            on:click={() => {
+              nuevoestudiante.universidad = u.codigo_universidad;
+              nuevoestudiante.nombre_universidad = u.universidad;
+              listUniversidades.close();
+            }}>
+            <Text>{u.universidad}</Text>
+          </Item>
+        {/each}
+      </Content>
+    </Dialog>
+
+    <div>
+      Universidad:
+      <div class="seleccion">
+        <span class="valor-seleccionado">
+          {#if nuevoestudiante.nombre_universidad}
+            {nuevoestudiante.nombre_universidad}
+          {:else}
+            <span class="empty">Selecciona una universidad</span>
+          {/if}
+        </span>
+        <Button on:click={() => listUniversidades.open()}>
+          <div class="material-icons">search</div>
+          <Label>Universidades</Label>
+        </Button>
       </div>
     </div>
-    <div id="dialogos">
-      <div id="dialogo">
-        <Dialog
-          bind:this={listUniversidades}
-          aria-labelledby="list-title"
-          aria-describedby="list-content">
-          <Title id="list-title">
-            <input
-              type="text"
-              size="12"
-              bind:value={filtro}
-              placeholder="Buscador"
-              title="Type in a name" />
-          </Title>
-          <Content component={List} id="list-content">
-            {#each universidadesFiltradas as u}
-              <Item
-                on:click={() => {
-                  nuevoestudiante.universidad = u.codigo_universidad;
-                  nuevoestudiante.nombre_universidad = u.universidad;
-                  listUniversidades.close();
-                }}>
-                <Text>{u.universidad}</Text>
-              </Item>
-            {/each}
-          </Content>
-        </Dialog>
 
-        <div id="botones">
-          <Button on:click={() => listUniversidades.open()}>
-            <div class="icon">
-              <IoIosSearch />
-            </div>
-            <Label>Universidades</Label>
-          </Button>
-        </div>
-      </div>
-      <div id="contenedorvalores">
-        <div id="valorseleccionado">{nuevoestudiante.nombre_universidad}</div>
-      </div>
-      <div id="dialogo">
-        <Dialog
-          bind:this={listTitulaciones}
-          aria-labelledby="list-title"
-          aria-describedby="list-content">
-          <Title id="list-title">
-            <input
-              type="text"
-              size="12"
-              bind:value={filtroTitulaciones}
-              placeholder="Buscador"
-              title="Type in a name" />
-          </Title>
-          <Content component={List} id="list-content">
-            {#each TitulacionesFiltradas as t}
-              <Item
-                on:click={() => {
-                  nuevoacuerdo.titulacion = t.codigo_titulacion;
-                  nuevoacuerdo.nombre_titulacion = t.titulacion_ingles;
-                  listTitulaciones.close();
-                }}>
-                <Text>{t.titulacion_ingles}</Text>
-              </Item>
-            {/each}
-          </Content>
-        </Dialog>
+    <!--------------- Titulaciones ----------------->
+    <Dialog
+      bind:this={listTitulaciones}
+      aria-labelledby="list-title"
+      aria-describedby="list-content">
+      <Title id="list-title">
+        <input
+          type="text"
+          size="12"
+          bind:value={filtroTitulaciones}
+          placeholder="Buscador"
+          title="Type in a name" />
+      </Title>
+      <Content component={List} id="list-content">
+        {#each TitulacionesFiltradas as t}
+          <Item
+            on:click={() => {
+              nuevoacuerdo.titulacion = t.codigo_titulacion;
+              nuevoacuerdo.nombre_titulacion = t.titulacion_ingles;
+              listTitulaciones.close();
+            }}>
+            <Text>{t.titulacion_ingles}</Text>
+          </Item>
+        {/each}
+      </Content>
+    </Dialog>
 
-        <div id="botones">
-          <Button on:click={() => listTitulaciones.open()}>
-            <div class="icon">
-              <IoIosSearch />
-            </div>
-            <Label>Titulaciones</Label>
-          </Button>
-        </div>
-        <div id="contenedorvalores">
-          <div id="valorseleccionado">{nuevoacuerdo.nombre_titulacion}</div>
-        </div>
-      </div>
-      <div id="dialogo">
-        <Dialog
-          bind:this={listPeriodos}
-          aria-labelledby="list-title"
-          aria-describedby="list-content">
-          <Title id="list-title">Periodos Académicos</Title>
-          <Content component={List} id="list-content">
-            {#each periodos as p}
-              <Item
-                on:click={() => {
-                  nuevoacuerdo.periodo_academico = p.id_periodo;
-                  nuevoacuerdo.año = mostrarperiodo(p.año, p.cuatrimestre);
-                  nuevoacuerdo.cuatrimestre = p.cuatrimestre;
-                  listPeriodos.close();
-                }}>
-                <Text>{p.año}-{p.año + 1} Q{p.cuatrimestre}</Text>
-              </Item>
-            {/each}
-          </Content>
-        </Dialog>
-
-        <div id="botones">
-          <Button on:click={() => listPeriodos.open()}>
-            <div class="icon">
-              <IoIosSearch />
-            </div>
-            <Label>Periodos Académicos</Label>
-          </Button>
-        </div>
-        <div id="contenedorvalores">
-          <div id="valorseleccionado">{nuevoacuerdo.año}</div>
-        </div>
+    <div>
+      Titulación:
+      <div class="seleccion">
+        <span class="valor-seleccionado">
+          {#if nuevoacuerdo.nombre_titulacion}
+            {nuevoacuerdo.nombre_titulacion}
+          {:else}
+            <span class="empty">Selecciona una titulación</span>
+          {/if}
+        </span>
+        <Button on:click={() => listTitulaciones.open()}>
+          <div class="material-icons">search</div>
+          <Label>Titulaciones</Label>
+        </Button>
       </div>
     </div>
-  </div>
-  <Actions>
-    {#if nuevoestudiante.apellidos === '' || nuevoestudiante.email === '' || nuevoestudiante.nombre === '' || nuevoestudiante.universidad === '' || nuevoacuerdo.titulacion === '' || nuevoacuerdo.periodo_academico === '' || nuevoacuerdo.estado === ''}
-      <Button color="secondary" variant="raised">
-        <Label>Cancel</Label>
-      </Button>
-    {:else}
-      <Button color="secondary" variant="raised">
-        <Label>Cancel</Label>
-      </Button>
-      <Button color="secondary" variant="raised" on:click={añadirambos}>
-        <Label>
-          <a href="/estudiante/{nuevoestudiante.email}">Salvar</a>
-        </Label>
-      </Button>
-    {/if}
-  </Actions>
+
+    <!--------------- Periodos ----------------->
+
+    <Dialog
+      bind:this={listPeriodos}
+      aria-labelledby="list-title"
+      aria-describedby="list-content">
+      <Title id="list-title">Periodos Académicos</Title>
+      <Content component={List} id="list-content">
+        {#each periodos as p}
+          <Item
+            on:click={() => {
+              nuevoacuerdo.periodo_academico = p.id_periodo;
+              nuevoacuerdo.año = mostrarperiodo(p.año, p.cuatrimestre);
+              nuevoacuerdo.cuatrimestre = p.cuatrimestre;
+              listPeriodos.close();
+            }}>
+            <Text>{p.año}-{p.año + 1} Q{p.cuatrimestre}</Text>
+          </Item>
+        {/each}
+      </Content>
+    </Dialog>
+
+    <div>
+      Titulación:
+      <div class="seleccion">
+        <span class="valor-seleccionado">
+          {#if nuevoacuerdo.año}
+            {nuevoacuerdo.año}
+          {:else}
+            <span class="empty">Selecciona un periodo</span>
+          {/if}        
+        </span>
+        <Button on:click={() => listPeriodos.open()}>
+          <div class="material-icons">search</div>
+          <Label>Periodos Académicos</Label>
+        </Button>
+      </div>
+    </div>
+
+    <div class="actions">
+      <Actions>
+        {#if nuevoestudiante.apellidos === '' || nuevoestudiante.email === '' || nuevoestudiante.nombre === '' || nuevoestudiante.universidad === '' || nuevoacuerdo.titulacion === '' || nuevoacuerdo.periodo_academico === '' || nuevoacuerdo.estado === ''}
+          <Button color="secondary" variant="raised">
+            <Label>Cancel</Label>
+          </Button>
+        {:else}
+          <Button color="secondary" variant="raised">
+            <Label>Cancel</Label>
+          </Button>
+          <Button color="secondary" variant="raised" on:click={añadirambos}>
+            <Label>
+              <a href="/estudiante/{nuevoestudiante.email}">Salvar</a>
+            </Label>
+          </Button>
+        {/if}
+      </Actions>
+    </div>
+  </Content>
 </Dialog>
 
-<div id="boton">
-  <Button variant="raised" on:click={() => dialog.open()}>
-    <Label>Nuevo Estudiante</Label>
-  </Button>
-</div>
+<Button variant="raised" on:click={() => dialog.open()}>
+  <Label>Nuevo Estudiante</Label>
+</Button>
