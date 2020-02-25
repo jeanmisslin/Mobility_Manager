@@ -24,6 +24,8 @@
 <script>
   import TablaFiltrable from "../components/TablaFiltrable.svelte";
   import NuevoEstudiante from "../components/NuevoEstudiante.svelte";
+  import NuevoEstudianteColumnas from "../components/NuevoEstudianteColumnas.svelte";
+  import NuevoEstudianteFilas from "../components/NuevoEstudianteFilas.svelte";
   import Textfield from "@smui/textfield";
   import Dialog, { Title, Content, Actions, InitialFocus } from "@smui/dialog";
   import Button, { Group, GroupItem, Label, Icon } from "@smui/button";
@@ -161,6 +163,10 @@
 <!--<div id="contenido">ESTUDIANTES</div>-->
 
 <NuevoEstudiante {universidades} {periodos} {titulaciones} />
+
+<NuevoEstudianteColumnas {universidades} {periodos} {titulaciones} />
+
+<NuevoEstudianteFilas {universidades} {periodos} {titulaciones} />
 
 <TablaFiltrable
   tabla={estudiantes}
