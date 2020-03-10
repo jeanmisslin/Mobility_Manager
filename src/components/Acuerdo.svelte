@@ -6,6 +6,7 @@
   export let ofertas;
 
   import ModificaAcuerdo from "./ModificaAcuerdo.svelte";
+  import ModificaAcuerdoForm from "./ModificaAcuerdoForm.svelte";
   import TablaFiltrableComponentes from "./TablaFiltrableComponentes.svelte";
 
   function encontrartitulacion(a, t) {
@@ -71,6 +72,7 @@
 </style>
 
 <ModificaAcuerdo {periodos} {acuerdo} {titulaciones} />
+<ModificaAcuerdoForm {periodos} {acuerdo} {titulaciones} />
 
 <div id="solicitadas">ASIGNATURAS SOLICITADAS</div>
 
