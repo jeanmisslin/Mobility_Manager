@@ -279,7 +279,7 @@
     </Dialog>
 
     <div>
-      Titulación:
+      Periodo Académico:
       <div class="seleccion">
         <span class="valor-seleccionado">
           {#if nuevoacuerdo.año}
