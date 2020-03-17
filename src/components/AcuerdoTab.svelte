@@ -48,8 +48,11 @@
     return asignacion;
   }
 
-  let id_periodo = periodo(active, periodos);
-  let acuerdo = id_acuerdo(acuerdos, id_periodo);
+  let id_periodo;
+  let acuerdo;
+
+  $: id_periodo = periodo(active, periodos);
+  $: acuerdo = id_acuerdo(acuerdos, id_periodo);
 </script>
 
 <style>
@@ -100,7 +103,7 @@
 
 <ModificaAcuerdoForm {periodos} {acuerdo} {titulaciones} />
 
-periodo: {id_periodo.id_periodo} acuerdo: {id_acuerdo.id_acuerdo}
+periodo: {id_periodo.id_periodo} acuerdo: {acuerdo.id_acuerdo}
 
 <!--active: {active} periodoA: {periodoA} periodoQ: {periodoQ} año: {año}
 cuatrimestre: {cuatrimestre} id_periodo: {id_periodo.id_periodo} periodo_año: {id_periodo.año}
