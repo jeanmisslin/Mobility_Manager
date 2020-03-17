@@ -164,10 +164,6 @@
 
 <NuevoEstudiante {universidades} {periodos} {titulaciones} />
 
-<NuevoEstudianteColumnas {universidades} {periodos} {titulaciones} />
-
-<NuevoEstudianteFilas {universidades} {periodos} {titulaciones} />
-
 <TablaFiltrable
   tabla={estudiantes}
   campos={[{ name: 'email', show: true, render: obj => `<a href="/estudiante/${obj.email}">${obj.email}</a>` }, { name: 'apellidos', show: true, filter: true }, { name: 'nombre', show: true, filter: true }, { name: 'universidad', show: true, filter: true }, { name: 'pais', show: true, filter: true }]} />

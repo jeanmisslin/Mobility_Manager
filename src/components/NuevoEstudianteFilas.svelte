@@ -136,7 +136,6 @@
   }
 
   #contenedorvalores {
-    border: 1px solid rgb(124, 124, 124);
     justify-content: center;
     height: 60px;
     width: 99%;
@@ -167,7 +166,7 @@
 
   #camposdetexto {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-content: center;
     justify-content: center;
     width: 100%;
@@ -192,6 +191,9 @@
     width: 100%;
     height: 33%;
   }
+
+  #datospersonales {
+  }
 </style>
 
 <Dialog
@@ -206,39 +208,30 @@
 
       <!--------------- Campos de Texto ----------------->
 
+      <Button color="secondary" variant="raised">
+        <Label>DATOS PERSONALES</Label>
+      </Button>
+
       <div id="camposdetexto">
         <div id="campo">
           <Textfield
-            fullwidth
-            textarea
-            class="shaped-outlined"
-            variant="outlined"
-            bind:value={nuevoestudiante.apellidos}
             label="Apellidos"
-            input$aria-controls="helper-text-shaped-outlined-a"
-            input$aria-describedby="helper-text-shaped-outlined-a" />
-        </div>
-        <div id="campo">
+            style="width: 100%"
+            bind:value={nuevoestudiante.apellidos} />
           <Textfield
-            fullwidth
-            textarea
-            class="shaped-outlined"
-            variant="outlined"
-            bind:value={nuevoestudiante.nombre}
             label="Nombre"
-            input$aria-controls="helper-text-shaped-outlined-a"
-            input$aria-describedby="helper-text-shaped-outlined-a" />
-        </div>
-        <div id="campo">
+            style="width: 100%"
+            bind:value={nuevoestudiante.nombre} />
           <Textfield
-            fullwidth
-            textarea
-            class="shaped-outlined"
-            variant="outlined"
-            bind:value={nuevoestudiante.email}
             label="Email"
-            input$aria-controls="helper-text-shaped-outlined-a"
-            input$aria-describedby="helper-text-shaped-outlined-a" />
+            type="email"
+            style="width: 100%"
+            updateInvalid
+            bind:value={nuevoestudiante.email}
+            input$autocomplete="email" />
+          <HelperText validationMsg>
+            No es una dirección de email válida.
+          </HelperText>
         </div>
       </div>
 
@@ -285,7 +278,9 @@
             </Button>
           </div>
           <div id="contenedorvalores">
-            <div id="valorseleccionado">{nuevoestudiante.nombre_universidad}</div>
+            <div id="valorseleccionado">
+              {nuevoestudiante.nombre_universidad}
+            </div>
           </div>
         </div>
 
@@ -334,7 +329,7 @@
           </div>
         </div>
 
-      <!--------------- Periodos Académicos ----------------->
+        <!--------------- Periodos Académicos ----------------->
 
         <div id="dialogo">
           <Dialog
@@ -374,7 +369,7 @@
         </div>
       </div>
 
-    <!--------------- Botones ----------------->
+      <!--------------- Botones ----------------->
 
       <Actions>
         {#if nuevoestudiante.apellidos === '' || nuevoestudiante.email === '' || nuevoestudiante.nombre === '' || nuevoestudiante.universidad === '' || nuevoacuerdo.titulacion === '' || nuevoacuerdo.periodo_academico === '' || nuevoacuerdo.estado === ''}
