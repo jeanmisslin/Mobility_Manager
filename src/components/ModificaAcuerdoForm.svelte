@@ -32,24 +32,18 @@
 
   let nombre_estudio = titulaciones.find(element => element.codigo_titulacion === acuerdo.titulacion);
   let año_periodo = periodos.find(element => element.id_periodo === acuerdo.periodo_academico);
+  
+  let modificaacuerdo;
 
-  let {
-    id_acuerdo,
-    estudiante,
-    titulacion,
-    periodo_academico,
-    estado
-  } = acuerdo;
-
-  export let modificaacuerdo = {
-    id_acuerdo: id_acuerdo,
-    estudiante: estudiante,
-    titulacion: titulacion,
-    periodo_academico: periodo_academico,
+  $: modificaacuerdo = {
+    id_acuerdo: acuerdo.id_acuerdo,
+    estudiante: acuerdo.estudiante,
+    titulacion: acuerdo.titulacion,
+    periodo_academico: acuerdo.periodo_academico,
     año: año_periodo.año,
     cuatrimestre: año_periodo.cuatrimestre,
     nombre_titulacion: nombre_estudio.titulacion_ingles,
-    estado: estado
+    estado: acuerdo.estado
   };
 
   let message;
