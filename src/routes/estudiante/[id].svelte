@@ -92,17 +92,6 @@
 
   let tabstring = generartab(acuerdos, periodos);
   let tabgenerado = tabstring.split(",");
-
-  let periodostring = tabgenerado[1].split("-");
-  let periodoQ = tabgenerado[1].split("Q");
-  let año = periodostring[0];
-  let cuatrimestre = periodoQ[1];
-  let id_periodo = periodos.find(
-    element =>
-      element.año === parseInt(año) &&
-      element.cuatrimestre === parseInt(cuatrimestre)
-  );
-  let acuerdo = acuerdos.find(element => element.periodo_academico === id_periodo.id_periodo);
 </script>
 
 <style>
@@ -189,22 +178,10 @@
 
 <div>
   <TabBar tabs={tabgenerado} let:tab bind:active>
-    <!-- Notice that the `tab` property is required! -->
     <Tab {tab}>
       <Label>{tab}</Label>
     </Tab>
   </TabBar>
-
-  <!--<div style="margin-top: 15px;">
-    Programmatically select:
-    {#each tabgenerado as tab}
-      <Button on:click={() => (active = tab)}>
-        <Label>{tab}</Label>
-      </Button>
-    {/each}
-  </div>
-
-  <pre class="status">Selected: {active}</pre>-->
 </div>
 
 {#if active === 'Datos Personales'}
@@ -214,7 +191,7 @@
   <AcuerdoTab {active} {periodos} {acuerdos} {titulaciones} />
 {/if}
 
-<!-- <DatosPersonales {estudiante} {universidades} />-->
+<!-- <DatosPersonales {estudiante} {universidades} />
 <div id="contenido">DATOS PERSONALES</div>
 
 <ModificaEstudiante {estudiante} {universidades} />
@@ -244,4 +221,4 @@
   {:else}
     <Acuerdo {periodos} {acuerdo} {titulaciones} {asignaturas} {ofertas} />
   {/if}
-{/each}
+{/each}-->
