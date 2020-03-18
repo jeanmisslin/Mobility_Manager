@@ -30,9 +30,12 @@
 
   let estados = [`Nominado/a`, `Matriculado/a`, `Eliminado`];
 
-  let nombre_estudio = titulaciones.find(element => element.codigo_titulacion === acuerdo.titulacion);
-  let año_periodo = periodos.find(element => element.id_periodo === acuerdo.periodo_academico);
+  let nombre_estudio;
+  let año_periodo;
   
+  $: nombre_estudio = titulaciones.find(element => element.codigo_titulacion === acuerdo.titulacion);
+  $: año_periodo = periodos.find(element => element.id_periodo === acuerdo.periodo_academico);
+
   let modificaacuerdo;
 
   $: modificaacuerdo = {
