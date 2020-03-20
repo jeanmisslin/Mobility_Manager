@@ -188,7 +188,7 @@
   <DatosPersonales {estudiante} {universidades} />
   <NuevoAcuerdoForm {periodos} {titulaciones} estudiante={email} />
 {:else}
-  <AcuerdoTab {active} {periodos} {acuerdos} {titulaciones} />
+  <AcuerdoTab seleccion={active} {periodos} {acuerdos} {titulaciones} {ofertas} {asignaturas}/>
 {/if}
 
 <!-- <DatosPersonales {estudiante} {universidades} />
@@ -201,9 +201,9 @@
 <div id="acuerdos">ACUERDOS ACADEMICOS</div>
 
 <NuevoAcuerdo {periodos} {titulaciones} estudiante={email} />
-<NuevoAcuerdoForm {periodos} {titulaciones} estudiante={email} />
+<NuevoAcuerdoForm {periodos} {titulaciones} estudiante={email} />-->
 
-{#each acuerdos as acuerdo}
+<!--{#each acuerdos as acuerdo}
   {#if acuerdo.titulacion === 'GRESEIAAT'}
     <AcuerdoGrados
       {periodos}

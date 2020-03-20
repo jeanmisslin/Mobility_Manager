@@ -6,6 +6,7 @@
 
   import SolicitarAsignatura from "./SolicitarAsignatura.svelte";
   import ModificarEstadoAsignacion from "./ModificarEstadoAsignacion.svelte";
+  import Textfield from "@smui/textfield";
 
   let filtro = "";
 
@@ -58,16 +59,16 @@
     background-color: rgb(255, 246, 239);
   }
 
-  #scroll {
-    overflow: scroll;
-    margin-top: 20px;
-    height: 204px;
-    width: 100%;
-    border: 1px solid black;
+  #buscador {
+    margin-bottom: 15px;
   }
 </style>
 
-<div id="filtro">
+<div id="buscador">
+  <Textfield label="Buscador" style="width: 100%" bind:value={filtro} />
+</div>
+
+<!--<div id="filtro">
   <p>
     BUSCADOR:
     <input
@@ -76,9 +77,9 @@
       placeholder="Introduce la palabra clave"
       title="Type in a name" />
   </p>
-</div>
+</div>-->
 
-<div id="scroll">
+{#if filtro !== ''}
   <table id="tabla">
     <tr>
       {#each campos as c}
@@ -119,4 +120,4 @@
       </tr>
     {/each}
   </table>
-</div>
+{/if}
