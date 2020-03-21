@@ -25,7 +25,7 @@
     border-collapse: collapse;
     width: 100%;
     margin-bottom: 0px;
-    margin-top: 0px;
+    margin-top:24px;
   }
 
   td {

@@ -15,7 +15,7 @@
   import TabBar from "@smui/tab-bar";
   import Button from "@smui/button";
 
-  let active = "Asignaturas Solicitadas";
+  let active = "Asignaturas Ofertadas";
 
   function periodo(seleccion, periodos) {
     let periodoA = seleccion.split("-");
@@ -62,10 +62,11 @@
 </script>
 
 <style>
+
   #contenedor {
-    display: flex;
-    flex-direction: column;
-    margin-top: 0px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
     width: 100%;
     height: 100%;
   }
@@ -73,27 +74,19 @@
   #datos {
     display: flex;
     flex-direction: column;
-    margin-top: 30px;
-    width: 100%;
-    height: 120px;
+    margin-top: 85px;
+    width: 30%;
+    height: 300px;
   }
 
   #tab {
     display: flex;
     flex-direction: column;
-    margin-top: 33px;
+    margin-top: 36px;
     margin-left: 6px;
-    margin-bottom: 30px;
-    width: 100%;
-    height: 100%;
-  }
-
-  #periodoyestado {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 47px;
     margin-bottom: 10px;
+    width: 68%;
+    height: 100%;
   }
 
   #campos {
@@ -114,7 +107,7 @@
     text-align: start;
     margin-top: 6px;
     margin-left: 2px;
-    margin-bottom: 30px;
+    margin-bottom: 6px;
     width: 100%;
     height: 68px;
     border-bottom-style: solid;
@@ -145,45 +138,46 @@
   }
 </style>
 
+<div id="contenedor">
+
 <div id="datos">
-  <div id="periodoyestado">
-    <div id="campos">
-      <label>Periodo</label>
-      <data>{seleccion}</data>
-    </div>
-    <div id="estado">
-      <label>Estado</label>
-      <data>{acuerdo.estado}</data>
-    </div>
+  <div id="campos">
+    <label>Periodo</label>
+    <data>{seleccion}</data>
   </div>
   <div id="titulacion">
     <label>Titulación</label>
     <data>{acuerdo.titulacion_castellano}</data>
   </div>
-
+  <div id="estado">
+    <label>Estado</label>
+    <data>{acuerdo.estado}</data>
+  </div>
+  <ModificaAcuerdoForm {periodos} {acuerdo} {titulaciones} />
 </div>
-
-<ModificaAcuerdoForm {periodos} {acuerdo} {titulaciones} />
 
 <div id="tab">
   <div>
-    <TabBar tabs={['Asignaturas Solicitadas', 'Asignaturas Ofertadas']} let:tab bind:active>
+    <TabBar
+      tabs={['Asignaturas Ofertadas', 'Asignaturas Solicitadas']}
+      let:tab
+      bind:active>
       <Tab {tab}>
         <Label>{tab}</Label>
       </Tab>
     </TabBar>
   </div>
+
+  {#if active === 'Asignaturas Ofertadas'}
+    <TablaFiltrableComponentes
+      tabla={ofertas.filter(ofer => ofer.periodo_academico === acuerdo.periodo_academico && (asignada(asignaturas, ofer) === null || asignada(asignaturas, ofer) === undefined))}
+      {acuerdo}
+      componente="solicitar"
+      campos={[{ name: 'codigo_asignatura', nombre: 'código', show: true, filter: true, render: obj => `<a href="/asignatura/${obj.codigo_asignatura}">${obj.codigo_asignatura}</a>` }, { name: 'nombre_ingles', nombre: 'titulo', show: true, filter: true, render: obj => `<a href="${obj.plan_de_estudios_ingles}">${obj.nombre_ingles}</a>` }, { name: 'nombre_catalan', filter: true }, { name: 'nombre_castellano', filter: true }, { name: 'plazas_disponibles', nombre: 'vacantes', show: true }]} />
+  {:else}
+    <TablaAsignaturasSolicitadas tabla={asignaturas} {ofertas} {acuerdo} />
+  {/if}
+
 </div>
 
-{#if active === 'Asignaturas Ofertadas'}
-  <TablaFiltrableComponentes
-    tabla={ofertas.filter(ofer => ofer.periodo_academico === acuerdo.periodo_academico && (asignada(asignaturas, ofer) === null || asignada(asignaturas, ofer) === undefined))}
-    {acuerdo}
-    componente="solicitar"
-    campos={[{ name: 'codigo_asignatura', nombre: 'código', show: true, filter: true, render: obj => `<a href="/asignatura/${obj.codigo_asignatura}">${obj.codigo_asignatura}</a>` }, { name: 'nombre_ingles', nombre: 'titulo', show: true, filter: true, render: obj => `<a href="${obj.plan_de_estudios_ingles}">${obj.nombre_ingles}</a>` }, { name: 'nombre_catalan', filter: true }, { name: 'nombre_castellano', filter: true }, { name: 'plazas_disponibles', nombre: 'vacantes', show: true }]} />
-{:else}
-  <TablaAsignaturasSolicitadas
-    tabla={asignaturas}
-    {ofertas}
-    {acuerdo}/>
-{/if}
+</div>

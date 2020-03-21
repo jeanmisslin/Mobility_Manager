@@ -67,8 +67,6 @@
     asignaturas
   } = estudiante;
 
-  console.log(estudiante.asignaturas);
-
   let active = "Datos Personales";
 
   function mostrarperiodo(p) {
@@ -104,7 +102,7 @@
     margin-bottom: 10px;
     height: 50px;
     width: 100%;
-    background-color: rgb(117, 182, 226);
+    background-color: white;
     border: 1px solid black;
   }
 

@@ -37,7 +37,7 @@
   #tabla {
     border-collapse: collapse;
     width: 100%;
-    margin-bottom: 0px;
+    margin-bottom: 20px;
     margin-top: 0px;
   }
 
@@ -51,15 +51,16 @@
     border: 1px solid black;
     text-align: center;
     padding: 3px;
-    background-color: rgb(117, 182, 226);
+    background-color: white;
     color: black;
   }
 
   tr:nth-child(even) {
-    background-color: rgb(255, 246, 239);
+    background-color: white;
   }
 
   #buscador {
+    margin-top: 0px;
     margin-bottom: 15px;
   }
 </style>
@@ -68,18 +69,6 @@
   <Textfield label="Buscador" style="width: 100%" bind:value={filtro} />
 </div>
 
-<!--<div id="filtro">
-  <p>
-    BUSCADOR:
-    <input
-      type="text"
-      bind:value={filtro}
-      placeholder="Introduce la palabra clave"
-      title="Type in a name" />
-  </p>
-</div>-->
-
-{#if filtro !== ''}
   <table id="tabla">
     <tr>
       {#each campos as c}
@@ -120,4 +109,4 @@
       </tr>
     {/each}
   </table>
-{/if}
+
