@@ -9,6 +9,7 @@
   import ModificaAcuerdo from "./ModificaAcuerdo.svelte";
   import ModificaAcuerdoForm from "./ModificaAcuerdoForm.svelte";
   import TablaFiltrableComponentes from "./TablaFiltrableComponentes.svelte";
+  import TablaAsignaturasSolicitadas from "./TablaAsignaturasSolicitadas.svelte";
   import AsignaturasSolicitadas from "./AsignaturasSolicitadas.svelte";
   import Tab, { Icon, Label } from "@smui/tab";
   import TabBar from "@smui/tab-bar";
@@ -181,7 +182,8 @@
     componente="solicitar"
     campos={[{ name: 'codigo_asignatura', nombre: 'código', show: true, filter: true, render: obj => `<a href="/asignatura/${obj.codigo_asignatura}">${obj.codigo_asignatura}</a>` }, { name: 'nombre_ingles', nombre: 'titulo', show: true, filter: true, render: obj => `<a href="${obj.plan_de_estudios_ingles}">${obj.nombre_ingles}</a>` }, { name: 'nombre_catalan', filter: true }, { name: 'nombre_castellano', filter: true }, { name: 'plazas_disponibles', nombre: 'vacantes', show: true }]} />
 {:else}
-  <AsignaturasSolicitadas
+  <TablaAsignaturasSolicitadas
     tabla={asignaturas}
+    {ofertas}
     {acuerdo}/>
 {/if}

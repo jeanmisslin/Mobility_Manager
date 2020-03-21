@@ -67,6 +67,8 @@
     asignaturas
   } = estudiante;
 
+  console.log(estudiante.asignaturas);
+
   let active = "Datos Personales";
 
   function mostrarperiodo(p) {
