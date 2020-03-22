@@ -5,6 +5,7 @@
 
   import SolicitarAsignatura from "./SolicitarAsignatura.svelte";
   import ModificarEstadoAsignacion from "./ModificarEstadoAsignacion.svelte";
+  import ModificarEstadoAsignacionForm from "./ModificarEstadoAsignacionForm.svelte";
   import Textfield from "@smui/textfield";
   import DataTable, { Head, Body, Row, Cell } from "@smui/data-table";
 
@@ -16,6 +17,14 @@
       if (array[i] === t) {
         return true;
       }
+    return false;
+  }
+
+  function masterogrado(a,o) {
+    let oferta = o.find(element => element.id_oferta === a);
+    if (oferta.titulacion.includes('GRE')) {
+      return true;
+    }
     return false;
   }
 </script>
@@ -90,6 +99,54 @@
           <td id="red">{obj.plazas_disponibles}</td>
           <td id="red">{obj.estado_solicitud}</td>
           <td id="red">
+            <ModificarEstadoAsignacion asignatura={obj} {acuerdo} />
+          </td>
+        {:else if acuerdo.titulacion.includes('GRE') && !masterogrado(obj.oferta, ofertas)}
+          <td id="red">
+            <a href="/asignatura/{obj.codigo_asignatura}">
+              {obj.codigo_asignatura}
+            </a>
+          </td>
+          <td id="red">{obj.nombre_ingles}</td>
+          <td id="red">{obj.plazas_disponibles}</td>
+          <td id="red">{obj.estado_solicitud}</td>
+          <td id="red">
+            <ModificarEstadoAsignacion asignatura={obj} {acuerdo} />
+          </td>
+        {:else if !acuerdo.titulacion.includes('GRE') && masterogrado(obj.oferta, ofertas)}
+          <td id="red">
+            <a href="/asignatura/{obj.codigo_asignatura}">
+              {obj.codigo_asignatura}
+            </a>
+          </td>
+          <td id="yellow">{obj.nombre_ingles}</td>
+          <td id="yellow">{obj.plazas_disponibles}</td>
+          <td id="yellow">{obj.estado_solicitud}</td>
+          <td id="yellow">
+            <ModificarEstadoAsignacion asignatura={obj} {acuerdo} />
+          </td>
+        {:else if !acuerdo.titulacion.includes('GRE') && !masterogrado(obj.oferta, ofertas)}
+          <td id="red">
+            <a href="/asignatura/{obj.codigo_asignatura}">
+              {obj.codigo_asignatura}
+            </a>
+          </td>
+          <td id="green">{obj.nombre_ingles}</td>
+          <td id="green">{obj.plazas_disponibles}</td>
+          <td id="green">{obj.estado_solicitud}</td>
+          <td id="green">
+            <ModificarEstadoAsignacion asignatura={obj} {acuerdo} />
+          </td>
+        {:else if acuerdo.titulacion === 'GRESEIAAT' && masterogrado(obj.oferta, ofertas)}
+          <td id="red">
+            <a href="/asignatura/{obj.codigo_asignatura}">
+              {obj.codigo_asignatura}
+            </a>
+          </td>
+          <td id="green">{obj.nombre_ingles}</td>
+          <td id="green">{obj.plazas_disponibles}</td>
+          <td id="green">{obj.estado_solicitud}</td>
+          <td id="green">
             <ModificarEstadoAsignacion asignatura={obj} {acuerdo} />
           </td>
         {:else if !encontrartitulacion(obj.oferta, acuerdo.titulacion, ofertas)}
