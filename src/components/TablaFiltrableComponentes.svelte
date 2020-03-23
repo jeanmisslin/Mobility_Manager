@@ -5,6 +5,7 @@
   export let acuerdo;
 
   import SolicitarAsignatura from "./SolicitarAsignatura.svelte";
+  import SolicitarAsignaturaForm from "./SolicitarAsignaturaForm.svelte";
   import ModificarEstadoAsignacion from "./ModificarEstadoAsignacion.svelte";
   import Textfield from "@smui/textfield";
 
@@ -69,6 +70,7 @@
   <Textfield label="Buscador" style="width: 100%" bind:value={filtro} />
 </div>
 
+{#if filtro !== ""}
   <table id="tabla">
     <tr>
       {#each campos as c}
@@ -99,7 +101,7 @@
         {/each}
         {#if componente === 'solicitar'}
           <td>
-            <SolicitarAsignatura acuerdo={acuerdo.id_acuerdo} oferta={obj} />
+            <SolicitarAsignaturaForm acuerdo={acuerdo.id_acuerdo} oferta={obj} />
           </td>
         {:else if componente === 'modificar'}
           <td>
@@ -109,4 +111,5 @@
       </tr>
     {/each}
   </table>
+  {/if}
 

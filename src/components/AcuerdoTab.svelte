@@ -15,7 +15,7 @@
   import TabBar from "@smui/tab-bar";
   import Button from "@smui/button";
 
-  let active = "Asignaturas Ofertadas";
+  let active = "Buscador de Asignaturas";
 
   function periodo(seleccion, periodos) {
     let periodoA = seleccion.split("-");
@@ -159,7 +159,7 @@
 <div id="tab">
   <div>
     <TabBar
-      tabs={['Asignaturas Ofertadas', 'Asignaturas Solicitadas']}
+      tabs={['Buscador de Asignaturas', 'Asignaturas Solicitadas']}
       let:tab
       bind:active>
       <Tab {tab}>
@@ -168,7 +168,7 @@
     </TabBar>
   </div>
 
-  {#if active === 'Asignaturas Ofertadas'}
+  {#if active === 'Buscador de Asignaturas'}
     <TablaFiltrableComponentes
       tabla={ofertas.filter(ofer => ofer.periodo_academico === acuerdo.periodo_academico && (asignada(asignaturas, ofer) === null || asignada(asignaturas, ofer) === undefined))}
       {acuerdo}

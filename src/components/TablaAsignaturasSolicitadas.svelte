@@ -114,7 +114,7 @@
             <ModificarEstadoAsignacionForm asignatura={obj} {acuerdo} />
           </td>
         {:else if !acuerdo.titulacion.includes('GRE') && masterogrado(obj.oferta, ofertas)}
-          <td id="red">
+          <td id="yellow">
             <a href="/asignatura/{obj.codigo_asignatura}">
               {obj.codigo_asignatura}
             </a>
@@ -126,7 +126,7 @@
             <ModificarEstadoAsignacionForm asignatura={obj} {acuerdo} />
           </td>
         {:else if !acuerdo.titulacion.includes('GRE') && !masterogrado(obj.oferta, ofertas)}
-          <td id="red">
+          <td id="green">
             <a href="/asignatura/{obj.codigo_asignatura}">
               {obj.codigo_asignatura}
             </a>
@@ -138,7 +138,7 @@
             <ModificarEstadoAsignacionForm asignatura={obj} {acuerdo} />
           </td>
         {:else if acuerdo.titulacion === 'GRESEIAAT' && masterogrado(obj.oferta, ofertas)}
-          <td id="red">
+          <td id="green">
             <a href="/asignatura/{obj.codigo_asignatura}">
               {obj.codigo_asignatura}
             </a>

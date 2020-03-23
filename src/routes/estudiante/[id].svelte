@@ -31,6 +31,16 @@
 </script>
 
 <script>
+  import Menu, { SelectionGroup, SelectionGroupIcon } from "@smui/menu";
+  import { Anchor } from "@smui/menu-surface";
+  import List, {
+    Item,
+    Separator,
+    Text,
+    PrimaryText,
+    SecondaryText,
+    Graphic
+  } from "@smui/list";
   import DatosPersonales from "../../components/DatosPersonales.svelte";
   import AcuerdoTab from "../../components/AcuerdoTab.svelte";
   import ModificaEstudiante from "../../components/ModificaEstudiante.svelte";
@@ -67,6 +77,8 @@
     asignaturas
   } = estudiante;
 
+  let menu;
+
   let active = "Datos Personales";
 
   function mostrarperiodo(p) {
@@ -98,7 +110,7 @@
   #cabecera {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     margin-bottom: 10px;
     height: 50px;
     width: 100%;
@@ -114,50 +126,11 @@
     text-transform: uppercase;
   }
 
-  #acuerdos {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 25px;
-    margin-bottom: 10px;
+  #menu {
+    width: 80px;
     height: 40px;
-    width: 100%;
-    font-weight: 650;
-    background-color: rgb(233, 158, 97);
-    color: black;
-    border: 1px solid black;
-  }
-
-  #contenido {
-    display: flex;
+    margin-left: 10px;
     align-items: center;
-    justify-content: center;
-    margin-top: 25px;
-    margin-bottom: 10px;
-    height: 40px;
-    width: 100%;
-    font-weight: 650;
-    background-color: rgb(233, 158, 97);
-    color: black;
-    border: 1px solid black;
-  }
-
-  #options {
-    flex-direction: row;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    margin-bottom: 10px;
-    border-bottom: groove;
-    height: 25px;
-    width: 100%;
-    color: black;
-  }
-
-  #data {
-    margin-left: 15px;
-    margin-bottom: 10px;
-    margin-top: 10px;
   }
 </style>
 
@@ -166,14 +139,27 @@
 </svelte:head>
 
 <div id="cabecera">
-  <div id="title">{apellidos}, {nombre}</div>
-</div>
-
-<div id="options">
-  <div id="data">
-    <a href="../">ESTUDIANTES</a>
-    <a href="/asignaturas/">ASIGNATURAS</a>
+  <div id="menu">
+    <div style="min-width: 100px;">
+      <Button on:click={() => menu.setOpen(true)}>Menu</Button>
+      <Menu bind:this={menu}>
+        <List>
+          <Item>
+            <Text>
+              <a href="../">Estudiantes Incoming</a>
+            </Text>
+          </Item>
+          <Item>
+            <Text>
+              <a href="/asignaturas/">Asignaturas</a>
+            </Text>
+          </Item>
+        </List>
+      </Menu>
+    </div>
   </div>
+  <div id="title">{apellidos}, {nombre}</div>
+  <div />
 </div>
 
 <div>
@@ -188,37 +174,11 @@
   <DatosPersonales {estudiante} {universidades} />
   <NuevoAcuerdoForm {periodos} {titulaciones} estudiante={email} />
 {:else}
-  <AcuerdoTab seleccion={active} {periodos} {acuerdos} {titulaciones} {ofertas} {asignaturas}/>
+  <AcuerdoTab
+    seleccion={active}
+    {periodos}
+    {acuerdos}
+    {titulaciones}
+    {ofertas}
+    {asignaturas} />
 {/if}
-
-<!-- <DatosPersonales {estudiante} {universidades} />
-<div id="contenido">DATOS PERSONALES</div>
-
-<ModificaEstudiante {estudiante} {universidades} />
-
-<ModificaEstudianteForm {estudiante} {universidades} />
-
-<div id="acuerdos">ACUERDOS ACADEMICOS</div>
-
-<NuevoAcuerdo {periodos} {titulaciones} estudiante={email} />
-<NuevoAcuerdoForm {periodos} {titulaciones} estudiante={email} />-->
-
-<!--{#each acuerdos as acuerdo}
-  {#if acuerdo.titulacion === 'GRESEIAAT'}
-    <AcuerdoGrados
-      {periodos}
-      {acuerdo}
-      {titulaciones}
-      {asignaturas}
-      {ofertas} />
-  {:else if acuerdo.titulacion === 'MUESEIAAT'}
-    <AcuerdoMasters
-      {periodos}
-      {acuerdo}
-      {titulaciones}
-      {asignaturas}
-      {ofertas} />
-  {:else}
-    <Acuerdo {periodos} {acuerdo} {titulaciones} {asignaturas} {ofertas} />
-  {/if}
-{/each}-->

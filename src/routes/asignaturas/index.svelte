@@ -9,8 +9,21 @@
 </script>
 
 <script>
+  import TablaFiltrableEstudiantes from "../../components/TablaFiltrableEstudiantes.svelte";
+  import NuevaAsignatura from "../../components/NuevaAsignatura.svelte";
+  import Menu, { SelectionGroup, SelectionGroupIcon } from "@smui/menu";
+  import { Anchor } from "@smui/menu-surface";
+  import List, {
+    Item,
+    Graphic,
+    Text,
+    PrimaryText,
+    SecondaryText,
+    Separator
+  } from "@smui/list";
+  import Button, { Group, GroupItem, Label, Icon } from "@smui/button";
 
-  import TablaFiltrable from "../../components/TablaFiltrable.svelte";
+  let menu;
 
   export let asignaturas;
 
@@ -50,11 +63,11 @@
   #cabecera {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     margin-bottom: 10px;
     height: 50px;
     width: 100%;
-    background-color: rgb(117, 182, 226);
+    background-color: white;
     border: 1px solid black;
   }
 
@@ -66,35 +79,17 @@
     text-transform: uppercase;
   }
 
-  #contenido {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 25px;
-    margin-bottom: 17px;
-    height: 40px;
-    width: 200px;
-    font-weight: 650;
-    background-color: rgb(233, 158, 97);
-    color: black;
-    border: 1px solid black;
-  }
-
-  #options {
-    flex-direction: row;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    border-bottom: groove;
-    height: 25px;
+  #form {
     width: 100%;
-    color: black;
+    height: 60px;
+    margin-top: 20px;
   }
 
-  #data {
-    margin-left: 15px;
-    margin-bottom: 10px;
-    margin-top: 10px;
+  #menu {
+    width: 80px;
+    height: 40px;
+    margin-left: 10px;
+    align-items: center;
   }
 </style>
 
@@ -103,99 +98,28 @@
 </svelte:head>
 
 <div id="cabecera">
-  <div id="title">ESEIAAT INCOMING STUDENTS</div>
+  <div id="menu">
+    <div style="min-width: 100px;">
+      <Button on:click={() => menu.setOpen(true)}>Menu</Button>
+      <Menu bind:this={menu}>
+        <List>
+          <Item>
+            <Text>
+              <a href="../">Estudiantes Incoming</a>
+            </Text>
+          </Item>
+        </List>
+      </Menu>
+    </div>
+  </div>
+  <div id="title">ASIGNATURAS</div>
+  <div />
 </div>
 
-<div id="options">
-  <div id="data">
-    <a href="../">ESTUDIANTES</a>
-  </div>
-</div>
-
-<div id="contenido">ASIGNATURAS</div>
-
-{#if nuevaasignatura.open}
-  <div class="request-box">
-    <div id="textfield">
-      <div id="field">
-        <p>
-          codigo:
-          <input type="text" bind:value={nuevaasignatura.codigo_asignatura} />
-        </p>
-        <p />
-        <p>
-          nombre_catalan:
-          <input type="text" bind:value={nuevaasignatura.nombre_catalan} />
-        </p>
-        <p>
-          nombre_castellano:
-          <input type="text" bind:value={nuevaasignatura.nombre_castellano} />
-        </p>
-        <p>
-          nombre_ingles:
-          <input type="text" bind:value={nuevaasignatura.nombre_ingles} />
-        </p>
-        <p>
-          idioma:
-          <input type="text" bind:value={nuevaasignatura.idioma} />
-        </p>
-        <p />
-        <p>
-          ects:
-          <input type="text" bind:value={nuevaasignatura.ects} />
-        </p>
-        <p />
-        <p>
-          plan_de_estudios_catalan:
-          <input
-            type="text"
-            bind:value={nuevaasignatura.plan_de_estudios_catalan} />
-        </p>
-        <p>
-          plan_de_estudios_castellano:
-          <input
-            type="text"
-            bind:value={nuevaasignatura.plan_de_estudios_castellano} />
-        </p>
-        <p>
-          plan_de_estudios_ingles:
-          <input
-            type="text"
-            bind:value={nuevaasignatura.plan_de_estudios_ingles} />
-        </p>
-      </div>
-    </div>
-    <div>
-      <div id="buttons">
-        <div id="field">
-          <button on:click={añadirasignatura}>Salvar</button>
-          <button on:click={() => (nuevaasignatura.open = false)}>
-            Cancelar
-          </button>
-        </div>
-      </div>
-    </div>
-    {#if message}
-      <p>{message}</p>
-    {/if}
-  </div>
-{:else}
-  <div id="buttons">
-    <div id="field">
-      <button on:click={() => (nuevaasignatura.open = true)}>Añadir</button>
-    </div>
-  </div>
-{/if}
-
-<!-- <BuscadorAsignaturas tabla="asignaturas" asignaturas = {asignaturas}/> -->
-
-<TablaFiltrable
+<TablaFiltrableEstudiantes
   tabla={asignaturas}
-  campos={[
-    { name: 'codigo_asignatura', nombre: 'codigo', show: true, filter: true, render: (obj) => `<a href="/asignatura/${obj.codigo_asignatura}">${obj.codigo_asignatura}</a>` }, 
-    { name: 'nombre_ingles', nombre: 'título', show: true, filter: true, render: (obj) => `<a href="${obj.plan_de_estudios_ingles}">${obj.nombre_ingles}</a>` },
-    { name: 'nombre_catalan', filter: true },
-    { name: 'nombre_castellano', filter: true }, 
-    { name: 'idioma', show: true, filter: true }, 
-    { name: 'ects', show: true }
-  ]} />
+  campos={[{ name: 'codigo_asignatura', nombre: 'codigo', show: true, filter: true, render: obj => `<a href="/asignatura/${obj.codigo_asignatura}">${obj.codigo_asignatura}</a>` }, { name: 'nombre_ingles', nombre: 'título', show: true, filter: true, render: obj => `<a href="${obj.plan_de_estudios_ingles}">${obj.nombre_ingles}</a>` }, { name: 'nombre_catalan', filter: true }, { name: 'nombre_castellano', filter: true }, { name: 'idioma', show: true, filter: true }, { name: 'ects', show: true }]} />
+
+<div id="form">
+  <NuevaAsignatura />
+</div>

@@ -22,22 +22,33 @@
 </script>
 
 <script>
-  import TablaFiltrable from "../components/TablaFiltrable.svelte";
+  import TablaFiltrableEstudiantes from "../components/TablaFiltrableEstudiantes.svelte";
   import NuevoEstudiante from "../components/NuevoEstudiante.svelte";
   import NuevoEstudianteColumnas from "../components/NuevoEstudianteColumnas.svelte";
   import NuevoEstudianteFilas from "../components/NuevoEstudianteFilas.svelte";
   import Textfield from "@smui/textfield";
   import Dialog, { Title, Content, Actions, InitialFocus } from "@smui/dialog";
   import Button, { Group, GroupItem, Label, Icon } from "@smui/button";
-  import List, { Item, Graphic, Text } from "@smui/list";
+  import List, {
+    Item,
+    Graphic,
+    Text,
+    PrimaryText,
+    SecondaryText,
+    Separator
+  } from "@smui/list";
   import Select, { Option } from "@smui/select";
   import { MDCDialog } from "@material/dialog";
   import IoIosSearch from "svelte-icons/io/IoIosSearch.svelte";
+  import Menu, { SelectionGroup, SelectionGroupIcon } from "@smui/menu";
+  import { Anchor } from "@smui/menu-surface";
 
   export let estudiantes;
   export let universidades;
   export let titulaciones;
   export let periodos;
+
+  let menu;
 
   let message;
 
@@ -97,11 +108,11 @@
   #cabecera {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     margin-bottom: 10px;
     height: 50px;
     width: 100%;
-    background-color: rgb(117, 182, 226);
+    background-color: white;
     border: 1px solid black;
   }
 
@@ -113,35 +124,17 @@
     text-transform: uppercase;
   }
 
-  #contenido {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 25px;
-    margin-bottom: 10px;
-    height: 40px;
-    width: 200px;
-    font-weight: 650;
-    background-color: rgb(233, 158, 97);
-    color: black;
-    border: 1px solid black;
-  }
-
-  #options {
-    flex-direction: row;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    border-bottom: groove;
-    height: 25px;
+  #form {
     width: 100%;
-    color: black;
+    height: 60px;
+    margin-top: 20px;
   }
 
-  #data {
-    margin-left: 15px;
-    margin-bottom: 10px;
-    margin-top: 10px;
+  #menu {
+    width: 80px;
+    height: 40px;
+    margin-left: 10px;
+    align-items: center;
   }
 </style>
 
@@ -150,20 +143,33 @@
 </svelte:head>
 
 <div id="cabecera">
-  <div id="title">ESEIAAT INCOMING STUDENTS</div>
-</div>
-
-<div id="options">
-  <div id="data">
-    <a href="/asignaturas/">ASIGNATURAS</a>
-    <a href="/ofertas/">OFERTAS DISPONIBLES</a>
+  <div id="menu">
+    <div style="min-width: 100px;">
+      <Button on:click={() => menu.setOpen(true)}>Menu</Button>
+      <Menu bind:this={menu}>
+        <List>
+          <Item>
+            <Text>
+              <a href="/asignaturas/">Asignaturas</a>
+            </Text>
+          </Item>
+          <Item>
+            <Text>
+              <a href="/ofertas/">Ofertas Disponibles</a>
+            </Text>
+          </Item>
+        </List>
+      </Menu>
+    </div>
   </div>
+  <div id="title">Estudiantes Incoming</div>
+  <div />
 </div>
 
-<!--<div id="contenido">ESTUDIANTES</div>-->
-
-<NuevoEstudiante {universidades} {periodos} {titulaciones} />
-
-<TablaFiltrable
+<TablaFiltrableEstudiantes
   tabla={estudiantes}
-  campos={[{ name: 'email', show: true, render: obj => `<a href="/estudiante/${obj.email}">${obj.email}</a>` }, { name: 'apellidos', show: true, filter: true }, { name: 'nombre', show: true, filter: true }, { name: 'universidad', show: true, filter: true }, { name: 'pais', show: true, filter: true }]} />
+  campos={[{ name: 'apellidos', show: true, render: obj => `<a href="/estudiante/${obj.email}">${obj.apellidos}</a>`, filter: true }, { name: 'nombre', show: true, filter: true }, { name: 'universidad', show: true, filter: true }, { name: 'pais', show: true, filter: true }]} />
+
+<div id="form">
+  <NuevoEstudiante {universidades} {periodos} {titulaciones} />
+</div>
