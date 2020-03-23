@@ -99,7 +99,7 @@
           <td id="red">{obj.plazas_disponibles}</td>
           <td id="red">{obj.estado_solicitud}</td>
           <td id="red">
-            <ModificarEstadoAsignacion asignatura={obj} {acuerdo} />
+            <ModificarEstadoAsignacionForm asignatura={obj} {acuerdo} />
           </td>
         {:else if acuerdo.titulacion.includes('GRE') && !masterogrado(obj.oferta, ofertas)}
           <td id="red">
@@ -111,7 +111,7 @@
           <td id="red">{obj.plazas_disponibles}</td>
           <td id="red">{obj.estado_solicitud}</td>
           <td id="red">
-            <ModificarEstadoAsignacion asignatura={obj} {acuerdo} />
+            <ModificarEstadoAsignacionForm asignatura={obj} {acuerdo} />
           </td>
         {:else if !acuerdo.titulacion.includes('GRE') && masterogrado(obj.oferta, ofertas)}
           <td id="red">
@@ -123,7 +123,7 @@
           <td id="yellow">{obj.plazas_disponibles}</td>
           <td id="yellow">{obj.estado_solicitud}</td>
           <td id="yellow">
-            <ModificarEstadoAsignacion asignatura={obj} {acuerdo} />
+            <ModificarEstadoAsignacionForm asignatura={obj} {acuerdo} />
           </td>
         {:else if !acuerdo.titulacion.includes('GRE') && !masterogrado(obj.oferta, ofertas)}
           <td id="red">
@@ -135,7 +135,7 @@
           <td id="green">{obj.plazas_disponibles}</td>
           <td id="green">{obj.estado_solicitud}</td>
           <td id="green">
-            <ModificarEstadoAsignacion asignatura={obj} {acuerdo} />
+            <ModificarEstadoAsignacionForm asignatura={obj} {acuerdo} />
           </td>
         {:else if acuerdo.titulacion === 'GRESEIAAT' && masterogrado(obj.oferta, ofertas)}
           <td id="red">
@@ -147,7 +147,7 @@
           <td id="green">{obj.plazas_disponibles}</td>
           <td id="green">{obj.estado_solicitud}</td>
           <td id="green">
-            <ModificarEstadoAsignacion asignatura={obj} {acuerdo} />
+            <ModificarEstadoAsignacionForm asignatura={obj} {acuerdo} />
           </td>
         {:else if !encontrartitulacion(obj.oferta, acuerdo.titulacion, ofertas)}
           <td id="yellow">
@@ -159,7 +159,7 @@
           <td id="yellow">{obj.plazas_disponibles}</td>
           <td id="yellow">{obj.estado_solicitud}</td>
           <td id="yellow">
-            <ModificarEstadoAsignacion asignatura={obj} {acuerdo} />
+            <ModificarEstadoAsignacionForm asignatura={obj} {acuerdo} />
           </td>
         {:else}
           <td id="green">
@@ -171,7 +171,7 @@
           <td id="green">{obj.plazas_disponibles}</td>
           <td id="green">{obj.estado_solicitud}</td>
           <td id="green">
-            <ModificarEstadoAsignacion asignatura={obj} {acuerdo} />
+            <ModificarEstadoAsignacionForm asignatura={obj} {acuerdo} />
           </td>
         {/if}
       {/if}
