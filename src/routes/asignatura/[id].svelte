@@ -35,14 +35,14 @@
 
   let menu;
 
-  let active = "Datos de la Asignatura";
+  let active = "Datos Asignatura";
 
   function generartab(periodos) {
     let l = periodos.length;
-    let pestañas = "Datos de la Asignatura";
+    let pestañas = "Datos Asignatura";
     let periodo;
     let pestaña;
-    for (let i = l-1; i > l-3; i--) {
+    for (let i = l-1; i > l-5; i--) {
       periodo = periodos[i];
       pestaña =
         periodo.año + "-" + (periodo.año + 1) + " Q" + periodo.cuatrimestre;
@@ -127,9 +127,9 @@
   </TabBar>
 </div>
 
-{#if active === 'Datos de la Asignatura'}
+{#if active === 'Datos Asignatura'}
 
-<!------ Datos de la Asignatura ------->
+<!------ Datos Asignatura ------->
 
   <DatosAsignatura {asignatura} />
 
