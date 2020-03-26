@@ -1,24 +1,12 @@
 <script context="module">
   export async function preload({ params, query }) {
     const id = params.id;
-    let estudiante = await this.fetch(`/estudiante/${id}.json`).then(body =>
-      body.json()
-    );
-    let { universidades } = await this.fetch(`universidades.json`).then(body =>
-      body.json()
-    );
-    let { titulaciones } = await this.fetch(`titulaciones.json`).then(body =>
-      body.json()
-    );
-    let { ofertas } = await this.fetch(`ofertas.json`).then(body =>
-      body.json()
-    );
-    let { periodos } = await this.fetch(`periodos.json`).then(body =>
-      body.json()
-    );
-    let { asignaciones } = await this.fetch(`asignaciones.json`).then(body =>
-      body.json()
-    );
+    let estudiante = await this.fetch(`/estudiante/${id}.json`).then(body => body.json());
+    let { universidades } = await this.fetch(`universidades.json`).then(body => body.json());
+    let { titulaciones } = await this.fetch(`titulaciones.json`).then(body => body.json());
+    let { ofertas } = await this.fetch(`ofertas.json`).then(body => body.json());
+    let { periodos } = await this.fetch(`periodos.json`).then(body => body.json());
+    let { asignaciones } = await this.fetch(`asignaciones.json`).then(body => body.json());
     return {
       estudiante,
       universidades,
@@ -33,25 +21,9 @@
 <script>
   import Menu, { SelectionGroup, SelectionGroupIcon } from "@smui/menu";
   import { Anchor } from "@smui/menu-surface";
-  import List, {
-    Item,
-    Separator,
-    Text,
-    PrimaryText,
-    SecondaryText,
-    Graphic
-  } from "@smui/list";
+  import List, { Item, Separator, Text, PrimaryText, SecondaryText, Graphic } from "@smui/list";
   import DatosPersonales from "../../components/DatosPersonales.svelte";
   import AcuerdoTab from "../../components/AcuerdoTab.svelte";
-  import ModificaEstudiante from "../../components/ModificaEstudiante.svelte";
-  import ModificaEstudianteForm from "../../components/ModificaEstudianteForm.svelte";
-  import ModificaAcuerdo from "../../components/ModificaAcuerdo.svelte";
-  import ModificaAcuerdoForm from "../../components/ModificaAcuerdoForm.svelte";
-  import TablaFiltrableComponentes from "../../components/TablaFiltrableComponentes.svelte";
-  import Acuerdo from "../../components/Acuerdo.svelte";
-  import AcuerdoGrados from "../../components/AcuerdoGrados.svelte";
-  import AcuerdoMasters from "../../components/AcuerdoMasters.svelte";
-  import NuevoAcuerdo from "../../components/NuevoAcuerdo.svelte";
   import NuevoAcuerdoForm from "../../components/NuevoAcuerdoForm.svelte";
   import Tab, { Icon, Label } from "@smui/tab";
   import TabBar from "@smui/tab-bar";
@@ -92,11 +64,8 @@
     let periodo;
     let pestaña;
     for (let i = 0; i < l; i++) {
-      periodo = periodos.find(
-        element => element.id_periodo === acuerdos[i].periodo_academico
-      );
-      pestaña =
-        periodo.año + "-" + (periodo.año + 1) + " Q" + periodo.cuatrimestre;
+      periodo = periodos.find(element => element.id_periodo === acuerdos[i].periodo_academico);
+      pestaña = periodo.año + "-" + (periodo.año + 1) + " Q" + periodo.cuatrimestre;
       pestañas = pestañas + ", " + pestaña;
     }
     return pestañas;
@@ -139,6 +108,9 @@
 </svelte:head>
 
 <div id="cabecera">
+
+<!-- Menú con los links al resto de pantallas -->
+
   <div id="menu">
     <div style="min-width: 100px;">
       <Button on:click={() => menu.setOpen(true)}>Menu</Button>
@@ -158,9 +130,14 @@
       </Menu>
     </div>
   </div>
+
+<!------- Titulo de la pantalla ----------->
+
   <div id="title">{apellidos}, {nombre}</div>
   <div />
 </div>
+
+<!--- Selector Datos Estudiante / Acuerdo Académico --->
 
 <div>
   <TabBar tabs={tabgenerado} let:tab bind:active>
@@ -171,9 +148,18 @@
 </div>
 
 {#if active === 'Datos Personales'}
+
+<!------ Datos del Estudiante ------->
+
   <DatosPersonales {estudiante} {universidades} />
+
+<!----- Formulario Nuevo Acuerdo ----->
+
   <NuevoAcuerdoForm {periodos} {titulaciones} estudiante={email} />
 {:else}
+
+<!----- Datos del Acuerdo Académico ----->
+
   <AcuerdoTab
     seleccion={active}
     {periodos}

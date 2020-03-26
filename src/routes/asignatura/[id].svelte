@@ -1,21 +1,11 @@
 <script context="module">
   export async function preload({ params, query }) {
     const id = params.id;
-    let asignatura = await this.fetch(`/asignatura/${id}.json`).then(body =>
-      body.json()
-    );
-    let { ofertas } = await this.fetch(`ofertas.json`).then(
-      body => body.json()
-    );
-    let { periodos } = await this.fetch(`periodos.json`).then(body =>
-      body.json()
-    );
-    let { titulaciones } = await this.fetch(`titulaciones.json`).then(body =>
-      body.json()
-    );
-    let { asignaciones } = await this.fetch(`asignaciones.json`).then(body =>
-      body.json()
-    );
+    let asignatura = await this.fetch(`/asignatura/${id}.json`).then(body => body.json());
+    let { ofertas } = await this.fetch(`ofertas.json`).then(body => body.json());
+    let { periodos } = await this.fetch(`periodos.json`).then(body => body.json());
+    let { titulaciones } = await this.fetch(`titulaciones.json`).then(body => body.json());
+    let { asignaciones } = await this.fetch(`asignaciones.json`).then(body => body.json());
     return {
       asignatura,
       ofertas,
@@ -33,31 +23,47 @@
   export let titulaciones;
   export let asignaciones;
 
-  import ModificaAsignatura from "../../components/ModificaAsignatura.svelte";
-  import MostrarOfertasAsignatura from "../../components/MostrarOfertasAsignatura.svelte";
+  import Menu, { SelectionGroup, SelectionGroupIcon } from "@smui/menu";
+  import { Anchor } from "@smui/menu-surface";
+  import List, { Item, Separator, Text, PrimaryText, SecondaryText, Graphic } from "@smui/list";
+  import MostrarOfertasForm from "../../components/MostrarOfertasForm.svelte";
+  import DatosAsignatura from "../../components/DatosAsignatura.svelte";
+  import ModificaAsignaturaForm from "../../components/ModificaAsignaturaForm.svelte";
+  import Tab, { Icon, Label } from "@smui/tab";
+  import TabBar from "@smui/tab-bar";
+  import Button from "@smui/button";
 
-  let {
-    codigo_asignatura,
-    nombre_catalan,
-    nombre_castellano,
-    nombre_ingles,
-    idioma,
-    ects,
-    plan_de_estudios_catalan,
-    plan_de_estudios_castellano,
-    plan_de_estudios_ingles
-  } = asignatura;
+  let menu;
+
+  let active = "Datos de la Asignatura";
+
+  function generartab(periodos) {
+    let l = periodos.length;
+    let pestañas = "Datos de la Asignatura";
+    let periodo;
+    let pestaña;
+    for (let i = l-1; i > l-3; i--) {
+      periodo = periodos[i];
+      pestaña =
+        periodo.año + "-" + (periodo.año + 1) + " Q" + periodo.cuatrimestre;
+      pestañas = pestañas + ", " + pestaña;
+    }
+    return pestañas;
+  }
+
+  let tabstring = generartab(periodos);
+  let tabgenerado = tabstring.split(",");
 </script>
 
 <style>
   #cabecera {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     margin-bottom: 10px;
     height: 50px;
     width: 100%;
-    background-color: rgb(117, 182, 226);
+    background-color: white;
     border: 1px solid black;
   }
 
@@ -69,49 +75,11 @@
     text-transform: uppercase;
   }
 
-  #ofertas {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 25px;
-    margin-bottom: 10px;
+  #menu {
+    width: 80px;
     height: 40px;
-    width: 100%;
-    font-weight: 650;
-    background-color: rgb(233, 158, 97);
-    color: black;
-    border: 1px solid black;
-  }
-
-  #contenido {
-    display: flex;
+    margin-left: 10px;
     align-items: center;
-    justify-content: center;
-    margin-top: 25px;
-    margin-bottom: 10px;
-    height: 40px;
-    width: 100%;
-    font-weight: 650;
-    background-color: rgb(233, 158, 97);
-    color: black;
-    border: 1px solid black;
-  }
-
-  #options {
-    flex-direction: row;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    border-bottom: groove;
-    height: 25px;
-    width: 100%;
-    color: black;
-  }
-
-  #data {
-    margin-left: 15px;
-    margin-bottom: 10px;
-    margin-top: 10px;
   }
 </style>
 
@@ -120,27 +88,57 @@
 </svelte:head>
 
 <div id="cabecera">
-  <div id="title">{nombre_ingles}</div>
-</div>
 
-<div id="options">
-  <div id="data">
-    <a href="../">ESTUDIANTES</a>
-    <a href="/asignaturas/">ASIGNATURAS</a>
+<!-- Menú con los links al resto de pantallas -->
+
+<div id="menu">
+    <div style="min-width: 100px;">
+      <Button on:click={() => menu.setOpen(true)}>Menu</Button>
+      <Menu bind:this={menu}>
+        <List>
+          <Item>
+            <Text>
+              <a href="../">Estudiantes Incoming</a>
+            </Text>
+          </Item>
+          <Item>
+            <Text>
+              <a href="/asignaturas/">Asignaturas</a>
+            </Text>
+          </Item>
+        </List>
+      </Menu>
+    </div>
   </div>
+
+<!------- Titulo de la pantalla ----------->
+
+  <div id="title">{asignatura.nombre_ingles}</div>
+  <div></div>
 </div>
 
-<div id="contenido">DATOS DE LA ASIGNATURA</div>
+<!--- Selector Datos Asignatura / Periodo Académico --->
 
-<ModificaAsignatura {asignatura} />
+<div>
+  <TabBar tabs={tabgenerado} let:tab bind:active>
+    <Tab {tab}>
+      <Label>{tab}</Label>
+    </Tab>
+  </TabBar>
+</div>
 
-<div id="ofertas">OFERTAS</div>
+{#if active === 'Datos de la Asignatura'}
 
-{#each periodos as p}
-  <MostrarOfertasAsignatura
-    {ofertas}
-    asignatura={codigo_asignatura}
-    periodo={p}
-    {titulaciones}
-    {asignaciones} />
-{/each}
+<!------ Datos de la Asignatura ------->
+
+  <DatosAsignatura {asignatura} />
+
+<!--- Formulario Modifica Asignatura --->
+
+  <ModificaAsignaturaForm {asignatura} />
+{:else}
+
+<!--- Ofertas de la Asignatura según Periodo Académico --->
+
+  <MostrarOfertasForm {ofertas} {periodos} {asignatura} {titulaciones} {asignaciones} seleccion={active} />
+{/if}

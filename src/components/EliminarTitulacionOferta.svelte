@@ -2,6 +2,23 @@
   export let elimina;
   export let oferta;
 
+  import MenuSurface, { Anchor } from "@smui/menu-surface";
+  import IconButton from "@smui/icon-button";
+  import Select, { Option } from "@smui/select";
+  import Textfield from "@smui/textfield";
+  import HelperText from "@smui/textfield/helper-text/index";
+  import Dialog, { Title, Content, Actions, InitialFocus } from "@smui/dialog";
+  import Button, {
+    Group,
+    GroupItem,
+    Label,
+    Icon as ButtonIcon
+  } from "@smui/button";
+  import List, { Item, Graphic, Text } from "@smui/list";
+  import { MDCDialog } from "@material/dialog";
+
+  let simpleDialog;
+
   let array = oferta.titulacion.split(",");
 
   let message;
@@ -10,11 +27,9 @@
     let i;
     let modificada = "";
     for (i = 0; i != array.length; i++)
-      if (array[i] != elimina && i<array.length-1) {
-        modificada = modificada + array[i] + ",";
-      } else if (array[i] != elimina && i===array.length-1) {
+      if (array[i] != elimina) {
         modificada = modificada + array[i];
-      }
+        }
       return modificada;
   }
 
@@ -40,7 +55,23 @@
   }
 </script>
 
-{#if modificacion.open}
+<div>
+    <Dialog bind:this={simpleDialog} aria-labelledby="simple-title" aria-describedby="simple-content">
+      <Title id="simple-title">Eliminar Titulación</Title>
+      <Actions>
+        <Button color="secondary" variant="raised">
+          <Label>NO</Label>
+        </Button>
+        <Button color="secondary" variant="raised" on:click={modificaoferta}>
+          <Label>SI</Label>
+        </Button>
+      </Actions>
+    </Dialog>
+
+    <Button color="primary" variant="raised" on:click={() => simpleDialog.open()}><Label>Eliminar</Label></Button>
+  </div>
+
+<!--{#if modificacion.open}
   <div class="request-box">
     <div>
       <div id="buttons">
@@ -60,4 +91,4 @@
       <button on:click={() => (modificacion.open = true)}>Eliminar</button>
     </div>
   </div>
-{/if}
+{/if}-->

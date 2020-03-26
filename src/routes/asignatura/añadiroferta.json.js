@@ -11,10 +11,9 @@ export function post(req, res, next) {
     req.on('data', data => body += data)
     req.on('end', () => {
         const nuevaoferta = JSON.parse(body)
-        db.run(`INSERT INTO ofertas 
-                (asignatura, periodo_academico, titulacion, plazas_ofertadas, 
-                    plazas_disponibles, plazas_concedidas, plazas_solicitadas) 
-                    VALUES(?, ?, ?, ?, ?, ?, ?)`, [
+        db.run(`INSERT INTO ofertas (asignatura, periodo_academico, titulacion, plazas_ofertadas, 
+                plazas_disponibles, plazas_concedidas, plazas_solicitadas) 
+                VALUES(?, ?, ?, ?, ?, ?, ?)`, [
                     nuevaoferta.asignatura,
                     parseInt(nuevaoferta.periodo),
                     nuevaoferta.titulacion,

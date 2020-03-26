@@ -1,4 +1,7 @@
 <script>
+
+  export let asignatura;
+
   import MenuSurface, { Anchor } from "@smui/menu-surface";
   import IconButton from "@smui/icon-button";
   import Select, { Option } from "@smui/select";
@@ -20,33 +23,45 @@
 
   let idiomas = [`CAT`, `CAST`, `ING`, `CAT/CAST`, `CAT/ING`, `CAST/ING`, `CAT/CAST/ING`];
 
-  let nuevaasignatura = {
+  let {
+    codigo_asignatura,
+    nombre_catalan,
+    nombre_castellano,
+    nombre_ingles,
+    idioma,
+    ects,
+    plan_de_estudios_catalan,
+    plan_de_estudios_castellano,
+    plan_de_estudios_ingles
+  } = asignatura;
+
+  let modificaasignatura = {
     open: false,
-    codigo_asignatura: "",
-    nombre_catalan: "",
-    nombre_castellano: "",
-    nombre_ingles: "",
-    idioma: "",
-    ects: "",
-    plan_de_estudios_catalan: "",
-    plan_de_estudios_castellano: "",
-    plan_de_estudios_ingles: ""
+    codigo: codigo_asignatura,
+    ncat: nombre_catalan,
+    ncast: nombre_castellano,
+    ning: nombre_ingles,
+    idioma: idioma,
+    ects: ects,
+    pscat: plan_de_estudios_catalan,
+    pscast: plan_de_estudios_castellano,
+    psing: plan_de_estudios_ingles 
   };
 
   let message;
 
-  function añadirasignatura() {
-    fetch(`nuevaasignatura.json`, {
+  function modificarasignatura() {
+    fetch(`/asignatura/modificaasignatura.json`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(nuevaasignatura)
+      body: JSON.stringify(modificaasignatura)
     })
       .then(body => body.json())
       .then(json => {
         if (json.error) {
           message = json.error;
         } else {
-          message = "nuevaasignatura saved";
+          message = "modificacion guardada";
         }
       });
   }
@@ -79,32 +94,32 @@
   aria-labelledby="dialog-title"
   aria-describedby="dialog-content">
   <Title>
-    <Label>Nueva Asignatura</Label>
+    <Label>Modifica Asignatura</Label>
   </Title>
   <Content>
     <Textfield
       label="Código"
       style="width: 100%"
-      bind:value={nuevaasignatura.codigo_asignatura} />
+      bind:value={modificaasignatura.codigo} />
     <Textfield
       label="Título en Catalán"
       style="width: 100%"
-      bind:value={nuevaasignatura.nombre_catalan} />
+      bind:value={modificaasignatura.ncat} />
     <Textfield
       label="Título en Castellano"
       style="width: 100%"
-      bind:value={nuevaasignatura.nombre_castellano} />
+      bind:value={modificaasignatura.ncat} />
     <Textfield
       label="Título en Inglés"
       style="width: 100%"
-      bind:value={nuevaasignatura.nombre_ingles} />
+      bind:value={modificaasignatura.ning} />
     <Select
       style="width: 100%"
-      bind:value={nuevaasignatura.idioma}
+      bind:value={modificaasignatura.idioma}
       label="Idiomas">
       <Option value="" />
       {#each idiomas as idioma}
-        <Option value={idioma} selected={nuevaasignatura.idioma === idioma}>
+        <Option value={idioma} selected={modificaasignatura.idioma === idioma}>
           {idioma}
         </Option>
       {/each}
@@ -112,40 +127,34 @@
     <Textfield
       label="ECTS"
       style="width: 100%"
-      bind:value={nuevaasignatura.ects} />
+      bind:value={modificaasignatura.ects} />
     <Textfield
       label="Plan de estudios en Catalán"
       style="width: 100%"
-      bind:value={nuevaasignatura.plan_de_estudios_catalan} />
+      bind:value={modificaasignatura.pscat} />
     <Textfield
       label="Plan de estudios en Castellano"
       style="width: 100%"
-      bind:value={nuevaasignatura.plan_de_estudios_castellano} />
+      bind:value={modificaasignatura.pscast} />
     <Textfield
       label="Plan de estudios en Inglés"
       style="width: 100%"
-      bind:value={nuevaasignatura.plan_de_estudios_ingles} />
+      bind:value={modificaasignatura.psing} />
     <div style="height: 1em" />
 
     <div class="actions">
       <Actions>
-        {#if nuevaasignatura.codigo_asignatura === '' || nuevaasignatura.nombre_catalan === '' || nuevaasignatura.nombre_castellano === '' || nuevaasignatura.nombre_ingles === '' || nuevaasignatura.idioma === '' || nuevaasignatura.ects === '' || nuevaasignatura.plan_de_estudios_ingles === '' || nuevaasignatura.plan_de_estudios_catalan === '' || nuevaasignatura.plan_de_estudios_castellano === ''}
           <Button color="secondary" variant="raised">
             <Label>Cancel</Label>
           </Button>
-        {:else}
-          <Button color="secondary" variant="raised">
-            <Label>Cancel</Label>
-          </Button>
-          <Button color="secondary" variant="raised" on:click={añadirasignatura}>
+          <Button color="secondary" variant="raised" on:click={modificarasignatura}>
             <Label>Salvar</Label>
           </Button>
-        {/if}
       </Actions>
     </div>
   </Content>
 </Dialog>
 
 <Button variant="raised" on:click={() => dialog.open()}>
-  <Label>Nueva Asignatura</Label>
+  <Label>Modifica Asignatura</Label>
 </Button>

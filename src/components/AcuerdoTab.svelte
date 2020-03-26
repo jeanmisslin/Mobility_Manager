@@ -6,34 +6,27 @@
   export let ofertas;
   export let asignaturas;
 
-  import ModificaAcuerdo from "./ModificaAcuerdo.svelte";
   import ModificaAcuerdoForm from "./ModificaAcuerdoForm.svelte";
   import TablaFiltrableComponentes from "./TablaFiltrableComponentes.svelte";
   import TablaAsignaturasSolicitadas from "./TablaAsignaturasSolicitadas.svelte";
-  import AsignaturasSolicitadas from "./AsignaturasSolicitadas.svelte";
   import Tab, { Icon, Label } from "@smui/tab";
   import TabBar from "@smui/tab-bar";
   import Button from "@smui/button";
 
-  let active = "Buscador de Asignaturas";
+  let active = "Asignaturas Solicitadas";
 
   function periodo(seleccion, periodos) {
     let periodoA = seleccion.split("-");
     let periodoQ = seleccion.split("Q");
     let año = periodoA[0];
     let cuatrimestre = periodoQ[1];
-    let id_periodo = periodos.find(
-      element =>
-        (element.año === parseInt(año)) &
-        (element.cuatrimestre === parseInt(cuatrimestre))
-    );
+    let id_periodo = periodos.find(element => (element.año === parseInt(año)) &
+        (element.cuatrimestre === parseInt(cuatrimestre)));
     return id_periodo;
   }
 
   function id_acuerdo(acuerdos, id_periodo) {
-    let acuerdo = acuerdos.find(
-      element => element.periodo_academico === id_periodo.id_periodo
-    );
+    let acuerdo = acuerdos.find(element => element.periodo_academico === id_periodo.id_periodo);
     return acuerdo;
   }
 
@@ -62,7 +55,6 @@
 </script>
 
 <style>
-
   #contenedor {
     display:flex;
     flex-direction: row;
@@ -158,10 +150,7 @@
 
 <div id="tab">
   <div>
-    <TabBar
-      tabs={['Buscador de Asignaturas', 'Asignaturas Solicitadas']}
-      let:tab
-      bind:active>
+    <TabBar tabs={['Asignaturas Solicitadas', 'Buscador de Asignaturas']} let:tab bind:active>
       <Tab {tab}>
         <Label>{tab}</Label>
       </Tab>

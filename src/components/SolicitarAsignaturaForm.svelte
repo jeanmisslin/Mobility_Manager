@@ -17,7 +17,7 @@
   import List, { Item, Graphic, Text } from "@smui/list";
   import { MDCDialog } from "@material/dialog";
 
-  let simpleDialog;;
+  let simpleDialog;
 
   let message;
   let asignacion;
@@ -86,24 +86,6 @@
 <style>
 
 </style>
-
-<!--{#if asignacion.open}
-  <div id="buttons">
-    <button on:click={ejecutarambas}>Salvar</button>
-    <button on:click={cerrar}>Cancelar</button>
-  </div>
-  <div>
-    {#if message}
-      <p>{message}</p>
-    {/if}
-  </div>
-{:else}
-  <div id="buttons">
-    <div id="field">
-      <button on:click={abrir}>Solicitar</button>
-    </div>
-  </div>
-{/if}-->
 
 <div>
     <Dialog bind:this={simpleDialog} aria-labelledby="simple-title" aria-describedby="simple-content">

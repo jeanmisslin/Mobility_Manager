@@ -9,7 +9,7 @@
   #contenedor {
     display: flex;
     flex-direction: column;
-    margin-top: 30px;
+    margin-top: 20px;
     width: 100%;
     height: 290px;
   }

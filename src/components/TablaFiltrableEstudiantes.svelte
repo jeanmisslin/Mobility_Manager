@@ -62,7 +62,7 @@
 
   #listado {
     width: 100%;
-    height: 370px;
+    height: 300px;
     overflow: auto;
   }
 </style>

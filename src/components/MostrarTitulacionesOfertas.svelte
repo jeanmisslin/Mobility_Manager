@@ -55,19 +55,19 @@
     border: 1px solid black;
     text-align: center;
     padding: 3px;
-    background-color: rgb(117, 182, 226);
+    background-color: white;
     color: black;
   }
 
   tr:nth-child(even) {
-    background-color: rgb(255, 246, 239);
+    background-color:white;
   }
 </style>
 
 <table id="tabla">
   <tr>
     <th>TITULACIONES QUE LA OFERTAN</th>
-    <th>ELIMINAR OFERTA</th>
+    <th>ELIMINAR TITULACIÓN</th>
   </tr>
   {#each array as a}
     {#each titulaciones as t}

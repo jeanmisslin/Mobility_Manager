@@ -3,17 +3,51 @@
   export let titulaciones;
   export let periodo;
 
-  let nuevaoferta = {
+  import MenuSurface, { Anchor } from "@smui/menu-surface";
+  import IconButton from "@smui/icon-button";
+  import Select, { Option } from "@smui/select";
+  import Textfield from "@smui/textfield";
+  import HelperText from "@smui/textfield/helper-text/index";
+  import Dialog, { Title, Content, Actions, InitialFocus } from "@smui/dialog";
+  import Button, {
+    Group,
+    GroupItem,
+    Label,
+    Icon as ButtonIcon
+  } from "@smui/button";
+  import List, { Item, Graphic, Text } from "@smui/list";
+  import { MDCDialog } from "@material/dialog";
+
+  let dialog;
+  let ListTitulaciones;
+
+  function listTitulaciones() {}
+
+  let nuevaoferta
+
+  $: nuevaoferta = {
     asignatura: asignatura,
     periodo: periodo,
     titulacion: "",
+    nombre_titulacion: "",
     plazas_ofertadas: ""
   };
 
   let message;
 
-  function añadiroferta() {
-    fetch(`/asignatura/añadiroferta.json`, {
+  let filtroTitulaciones = "";
+
+  $: TitulacionesFiltradas = titulaciones.filter(e => {
+    let strIn = (a, b) => a.toLowerCase().indexOf(b.toLowerCase()) != -1;
+    return (
+      strIn(e.titulacion_catalan, filtroTitulaciones) ||
+      strIn(e.titulacion_castellano, filtroTitulaciones) ||
+      strIn(e.titulacion_ingles, filtroTitulaciones)
+    );
+  });
+
+  function añadeoferta() {
+    fetch(`nuevaoferta.json`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(nuevaoferta)
@@ -30,72 +64,83 @@
 </script>
 
 <style>
-  #datos {
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    margin-top: 25px;
-    margin-bottom: 10px;
-    height: 60px;
-    width: 85%;
-    font-weight: 650;
-    background-color: rgb(230, 245, 255);
-    color: black;
-    border: 1px solid black;
-  }
-
-  #contenido_datos {
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    margin-left: 20px;
-    margin-right: 1px;
-    height: 50px;
-    width: 85%;
-    font-weight: 650;
-    background-color: rgb(230, 245, 255);
-  }
 </style>
 
-{#if nuevaoferta.open}
-  <div class="request-box">
-    <div id="textfield">
-      <div id="datos">
-        <div id="contenido_datos">
-          <p>
-            Titulación:
-            <select name="titu" bind:value={nuevaoferta.titulacion}>
-              <option value="">Selecciona una titulación...</option>
-              {#each titulaciones as t}
-                <option value={t.codigo_titulacion}>{t.titulacion_catalan}</option>
-              {/each}
-            </select>
-            <br />
-            Plazas Ofertadas:
-            <input type="text" bind:value={nuevaoferta.plazas_ofertadas} />
-            <br />
-          </p>
-        </div>
-      </div>
-    </div>
+<Dialog
+  bind:this={dialog}
+  aria-labelledby="dialog-title"
+  aria-describedby="dialog-content">
+  <Title>
+    <Label>Añadir Oferta</Label>
+  </Title>
+  <Content>
+    <Textfield
+      label="Plazas Ofertadas"
+      style="width: 100%"
+      bind:value={nuevaoferta.plazas_ofertadas} />
+  
+    <!-- Esto es un separador -->
+    <div style="height: 1em" />
+
+   <!--------------- Titulaciones ----------------->
+    <Dialog
+      bind:this={listTitulaciones}
+      aria-labelledby="list-title"
+      aria-describedby="list-content">
+      <Title id="list-title">
+        <input
+          type="text"
+          size="12"
+          bind:value={filtroTitulaciones}
+          placeholder="Buscador"
+          title="Type in a name" />
+      </Title>
+      <Content component={List} id="list-content">
+        {#each TitulacionesFiltradas as t}
+          <Item
+            on:click={() => {
+              nuevaoferta.titulacion = t.codigo_titulacion;
+              nuevaoferta.nombre_titulacion = t.titulacion_ingles;
+              listTitulaciones.close();
+            }}>
+            <Text>{t.titulacion_ingles}</Text>
+          </Item>
+        {/each}
+      </Content>
+    </Dialog>
+
     <div>
-      <div id="buttons">
-        <div id="field">
-          <button on:click={añadiroferta}>Salvar</button>
-          <button on:click={() => (nuevaoferta.open = false)}>
-            Cancelar
-          </button>
-        </div>
+      Titulación:
+      <div class="seleccion">
+        <span class="valor-seleccionado">
+          {#if nuevaoferta.nombre_titulacion}
+            {nuevaoferta.nombre_titulacion}
+          {:else}
+            <span class="empty">Selecciona una titulación</span>
+          {/if}
+        </span>
+        <Button on:click={() => listTitulaciones.open()}>
+          <div class="material-icons">search</div>
+          <Label>Titulaciones</Label>
+        </Button>
       </div>
     </div>
-    {#if message}
-      <p>{message}</p>
-    {/if}
-  </div>
-{:else}
-  <div id="buttons">
-    <div id="field">
-      <button on:click={() => (nuevaoferta.open = true)}>Nueva Oferta</button>
+
+    <div class="actions">
+      <Actions>
+          <Button color="secondary" variant="raised">
+            <Label>Cancel</Label>
+          </Button>
+          <Button color="secondary" variant="raised" on:click={añadeoferta}>
+            <Label>
+              Salvar
+            </Label>
+          </Button>
+      </Actions>
     </div>
-  </div>
-{/if}
+  </Content>
+</Dialog>
+
+<Button variant="raised" on:click={() => dialog.open()}>
+  <Label>Añadir Oferta</Label>
+</Button>

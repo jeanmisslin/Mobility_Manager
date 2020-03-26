@@ -1,6 +1,23 @@
 <script>
   export let oferta;
 
+  import MenuSurface, { Anchor } from "@smui/menu-surface";
+  import IconButton from "@smui/icon-button";
+  import Select, { Option } from "@smui/select";
+  import Textfield from "@smui/textfield";
+  import HelperText from "@smui/textfield/helper-text/index";
+  import Dialog, { Title, Content, Actions, InitialFocus } from "@smui/dialog";
+  import Button, {
+    Group,
+    GroupItem,
+    Label,
+    Icon as ButtonIcon
+  } from "@smui/button";
+  import List, { Item, Graphic, Text } from "@smui/list";
+  import { MDCDialog } from "@material/dialog";
+
+  let dialog;
+
   let { asignatura, plazas_ofertadas, plazas_concedidas, periodo_academico } = oferta;
 
   let modificaoferta = {
@@ -61,53 +78,17 @@
     border: 1px solid black;
     text-align: center;
     padding: 3px;
-    background-color: rgb(117, 182, 226);
+    background-color: white;
     color: black;
   }
 
   tr:nth-child(even) {
-    background-color: rgb(255, 246, 239);
+    background-color: white
+    ;
   }
 </style>
 
-{#if modificaoferta.open}
-  <div class="request-box">
-    <div id="periodo">
-      <div>Q{oferta.cuatrimestre}, {oferta.año}</div>
-    </div>
-    <table id="tabla">
-      <tr>
-        <th>PLAZAS OFERTADAS</th>
-        <th>PLAZAS DISPONIBLES</th>
-        <th>PLAZAS SOLICITADAS</th>
-        <th>PLAZAS CONCEDIDAS</th>
-      </tr>
-      <tr>
-        <td><input type="text" size="1" maxlength="2" bind:value={modificaoferta.plazas_ofertadas} /></td>
-        <td>{oferta.plazas_disponibles}</td>
-        <td>{oferta.plazas_solicitadas}</td>
-        <td>{oferta.plazas_concedidas}</td>
-      </tr>
-    </table>
-    <div>
-      <div id="buttons">
-        <div id="field">
-          <button on:click={modificaroferta}>Salvar</button>
-          <button on:click={() => (modificaoferta.open = false)}>
-            Cancelar
-          </button>
-        </div>
-      </div>
-    </div>
-    {#if message}
-      <p>{message}</p>
-    {/if}
-  </div>
-{:else}
-  <div id="periodo">
-    <div>Q{oferta.cuatrimestre}, {oferta.año}</div>
-  </div>
-  <table id="tabla">
+<table id="tabla">
     <tr>
       <th>PLAZAS OFERTADAS</th>
       <th>PLAZAS DISPONIBLES</th>
@@ -121,13 +102,33 @@
       <td>{oferta.plazas_concedidas}</td>
     </tr>
   </table>
-  <div id="buttons">
-    <div id="field">
-      <button on:click={() => (modificaoferta.open = true)}>
-        Modificar Plazas Ofertadas
-      </button>
+
+<Dialog
+  bind:this={dialog}
+  aria-labelledby="dialog-title"
+  aria-describedby="dialog-content">
+  <Title>
+    <Label>Modificar Oferta de Plazas</Label>
+  </Title>
+  <Content>
+    <Textfield
+      label="Plazas Ofertadas"
+      style="width: 100%"
+      bind:value={modificaoferta.plazas_ofertadas} />
+
+    <div class="actions">
+      <Actions>
+          <Button color="secondary" variant="raised">
+            <Label>Cancel</Label>
+          </Button>
+          <Button color="secondary" variant="raised" on:click={modificaroferta}>
+            <Label>Salvar</Label>
+          </Button>
+      </Actions>
     </div>
-  </div>
-{/if}
+  </Content>
+</Dialog>
 
-
+<Button variant="raised" on:click={() => dialog.open()}>
+  <Label>Modificar Plazas</Label>
+</Button>
