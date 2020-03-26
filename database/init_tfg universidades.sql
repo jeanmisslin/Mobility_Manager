@@ -9,31 +9,31 @@ CREATE TABLE universidades(
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'RO BACAU01',
     'Vasile Alecsandri University of Bacau',
-    'Romania'
+    'Rumania'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'CZ BRNO01',
     'Vysoké Uceni Technické V Brne',
-    'República Txeca'
+    'República Checa'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'PL WROCLAW02',
     'Wroclaw University of Technology',
-    'Polònia'
+    'Polonia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'PL SZCZECI02',
     'West Pomeranian University of Technology',
-    'Polònia'
+    'Polonia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'LT VILNIUS02',
     'Vilnius Gediminas Technical University',
-    'Lituània'
+    'Lituania'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
@@ -45,7 +45,7 @@ INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'TR BURSA01',
     'Uludag Universitesi',
-    'Turquia'
+    'Turquía'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
@@ -63,13 +63,13 @@ INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'RO TIMISOA04',
     'Universitatea Politehnica Din Timisoara',
-    'Romania'
+    'Rumania'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'RO ORADEA 01',
     'Universitatea Din Oradea',
-    'Romania'
+    'Rumania'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
@@ -105,25 +105,25 @@ INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'PL ZIELONA01',
     'University of Zielona Gora',
-    'Polònia'
+    'Polonia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'PL BIELSKO02',
     'University of Bielsko-Biala',
-    'Polònia'
+    'Polonia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'MEXAGUASCA03',
     'Universidad Autónoma de Aguascalientes',
-    'Mèxic'
+    'México'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'MEXMEXICAL02',
     'Universidad Autónoma de Baja California (UABC)',
-    'Mèxic'
+    'México'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
@@ -135,97 +135,97 @@ INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'I CATANIA01',
     'University Of Catania',
-    'Itàlia'
+    'Italia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'I SIENA01',
     "Universita' Di Siena",
-    'Itàlia'
+    'Italia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'I SALERNO01',
     'Università Degli Studi Di Salerno',
-    'Itàlia'
+    'Italia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'I ROMA16',
     'Università degli Studi Roma Tre',
-    'Itàlia'
+    'Italia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'I ROMA01',
     "Università Degli Studi Roma 'La Sapienza'",
-    'Itàlia'
+    'Italia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'I PISA01',
     'Università Di Pisa',
-    'Itàlia'
+    'Italia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'I PADOVA01',
     'Università Degli Studi Di Padova',
-    'Itàlia'
+    'Italia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'I NAPOLI01',
     'Università Degli Studi Di Napoli Federico II',
-    'Itàlia'
+    'Italia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'I L-AQUIL01',
     "Università Degli Studi Di l'Aquila",
-    'Itàlia'
+    'Italia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'I FIRENZE01',
     'Università Degli Studi Di Firenze',
-    'Itàlia'
+    'Italia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'I COSENZA01',
     'Università Della Calabria',
-    'Itàlia'
+    'Italia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'I BRESCIA01',
     'Università Degli Studi Brescia',
-    'Itàlia'
+    'Italia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'I BERGAMO01',
     'Università Degli Studi Bergamo',
-    'Itàlia'
+    'Italia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'I BENEVEN02',
     'Universita de Sannio',
-    'Itàlia'
+    'Italia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'I ANCONA01',
     'Universita Politecnica Delle Marche',
-    'Itàlia'
+    'Italia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'HU MISKOLC01',
     'University of Miskolc',
-    'Hongria'
+    'Hungría'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
@@ -243,67 +243,67 @@ INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'F TOULOUS03',
     'Universite Paul Sabatier',
-    'França'
+    'Francia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'F RENNES01',
     'University of Rennes',
-    'França'
+    'Francia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'F POITIER01',
     'Universite de Poitiers',
-    'França'
+    'Francia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'F PARIS013',
     'Université Paris 13',
-    'França'
+    'Francia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'F MULHOUS01',
     'Université de Haute Alsace (ENSITM)',
-    'França'
+    'Francia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'F LYON01',
     'Université Claude Bernard Lyon 1',
-    'França'
+    'Francia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'F EVRY04',
     "Université d'Evry Val D'Essonne",
-    'França'
+    'Francia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'F BORDEAU01',
     'University Bordeaux 1',
-    'França'
+    'Francia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'F BELFORT06',
     'Université de Technologie de Belfort-Montbéliard',
-    'França'
+    'Francia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'F ANGERS01',
     "Université d'Angers (ISTIA)",
-    'França'
+    'Francia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'F AMIENS01',
     'Université Picardie Jules Verne',
-    'França'
+    'Francia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
@@ -333,13 +333,13 @@ INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'SI MARIBOR01',
     'University of Maribor',
-    'Eslovènia'
+    'Eslovenia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'SI LJUBLJA01',
     'University of Ljubljana',
-    'Eslovènia'
+    'Eslovenia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
@@ -363,7 +363,7 @@ INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'BG SOFIA20',
     'University of Chemical Technology and Metallurgy (UCTM)',
-    'Bulgària'
+    'Bulgaria'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
@@ -375,31 +375,31 @@ INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'B MONS21',
     'Université De Mons',
-    'Bèlgica'
+    'Bélgica'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'B LIEGE01',
     'Université de Liège',
-    'Bèlgica'
+    'Bélgica'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'B GENT01',
     'Universiteit Gent',
-    'Bèlgica'
+    'Bélgica'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'B ANTWERP01',
     'University of Antwerp',
-    'Bèlgica'
+    'Bélgica'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'A SPITTAL01',
     'University of Applied Sciences Technikum Kärnten',
-    'Àustria'
+    'Austria'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
@@ -411,67 +411,67 @@ INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'D STUTTGA01',
     'Universität Stuttgart',
-    'Alemanya'
+    'Alemania'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'D OLDENBU01',
     'University of Oldenburg',
-    'Alemanya'
+    'Alemania'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'D BREMEN01',
     'Universität Bremen',
-    'Alemanya'
+    'Alemania'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'CHNTIANJIN01',
     'Tianjin University',
-    'Xina'
+    'China'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'TR ANKARA16',
     'Turk Hava Kurumu University Ankara',
-    'Turquia'
+    'Turquía'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'TR ANKARA10',
     'Tobb University of Economics and Technology',
-    'Turquia'
+    'Turquía'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'RO CLUJNAP05',
     'Technical University of Cluj-Napoca',
-    'Romania'
+    'Rumania'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'CZ OSTRAVA01',
     'Technical University of Ostrava',
-    'República Txeca'
+    'República Checa'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'CZ LIBEREC01',
     'Technical University of Liberec',
-    'República Txeca'
+    'República Checa'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'PL LODZ02',
     'Technical University of Lodz',
-    'Polònia'
+    'Polonia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'J  SENDAI01',
     'Tohoku',
-    'Japó'
+    'Japón'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
@@ -513,79 +513,79 @@ INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'EE TALLINN04',
     'TalTech University',
-    'Estònia'
+    'Estonia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'BG ROUSSE01',
     'The University of Rousse',
-    'Bulgària'
+    'Bulgaria'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'A WIEN02',
     'Technische Universität Wien',
-    'Àustria'
+    'Austria'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'D WILDAU01',
     'Technische Fachhochschule Wildau',
-    'Alemanya'
+    'Alemania'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'D MUNCHEN02',
     'Technische Universität München',
-    'Alemanya'
+    'Alemania'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'D KAISERS01',
     'Technische Universität Kaiserslautern',
-    'Alemanya'
+    'Alemania'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'D DRESDEN02',
     'Technische Universität Dresden',
-    'Alemanya'
+    'Alemania'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'D DORTMUN01',
     'Techinische Universitat Dortmund',
-    'Alemanya'
+    'Alemania'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'D DARMSTA01',
     'Technische Universitat Darmstadt',
-    'Alemanya'
+    'Alemania'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'D BRAUNSC01',
     'Technische Universität Carolo-Wilhelmina Zu Braunschweig',
-    'Alemanya'
+    'Alemania'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'D BERLIN02',
     'Technische Universität Berlin',
-    'Alemanya'
+    'Alemania'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'TR ISPARTA01',
     'Suleyman Demirel University',
-    'Turquia'
+    'Turquía'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'PL GLIWICE01',
     'Silesian University of Technology/ Politechnika Śląska',
-    'Polònia'
+    'Polonia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
@@ -597,7 +597,7 @@ INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'F AUBIERE04',
     'SIGMA Cleremont',
-    'França'
+    'Francia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
@@ -609,7 +609,7 @@ INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'SK BRATISL01',
     'Slovenská Technická Univerzita V Bratislave',
-    'Eslovàquia'
+    'Eslovaquia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
@@ -621,55 +621,55 @@ INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'BG SOFIA06',
     'Sofia University',
-    'Bulgària'
+    'Bulgaria'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'TR ISTANBU37',
     'Piri-Reis University',
-    'Turquia'
+    'Turquía'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'RO BUCURES11',
     'Politehnica University of Bucarest',
-    'Romania'
+    'Rumania'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'PL WARSZAW02',
     'Politechnika Warszawska',
-    'Polònia'
+    'Polonia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'PL RZESZOW02',
     'Rzeszow University of Technology',
-    'Polònia'
+    'Polonia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'PL POZNAN02',
     'Poznan University of Technology',
-    'Polònia'
+    'Polonia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'I TORINO02',
     'Politecnico di Torino',
-    'Itàlia'
+    'Italia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'I MILANO02',
     'Politecnico Di Milano',
-    'Itàlia'
+    'Italia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'I BARI05',
     'Politecnico de Bari',
-    'Itàlia'
+    'Italia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
@@ -681,37 +681,37 @@ INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'D REUTLIN02',
     'Reutlingen University',
-    'Alemanya'
+    'Alemania'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'D BOCHUM01',
     'Universität Bochum RUHR',
-    'Alemanya'
+    'Alemania'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'TR NIGDE01',
     'Nigde Universitesi',
-    'Turquia'
+    'Turquía'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'TR KAHRAMA01',
     'Kahramanmaras Sutcu Imam University',
-    'Turquia'
+    'Turquía'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'TR ANKARA04',
     'Middle East Technical University',
-    'Turquia'
+    'Turquía'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'TWNTAIPEI04',
     'National Taiwan University of Science and Technology (NTUST)',
-    'Taiwan'
+    'Taiwán'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
@@ -735,19 +735,19 @@ INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'LT KAUNAS02',
     'Kaunas University of Technology',
-    'Lituània'
+    'Lituania'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'J  TOKYO07',
     'Keio University',
-    'Japó'
+    'Japón'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'J  KYOTO02',
     'Kyoto Institute of Technology (KIT)',
-    'Japó'
+    'Japón'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
@@ -759,31 +759,31 @@ INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'B BRUSSEL48',
     'Odisee',
-    'Bèlgica'
+    'Bélgica'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'B ANTWERP59',
     'Karel de Grote-Hogeschool',
-    'Bèlgica'
+    'Bélgica'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'YEREVAN',
     'National Polytechnic University of Armenia',
-    'Armènia'
+    'Armenia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'D KARLSRU01',
     'Karlsruher Institut Für Technologie',
-    'Alemanya'
+    'Alemania'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'TR ISTAMBU04',
     'Istambul Technical University',
-    'Turquia'
+    'Turquía'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
@@ -795,61 +795,61 @@ INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'MEXMONTERR01',
     'Instituto Tecnológico de Monterrey (ITESM)',
-    'Mèxic'
+    'México'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'F TOULOUS28',
     'Institut National Politechnique de Toulouse',
-    'França'
+    'Francia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'F TOULOUS16',
     "Institut National Supérieur de L'Aéronautique et L'Espace (SUPAERO)",
-    'França'
+    'Francia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'F TOULOUS14',
     'Institut National des sciences apliquees de Tolouse',
-    'França'
+    'Francia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'F RENNES10',
     'Institut National des Sciences Appliquées de Rennes (INSA)',
-    'França'
+    'Francia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'F PARIS 342',
     "IPSA (École Ingenieur De L'Air Et De L'Espace'",
-    'França'
+    'Francia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'F LYON84',
     'Institut Textiel et Chimique de Lyon (ITECH)',
-    'França'
+    'Francia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'F LYON12',
     'Institut National des Sciences Appliquées de Lyon (INSA)',
-    'França'
+    'Francia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'F LILLE01',
     'IUT "A" de Lille',
-    'França'
+    'Francia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'F GRENOBL22',
     'Institut National Polytechnique de Grenoble',
-    'França'
+    'Francia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
@@ -861,49 +861,49 @@ INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'D WILHELM02',
     'Jade Hochschule',
-    'Alemanya'
+    'Alemania'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'D INGOLST01',
     'Ingolstadt University of Applied Scieces',
-    'Alemanya'
+    'Alemania'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'TR KOCAELI01',
     'Gebze Institute of Technology',
-    'Turquia'
+    'Turquía'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'TR GAZIANTEP01',
     'Gaziantep University',
-    'Turquia'
+    'Turquía'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'CH ST.GALL08',
     'HSR University of Applied Sciences Rapperswill',
-    'Suïssa'
+    'Suiza'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'RO IASI05',
     'Gheorghe Asachi Technical University of Iasi',
-    'Romania'
+    'Rumania'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'UK DEESIDE01',
     'Glyndwr University',
-    'Regne Unit'
+    'Reino Unido'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'PL GDANSK02',
     'Gdansk University of Technology',
-    'Polònia'
+    'Polonia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
@@ -915,163 +915,163 @@ INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'B LIEGE38',
     'Haute école de la province de Liège',
-    'Bèlgica'
+    'Bélgica'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'A GRAZ02',
     'Graz University of Technology',
-    'Àustria'
+    'Austria'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'D WIESBAD01',
     'Hochschule Rheinmain',
-    'Alemanya'
+    'Alemania'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'D KREFELD01',
     'Hochschule Niederrhein',
-    'Alemanya'
+    'Alemania'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'D HAMBURG06',
     'Hamburg University of Applied Sciences',
-    'Alemanya'
+    'Alemania'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'D AALEN01',
     'Hochschule Aalen',
-    'Alemanya'
+    'Alemania'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'NL EINDHOV03',
     'Fontys University of Professional Education',
-    'França'
+    'Francia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'F SCEAUX01',
     "EPF . École d'Ingénieurs",
-    'França'
+    'Francia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'F ANGERS06',
     'ESEO',
-    'França'
+    'Francia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'A WIEN63',
     'FH Campus Wien, University of Applied Sciences',
-    'Àustria'
+    'Austria'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'A SALZBURG08',
     'Fachhochschule Salzburg',
-    'Àustria'
+    'Austria'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'A GRAZ09',
     'FH Joanneum Gessellschaft mbH',
-    'Àustria'
+    'Austria'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'D KOLN04',
     'Fachochschule Köln',
-    'Alemanya'
+    'Alemania'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'D EMDEN02',
     'Fachhochschule Emden/Leer',
-    'Alemanya'
+    'Alemania'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'CH LAUSANN06',
     'École Polythecnique Féderale de Lausanne',
-    'Suïssa'
+    'Suiza'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'F TOULOUS18',
     "Ecole Nationale de L'Aviation Civile (ENAC)",
-    'França'
+    'Francia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'F ROUEN07',
     "École Supérieure d'Ingénieurs en Génie Électrique (ESIGELEC)",
-    'França'
+    'Francia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'F ROUBAIX03',
     'École Nationale Superieure des Arts et Industries Textiles (ENSAIT)',
-    'França'
+    'Francia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'F POITIER05',
     "École Nationale Superieure de Mecanique et d'Aérontechnique (FUTUROSCOPE)",
-    'França'
+    'Francia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'F NOISY02',
     "École Superieure d'Ingenieurs en Electrotechnique et Electronique (ESIEE)",
-    'França'
+    'Francia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'F NANTES07',
     'École Centrale Nantes',
-    'França'
+    'Francia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'F MARSEIL11',
     'École Central Marseille',
-    'França'
+    'Francia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'F LEVALLO01',
     'École Supérieure des Techniques Aéronautiques et de Construction Automobile (ESTACA)',
-    'França'
+    'Francia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'F CHATENA02',
     'École Centrale Paris',
-    'França'
+    'Francia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'F CACHAN03',
     'École Normale Supérieure de Cachan (BRETAGNE)',
-    'França'
+    'Francia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'F ALES02',
     "École des Mines d'Alès",
-    'França'
+    'Francia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'F STRASBO 50',
     'ECAM Strasbourg-Europe',
-    'França'
+    'Francia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
@@ -1083,7 +1083,7 @@ INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'D DEGGEND01',
     'Deggendorf Institute of Technology',
-    'Alemanya'
+    'Alemania'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
@@ -1095,31 +1095,31 @@ INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'TR ADANA01',
     'Çukurova University',
-    'Turquia'
+    'Turquía'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'PL KRAKOW03',
     'Cracow University of Technology',
-    'Polònia'
+    'Polonia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'CHNHONGKO01',
     'City University of Hong Kong',
-    'Xina'
+    'China'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'HU BUDAPES02',
     'Budapest University of Technology and Economics (BME)',
-    'Hongria'
+    'Hungría'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'CHNBEIJING05',
     'Beijing Institute of Technology (BIT)',
-    'Xina'
+    'China'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
@@ -1137,25 +1137,25 @@ INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'LT ALYTUS01',
     'Alytaus Kolegija',
-    'Lituània'
+    'Lituania'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'I BOLOGNA01',
     'Universita Di Bologna (Campus Forli)',
-    'Itàlia'
+    'Italia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'PL KRAKOW02',
     'AGH University of Science and Technology',
-    'Polònia'
+    'Polonia'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'D AACHEN01',
     'RWTH Aachen University',
-    'Alemanya'
+    'Alemania'
 );
 
 INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(

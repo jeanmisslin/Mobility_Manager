@@ -27,6 +27,7 @@
 <script>
   import TablaFiltrableEstudiantes from "../components/TablaFiltrableEstudiantes.svelte";
   import NuevoEstudiante from "../components/NuevoEstudiante.svelte";
+  import AñadirPeriodo from "../components/AñadirPeriodo.svelte";
   import Dialog, { Title, Content, Actions, InitialFocus } from "@smui/dialog";
   import Button, { Group, GroupItem, Label, Icon } from "@smui/button";
   import List, { Item, Graphic, Text, PrimaryText, SecondaryText, Separator } from "@smui/list";
@@ -141,6 +142,7 @@
   #contenedor {
     display: flex;
     flex-direction: row-reverse;
+    justify-content: space-between;
     width: 100%;
     height: 40px;
   }
@@ -164,20 +166,30 @@
               <a href="/asignaturas/">Asignaturas</a>
             </Text>
           </Item>
+          <Item>
+            <Text>
+              <a href="/universidades/">Universidades</a>
+            </Text>
+          </Item>
         </List>
       </Menu>
     </div>
   </div>
 
-<!------- Titulo de la pantalla ----------->
+<!-------- Titulo de la pantalla ----------->
 
   <div id="title">Estudiantes Incoming</div>
   <div />
 </div>
 
+<div id="contenedor">
+
+<!----- Formulario Añadir Periodo ---------->
+
+  <AñadirPeriodo />
+
 <!------- Selector de Periodos ------------->
 
-<div id="contenedor">
   <Dialog
     bind:this={listPeriodos}
     aria-labelledby="list-title"
