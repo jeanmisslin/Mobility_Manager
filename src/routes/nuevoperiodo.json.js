@@ -13,7 +13,7 @@ export function post(req, res, next) {
         db.run(`INSERT INTO periodos_academicos (año, cuatrimestre)
                 VALUES(?, ?)`, [
                     parseInt(nuevoperiodo.año),
-                    parseInt(nuevoperiodo.cuatrimestre),
+                    parseInt(nuevoperiodo.cuatrimestre)
                 ], (err) => {
             if (err) {
                 jsonResponse(500, { 
