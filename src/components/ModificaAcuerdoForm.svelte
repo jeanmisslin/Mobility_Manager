@@ -37,7 +37,6 @@
   $: año_periodo = periodos.find(element => element.id_periodo === acuerdo.periodo_academico);
 
   let modificaacuerdo;
-
   $: modificaacuerdo = {
     id_acuerdo: acuerdo.id_acuerdo,
     estudiante: acuerdo.estudiante,
@@ -115,10 +114,10 @@
     <Label>Modifica Acuerdo</Label>
   </Title>
   <Content>
-    <Select style="width: 100%" bind:value={modificaacuerdo.estado} label="Estados">
+    <Select style="width: 100%" bind:value={acuerdo.estado} label="Estados">
       <Option value="" />
       {#each estados as estado}
-        <Option value={estado} selected={modificaacuerdo.estado === estado}>
+        <Option value={estado} selected={acuerdo.estado === estado}>
           {estado}
         </Option>
       {/each}
