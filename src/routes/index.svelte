@@ -226,7 +226,7 @@
     <div class="seleccion">
       <span class="valor-seleccionado">
         {#if periodo_seleccionado.año}
-          Estudiantes del Periodo: {periodo_seleccionado.año}-{periodo_seleccionado.año + 1} Q{periodo_seleccionado.cuatrimestre}
+          Estudiantes: {periodo_seleccionado.año}-{periodo_seleccionado.año + 1} Q{periodo_seleccionado.cuatrimestre}
         {:else}
           <span class="empty">Todos los Estudiantes</span>
         {/if}
@@ -237,12 +237,11 @@
       </Button>
     </div>
   </div>
-</div>
 
 <!------ Formulario Nuevo Estudiante ------->
 
-<div id="form">
   <NuevoEstudiante {universidades} {periodos} {titulaciones} />
+
 </div>
 
 {#if periodo_seleccionado.id_periodo === ''}

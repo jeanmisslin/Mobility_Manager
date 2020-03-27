@@ -33,7 +33,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     height: 50px;
     width: 100%;
     background-color: white;
@@ -50,8 +50,8 @@
 
   #form {
     width: 100%;
-    height: 60px;
-    margin-top: 20px;
+    height: 40px;
+    margin-top: 10px;
   }
 
   #menu {
