@@ -2,18 +2,9 @@
   export let titulaciones;
   export let oferta;
 
-  import MenuSurface, { Anchor } from "@smui/menu-surface";
   import IconButton from "@smui/icon-button";
-  import Select, { Option } from "@smui/select";
-  import Textfield from "@smui/textfield";
-  import HelperText from "@smui/textfield/helper-text/index";
   import Dialog, { Title, Content, Actions, InitialFocus } from "@smui/dialog";
-  import Button, {
-    Group,
-    GroupItem,
-    Label,
-    Icon as ButtonIcon
-  } from "@smui/button";
+  import Button, { Group, GroupItem, Label, Icon as ButtonIcon } from "@smui/button";
   import List, { Item, Graphic, Text } from "@smui/list";
   import { MDCDialog } from "@material/dialog";
 
@@ -26,17 +17,17 @@
 
   let message;
   let añade = "";
-  
+
   let modificacion = {
     oferta: oferta.id_oferta,
-    nombre_titulacion:"",
-    titulacion: oferta.titulacion  
+    nombre_titulacion: "",
+    titulacion: oferta.titulacion
   };
 
   function encontrartitulacion(a, t) {
     let i;
     for (i = 0; i != a.length; i++)
-      if (array[i] === t) {
+      if (a[i] === t) {
         return true;
       }
     return false;
@@ -74,14 +65,6 @@
     modificacion.titulacion = modificacion.titulacion + "," + añade;
     modificaoferta();
   }
-
-  function abrir() {
-    modificacion = { ...modificacion, open: true };
-  }
-
-  function cerrar() {
-    modificacion = { ...modificacion, open: false };
-  }
 </script>
 
 <Dialog
@@ -107,14 +90,16 @@
       </Title>
       <Content component={List} id="list-content">
         {#each TitulacionesFiltradas as t}
-          <Item
-            on:click={() => {
-              añade = t.codigo_titulacion;
-              modificacion.nombre_titulacion = t.titulacion_ingles;
-              listTitulaciones.close();
-            }}>
-            <Text>{t.titulacion_ingles}</Text>
-          </Item>
+          {#if !encontrartitulacion(array, t.codigo_titulacion)}
+            <Item
+              on:click={() => {
+                añade = t.codigo_titulacion;
+                modificacion.nombre_titulacion = t.titulacion_ingles;
+                listTitulaciones.close();
+              }}>
+              <Text>{t.titulacion_ingles}</Text>
+            </Item>
+          {/if}
         {/each}
       </Content>
     </Dialog>
@@ -123,7 +108,7 @@
       Titulación:
       <div class="seleccion">
         <span class="valor-seleccionado">
-            {#if modificacion.nombre_titulacion}
+          {#if modificacion.nombre_titulacion}
             {modificacion.nombre_titulacion}
           {:else}
             <span class="empty">Selecciona una titulación</span>
@@ -138,14 +123,12 @@
 
     <div class="actions">
       <Actions>
-          <Button color="secondary" variant="raised">
-            <Label>Cancel</Label>
-          </Button>
-          <Button color="secondary" variant="raised" on:click={ejecutarambas}>
-            <Label>
-              Salvar
-            </Label>
-          </Button>
+        <Button color="secondary" variant="raised">
+          <Label>Cancel</Label>
+        </Button>
+        <Button color="secondary" variant="raised" on:click={ejecutarambas}>
+          <Label>Salvar</Label>
+        </Button>
       </Actions>
     </div>
   </Content>

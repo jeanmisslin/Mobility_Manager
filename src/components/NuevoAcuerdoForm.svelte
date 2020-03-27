@@ -28,7 +28,7 @@
   function listPeriodos() {}
   function listTitulaciones() {}
 
-  let estados = [`Nominado/a`, `Matriculado/a`, `Eliminado`];
+  let estados = [`Nominado/a`, `Matriculado/a`, `Eliminado/a`];
 
   export let nuevoacuerdo = {
     open: false,
@@ -113,17 +113,6 @@
     <Label>Nuevo Acuerdo</Label>
   </Title>
   <Content>
-    <Select style="width: 100%" bind:value={nuevoacuerdo.estado} label="Estados">
-      <Option value="" />
-      {#each estados as estado}
-        <Option value={estado} selected={nuevoacuerdo.estado === estado}>
-          {estado}
-        </Option>
-      {/each}
-    </Select>
-
-    <!-- Esto es un separador -->
-    <div style="height: 1em" />
 
     <!--------------- Titulaciones ----------------->
     <Dialog

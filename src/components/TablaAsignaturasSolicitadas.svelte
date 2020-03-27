@@ -9,6 +9,19 @@
   import Textfield from "@smui/textfield";
   import DataTable, { Head, Body, Row, Cell } from "@smui/data-table";
 
+  let filtro = "";
+
+  $: tablaFiltrada = tabla.filter(e => {
+    let strIn = (a, b) => a.toLowerCase().indexOf(b.toLowerCase()) != -1;
+    return (
+      strIn(e.codigo_asignatura, filtro) ||
+      strIn(e.nombre_ingles, filtro) ||
+      strIn(e.nombre_catalan, filtro) ||
+      strIn(e.nombre_castellano, filtro) ||
+      strIn(e.estado_solicitud, filtro)
+    );
+  });
+
   function encontrartitulacion(a, t, o) {
     let oferta = o.find(element => element.id_oferta === a);
     let array = oferta.titulacion.split(",");
@@ -34,7 +47,7 @@
     border-collapse: collapse;
     width: 100%;
     margin-bottom: 0px;
-    margin-top:24px;
+    margin-top:0px;
   }
 
   td {
@@ -75,7 +88,16 @@
   tr:nth-child(even) {
     background-color: white;
   }
+
+  #buscador {
+    margin-top: 0px;
+    margin-bottom: 15px;
+  }
 </style>
+
+<div id="buscador">
+  <Textfield label="Buscador" style="width: 100%" bind:value={filtro} />
+</div>
 
 <table id="tabla">
   <tr>
@@ -86,7 +108,7 @@
     <th>MODIFICAR</th>
 
   </tr>
-  {#each tabla as obj}
+  {#each tablaFiltrada as obj}
     <tr>
       {#if obj.periodo_academico === acuerdo.periodo_academico}
         {#if obj.plazas_disponibles <= 0}

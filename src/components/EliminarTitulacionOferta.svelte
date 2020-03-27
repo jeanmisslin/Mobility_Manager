@@ -2,18 +2,8 @@
   export let elimina;
   export let oferta;
 
-  import MenuSurface, { Anchor } from "@smui/menu-surface";
-  import IconButton from "@smui/icon-button";
-  import Select, { Option } from "@smui/select";
-  import Textfield from "@smui/textfield";
-  import HelperText from "@smui/textfield/helper-text/index";
   import Dialog, { Title, Content, Actions, InitialFocus } from "@smui/dialog";
-  import Button, {
-    Group,
-    GroupItem,
-    Label,
-    Icon as ButtonIcon
-  } from "@smui/button";
+  import Button, { Group, GroupItem, Label, Icon as ButtonIcon } from "@smui/button";
   import List, { Item, Graphic, Text } from "@smui/list";
   import { MDCDialog } from "@material/dialog";
 
@@ -27,15 +17,21 @@
     let i;
     let modificada = "";
     for (i = 0; i != array.length; i++)
-      if (array[i] != elimina) {
+      if (array[i] != elimina && i === 0) {
         modificada = modificada + array[i];
-        }
-      return modificada;
+      } else if (array[i-1] === elimina && i === 1) {
+        modificada = modificada + array[i];
+      } else if (array[i] != elimina) {
+        modificada = modificada + "," + array[i];
+      }
+    return modificada;
   }
 
-  let modificacion = {
+  let modificacion;
+
+  $: modificacion = {
     oferta: oferta.id_oferta,
-    titulacion: reconstruir(array,elimina)
+    titulacion: reconstruir(array, elimina)
   };
 
   function modificaoferta() {
@@ -56,39 +52,22 @@
 </script>
 
 <div>
-    <Dialog bind:this={simpleDialog} aria-labelledby="simple-title" aria-describedby="simple-content">
-      <Title id="simple-title">Eliminar Titulación</Title>
-      <Actions>
-        <Button color="secondary" variant="raised">
-          <Label>NO</Label>
-        </Button>
-        <Button color="secondary" variant="raised" on:click={modificaoferta}>
-          <Label>SI</Label>
-        </Button>
-      </Actions>
-    </Dialog>
+  <Dialog
+    bind:this={simpleDialog}
+    aria-labelledby="simple-title"
+    aria-describedby="simple-content">
+    <Title id="simple-title">Eliminar Titulación</Title>
+    <Actions>
+      <Button color="secondary" variant="raised">
+        <Label>NO</Label>
+      </Button>
+      <Button color="secondary" variant="raised" on:click={modificaoferta}>
+        <Label>SI</Label>
+      </Button>
+    </Actions>
+  </Dialog>
 
-    <Button color="primary" variant="raised" on:click={() => simpleDialog.open()}><Label>Eliminar</Label></Button>
-  </div>
-
-<!--{#if modificacion.open}
-  <div class="request-box">
-    <div>
-      <div id="buttons">
-        <div id="field">
-          <button on:click={modificaoferta}>Salvar</button>
-          <button on:click={() => (modificacion.open = false)}>Cancelar</button>
-        </div>
-      </div>
-    </div>
-    {#if message}
-      <p>{message}</p>
-    {/if}
-  </div>
-{:else}
-  <div id="buttons">
-    <div id="field">
-      <button on:click={() => (modificacion.open = true)}>Eliminar</button>
-    </div>
-  </div>
-{/if}-->
+  <Button color="primary" variant="raised" on:click={() => simpleDialog.open()}>
+    <Label>Eliminar</Label>
+  </Button>
+</div>

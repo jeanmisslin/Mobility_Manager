@@ -70,24 +70,24 @@
   <Textfield label="Buscador" style="width: 100%" bind:value={filtro} />
 </div>
 
-{#if filtro !== ""}
-  <table id="tabla">
-    <tr>
-      {#each campos as c}
-        {#if c.show}
-          <th>
-            {#if c.nombre}
-              {c.nombre.toUpperCase()}
-            {:else}{c.name.toUpperCase()}{/if}
-          </th>
-        {/if}
-      {/each}
-      {#if componente === 'solicitar'}
-        <th>SOLICITAR</th>
-      {:else if componente === 'modificar'}
-        <th>MODIFICAR</th>
+<table id="tabla">
+  <tr>
+    {#each campos as c}
+      {#if c.show}
+        <th>
+          {#if c.nombre}
+            {c.nombre.toUpperCase()}
+          {:else}{c.name.toUpperCase()}{/if}
+        </th>
       {/if}
-    </tr>
+    {/each}
+    {#if componente === 'solicitar'}
+      <th>SOLICITAR</th>
+    {:else if componente === 'modificar'}
+      <th>MODIFICAR</th>
+    {/if}
+  </tr>
+  {#if filtro !== ''}
     {#each tablaFiltrada as obj}
       <tr>
         {#each campos as c}
@@ -101,7 +101,9 @@
         {/each}
         {#if componente === 'solicitar'}
           <td>
-            <SolicitarAsignaturaForm acuerdo={acuerdo.id_acuerdo} oferta={obj} />
+            <SolicitarAsignaturaForm
+              acuerdo={acuerdo.id_acuerdo}
+              oferta={obj} />
           </td>
         {:else if componente === 'modificar'}
           <td>
@@ -110,6 +112,5 @@
         {/if}
       </tr>
     {/each}
-  </table>
   {/if}
-
+</table>

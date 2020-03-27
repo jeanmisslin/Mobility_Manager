@@ -5,16 +5,10 @@
 
   import MenuSurface, { Anchor } from "@smui/menu-surface";
   import IconButton from "@smui/icon-button";
-  import Select, { Option } from "@smui/select";
   import Textfield from "@smui/textfield";
   import HelperText from "@smui/textfield/helper-text/index";
   import Dialog, { Title, Content, Actions, InitialFocus } from "@smui/dialog";
-  import Button, {
-    Group,
-    GroupItem,
-    Label,
-    Icon as ButtonIcon
-  } from "@smui/button";
+  import Button, { Group, GroupItem, Label, Icon as ButtonIcon } from "@smui/button";
   import List, { Item, Graphic, Text } from "@smui/list";
   import { MDCDialog } from "@material/dialog";
 
@@ -74,6 +68,8 @@
     <Label>Añadir Oferta</Label>
   </Title>
   <Content>
+
+    <!------------- Plazas Ofertadas --------------->
     <Textfield
       label="Plazas Ofertadas"
       style="width: 100%"
@@ -82,7 +78,7 @@
     <!-- Esto es un separador -->
     <div style="height: 1em" />
 
-   <!--------------- Titulaciones ----------------->
+    <!--------------- Titulaciones ----------------->
     <Dialog
       bind:this={listTitulaciones}
       aria-labelledby="list-title"
