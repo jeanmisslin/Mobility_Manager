@@ -184,6 +184,9 @@
 
 <div id="contenedor">
 
+
+
+
 <!----- Formulario Añadir Periodo ---------->
 
   <AñadirPeriodo />
@@ -236,6 +239,12 @@
   </div>
 </div>
 
+<!------ Formulario Nuevo Estudiante ------->
+
+<div id="form">
+  <NuevoEstudiante {universidades} {periodos} {titulaciones} />
+</div>
+
 {#if periodo_seleccionado.id_periodo === ''}
 
 <!------ Tabla con todos los estudiantes de la Base de Datos ------->
@@ -254,8 +263,3 @@
     campos={[{ name: 'apellidos', show: true, render: obj => `<a href="/estudiante/${obj.email}">${obj.apellidos}</a>`, filter: true }, { name: 'nombre', show: true, filter: true }, { name: 'universidad', show: true, filter: true }, { name: 'pais', show: true, filter: true }]} />
 {/if}
 
-<!------ Formulario Nuevo Estudiante ------->
-
-<div id="form">
-  <NuevoEstudiante {universidades} {periodos} {titulaciones} />
-</div>
