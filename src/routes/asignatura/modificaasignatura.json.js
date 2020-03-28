@@ -24,7 +24,7 @@ export function post(req, res, next) {
                     modificaasignatura.pscat,
                     modificaasignatura.pscast,
                     modificaasignatura.psing,
-                    modificaasignatura.codigo
+                    modificaasignatura.codigo_ant
                 ], (err) => {
             if (err) {
                 jsonResponse(500, { 

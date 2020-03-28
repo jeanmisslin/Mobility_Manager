@@ -37,6 +37,7 @@
 
   let modificaasignatura = {
     open: false,
+    codigo_ant: codigo_asignatura,
     codigo: codigo_asignatura,
     ncat: nombre_catalan,
     ncast: nombre_castellano,
@@ -148,7 +149,7 @@
             <Label>Cancel</Label>
           </Button>
           <Button color="secondary" variant="raised" on:click={modificarasignatura}>
-            <Label>Salvar</Label>
+            <a href="/asignatura/{modificaasignatura.codigo}">Salvar</a>
           </Button>
       </Actions>
     </div>
