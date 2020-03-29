@@ -126,6 +126,11 @@
               <a href="/asignaturas/">Asignaturas</a>
             </Text>
           </Item>
+          <Item>
+            <Text>
+              <a href="/universidades/">Universidades</a>
+            </Text>
+          </Item>
         </List>
       </Menu>
     </div>

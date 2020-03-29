@@ -9,12 +9,7 @@
   import Textfield from "@smui/textfield";
   import HelperText from "@smui/textfield/helper-text/index";
   import Dialog, { Title, Content, Actions, InitialFocus } from "@smui/dialog";
-  import Button, {
-    Group,
-    GroupItem,
-    Label,
-    Icon as ButtonIcon
-  } from "@smui/button";
+  import Button, { Group, GroupItem, Label, Icon as ButtonIcon } from "@smui/button";
   import List, { Item, Graphic, Text } from "@smui/list";
   import { MDCDialog } from "@material/dialog";
 
@@ -76,6 +71,10 @@
     );
   });
 
+  let filtroPeriodos = "";
+
+  $: PeriodosFiltrados = periodos.filter(e => e.año === parseInt(filtroPeriodos));
+
   function mostrarperiodo(año, cuatrimestre) {
     let a = año.toString();
     let periodo = a + "-" + (año + 1) + " Q" + cuatrimestre;
@@ -120,12 +119,7 @@
       aria-labelledby="list-title"
       aria-describedby="list-content">
       <Title id="list-title">
-        <input
-          type="text"
-          size="12"
-          bind:value={filtroTitulaciones}
-          placeholder="Buscador"
-          title="Type in a name" />
+        <Textfield label="Buscador" style="width: 100%" bind:value={filtroTitulaciones} />
       </Title>
       <Content component={List} id="list-content">
         {#each TitulacionesFiltradas as t}
@@ -164,9 +158,24 @@
       bind:this={listPeriodos}
       aria-labelledby="list-title"
       aria-describedby="list-content">
-      <Title id="list-title">Periodos Académicos</Title>
+      <Title id="list-title">
+        <Textfield label="Buscador" style="width: 100%" bind:value={filtroPeriodos} />
+      </Title>
       <Content component={List} id="list-content">
+        {#if filtroPeriodos === ""}
         {#each periodos as p}
+          <Item
+            on:click={() => {
+              nuevoacuerdo.periodo_academico = p.id_periodo;
+              nuevoacuerdo.año = mostrarperiodo(p.año, p.cuatrimestre);
+              nuevoacuerdo.cuatrimestre = p.cuatrimestre;
+              listPeriodos.close();
+            }}>
+            <Text>{p.año}-{p.año + 1} Q{p.cuatrimestre}</Text>
+          </Item>
+        {/each}
+        {:else}
+        {#each PeriodosFiltrados as p}
           <Item
             on:click={() => {
               nuevoacuerdo.periodo_academico = p.id_periodo;
@@ -177,6 +186,7 @@
             <Text>{p.año}-{p.año + 1} Q{p.cuatrimestre}</Text>
           </Item>
         {/each}
+        {/if}
       </Content>
     </Dialog>
 

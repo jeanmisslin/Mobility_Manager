@@ -47,20 +47,6 @@
 </script>
 
 <style>
-  #periodo {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin-top: 25px;
-    margin-bottom: 10px;
-    height: 30px;
-    width: 25%;
-    font-weight: 650;
-    background-color: rgb(240, 204, 175);
-    color: black;
-    border: 1px solid black;
-  }
-
   #tabla {
     border-collapse: collapse;
     width: 100%;

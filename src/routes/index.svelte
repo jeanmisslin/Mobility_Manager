@@ -25,6 +25,7 @@
 </script>
 
 <script>
+  import Textfield from "@smui/textfield";
   import TablaFiltrableEstudiantes from "../components/TablaFiltrableEstudiantes.svelte";
   import NuevoEstudiante from "../components/NuevoEstudiante.svelte";
   import AñadirPeriodo from "../components/AñadirPeriodo.svelte";
@@ -52,6 +53,10 @@
   function listPeriodos() {}
 
   let message;
+
+  let filtroPeriodos = "";
+
+  $: PeriodosFiltrados = periodos.filter(e => e.año === parseInt(filtroPeriodos));
 
   function añadirestudiante() {
     fetch(`nuevoestudiante.json`, {
@@ -120,16 +125,11 @@
 
   #title {
     display: flex;
+    text-align: center;
     font-weight: 500;
     font-size: 20pt;
     color: black;
     text-transform: uppercase;
-  }
-
-  #form {
-    width: 100%;
-    height: 60px;
-    margin-top: 20px;
   }
 
   #menu {
@@ -197,7 +197,9 @@
     bind:this={listPeriodos}
     aria-labelledby="list-title"
     aria-describedby="list-content">
-    <Title id="list-title">Periodos Académicos</Title>
+    <Title id="list-title">
+      Periodos Académicos
+    </Title>
     <Content component={List} id="list-content">
       <Item
         on:click={() => {

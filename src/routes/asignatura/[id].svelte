@@ -61,7 +61,7 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom: 10px;
-    height: 50px;
+    height: 80px;
     width: 100%;
     background-color: white;
     border: 1px solid black;
@@ -69,8 +69,9 @@
 
   #title {
     display: flex;
+    text-align: center;
     font-weight: 500;
-    font-size: 18pt;
+    font-size: 16pt;
     color: black;
     text-transform: uppercase;
   }
@@ -104,6 +105,11 @@
           <Item>
             <Text>
               <a href="/asignaturas/">Asignaturas</a>
+            </Text>
+          </Item>
+          <Item>
+            <Text>
+              <a href="/universidades/">Universidades</a>
             </Text>
           </Item>
         </List>

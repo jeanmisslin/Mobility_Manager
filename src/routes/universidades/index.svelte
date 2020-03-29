@@ -46,16 +46,11 @@
 
   #title {
     display: flex;
+    text-align: center;
     font-weight: 500;
     font-size: 20pt;
     color: black;
     text-transform: uppercase;
-  }
-
-  #form {
-    width: 100%;
-    height: 60px;
-    margin-top: 20px;
   }
 
   #menu {
@@ -65,13 +60,6 @@
     align-items: center;
   }
 
-  #contenedor {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    width: 100%;
-    height: 40px;
-  }
 </style>
 
 <svelte:head>
@@ -89,6 +77,11 @@
         <List>
           <Item>
             <Text>
+              <a href="../">Estudiantes Incoming</a>
+            </Text>
+          </Item>
+          <Item>
+            <Text>
               <a href="/asignaturas/">Asignaturas</a>
             </Text>
           </Item>
@@ -103,16 +96,18 @@
   <div />
 </div>
 
+<!------ Formulario Nueva Universidad ------->
+
+  <AñadirUniversidad />
+
 <!------ Tabla con todas las universidades de la Base de Datos ------->
 
   <TablaFiltrableEstudiantes
     tabla={universidades}
-    campos={[{ name: 'codigo_universidad', nombre: 'codigo', show: true, render: obj => `<a href="/universidad/${obj.codigo_universidad}">${obj.codigo_universidad}</a>`, filter: true },
+    campos={[{ name: 'codigo_universidad', nombre: 'codigo', show: true, 
+               render: obj => `<a href="/universidad/${obj.codigo_universidad}">${obj.codigo_universidad}</a>`,
+               filter: true },
              { name: 'universidad', show: true, filter: true }, 
              { name: 'pais', show: true, filter: true }]} />
 
-<!------ Formulario Nueva Universidad ------->
 
-<div id="form">
-  <AñadirUniversidad />
-</div>

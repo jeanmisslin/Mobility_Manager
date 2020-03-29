@@ -103,28 +103,8 @@
 </script>
 
 <style>
-  .seleccion {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-bottom: 1.3rem;
-  }
-  .valor-seleccionado {
-    flex: 1;
-    color: black;
-    font-size: 1.1rem;
-  }
   .actions {
     margin-top: 2em;
-  }
-  .empty {
-    color: rgb(156, 156, 156);
-    font-style: italic;
-    font-size: 0.9rem;
-  }
-
-  #boton {
-    display: flex;
   }
 </style>
 

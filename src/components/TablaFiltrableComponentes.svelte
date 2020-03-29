@@ -4,9 +4,8 @@
   export let componente;
   export let acuerdo;
 
-  import SolicitarAsignatura from "./SolicitarAsignatura.svelte";
   import SolicitarAsignaturaForm from "./SolicitarAsignaturaForm.svelte";
-  import ModificarEstadoAsignacion from "./ModificarEstadoAsignacion.svelte";
+  import ModificarEstadoAsignacionForm from "./ModificarEstadoAsignacionForm.svelte";
   import Textfield from "@smui/textfield";
 
   let filtro = "";
@@ -87,7 +86,6 @@
       <th>MODIFICAR</th>
     {/if}
   </tr>
-  {#if filtro !== ''}
     {#each tablaFiltrada as obj}
       <tr>
         {#each campos as c}
@@ -107,10 +105,9 @@
           </td>
         {:else if componente === 'modificar'}
           <td>
-            <ModificarEstadoAsignacion asignatura={obj} {acuerdo} />
+            <ModificarEstadoAsignacionForm asignatura={obj} {acuerdo} />
           </td>
         {/if}
       </tr>
     {/each}
-  {/if}
 </table>

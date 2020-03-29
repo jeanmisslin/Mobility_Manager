@@ -84,12 +84,7 @@
       aria-labelledby="list-title"
       aria-describedby="list-content">
       <Title id="list-title">
-        <input
-          type="text"
-          size="12"
-          bind:value={filtroTitulaciones}
-          placeholder="Buscador"
-          title="Type in a name" />
+        <Textfield label="Buscador" style="width: 100%" bind:value={filtroTitulaciones} />
       </Title>
       <Content component={List} id="list-content">
         {#each TitulacionesFiltradas as t}

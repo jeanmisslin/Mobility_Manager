@@ -2,6 +2,7 @@
   export let titulaciones;
   export let oferta;
 
+  import Textfield from "@smui/textfield";
   import IconButton from "@smui/icon-button";
   import Dialog, { Title, Content, Actions, InitialFocus } from "@smui/dialog";
   import Button, { Group, GroupItem, Label, Icon as ButtonIcon } from "@smui/button";
@@ -81,12 +82,7 @@
       aria-labelledby="list-title"
       aria-describedby="list-content">
       <Title id="list-title">
-        <input
-          type="text"
-          size="12"
-          bind:value={filtroTitulaciones}
-          placeholder="Buscador"
-          title="Type in a name" />
+        <Textfield label="Buscador" style="width: 100%" bind:value={filtroTitulaciones} />
       </Title>
       <Content component={List} id="list-content">
         {#each TitulacionesFiltradas as t}

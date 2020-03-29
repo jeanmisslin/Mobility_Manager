@@ -61,6 +61,10 @@
     );
   });
 
+  let filtroPeriodos = "";
+
+  $: PeriodosFiltrados = periodos.filter(e => e.año === parseInt(filtroPeriodos));
+
   function mostrarperiodo(año, cuatrimestre) {
     let a = año.toString();
     let periodo = a + "-" + (año + 1) + " Q" + cuatrimestre;
@@ -132,12 +136,7 @@
       aria-labelledby="list-title"
       aria-describedby="list-content">
       <Title id="list-title">
-        <input
-          type="text"
-          size="12"
-          bind:value={filtroTitulaciones}
-          placeholder="Buscador"
-          title="Type in a name" />
+        <Textfield label="Buscador" style="width: 100%" bind:value={filtroTitulaciones} />
       </Title>
       <Content component={List} id="list-content">
         {#each TitulacionesFiltradas as t}
@@ -176,8 +175,11 @@
       bind:this={listPeriodos}
       aria-labelledby="list-title"
       aria-describedby="list-content">
-      <Title id="list-title">Periodos Académicos</Title>
+      <Title id="list-title">
+        <Textfield label="Buscador" style="width: 100%" bind:value={filtroPeriodos} />
+      </Title>
       <Content component={List} id="list-content">
+        {#if filtroPeriodos === ""}
         {#each periodos as p}
           <Item
             on:click={() => {
@@ -189,6 +191,19 @@
             <Text>{p.año}-{p.año + 1} Q{p.cuatrimestre}</Text>
           </Item>
         {/each}
+        {:else}
+        {#each PeriodosFiltrados as p}
+          <Item
+            on:click={() => {
+              modificaacuerdo.periodo_academico = p.id_periodo;
+              modificaacuerdo.año = p.año;
+              modificaacuerdo.cuatrimestre = p.cuatrimestre;
+              listPeriodos.close();
+            }}>
+            <Text>{p.año}-{p.año + 1} Q{p.cuatrimestre}</Text>
+          </Item>
+        {/each}
+        {/if}
       </Content>
     </Dialog>
 

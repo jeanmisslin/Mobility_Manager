@@ -42,6 +42,7 @@
 
   #title {
     display: flex;
+    text-align: center;
     font-weight: 500;
     font-size: 20pt;
     color: black;
@@ -78,6 +79,11 @@
           <Item>
             <Text>
               <a href="../">Estudiantes Incoming</a>
+            </Text>
+          </Item>
+          <Item>
+            <Text>
+              <a href="/universidades/">Universidades</a>
             </Text>
           </Item>
         </List>
