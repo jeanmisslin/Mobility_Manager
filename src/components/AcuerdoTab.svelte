@@ -128,6 +128,12 @@
     color: black;
     font-size: 15px;
   }
+
+  #ofertas {
+    width: 100%;
+    height: 50px;
+    margin-top: 10px;
+  }
 </style>
 
 <div id="contenedor">
@@ -146,6 +152,11 @@
     <data>{acuerdo.estado}</data>
   </div>
   <ModificaAcuerdoForm {periodos} {acuerdo} {titulaciones} />
+  <div id="ofertas">
+    <Button color="primary" variant="raised">
+      <Label><a href="/asignaturas_recomendadas/{acuerdo.id_acuerdo}">Oferta Personalizada</a></Label>
+    </Button>
+  </div>
 </div>
 
 <div id="tab">

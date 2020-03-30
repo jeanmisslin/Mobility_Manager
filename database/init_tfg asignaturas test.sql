@@ -741,7 +741,7 @@ INSERT INTO asignaturas
 VALUES(
         '205214',
         'Seguretat Robòtica i Automatització per a la Indústria 4.0',
-        'Seguridad Robótica  y Automatización para la Industria 4.0',
+        'Seguridad Robótica y Automatización para la Industria 4.0',
         'Safety Robotics and Automation for Industry 4.0',
         'ING',
         3,
@@ -1845,7 +1845,7 @@ INSERT INTO asignaturas
 VALUES(
         '205201',
         'Robòtica i Automatització',
-        'Robótoca y Automatización',
+        'Robótica y Automatización',
         'Robotics and Automation',
         'ING',
         3,
