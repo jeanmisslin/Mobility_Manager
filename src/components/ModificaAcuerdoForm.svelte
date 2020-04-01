@@ -2,6 +2,7 @@
   export let periodos;
   export let acuerdo;
   export let titulaciones;
+  export let acuerdos;
 
   import MenuSurface, { Anchor } from "@smui/menu-surface";
   import IconButton from "@smui/icon-button";
@@ -9,12 +10,7 @@
   import Textfield from "@smui/textfield";
   import HelperText from "@smui/textfield/helper-text/index";
   import Dialog, { Title, Content, Actions, InitialFocus } from "@smui/dialog";
-  import Button, {
-    Group,
-    GroupItem,
-    Label,
-    Icon as ButtonIcon
-  } from "@smui/button";
+  import Button, { Group, GroupItem, Label, Icon as ButtonIcon } from "@smui/button";
   import List, { Item, Graphic, Text } from "@smui/list";
   import { MDCDialog } from "@material/dialog";
 
@@ -41,10 +37,11 @@
     id_acuerdo: acuerdo.id_acuerdo,
     estudiante: acuerdo.estudiante,
     titulacion: acuerdo.titulacion,
+    periodo_anterior: acuerdo.periodo_academico,
     periodo_academico: acuerdo.periodo_academico,
     año: año_periodo.año,
     cuatrimestre: año_periodo.cuatrimestre,
-    nombre_titulacion: nombre_estudio.titulacion_ingles,
+    nombre_titulacion: nombre_estudio.titulacion_castellano,
     estado: acuerdo.estado
   };
 
@@ -69,6 +66,11 @@
     let a = año.toString();
     let periodo = a + "-" + (año + 1) + " Q" + cuatrimestre;
     return periodo;
+  }
+
+  function existe(a) {
+    let introducido = acuerdos.find(acu => acu.periodo_academico === parseInt(a));
+    return introducido;
   }
 
   function modificaracuerdo() {
@@ -143,10 +145,10 @@
           <Item
             on:click={() => {
               modificaacuerdo.titulacion = t.codigo_titulacion;
-              modificaacuerdo.nombre_titulacion = t.titulacion_ingles;
+              modificaacuerdo.nombre_titulacion = t.titulacion_castellano;
               listTitulaciones.close();
             }}>
-            <Text>{t.titulacion_ingles}</Text>
+            <Text>{t.titulacion_castellano}</Text>
           </Item>
         {/each}
       </Content>
@@ -226,12 +228,19 @@
 
     <div class="actions">
       <Actions>
-        <Button color="secondary" variant="raised">
-          <Label>Cancel</Label>
-        </Button>
-        <Button color="secondary" variant="raised" on:click={modificaracuerdo}>
-          <Label>Salvar</Label>
-        </Button>
+        {#if modificaacuerdo.periodo_academico !== modificaacuerdo.periodo_anterior
+             && existe(modificaacuerdo.periodo_academico)}
+          <Button color="secondary" variant="raised">
+            <Label>Cancelar</Label>
+          </Button>
+        {:else}
+          <Button color="secondary" variant="raised">
+            <Label>Cancelar</Label>
+          </Button>
+          <Button color="secondary" variant="raised" on:click={modificaracuerdo}>
+            <Label>Salvar</Label>
+          </Button>
+        {/if}
       </Actions>
     </div>
   </Content>

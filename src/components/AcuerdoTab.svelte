@@ -151,7 +151,7 @@
     <label>Estado</label>
     <data>{acuerdo.estado}</data>
   </div>
-  <ModificaAcuerdoForm {periodos} {acuerdo} {titulaciones} />
+  <ModificaAcuerdoForm {periodos} {acuerdo} {titulaciones} {acuerdos} />
   <div id="ofertas">
     <Button color="primary" variant="raised">
       <Label><a href="/asignaturas_recomendadas/{acuerdo.id_acuerdo}">Oferta Personalizada</a></Label>
