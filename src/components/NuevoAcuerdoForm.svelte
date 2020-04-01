@@ -2,6 +2,7 @@
   export let periodos;
   export let estudiante;
   export let titulaciones;
+  export let acuerdos;
 
   import MenuSurface, { Anchor } from "@smui/menu-surface";
   import IconButton from "@smui/icon-button";
@@ -40,6 +41,11 @@
   };
 
   let message;
+
+  function existe(a) {
+    let introducido = acuerdos.find(acu => acu.periodo_academico === parseInt(a));
+    return introducido;
+  }
 
   function añadiracuerdo() {
     fetch(`nuevoacuerdo.json`, {
@@ -167,7 +173,7 @@
           <Item
             on:click={() => {
               nuevoacuerdo.periodo_academico = p.id_periodo;
-              nuevoacuerdo.año = mostrarperiodo(p.año, p.cuatrimestre);
+              nuevoacuerdo.año = p.año;
               nuevoacuerdo.cuatrimestre = p.cuatrimestre;
               listPeriodos.close();
             }}>
@@ -209,12 +215,19 @@
 
     <div class="actions">
       <Actions>
+      {#if nuevoacuerdo.periodo_academico === '' || nuevoacuerdo.titulacion === ''
+           || existe(nuevoacuerdo.periodo_academico)}
+        <Button color="secondary" variant="raised">
+          <Label>Cancel</Label>
+        </Button>
+      {:else}
         <Button color="secondary" variant="raised">
           <Label>Cancel</Label>
         </Button>
         <Button color="secondary" variant="raised" on:click={añadiracuerdo}>
           <Label>Salvar</Label>
         </Button>
+      {/if}
       </Actions>
     </div>
   </Content>
