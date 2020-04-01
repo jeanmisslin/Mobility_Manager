@@ -1,6 +1,7 @@
 <script>
   export let estudiante;
   export let universidades;
+  export let estudiantes;
 
   import ModificaEstudianteForm from "./ModificaEstudianteForm.svelte";
 </script>
@@ -60,4 +61,4 @@
   </div>
 </div>
 
-<ModificaEstudianteForm {estudiante} {universidades} />
+<ModificaEstudianteForm {estudiante} {universidades} {estudiantes} />

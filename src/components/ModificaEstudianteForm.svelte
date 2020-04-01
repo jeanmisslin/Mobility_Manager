@@ -1,6 +1,7 @@
 <script>
   export let estudiante;
   export let universidades;
+  export let estudiantes;
 
   import MenuSurface, { Anchor } from "@smui/menu-surface";
   import IconButton from "@smui/icon-button";
@@ -8,12 +9,7 @@
   import Textfield from "@smui/textfield";
   import HelperText from "@smui/textfield/helper-text/index";
   import Dialog, { Title, Content, Actions, InitialFocus } from "@smui/dialog";
-  import Button, {
-    Group,
-    GroupItem,
-    Label,
-    Icon as ButtonIcon
-  } from "@smui/button";
+  import Button, { Group, GroupItem, Label, Icon as ButtonIcon } from "@smui/button";
   import List, { Item, Graphic, Text } from "@smui/list";
   import { MDCDialog } from "@material/dialog";
 
@@ -61,6 +57,11 @@
       strIn(e.pais, filtro)
     );
   });
+
+  function existe(e) {
+    let introducido = estudiantes.find(est => est.email === e);
+    return introducido;
+  }
 
   function modificarestudiante() {
     fetch(`/estudiante/modificaestudiante.json`, {
@@ -171,13 +172,14 @@
 
     <div class="actions">
       <Actions>
-        {#if modificaestudiante.apellidos === '' || modificaestudiante.email === '' || modificaestudiante.nombre === '' || modificaestudiante.universidad === ''}
+        {#if modificaestudiante.email !== modificaestudiante.estudiante 
+             && existe(modificaestudiante.email)}
           <Button color="secondary" variant="raised">
-            <Label>Cancel</Label>
+            <Label>Cancelar</Label>
           </Button>
         {:else}
           <Button color="secondary" variant="raised">
-            <Label>Cancel</Label>
+            <Label>Cancelar</Label>
           </Button>
           <Button color="secondary" variant="raised" on:click={modificarestudiante}>
             <Label>

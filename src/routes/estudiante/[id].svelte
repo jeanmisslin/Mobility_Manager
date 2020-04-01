@@ -6,13 +6,13 @@
     let { titulaciones } = await this.fetch(`titulaciones.json`).then(body => body.json());
     let { ofertas } = await this.fetch(`ofertas.json`).then(body => body.json());
     let { periodos } = await this.fetch(`periodos.json`).then(body => body.json());
-    let { asignaciones } = await this.fetch(`asignaciones.json`).then(body => body.json());
+    let { estudiantes } = await this.fetch(`estudiantes.json`).then(body => body.json());
     return {
       estudiante,
       universidades,
       titulaciones,
       ofertas,
-      asignaciones,
+      estudiantes,
       periodos
     };
   }
@@ -34,7 +34,7 @@
   export let titulaciones;
   export let ofertas;
   export let periodos;
-  let asignaciones;
+  export let estudiantes;
 
   let {
     apellidos,
@@ -156,7 +156,7 @@
 
 <!------ Datos del Estudiante ------->
 
-  <DatosPersonales {estudiante} {universidades} />
+  <DatosPersonales {estudiante} {universidades} {estudiantes}/>
 
 <!----- Formulario Nuevo Acuerdo ----->
 
