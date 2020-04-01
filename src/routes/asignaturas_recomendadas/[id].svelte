@@ -4,9 +4,11 @@
     let acuerdo = await this.fetch(`/asignaturas_recomendadas/${id}.json`).then(body => body.json());
     let { ofertas } = await this.fetch(`ofertas.json`).then(body => body.json());
     let { asignaciones } = await this.fetch(`asignaciones.json`).then(body => body.json());
+    let { estudiantes } = await this.fetch(`estudiantes.json`).then(body => body.json());
     return {
       acuerdo,
       ofertas,
+      estudiantes,
       asignaciones
     };
   }
@@ -16,6 +18,7 @@
   export let acuerdo;
   export let ofertas;
   export let asignaciones;
+  export let estudiantes;
 
   import Menu, { SelectionGroup, SelectionGroupIcon } from "@smui/menu";
   import { Anchor } from "@smui/menu-surface";
@@ -146,7 +149,10 @@
 
 <!------- Titulo de la pantalla ----------->
 
-  <div id="title">Oferta Personalizada</div>
+  <div id="title">
+    {estudiantes.find(element => element.email === acuerdo.estudiante).apellidos},
+    {estudiantes.find(element => element.email === acuerdo.estudiante).nombre}
+  </div>
   <div></div>
 </div>
 

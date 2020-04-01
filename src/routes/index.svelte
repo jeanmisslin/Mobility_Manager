@@ -189,7 +189,7 @@
 
 <!----- Formulario Añadir Periodo ---------->
 
-  <AñadirPeriodo />
+  <AñadirPeriodo {periodos}/>
 
 <!------- Selector de Periodos ------------->
 
@@ -242,7 +242,7 @@
 
 <!------ Formulario Nuevo Estudiante ------->
 
-  <NuevoEstudiante {universidades} {periodos} {titulaciones} />
+  <NuevoEstudiante {universidades} {periodos} {titulaciones} {estudiantes}/>
 
 </div>
 
@@ -252,7 +252,10 @@
 
   <TablaFiltrableEstudiantes
     tabla={estudiantes}
-    campos={[{ name: 'apellidos', show: true, render: obj => `<a href="/estudiante/${obj.email}">${obj.apellidos}</a>`, filter: true }, { name: 'nombre', show: true, filter: true }, { name: 'universidad', show: true, filter: true }, { name: 'pais', show: true, filter: true }]} />
+    campos={[{ name: 'apellidos', show: true, render: obj => `<a href="/estudiante/${obj.email}">${obj.apellidos}</a>`, filter: true }, 
+             { name: 'nombre', show: true, filter: true }, 
+             { name: 'universidad', show: true, filter: true }, 
+             { name: 'pais', show: true, filter: true }]} />
 {:else}
 
 <!--- Tabla con los estudiantes de la Base de Datos que corresponden al Periodo seleccionado --->
@@ -261,6 +264,9 @@
     tabla={estudiantes.filter(est =>
       mostrarestudiante(periodo_seleccionado.id_periodo, est, acuerdos)
     )}
-    campos={[{ name: 'apellidos', show: true, render: obj => `<a href="/estudiante/${obj.email}">${obj.apellidos}</a>`, filter: true }, { name: 'nombre', show: true, filter: true }, { name: 'universidad', show: true, filter: true }, { name: 'pais', show: true, filter: true }]} />
+    campos={[{ name: 'apellidos', show: true, render: obj => `<a href="/estudiante/${obj.email}">${obj.apellidos}</a>`, filter: true }, 
+             { name: 'nombre', show: true, filter: true }, 
+             { name: 'universidad', show: true, filter: true }, 
+             { name: 'pais', show: true, filter: true }]} />
 {/if}
 

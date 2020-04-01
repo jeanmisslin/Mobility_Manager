@@ -131,28 +131,28 @@
       <Actions>
       {#if asignacion.estado === 'Concedida' && asignacion.previo !== 'Concedida'}
         <Button color="secondary" variant="raised">
-          <Label>Cancel</Label>
+          <Label>Cancelar</Label>
         </Button>
         <Button color="secondary" variant="raised" on:click={ejecutarresta}>
           <Label>Salvar</Label>
         </Button>
       {:else if asignacion.estado !== 'Concedida' && asignacion.previo === 'Concedida'}
         <Button color="secondary" variant="raised">
-          <Label>Cancel</Label>
+          <Label>Cancelar</Label>
         </Button>
         <Button color="secondary" variant="raised" on:click={ejecutarincremento}>
           <Label>Salvar</Label>
         </Button>
       {:else if asignacion.estado !== 'Concedida' && asignacion.previo !== 'Concedida'}
         <Button color="secondary" variant="raised">
-          <Label>Cancel</Label>
+          <Label>Cancelar</Label>
         </Button>
         <Button color="secondary" variant="raised" on:click={modificarasignacion}>
           <Label>Salvar</Label>
         </Button>
       {:else if asignacion.estado === 'Concedida' && asignacion.previo === 'Concedida'}
         <Button color="secondary" variant="raised">
-          <Label>Cancel</Label>
+          <Label>Cancelar</Label>
         </Button>
         <Button color="secondary" variant="raised" on:click={modificarasignacion}>
           <Label>Salvar</Label>
