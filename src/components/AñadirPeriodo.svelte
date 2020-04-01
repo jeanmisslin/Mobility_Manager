@@ -1,4 +1,6 @@
 <script>
+  export let periodos;
+
   import IconButton from "@smui/icon-button";
   import Textfield from "@smui/textfield";
   import HelperText from "@smui/textfield/helper-text/index";
@@ -34,6 +36,12 @@
         }
       });
   }
+
+  function existe(a,q) {
+    let introducido = periodos.find(per => 
+        per.año === parseInt(a) && per.cuatrimestre === parseInt(q));
+    return introducido;
+  }
 </script>
 
 <style>
@@ -61,6 +69,12 @@
 
     <div class="actions">
       <Actions>
+        {#if nuevoperiodo.año === "" || nuevoperiodo.cuatrimestre === ""
+             || existe(nuevoperiodo.año, nuevoperiodo.cuatrimestre)}
+          <Button color="secondary" variant="raised">
+            <Label>Cancel</Label>
+          </Button>
+        {:else}
           <Button color="secondary" variant="raised">
             <Label>Cancel</Label>
           </Button>
@@ -69,6 +83,7 @@
               Salvar
             </Label>
           </Button>
+        {/if}
       </Actions>
     </div>
   </Content>
