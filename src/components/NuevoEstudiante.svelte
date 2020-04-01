@@ -2,8 +2,8 @@
   export let universidades;
   export let periodos;
   export let titulaciones;
+  export let estudiantes;
 
-  import MenuSurface, { Anchor } from "@smui/menu-surface";
   import IconButton from "@smui/icon-button";
   import Select, { Option } from "@smui/select";
   import Textfield from "@smui/textfield";
@@ -14,10 +14,6 @@
   import { MDCDialog } from "@material/dialog";
 
   let dialog;
-  let ListUniversidades;
-  let ListPeriodos;
-
-  let menuSurface;
 
   function listUniversidades() {}
   function listPeriodos() {}
@@ -74,6 +70,11 @@
     let a = año.toString();
     let periodo = a + "-" + (año + 1) + " Q" + cuatrimestre;
     return periodo;
+  }
+
+  function existe(e) {
+    let introducido = estudiantes.find(est => est.email === e);
+    return introducido;
   }
 
   function añadirestudiante() {
@@ -219,10 +220,10 @@
           <Item
             on:click={() => {
               nuevoacuerdo.titulacion = t.codigo_titulacion;
-              nuevoacuerdo.nombre_titulacion = t.titulacion_ingles;
+              nuevoacuerdo.nombre_titulacion = t.titulacion_castellano;
               listTitulaciones.close();
             }}>
-            <Text>{t.titulacion_ingles}</Text>
+            <Text>{t.titulacion_castellano}</Text>
           </Item>
         {/each}
       </Content>
@@ -302,13 +303,16 @@
 
     <div class="actions">
       <Actions>
-        {#if nuevoestudiante.apellidos === '' || nuevoestudiante.email === '' || nuevoestudiante.nombre === '' || nuevoestudiante.universidad === '' || nuevoacuerdo.titulacion === '' || nuevoacuerdo.periodo_academico === '' || nuevoacuerdo.estado === ''}
+        {#if nuevoestudiante.apellidos === '' || nuevoestudiante.email === '' 
+             || nuevoestudiante.nombre === '' || nuevoestudiante.universidad === '' 
+             || nuevoacuerdo.titulacion === '' || nuevoacuerdo.periodo_academico === '' 
+             || nuevoacuerdo.estado === '' || existe(nuevoestudiante.email)}
           <Button color="secondary" variant="raised">
-            <Label>Cancel</Label>
+            <Label>Cancelar</Label>
           </Button>
         {:else}
           <Button color="secondary" variant="raised">
-            <Label>Cancel</Label>
+            <Label>Cancelar</Label>
           </Button>
           <Button color="secondary" variant="raised" on:click={añadirambos}>
             <Label>
