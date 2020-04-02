@@ -73,7 +73,7 @@
     {#each titulaciones as t}
       {#if t.codigo_titulacion === a}
         <tr>
-          <td>{t.titulacion_ingles}</td>
+          <td>{t.titulacion_castellano}</td>
           <td>
             <EliminarTitulacionOferta {oferta} elimina={a} />
           </td>

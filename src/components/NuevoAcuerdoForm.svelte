@@ -132,10 +132,10 @@
           <Item
             on:click={() => {
               nuevoacuerdo.titulacion = t.codigo_titulacion;
-              nuevoacuerdo.nombre_titulacion = t.titulacion_ingles;
+              nuevoacuerdo.nombre_titulacion = t.titulacion_castellano;
               listTitulaciones.close();
             }}>
-            <Text>{t.titulacion_ingles}</Text>
+            <Text>{t.titulacion_castellano}</Text>
           </Item>
         {/each}
       </Content>
