@@ -83,14 +83,14 @@
   </div>
   <div id="campos">
     <label>Plan de estudios en Catalán</label>
-    <data>{asignatura.plan_de_estudios_catalan}</data>
+    <data><a href="{asignatura.plan_de_estudios_catalan}">{asignatura.plan_de_estudios_catalan}</a></data>
   </div>
   <div id="campos">
     <label>Plan de estudios en Castellano</label>
-    <data>{asignatura.plan_de_estudios_castellano}</data>
+    <data><a href="{asignatura.plan_de_estudios_castellano}">{asignatura.plan_de_estudios_castellano}</a></data>
   </div>
   <div id="campos">
     <label>Plan de estudios en Inglés</label>
-    <data>{asignatura.plan_de_estudios_ingles}</data>
+    <data><a href="{asignatura.plan_de_estudios_ingles}">{asignatura.plan_de_estudios_ingles}</a></data>
   </div>
 </div>

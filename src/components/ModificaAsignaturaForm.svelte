@@ -8,12 +8,7 @@
   import Textfield from "@smui/textfield";
   import HelperText from "@smui/textfield/helper-text/index";
   import Dialog, { Title, Content, Actions, InitialFocus } from "@smui/dialog";
-  import Button, {
-    Group,
-    GroupItem,
-    Label,
-    Icon as ButtonIcon
-  } from "@smui/button";
+  import Button, { Group, GroupItem, Label, Icon as ButtonIcon } from "@smui/button";
   import List, { Item, Graphic, Text } from "@smui/list";
   import { MDCDialog } from "@material/dialog";
 
@@ -130,7 +125,7 @@
     <div class="actions">
       <Actions>
           <Button color="secondary" variant="raised">
-            <Label>Cancel</Label>
+            <Label>Cancelar</Label>
           </Button>
           <Button color="secondary" variant="raised" on:click={modificarasignatura}>
             <a href="/asignatura/{modificaasignatura.codigo}">Salvar</a>
