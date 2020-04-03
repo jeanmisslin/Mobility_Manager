@@ -120,7 +120,7 @@
     <div class="actions">
       <Actions>
         <Button color="secondary" variant="raised">
-          <Label>Cancel</Label>
+          <Label>Cancelar</Label>
         </Button>
         <Button color="secondary" variant="raised" on:click={ejecutarambas}>
           <Label>Salvar</Label>

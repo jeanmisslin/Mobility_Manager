@@ -1,4 +1,6 @@
 <script>
+  export let asignaturas;
+
   import MenuSurface, { Anchor } from "@smui/menu-surface";
   import IconButton from "@smui/icon-button";
   import Select, { Option } from "@smui/select";
@@ -30,6 +32,11 @@
 
   let message;
 
+  function existe(a) {
+    let introducido = asignaturas.find(asg => asg.codigo_asignatura === a);
+    return introducido;
+  }
+
   function añadirasignatura() {
     fetch(`nuevaasignatura.json`, {
       method: "POST",
@@ -48,24 +55,8 @@
 </script>
 
 <style>
-  .seleccion {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-bottom: 1.3rem;
-  }
-  .valor-seleccionado {
-    flex: 1;
-    color: black;
-    font-size: 1.1rem;
-  }
   .actions {
     margin-top: 2em;
-  }
-  .empty {
-    color: rgb(156, 156, 156);
-    font-style: italic;
-    font-size: 0.9rem;
   }
 </style>
 
@@ -124,7 +115,13 @@
 
     <div class="actions">
       <Actions>
-        {#if nuevaasignatura.codigo_asignatura === '' || nuevaasignatura.nombre_catalan === '' || nuevaasignatura.nombre_castellano === '' || nuevaasignatura.nombre_ingles === '' || nuevaasignatura.idioma === '' || nuevaasignatura.ects === '' || nuevaasignatura.plan_de_estudios_ingles === '' || nuevaasignatura.plan_de_estudios_catalan === '' || nuevaasignatura.plan_de_estudios_castellano === ''}
+        {#if nuevaasignatura.codigo_asignatura === '' || nuevaasignatura.nombre_catalan === '' 
+             || nuevaasignatura.nombre_castellano === '' || nuevaasignatura.nombre_ingles === '' 
+             || nuevaasignatura.idioma === '' || nuevaasignatura.ects === '' 
+             || nuevaasignatura.plan_de_estudios_ingles === '' 
+             || nuevaasignatura.plan_de_estudios_catalan === '' 
+             || nuevaasignatura.plan_de_estudios_castellano === ''
+             || existe(nuevaasignatura.codigo_asignatura)}
           <Button color="secondary" variant="raised">
             <Label>Cancelar</Label>
           </Button>

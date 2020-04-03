@@ -6,11 +6,13 @@
     let { periodos } = await this.fetch(`periodos.json`).then(body => body.json());
     let { titulaciones } = await this.fetch(`titulaciones.json`).then(body => body.json());
     let { asignaciones } = await this.fetch(`asignaciones.json`).then(body => body.json());
+    let { asignaturas } = await this.fetch(`../asignaturas.json`).then(body => body.json());
     return {
       asignatura,
       ofertas,
       periodos,
       asignaciones,
+      asignaturas,
       titulaciones
     };
   }
@@ -22,6 +24,7 @@
   export let periodos;
   export let titulaciones;
   export let asignaciones;
+  export let asignaturas;
 
   import Menu, { SelectionGroup, SelectionGroupIcon } from "@smui/menu";
   import { Anchor } from "@smui/menu-surface";
@@ -141,7 +144,7 @@
 
 <!--- Formulario Modifica Asignatura --->
 
-  <ModificaAsignaturaForm {asignatura} />
+  <ModificaAsignaturaForm {asignatura} {asignaturas} />
 {:else}
 
 <!--- Ofertas de la Asignatura según Periodo Académico --->

@@ -25,7 +25,7 @@
   let message;
 
   function modificaroferta() {
-    fetch(`/asignatura/modificaoferta.json`, {
+    fetch(`modificaoferta.json`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(modificaoferta)

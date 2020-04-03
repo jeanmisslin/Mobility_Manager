@@ -1,31 +1,29 @@
 <script context="module">
-  export function preload({ params, query }) {
-    return this.fetch(`../asignaturas.json`)
-      .then(body => body.json())
-      .then(json => {
-        return { asignaturas: json };
-      });
+  export async function preload({ params, query }) {
+    let fetch_endpoints = [
+      this.fetch(`asignaturas.json`).then(body => body.json())
+    ];
+    let [
+      { asignaturas }
+    ] = await Promise.all(fetch_endpoints);
+    return {
+      asignaturas
+    };
   }
 </script>
 
 <script>
+  export let asignaturas;
+
   import TablaFiltrableEstudiantes from "../../components/TablaFiltrableEstudiantes.svelte";
   import NuevaAsignatura from "../../components/NuevaAsignatura.svelte";
   import Menu, { SelectionGroup, SelectionGroupIcon } from "@smui/menu";
   import { Anchor } from "@smui/menu-surface";
-  import List, {
-    Item,
-    Graphic,
-    Text,
-    PrimaryText,
-    SecondaryText,
-    Separator
-  } from "@smui/list";
+  import List, { Item, Graphic, Text, PrimaryText, SecondaryText, Separator } from "@smui/list";
   import Button, { Group, GroupItem, Label, Icon } from "@smui/button";
 
   let menu;
 
-  export let asignaturas;
 </script>
 
 <style>
@@ -100,7 +98,7 @@
 <!------ Formulario Nueva Asignatura ------->
 
 <div id="form">
-  <NuevaAsignatura />
+  <NuevaAsignatura {asignaturas} />
 </div>
 
 <!------ Tabla con todas las asignaturas de la Base de Datos ------->

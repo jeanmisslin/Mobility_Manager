@@ -1,5 +1,6 @@
 <script>
   export let universidad;
+  export let universidades;
 
   import MenuSurface, { Anchor } from "@smui/menu-surface";
   import IconButton from "@smui/icon-button";
@@ -45,7 +46,8 @@
   let dialog;
 
   let modificauniversidad = {
-    codigo_ant: universidad.codigo_universidad,
+    open: false,
+    id: universidad.codigo_universidad,
     codigo_universidad: universidad.codigo_universidad,
     universidad: universidad.universidad,
     pais: universidad.pais
@@ -63,6 +65,11 @@
       strIn(e, filtro)
     );
   });
+
+  function existe(u) {
+    let introducida = universidades.find(uni => uni.codigo_universidad === u);
+    return introducida;
+  }
 
   function modificaruniversidad() {
     fetch(`modificauniversidad.json`, {
@@ -164,7 +171,7 @@
     <div class="actions">
       <Actions>
           <Button color="secondary" variant="raised">
-            <Label>Cancel</Label>
+            <Label>Cancelar</Label>
           </Button>
           <Button color="secondary" variant="raised" on:click={modificaruniversidad}>
             <Label>

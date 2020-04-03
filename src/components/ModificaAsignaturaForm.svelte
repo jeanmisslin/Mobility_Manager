@@ -1,6 +1,7 @@
 <script>
 
   export let asignatura;
+  export let asignaturas;
 
   import MenuSurface, { Anchor } from "@smui/menu-surface";
   import IconButton from "@smui/icon-button";
@@ -32,7 +33,7 @@
 
   let modificaasignatura = {
     open: false,
-    codigo_ant: codigo_asignatura,
+    id: codigo_asignatura,
     codigo: codigo_asignatura,
     ncat: nombre_catalan,
     ncast: nombre_castellano,
@@ -46,8 +47,13 @@
 
   let message;
 
+  function existe(a) {
+    let introducido = asignaturas.find(asg => asg.codigo_asignatura === a);
+    return introducido;
+  }
+
   function modificarasignatura() {
-    fetch(`/asignatura/modificaasignatura.json`, {
+    fetch(`modificaasignatura.json`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(modificaasignatura)
@@ -124,12 +130,19 @@
 
     <div class="actions">
       <Actions>
+        {#if modificaasignatura.codigo !== modificaasignatura.id 
+             && existe(modificaasignatura.codigo)}
+          <Button color="secondary" variant="raised">
+            <Label>Cancelar</Label>
+          </Button>
+        {:else}
           <Button color="secondary" variant="raised">
             <Label>Cancelar</Label>
           </Button>
           <Button color="secondary" variant="raised" on:click={modificarasignatura}>
             <a href="/asignatura/{modificaasignatura.codigo}">Salvar</a>
           </Button>
+        {/if}
       </Actions>
     </div>
   </Content>

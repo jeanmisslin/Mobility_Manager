@@ -98,7 +98,7 @@
 
 <!------ Formulario Nueva Universidad ------->
 
-  <AñadirUniversidad />
+  <AñadirUniversidad {universidades} />
 
 <!------ Tabla con todas las universidades de la Base de Datos ------->
 

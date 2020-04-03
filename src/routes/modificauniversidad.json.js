@@ -17,7 +17,7 @@ export function post(req, res, next) {
                     modificauniversidad.codigo_universidad,
                     modificauniversidad.universidad,
                     modificauniversidad.pais,
-                    modificauniversidad.codigo_ant
+                    modificauniversidad.id
                 ], (err) => {
             if (err) {
                 jsonResponse(500, { 

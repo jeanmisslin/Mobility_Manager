@@ -64,7 +64,7 @@
   }
 
   function modificarestudiante() {
-    fetch(`/estudiante/modificaestudiante.json`, {
+    fetch(`modificaestudiante.json`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(modificaestudiante)

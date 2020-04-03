@@ -1,4 +1,6 @@
 <script>
+  export let universidades;  
+
   import MenuSurface, { Anchor } from "@smui/menu-surface";
   import IconButton from "@smui/icon-button";
   import Select, { Option } from "@smui/select";
@@ -62,6 +64,11 @@
       strIn(e, filtro)
     );
   });
+
+  function existe(u) {
+    let introducido = universidades.find(uni => uni.codigo_universidad === u);
+    return introducido;
+  }
 
   function añadiruniversidad() {
     fetch(`nuevauniversidad.json`, {
@@ -143,14 +150,21 @@
 
     <div class="actions">
       <Actions>
+        {#if nuevauniversidad.codigo_universidad === "" || nuevauniversidad.universidad === "" 
+             || nuevauniversidad.pais === "" || existe(nuevauniversidad.codigo_universidad)}
           <Button color="secondary" variant="raised">
-            <Label>Cancel</Label>
+            <Label>Cancelar</Label>
+          </Button>
+        {:else}
+          <Button color="secondary" variant="raised">
+            <Label>Cancelar</Label>
           </Button>
           <Button color="secondary" variant="raised" on:click={añadiruniversidad}>
             <Label>
               Salvar
             </Label>
           </Button>
+        {/if}
       </Actions>
     </div>
   </Content>

@@ -2,12 +2,14 @@
   export async function preload({ params, query }) {
     const id = params.id;
     let universidad = await this.fetch(`/universidad/${id}.json`).then(body => body.json());
-    return { universidad };
+    let universidades = await this.fetch(`universidades.json`).then(body => body.json());
+    return { universidad, universidades };
   }
 </script>
 
 <script>
   export let universidad;
+  export let universidades;
 
   import Menu, { SelectionGroup, SelectionGroupIcon } from "@smui/menu";
   import { Anchor } from "@smui/menu-surface";
@@ -92,7 +94,7 @@
 
 <!------ Datos Universidad ------->
 
-  <DatosUniversidad {universidad} />
+  <DatosUniversidad {universidad} {universidades}/>
 
 <!--- Formulario Modifica Universidad
 
