@@ -12,6 +12,7 @@
   import Button, { Group, GroupItem, Label, Icon as ButtonIcon } from "@smui/button";
   import List, { Item, Graphic, Text } from "@smui/list";
   import { MDCDialog } from "@material/dialog";
+  import Warning from "./Warning.svelte";
 
   let dialog;
 
@@ -37,6 +38,8 @@
     cuatrimestre: "",
     nombre_titulacion: ""
   };
+
+  let warning = "Ya existe un/a estudiante con el mismo email en la base de datos";
 
   let message;
 
@@ -164,6 +167,9 @@
       bind:value={nuevoestudiante.email}
       input$autocomplete="email" />
     <HelperText validationMsg>No es una dirección de email válida.</HelperText>
+    {#if existe(nuevoestudiante.email)}
+      <Warning {warning} />
+    {/if}
 
     <!-- Esto es un separador -->
     <div style="height: 1em" />
