@@ -172,8 +172,9 @@
       bind:value={nuevoestudiante.email}
       input$autocomplete="email" />
     <HelperText validationMsg>No es una dirección de email válida.</HelperText>
+    
     {#if existe(nuevoestudiante.email)}
-      <!--<Warning {warning} />--> <div id="warning">{warning}</div> 
+      <div id="warning">{warning}</div> 
     {/if}
 
     <!-- Esto es un separador -->
