@@ -15,6 +15,10 @@
 
   let dialog;
 
+  let warning = "Ya existe una asignatura con el mismo código";
+
+  let array = [2.5,3,4.5,5,6,7,7.5,9,10,12,15,24,30];
+
   let menuSurface;
 
   let idiomas = [`CAT`, `CAST`, `ING`, `CAT/CAST`, `CAT/ING`, `CAST/ING`, `CAT/CAST/ING`];
@@ -73,6 +77,10 @@
   .actions {
     margin-top: 2em;
   }
+  #warning {
+    text-align: center;
+    color: red;
+  }
 </style>
 
 <Dialog
@@ -87,6 +95,10 @@
       label="Código"
       style="width: 100%"
       bind:value={modificaasignatura.codigo} />
+    {#if modificaasignatura.codigo !== modificaasignatura.id 
+         && existe(modificaasignatura.codigo)}
+         <div id="warning">{warning}</div>
+    {/if}
     <Textfield
       label="Título en Catalán"
       style="width: 100%"
@@ -110,10 +122,17 @@
         </Option>
       {/each}
     </Select>
-    <Textfield
-      label="ECTS"
+    <Select
       style="width: 100%"
-      bind:value={modificaasignatura.ects} />
+      bind:value={modificaasignatura.ects}
+      label="ECTS">
+      <Option value="" />
+      {#each array as e}
+        <Option value={e} selected={modificaasignatura.ects === e}>
+          {e}
+        </Option>
+      {/each}
+    </Select>
     <Textfield
       label="Plan de estudios en Catalán"
       style="width: 100%"
