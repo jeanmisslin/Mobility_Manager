@@ -2,6 +2,7 @@
   export let periodos;
 
   import IconButton from "@smui/icon-button";
+  import Select, { Option } from "@smui/select";
   import Textfield from "@smui/textfield";
   import HelperText from "@smui/textfield/helper-text/index";
   import Dialog, { Title, Content, Actions, InitialFocus } from "@smui/dialog";
@@ -9,7 +10,20 @@
   import List, { Item, Graphic, Text } from "@smui/list";
   import { MDCDialog } from "@material/dialog";
 
+  function años(){
+    let i = 2020;
+    let array = [2019];
+    for(i; i < 2034; i++){
+      array.push(i);
+    }
+    return array;
+  }
+
+  let array = años();
+
   let dialog;
+
+  let cuatrimestres = [1,2];
   
   let nuevoperiodo
 
@@ -18,6 +32,8 @@
     año: "",
     cuatrimestre: ""
   };
+
+  let warning = "Ya existe un periodo con el mismo año y cuatrimestre";
 
   let message;
 
@@ -45,6 +61,10 @@
 </script>
 
 <style>
+  #warning {
+      text-align: center;
+      color: red;
+    }
 </style>
 
 <Dialog
@@ -55,14 +75,26 @@
     <Label>Añadir Periodo</Label>
   </Title>
   <Content>
-    <Textfield
-      label="Año"
-      style="width: 100%"
-      bind:value={nuevoperiodo.año} />
-    <Textfield
-      label="Cuatrimestre"
-      style="width: 100%"
-      bind:value={nuevoperiodo.cuatrimestre} />
+    <Select style="width: 100%" bind:value={nuevoperiodo.año} label="Año">
+      <Option value="" />
+      {#each array as año}
+        <Option value={año} selected={nuevoperiodo.año === año}>
+          {año}
+        </Option>
+      {/each}
+    </Select>
+    <Select style="width: 100%" bind:value={nuevoperiodo.cuatrimestre} label="Cuatrimestre">
+      <Option value="" />
+      {#each cuatrimestres as cuatri}
+        <Option value={cuatri} selected={nuevoperiodo.cuatrimestre === cuatri}>
+          {cuatri}
+        </Option>
+      {/each}
+    </Select>
+    
+    {#if existe(nuevoperiodo.año, nuevoperiodo.cuatrimestre)}
+      <div id="warning">{warning}</div>
+    {/if}
   
     <!-- Esto es un separador -->
     <div style="height: 1em" />
