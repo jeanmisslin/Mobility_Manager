@@ -45,6 +45,8 @@
     universidad: codigo_universidad
   };
 
+  let warning = "Ya existe un/a estudiante con el mismo email";
+
   let message;
 
   let filtro = "";
@@ -100,6 +102,11 @@
     font-style: italic;
     font-size: 0.9rem;
   }
+
+  #warning {
+    text-align: center;
+    color: red;
+  }
 </style>
 
 <Dialog
@@ -126,6 +133,11 @@
       bind:value={modificaestudiante.email}
       input$autocomplete="email" />
     <HelperText validationMsg>No es una dirección de email válida.</HelperText>
+
+    {#if modificaestudiante.email !== modificaestudiante.estudiante 
+         && existe(modificaestudiante.email)}
+      <div id="warning">{warning}</div> 
+    {/if}
 
     <!-- Esto es un separador -->
     <div style="height: 1em" />
