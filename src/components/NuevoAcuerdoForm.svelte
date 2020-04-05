@@ -40,6 +40,8 @@
     email: estudiante
   };
 
+  let warning = "El/la estudiante ya dispone de un acuerdo académico para el periodo seleccionado";
+
   let message;
 
   function existe(a) {
@@ -107,6 +109,10 @@
     color: rgb(156, 156, 156);
     font-style: italic;
     font-size: 0.9rem;
+  }
+  #warning {
+    text-align: center;
+    color: red;
   }
 </style>
 
@@ -212,6 +218,9 @@
         </Button>
       </div>
     </div>
+    {#if existe(nuevoacuerdo.periodo_academico)}
+      <div id="warning">{warning}</div>
+    {/if}
 
     <div class="actions">
       <Actions>
