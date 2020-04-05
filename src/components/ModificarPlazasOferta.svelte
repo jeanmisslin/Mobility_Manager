@@ -13,6 +13,8 @@
 
   let dialog;
 
+  let plazas = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+
   let { asignatura, plazas_ofertadas, plazas_concedidas, periodo_academico } = oferta;
 
   let modificaoferta = {
@@ -92,10 +94,17 @@
     <Label>Modificar Oferta de Plazas</Label>
   </Title>
   <Content>
-    <Textfield
-      label="Plazas Ofertadas"
+    <Select
       style="width: 100%"
-      bind:value={modificaoferta.plazas_ofertadas} />
+      bind:value={modificaoferta.plazas_ofertadas}
+      label="Plazas Ofertadas">
+      <Option value="" />
+      {#each plazas as e}
+        <Option value={e} selected={modificaoferta.plazas_ofertadas === e}>
+          {e}
+        </Option>
+      {/each}
+    </Select>
 
     <div class="actions">
       <Actions>

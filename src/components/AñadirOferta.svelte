@@ -4,6 +4,7 @@
   export let periodo;
 
   import MenuSurface, { Anchor } from "@smui/menu-surface";
+  import Select, { Option } from "@smui/select";
   import IconButton from "@smui/icon-button";
   import Textfield from "@smui/textfield";
   import HelperText from "@smui/textfield/helper-text/index";
@@ -26,6 +27,8 @@
     nombre_titulacion: "",
     plazas_ofertadas: ""
   };
+
+  let plazas = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
 
   let message;
 
@@ -70,10 +73,17 @@
   <Content>
 
     <!------------- Plazas Ofertadas --------------->
-    <Textfield
-      label="Plazas Ofertadas"
+    <Select
       style="width: 100%"
-      bind:value={nuevaoferta.plazas_ofertadas} />
+      bind:value={nuevaoferta.plazas_ofertadas}
+      label="Plazas Ofertadas">
+      <Option value="" />
+      {#each plazas as e}
+        <Option value={e} selected={nuevaoferta.plazas_ofertadas === e}>
+          {e}
+        </Option>
+      {/each}
+    </Select>
   
     <!-- Esto es un separador -->
     <div style="height: 1em" />
