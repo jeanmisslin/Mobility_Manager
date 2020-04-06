@@ -43,6 +43,8 @@
                 "Zimbabue"];
 
   let dialog;
+
+  let warning = "Ya existe una universidad con el mismo código";
   
   let nuevauniversidad;
 
@@ -88,6 +90,10 @@
 </script>
 
 <style>
+  #warning {
+      text-align: center;
+      color: red;
+    }
 </style>
 
 <Dialog
@@ -102,6 +108,9 @@
       label="Código"
       style="width: 100%"
       bind:value={nuevauniversidad.codigo_universidad} />
+    {#if existe(nuevauniversidad.codigo_universidad)}
+      <div id="warning">{warning}</div>
+    {/if}
     <Textfield
       label="Nombre"
       style="width: 100%"

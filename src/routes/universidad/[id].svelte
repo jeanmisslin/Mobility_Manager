@@ -16,7 +16,6 @@
   import List, { Item, Separator, Text, PrimaryText, SecondaryText, Graphic } from "@smui/list";
   import MostrarOfertasForm from "../../components/MostrarOfertasForm.svelte";
   import DatosUniversidad from "../../components/DatosUniversidad.svelte";
-  import ModificaUniversidadForm from "../../components/ModificaUniversidadForm.svelte";
   import Tab, { Icon, Label } from "@smui/tab";
   import TabBar from "@smui/tab-bar";
   import Button from "@smui/button";
