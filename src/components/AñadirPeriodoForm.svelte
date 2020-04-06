@@ -18,20 +18,26 @@
   let periodo = ultimo(periodos);
 
   function cuatri(periodo){
-    let cuatrimestre = periodo.cuatrimestre;
     if (periodo.cuatrimestre === 2){
-      return cuatrimestre = 1;
+      return 1;
     }
     return 2;
   }
 
+  function año(periodo){
+    if (periodo.cuatrimestre === 2){
+      return periodo.año+1;
+    }
+    return periodo.año;
+  }
+
   let simpleDialog;
   
-  let nuevoperiodo
+  let nuevoperiodo;
 
   $: nuevoperiodo = {
     id_periodo: "",
-    año: periodo.año +1,
+    año: año(periodo),
     cuatrimestre: cuatri(periodo)
   };
 
