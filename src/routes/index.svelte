@@ -29,6 +29,7 @@
   import TablaFiltrableEstudiantes from "../components/TablaFiltrableEstudiantes.svelte";
   import NuevoEstudiante from "../components/NuevoEstudiante.svelte";
   import AñadirPeriodo from "../components/AñadirPeriodo.svelte";
+  import AñadirPeriodoForm from "../components/AñadirPeriodoForm.svelte";
   import Dialog, { Title, Content, Actions, InitialFocus } from "@smui/dialog";
   import Button, { Group, GroupItem, Label, Icon } from "@smui/button";
   import List, { Item, Graphic, Text, PrimaryText, SecondaryText, Separator } from "@smui/list";
@@ -189,7 +190,7 @@
 
 <!----- Formulario Añadir Periodo ---------->
 
-  <AñadirPeriodo {periodos}/>
+  <AñadirPeriodoForm {periodos}/>
 
 <!------- Selector de Periodos ------------->
 
