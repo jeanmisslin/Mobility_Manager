@@ -139,6 +139,11 @@
           </Item>
           <Item>
             <Text>
+              <a href="/ofertas/">Ofertas</a>
+            </Text>
+          </Item>
+          <Item>
+            <Text>
               <a href="/universidades/">Universidades</a>
             </Text>
           </Item>

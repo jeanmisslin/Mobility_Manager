@@ -85,6 +85,11 @@
               <a href="/asignaturas/">Asignaturas</a>
             </Text>
           </Item>
+          <Item>
+            <Text>
+              <a href="/ofertas/">Ofertas</a>
+            </Text>
+          </Item>
         </List>
       </Menu>
     </div>
