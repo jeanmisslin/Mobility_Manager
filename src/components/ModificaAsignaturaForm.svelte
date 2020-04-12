@@ -72,9 +72,20 @@
       });
   }
 
+  function ruta(codigo){
+    let ruta = "/asignatura/";
+    ruta = ruta + codigo;
+    return ruta;
+  }
+
   function ambas(){
     modificarasignatura();
     location.reload(true);
+  }
+
+  function salto(){
+    modificarasignatura();
+    location.replace(ruta(modificaasignatura.codigo));
   }
 </script>
 
@@ -164,8 +175,8 @@
           <Button color="secondary" variant="raised">
             <Label>Cancelar</Label>
           </Button>
-          <Button color="secondary" variant="raised" on:click={() => modificarasignatura()}>
-            <a href="/asignatura/{modificaasignatura.codigo}">Salvar</a>
+          <Button color="secondary" variant="raised" on:click={() => salto()}>
+            Salvar
           </Button>
         {:else}
           <Button color="secondary" variant="raised">
