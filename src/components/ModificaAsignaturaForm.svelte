@@ -71,6 +71,11 @@
         }
       });
   }
+
+  function ambas(){
+    modificarasignatura();
+    location.reload(true);
+  }
 </script>
 
 <style>
@@ -154,11 +159,19 @@
           <Button color="secondary" variant="raised">
             <Label>Cancelar</Label>
           </Button>
+        {:else if modificaasignatura.codigo !== modificaasignatura.id 
+             && !existe(modificaasignatura.codigo)}
+          <Button color="secondary" variant="raised">
+            <Label>Cancelar</Label>
+          </Button>
+          <Button color="secondary" variant="raised" on:click={() => modificarasignatura()}>
+            <a href="/asignatura/{modificaasignatura.codigo}">Salvar</a>
+          </Button>
         {:else}
           <Button color="secondary" variant="raised">
             <Label>Cancelar</Label>
           </Button>
-          <Button color="secondary" variant="raised" on:click={modificarasignatura}>
+          <Button color="secondary" variant="raised" on:click={() => ambas()}>
             <a href="/asignatura/{modificaasignatura.codigo}">Salvar</a>
           </Button>
         {/if}
