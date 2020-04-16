@@ -183,7 +183,7 @@
             <Label>Cancelar</Label>
           </Button>
           <Button color="secondary" variant="raised" on:click={() => ambas()}>
-            <a href="/asignatura/{modificaasignatura.codigo}">Salvar</a>
+            Salvar
           </Button>
         {/if}
       </Actions>
