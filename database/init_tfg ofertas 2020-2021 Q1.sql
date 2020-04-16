@@ -1,27 +1,10 @@
-DROP TABLE IF EXISTS ofertas;
-
-CREATE TABLE ofertas
-(
-    id_oferta INTEGER PRIMARY KEY,
-    asignatura TEXT,
-    periodo_academico int,
-    titulacion TEXT,
-    plazas_ofertadas int,
-    plazas_disponibles int,
-    plazas_concedidas int,
-    plazas_solicitadas int,
-    FOREIGN KEY (asignatura) REFERENCES asignaturas (codigo_asignatura),
-    FOREIGN KEY (periodo_academico) REFERENCES periodos_academicos (id_periodo),
-    FOREIGN KEY (titulacion) REFERENCES titulaciones (codigo_titulacion),
-    CONSTRAINT UC_OFERTA UNIQUE (asignatura,periodo_academico)
-);
 
 INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '205001',
-        1,
+        3,
         '205MASE',
         8,
         8,
@@ -34,7 +17,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '205015',
-        1,
+        3,
         '220MUAERON',
         0,
         0,
@@ -47,7 +30,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '205016',
-        1,
+        3,
         '220MUAERON',
         0,
         0,
@@ -60,7 +43,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '205017',
-        1,
+        3,
         '220MUAERON,205MASE',
         0,
         0,
@@ -73,7 +56,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '205052',
-        1,
+        3,
         '220MEI,220MUAERON,205MASE',
         5,
         5,
@@ -86,7 +69,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '205055',
-        1,
+        3,
         '220MEI,220MUAERON,205MASE',
         10,
         10,
@@ -99,7 +82,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '205060',
-        1,
+        3,
         '220MEI,220MUAERON',
         4,
         4,
@@ -112,7 +95,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '205061',
-        1,
+        3,
         '220MEI,220MUAERON,205MASE',
         5,
         5,
@@ -125,7 +108,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '205062',
-        1,
+        3,
         '220MEI,220MUAERON,205MASE',
         7,
         7,
@@ -138,7 +121,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '205063',
-        1,
+        3,
         '220MEI,220MUAERON,205MASE',
         6,
         6,
@@ -151,7 +134,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '205079',
-        1,
+        3,
         '220MEI,220MUAERON,205MASE',
         3,
         3,
@@ -164,7 +147,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '205086',
-        1,
+        3,
         '220MUESAI',
         3,
         3,
@@ -177,7 +160,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '205104',
-        1,
+        3,
         '205MEM',
         6,
         6,
@@ -190,7 +173,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '205105',
-        1,
+        3,
         '205MEM',
         6,
         6,
@@ -203,7 +186,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '205108',
-        1,
+        3,
         '205MEM',
         6,
         6,
@@ -216,7 +199,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '205109',
-        1,
+        3,
         '205MEM',
         9,
         9,
@@ -229,7 +212,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '205110',
-        1,
+        3,
         '205MEM',
         0,
         0,
@@ -242,7 +225,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '205113',
-        1,
+        3,
         '205MEM',
         6,
         6,
@@ -255,7 +238,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '205114',
-        1,
+        3,
         '205MEM',
         6,
         6,
@@ -268,7 +251,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '205201',
-        1,
+        3,
         '220GRETIND,220GRETAER,220GREVAER,320GRESAUD,320GREMECA,320GREQUIM,320GREELEC,320GREDIDP,320GREEIA,320GRETDT',
         7,
         7,
@@ -281,7 +264,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '205202',
-        1,
+        3,
         '220GRETIND,220GRETAER,220GREVAER,320GRESAUD,320GREMECA,320GREQUIM,320GREELEC,320GREDIDP,320GREEIA,320GRETDT',
         7,
         7,
@@ -294,7 +277,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '205214',
-        1,
+        3,
         '220GRETIND,220GRETAER,220GREVAER,320GREMECA,320GREQUIM,320GREELEC,320GREEIA,320GRETDT,320GREDIDP',
         4,
         4,
@@ -307,7 +290,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '205215',
-        1,
+        3,
         '220GRETIND,220GRETAER,220GREVAER,320GRESAUD,320GREMECA,320GREQUIM,320GREELEC,320GREEIA,320GRETDT,320GREDIDP',
         4,
         4,
@@ -320,7 +303,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '205219',
-        1,
+        3,
         '220GRETIND,220GRETAER,220GREVAER,320GRESAUD,320GREMECA,320GREQUIM,320GREELEC,320GREEIA,320GRETDT,320GREDIDP',
         0,
         0,
@@ -333,7 +316,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '205220',
-        1,
+        3,
         '220GRETIND,220GRETAER,220GREVAER,320GRESAUD,320GREMECA,320GREQUIM,320GREELEC,320GREEIA,320GRETDT,320GREDIDP',
         0,
         0,
@@ -346,7 +329,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '205250',
-        1,
+        3,
         '320GREEIA',
         0,
         0,
@@ -359,7 +342,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '205251',
-        1,
+        3,
         '320GREDIDP',
         2,
         2,
@@ -372,7 +355,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '205252',
-        1,
+        3,
         '320GREQUIM,320GRETDT',
         2,
         2,
@@ -385,7 +368,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '205253',
-        1,
+        3,
         '320GRESAUD',
         1,
         1,
@@ -398,7 +381,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '205300',
-        1,
+        3,
         '220MEORSEM',
         4,
         4,
@@ -411,7 +394,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '205354',
-        1,
+        3,
         '205METEXPA',
         4,
         4,
@@ -424,7 +407,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220001',
-        1,
+        3,
         '220GRETAER,220GREVAER',
         2,
         2,
@@ -437,7 +420,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220002',
-        1,
+        3,
         '220GRETAER,220GREVAER',
         3,
         3,
@@ -450,7 +433,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220003',
-        1,
+        3,
         '220GRETAER,220GREVAER',
         2,
         2,
@@ -463,7 +446,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220004',
-        1,
+        3,
         '220GRETAER,220GREVAER',
         1,
         1,
@@ -476,7 +459,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220005',
-        1,
+        3,
         '220GRETAER,220GREVAER',
         2,
         2,
@@ -489,7 +472,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220006',
-        1,
+        3,
         '220GRETAER,220GREVAER',
         1,
         1,
@@ -502,7 +485,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220007',
-        1,
+        3,
         '220GRETAER,220GREVAER',
         2,
         2,
@@ -515,7 +498,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220008',
-        1,
+        3,
         '220GRETAER,220GREVAER',
         2,
         2,
@@ -528,7 +511,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220009',
-        1,
+        3,
         '220GRETAER,220GREVAER',
         2,
         2,
@@ -541,7 +524,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220010',
-        1,
+        3,
         '220GRETAER,220GREVAER',
         2,
         2,
@@ -554,7 +537,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220011',
-        1,
+        3,
         '220GRETAER,220GREVAER',
         1,
         1,
@@ -567,7 +550,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220012',
-        1,
+        3,
         '220GRETAER,220GREVAER',
         2,
         2,
@@ -580,7 +563,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220013',
-        1,
+        3,
         '220GRETAER,220GREVAER',
         4,
         4,
@@ -593,7 +576,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220014',
-        1,
+        3,
         '220GRETAER,220GREVAER',
         2,
         2,
@@ -606,7 +589,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220015',
-        1,
+        3,
         '220GRETAER,220GREVAER',
         4,
         4,
@@ -619,7 +602,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220016',
-        1,
+        3,
         '220GRETAER,220GREVAER',
         3,
         3,
@@ -632,7 +615,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220017',
-        1,
+        3,
         '220GRETAER,220GREVAER',
         2,
         2,
@@ -645,7 +628,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220018',
-        1,
+        3,
         '220GRETAER,220GREVAER',
         2,
         2,
@@ -658,7 +641,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220019',
-        1,
+        3,
         '220GRETAER,220GREVAER',
         1,
         1,
@@ -671,7 +654,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220020',
-        1,
+        3,
         '220GRETAER,220GREVAER',
         3,
         3,
@@ -684,7 +667,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220021',
-        1,
+        3,
         '220GRETAER,220GREVAER',
         3,
         3,
@@ -697,7 +680,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220022',
-        1,
+        3,
         '220GRETAER,220GREVAER',
         4,
         4,
@@ -710,7 +693,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220023',
-        1,
+        3,
         '220GRETAER,220GREVAER',
         4,
         4,
@@ -723,7 +706,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220024',
-        1,
+        3,
         '220GRETAER,220GREVAER',
         4,
         4,
@@ -736,7 +719,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220025',
-        1,
+        3,
         '220GRETAER,220GREVAER',
         2,
         2,
@@ -749,7 +732,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220026',
-        1,
+        3,
         '220GRETAER,220GREVAER',
         5,
         5,
@@ -762,7 +745,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220027',
-        1,
+        3,
         '220GRETAER,220GREVAER',
         2,
         2,
@@ -775,7 +758,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220028',
-        1,
+        3,
         '220GRETAER,220GREVAER',
         2,
         2,
@@ -788,7 +771,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220029',
-        1,
+        3,
         '220GREVAER',
         3,
         3,
@@ -801,7 +784,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220030',
-        1,
+        3,
         '220GREVAER',
         2,
         2,
@@ -814,7 +797,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220031',
-        1,
+        3,
         '220GREVAER',
         4,
         4,
@@ -827,7 +810,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220032',
-        1,
+        3,
         '220GREVAER',
         4,
         4,
@@ -840,7 +823,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220033',
-        1,
+        3,
         '220GREVAER',
         3,
         3,
@@ -853,7 +836,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220034',
-        1,
+        3,
         '220GREVAER',
         2,
         2,
@@ -866,7 +849,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220038',
-        1,
+        3,
         '220GRETIND,220GRETAER,220GREVAER',
         12,
         12,
@@ -879,7 +862,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220039',
-        1,
+        3,
         '320GRESAUD,320GREMECA,320GREQUIM,320GREELEC,320GREDIDP,320GREEIA,320GRETDT,220GRETAER,220GREVAER',
         10,
         10,
@@ -892,7 +875,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220040',
-        1,
+        3,
         '220GRETIND,220GRETAER,220GREVAER,320GRESAUD,320GREMECA,320GREQUIM,320GREELEC,320GREDIDP,320GREEIA,320GRETDT',
         9,
         9,
@@ -905,7 +888,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220043',
-        1,
+        3,
         '220GRETIND,220GRETAER,220GREVAER,320GREMECA',
         9,
         9,
@@ -918,7 +901,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220051',
-        1,
+        3,
         '220GRETAER',
         2,
         2,
@@ -931,7 +914,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220052',
-        1,
+        3,
         '220GRETAER',
         2,
         2,
@@ -944,7 +927,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220054',
-        1,
+        3,
         '220GRETAER',
         2,
         2,
@@ -957,7 +940,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220055',
-        1,
+        3,
         '220GRETAER',
         4,
         4,
@@ -970,7 +953,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220056',
-        1,
+        3,
         '220GRETAER',
         2,
         2,
@@ -983,7 +966,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220057',
-        1,
+        3,
         '220GRETAER',
         5,
         5,
@@ -996,7 +979,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220066',
-        1,
+        3,
         '220GRETIND,220GRETAER,220GREVAER,320GRESAUD,320GREMECA,320GREQUIM,320GREELEC,320GREDIDP,320GREEIA,320GRETDT',
         10,
         10,
@@ -1009,7 +992,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220069',
-        1,
+        3,
         '220GRETIND,220GRETAER,220GREVAER',
         0,
         0,
@@ -1022,7 +1005,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220070',
-        1,
+        3,
         '220GRETIND,220GRETAER,220GREVAER',
         11,
         11,
@@ -1035,7 +1018,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220072',
-        1,
+        3,
         '220GRETIND,220GRETAER,220GREVAER,320GREELEC,320GREEIA',
         10,
         10,
@@ -1048,7 +1031,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220073',
-        1,
+        3,
         '220GRETIND,220GRETAER,220GREVAER',
         5,
         5,
@@ -1061,7 +1044,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220074',
-        1,
+        3,
         '220GRETIND,220GRETAER,220GREVAER',
         0,
         0,
@@ -1074,7 +1057,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220080',
-        1,
+        3,
         '220GRETIND',
         2,
         2,
@@ -1087,7 +1070,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220081',
-        1,
+        3,
         '220GRETIND',
         2,
         2,
@@ -1100,7 +1083,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220082',
-        1,
+        3,
         '220GRETIND',
         2,
         2,
@@ -1113,7 +1096,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220083',
-        1,
+        3,
         '220GRETIND',
         2,
         2,
@@ -1126,7 +1109,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220084',
-        1,
+        3,
         '220GRETIND',
         2,
         2,
@@ -1139,7 +1122,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220085',
-        1,
+        3,
         '220GRETIND',
         2,
         2,
@@ -1152,7 +1135,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220086',
-        1,
+        3,
         '220GRETIND',
         2,
         2,
@@ -1165,7 +1148,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220087',
-        1,
+        3,
         '220GRETIND',
         2,
         2,
@@ -1178,7 +1161,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220088',
-        1,
+        3,
         '220GRETIND',
         2,
         2,
@@ -1191,7 +1174,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220089',
-        1,
+        3,
         '220GRETIND',
         2,
         2,
@@ -1204,7 +1187,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220090',
-        1,
+        3,
         '220GRETIND',
         2,
         2,
@@ -1217,7 +1200,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220091',
-        1,
+        3,
         '220GRETIND',
         2,
         2,
@@ -1230,7 +1213,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220092',
-        1,
+        3,
         '220GRETIND',
         4,
         4,
@@ -1243,7 +1226,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220093',
-        1,
+        3,
         '220GRETIND',
         2,
         2,
@@ -1256,7 +1239,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220094',
-        1,
+        3,
         '220GRETIND',
         2,
         2,
@@ -1269,7 +1252,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220095',
-        1,
+        3,
         '220GRETIND',
         2,
         2,
@@ -1282,7 +1265,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220096',
-        1,
+        3,
         '220GRETIND',
         2,
         2,
@@ -1295,7 +1278,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220097',
-        1,
+        3,
         '220GRETIND',
         2,
         2,
@@ -1308,7 +1291,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220098',
-        1,
+        3,
         '220GRETIND',
         2,
         2,
@@ -1321,7 +1304,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220099',
-        1,
+        3,
         '220GRETIND',
         2,
         2,
@@ -1334,7 +1317,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220100',
-        1,
+        3,
         '220GRETIND',
         2,
         2,
@@ -1347,7 +1330,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220101',
-        1,
+        3,
         '220GRETIND',
         3,
         3,
@@ -1360,7 +1343,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220102',
-        1,
+        3,
         '220GRETIND',
         2,
         2,
@@ -1373,7 +1356,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220103',
-        1,
+        3,
         '220GRETIND',
         1,
         1,
@@ -1386,7 +1369,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220104',
-        1,
+        3,
         '220GRETIND',
         2,
         2,
@@ -1399,7 +1382,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220105',
-        1,
+        3,
         '220GRETIND',
         7,
         7,
@@ -1412,7 +1395,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220106',
-        1,
+        3,
         '220GRETIND',
         4,
         4,
@@ -1425,7 +1408,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220107',
-        1,
+        3,
         '220GRETIND',
         3,
         3,
@@ -1438,7 +1421,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220108',
-        1,
+        3,
         '220GRETIND',
         2,
         2,
@@ -1451,7 +1434,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220109',
-        1,
+        3,
         '220GRETIND',
         5,
         5,
@@ -1464,7 +1447,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220110',
-        1,
+        3,
         '220GRETIND',
         2,
         2,
@@ -1477,7 +1460,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220111',
-        1,
+        3,
         '220GRETIND',
         2,
         2,
@@ -1490,7 +1473,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220112',
-        1,
+        3,
         '220GRETIND',
         2,
         2,
@@ -1503,7 +1486,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220113',
-        1,
+        3,
         '220GRETIND',
         4,
         4,
@@ -1516,7 +1499,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220114',
-        1,
+        3,
         '220GRETIND',
         6,
         6,
@@ -1529,7 +1512,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220115',
-        1,
+        3,
         '220GRETIND',
         5,
         5,
@@ -1542,7 +1525,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220116',
-        1,
+        3,
         '220GRETIND',
         7,
         7,
@@ -1555,7 +1538,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220117',
-        1,
+        3,
         '220GRETIND',
         2,
         2,
@@ -1568,7 +1551,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220126',
-        1,
+        3,
         '220GRETIND,220GRETAER,220GREVAER',
         7,
         7,
@@ -1581,7 +1564,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220128',
-        1,
+        3,
         '220GRETIND,220GRETAER,220GREVAER,320GRESAUD,320GREMECA,320GREQUIM,320GREELEC,320GREDIDP,320GREEIA,320GRETDT',
         10,
         10,
@@ -1594,7 +1577,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220129',
-        1,
+        3,
         '220GRETIND,220GRETAER,220GREVAER',
         14,
         14,
@@ -1607,7 +1590,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220130',
-        1,
+        3,
         '220GRETIND,220GRETAER,220GREVAER,320GREQUIM',
         7,
         7,
@@ -1620,7 +1603,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220131',
-        1,
+        3,
         '220GRETIND,220GRETAER,220GREVAER,320GRESAUD,320GREMECA,320GREQUIM,320GREELEC,320GREDIDP,320GREEIA,320GRETDT',
         0,
         0,
@@ -1633,7 +1616,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220134',
-        1,
+        3,
         '220GRETIND,220GRETAER,220GREVAER,320GRESAUD,320GREMECA,320GREQUIM,320GREELEC,320GREDIDP,320GREEIA,320GRETDT',
         11,
         11,
@@ -1646,7 +1629,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220135',
-        1,
+        3,
         '220GRETIND,220GRETAER,220GREVAER,320GRESAUD,320GREMECA,320GREQUIM,320GREELEC,320GREDIDP,320GRETDT',
         11,
         11,
@@ -1659,7 +1642,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220142',
-        1,
+        3,
         '220GRETIND,220GRETAER,220GREVAER,320GRESAUD,320GREMECA,320GREQUIM,320GREELEC,320GREDIDP,320GREEIA,320GRETDT',
         5,
         5,
@@ -1672,7 +1655,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220146',
-        1,
+        3,
         '220GRETIND,220GRETAER,220GREVAER,320GRESAUD,320GREMECA,320GREQUIM,320GREELEC,320GREDIDP,320GREEIA,320GRETDT',
         1,
         1,
@@ -1685,7 +1668,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220203',
-        1,
+        3,
         '220MEI',
         2,
         2,
@@ -1698,7 +1681,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220204',
-        1,
+        3,
         '220MEI',
         1,
         1,
@@ -1711,7 +1694,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220206',
-        1,
+        3,
         '220MEI',
         5,
         5,
@@ -1724,7 +1707,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220207',
-        1,
+        3,
         '220MEI',
         3,
         3,
@@ -1737,7 +1720,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220208',
-        1,
+        3,
         '220MEI',
         4,
         4,
@@ -1750,7 +1733,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220209',
-        1,
+        3,
         '220MEI',
         4,
         4,
@@ -1763,7 +1746,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220211',
-        1,
+        3,
         '220MEI',
         2,
         2,
@@ -1776,7 +1759,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220212',
-        1,
+        3,
         '220MEI',
         2,
         2,
@@ -1789,7 +1772,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220213',
-        1,
+        3,
         '220MEI',
         4,
         4,
@@ -1802,7 +1785,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220214',
-        1,
+        3,
         '220MEI',
         4,
         4,
@@ -1815,7 +1798,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220215',
-        1,
+        3,
         '220MEI',
         4,
         4,
@@ -1828,7 +1811,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220216',
-        1,
+        3,
         '220MEI',
         5,
         5,
@@ -1841,7 +1824,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220230',
-        1,
+        3,
         '220MEI',
         0,
         0,
@@ -1854,7 +1837,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220236',
-        1,
+        3,
         '220MEI',
         3,
         3,
@@ -1867,7 +1850,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220252',
-        1,
+        3,
         '220MEI',
         2,
         2,
@@ -1880,7 +1863,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220253',
-        1,
+        3,
         '220MEI',
         2,
         2,
@@ -1893,7 +1876,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220261',
-        1,
+        3,
         '220MEI',
         4,
         4,
@@ -1906,7 +1889,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220262',
-        1,
+        3,
         '220MEI',
         2,
         2,
@@ -1919,7 +1902,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220263',
-        1,
+        3,
         '220MEI',
         4,
         4,
@@ -1932,7 +1915,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220270',
-        1,
+        3,
         '220MEI',
         1,
         1,
@@ -1945,7 +1928,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220272',
-        1,
+        3,
         '220MEI',
         4,
         4,
@@ -1958,7 +1941,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220273',
-        1,
+        3,
         '220MEI',
         0,
         0,
@@ -1971,7 +1954,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220274',
-        1,
+        3,
         '220MEI',
         2,
         2,
@@ -1984,7 +1967,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220280',
-        1,
+        3,
         '220MEI',
         3,
         3,
@@ -1997,7 +1980,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220281',
-        1,
+        3,
         '220MEI',
         0,
         0,
@@ -2010,7 +1993,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220282',
-        1,
+        3,
         '220MEI',
         4,
         4,
@@ -2023,7 +2006,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220283',
-        1,
+        3,
         '220MEI',
         2,
         2,
@@ -2036,7 +2019,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220301',
-        1,
+        3,
         '220MUAERON',
         4,
         4,
@@ -2049,7 +2032,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220302',
-        1,
+        3,
         '220MUAERON',
         2,
         2,
@@ -2062,7 +2045,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220303',
-        1,
+        3,
         '220MUAERON',
         4,
         4,
@@ -2075,7 +2058,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220304',
-        1,
+        3,
         '220MUAERON',
         2,
         2,
@@ -2088,7 +2071,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220305',
-        1,
+        3,
         '220MUAERON',
         4,
         4,
@@ -2101,7 +2084,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220306',
-        1,
+        3,
         '220MUAERON',
         4,
         4,
@@ -2114,7 +2097,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220308',
-        1,
+        3,
         '220MUAERON',
         3,
         3,
@@ -2127,7 +2110,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220310',
-        1,
+        3,
         '220MUAERON',
         4,
         4,
@@ -2140,7 +2123,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220311',
-        1,
+        3,
         '220MUAERON',
         4,
         4,
@@ -2153,7 +2136,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220321',
-        1,
+        3,
         '220MUAERON,205MASE',
         8,
         8,
@@ -2166,7 +2149,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220322',
-        1,
+        3,
         '220MUAERON,205MASE',
         8,
         8,
@@ -2179,7 +2162,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220323',
-        1,
+        3,
         '220MUAERON,205MASE',
         8,
         8,
@@ -2192,7 +2175,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220324',
-        1,
+        3,
         '220MUAERON,205MASE',
         8,
         8,
@@ -2205,7 +2188,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220325',
-        1,
+        3,
         '220MUAERON,205MASE',
         9,
         9,
@@ -2218,7 +2201,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220330',
-        1,
+        3,
         '220MUAERON,205MASE',
         0,
         0,
@@ -2231,7 +2214,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220331',
-        1,
+        3,
         '220MUAERON,205MASE',
         8,
         8,
@@ -2244,7 +2227,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220332',
-        1,
+        3,
         '220MUAERON,205MASE',
         8,
         8,
@@ -2257,7 +2240,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220333',
-        1,
+        3,
         '220MUAERON,205MASE',
         8,
         8,
@@ -2270,7 +2253,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220334',
-        1,
+        3,
         '220MUAERON,205MASE',
         0,
         0,
@@ -2283,7 +2266,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220340',
-        1,
+        3,
         '220MUAERON,205MASE',
         0,
         0,
@@ -2296,7 +2279,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220341',
-        1,
+        3,
         '220MUAERON,205MASE',
         2,
         2,
@@ -2309,7 +2292,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220342',
-        1,
+        3,
         '220MUAERON,205MASE',
         0,
         0,
@@ -2322,7 +2305,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220343',
-        1,
+        3,
         '220MUAERON,205MASE',
         0,
         0,
@@ -2335,7 +2318,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220344',
-        1,
+        3,
         '220MUAERON,205MASE',
         0,
         0,
@@ -2348,7 +2331,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220350',
-        1,
+        3,
         '220MUAERON,205MASE',
         0,
         0,
@@ -2361,7 +2344,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220351',
-        1,
+        3,
         '220MUAERON,205MASE',
         0,
         0,
@@ -2374,7 +2357,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220352',
-        1,
+        3,
         '220MUAERON,205MASE',
         0,
         0,
@@ -2387,7 +2370,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220353',
-        1,
+        3,
         '220MUAERON,205MASE',
         8,
         8,
@@ -2400,7 +2383,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220550',
-        1,
+        3,
         '220MEORSEM',
         4,
         4,
@@ -2413,7 +2396,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220551',
-        1,
+        3,
         '220MEORSEM',
         4,
         4,
@@ -2426,7 +2409,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220552',
-        1,
+        3,
         '220MEORSEM',
         5,
         5,
@@ -2439,7 +2422,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220553',
-        1,
+        3,
         '220MEORSEM',
         4,
         4,
@@ -2452,7 +2435,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220554',
-        1,
+        3,
         '220MEORSEM',
         4,
         4,
@@ -2465,7 +2448,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220555',
-        1,
+        3,
         '220MEORSEM',
         2,
         2,
@@ -2478,7 +2461,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220558',
-        1,
+        3,
         '220MEORSEM',
         5,
         5,
@@ -2491,7 +2474,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220559',
-        1,
+        3,
         '220MEORSEM',
         4,
         4,
@@ -2504,7 +2487,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220560',
-        1,
+        3,
         '220MEORSEM',
         4,
         4,
@@ -2517,7 +2500,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220561',
-        1,
+        3,
         '220MEORSEM',
         2,
         2,
@@ -2530,7 +2513,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220562',
-        1,
+        3,
         '220MEORSEM',
         4,
         4,
@@ -2543,7 +2526,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220563',
-        1,
+        3,
         '220MEORSEM',
         5,
         5,
@@ -2556,7 +2539,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220564',
-        1,
+        3,
         '220MEORSEM',
         3,
         3,
@@ -2569,7 +2552,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220565',
-        1,
+        3,
         '220MEORSEM',
         4,
         4,
@@ -2582,7 +2565,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220566',
-        1,
+        3,
         '220MEORSEM',
         4,
         4,
@@ -2595,7 +2578,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220601',
-        1,
+        3,
         '220MUESAI',
         2,
         2,
@@ -2608,7 +2591,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220604',
-        1,
+        3,
         '220MUESAI',
         0,
         0,
@@ -2621,7 +2604,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220605',
-        1,
+        3,
         '220MUESAI',
         0,
         0,
@@ -2634,7 +2617,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220621',
-        1,
+        3,
         '220MUESAI',
         0,
         0,
@@ -2647,7 +2630,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220625',
-        1,
+        3,
         '220MUESAI',
         0,
         0,
@@ -2660,7 +2643,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220658',
-        1,
+        3,
         '220MUAERON',
         0,
         0,
@@ -2673,7 +2656,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220659',
-        1,
+        3,
         '220MUAERON',
         0,
         0,
@@ -2686,7 +2669,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220660',
-        1,
+        3,
         '220MUAERON',
         0,
         0,
@@ -2699,7 +2682,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220661',
-        1,
+        3,
         '220MUAERON',
         0,
         0,
@@ -2712,7 +2695,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220662',
-        1,
+        3,
         '220MUAERON',
         0,
         0,
@@ -2725,7 +2708,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220669',
-        1,
+        3,
         '220MEORSEM',
         11,
         11,
@@ -2738,7 +2721,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220683',
-        1,
+        3,
         '220MUAERON',
         5,
         5,
@@ -2751,7 +2734,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '220685',
-        1,
+        3,
         '220MUAERON',
         4,
         4,
@@ -2764,7 +2747,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '3200011',
-        1,
+        3,
         '320GREMECA,320GREQUIM,320GREELEC,320GREEIA,320GRETDT,320GREDIDP',
         4,
         4,
@@ -2777,7 +2760,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '3200012',
-        1,
+        3,
         '320GREMECA,320GREQUIM,320GREELEC,320GREDIDP,320GREEIA,320GRETDT',
         2,
         2,
@@ -2790,7 +2773,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320002',
-        1,
+        3,
         '320GREMECA,320GREQUIM,320GREELEC,320GREDIDP,320GREEIA,320GRETDT',
         2,
         2,
@@ -2803,7 +2786,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '3200031',
-        1,
+        3,
         '320GREMECA,320GREQUIM,320GREELEC,320GREEIA,320GRETDT,320GREDIDP',
         3,
         3,
@@ -2816,7 +2799,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '3200032',
-        1,
+        3,
         '320GREMECA,320GREQUIM,320GREELEC,320GREEIA,320GRETDT,320GREDIDP',
         3,
         3,
@@ -2829,7 +2812,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320004',
-        1,
+        3,
         '320GREMECA,320GREQUIM,320GREELEC,320GREDIDP,320GREEIA,320GRETDT',
         3,
         3,
@@ -2842,7 +2825,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320005',
-        1,
+        3,
         '320GREMECA,320GREQUIM,320GREELEC,320GREDIDP,320GREEIA,320GRETDT',
         4,
         4,
@@ -2855,7 +2838,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320006',
-        1,
+        3,
         '320GREMECA,320GREQUIM,320GREELEC,320GREDIDP,320GREEIA,320GRETDT',
         5,
         5,
@@ -2868,7 +2851,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320007',
-        1,
+        3,
         '320GREMECA,320GREQUIM,320GREELEC,320GREDIDP,320GREEIA,320GRETDT',
         2,
         2,
@@ -2881,7 +2864,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320008',
-        1,
+        3,
         '320GREMECA,320GREQUIM,320GREELEC,320GREEIA,320GRETDT',
         2,
         2,
@@ -2894,7 +2877,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320009',
-        1,
+        3,
         '320GREMECA,320GREQUIM,320GREELEC,320GREEIA,320GRETDT,320GREDIDP',
         4,
         4,
@@ -2907,7 +2890,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320010',
-        1,
+        3,
         '320GREMECA,320GREQUIM,320GREELEC,320GREEIA,320GRETDT',
         2,
         2,
@@ -2920,7 +2903,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320011',
-        1,
+        3,
         '320GREMECA,320GREQUIM,320GREELEC,320GREEIA,320GRETDT',
         4,
         4,
@@ -2933,7 +2916,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320012',
-        1,
+        3,
         '320GREMECA,320GREQUIM,320GREELEC,320GREEIA,320GRETDT',
         3,
         3,
@@ -2946,7 +2929,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320013',
-        1,
+        3,
         '320GREMECA,320GREQUIM,320GREELEC,320GREEIA,320GRETDT,320GREDIDP',
         2,
         2,
@@ -2959,7 +2942,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320017',
-        1,
+        3,
         '320GREMECA,320GREQUIM,320GREELEC,320GREEIA,320GRETDT',
         4,
         4,
@@ -2972,7 +2955,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320018',
-        1,
+        3,
         '320GREMECA,320GREQUIM,320GREELEC,320GREEIA,320GRETDT,320GREDIDP',
         8,
         8,
@@ -2985,7 +2968,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320020',
-        1,
+        3,
         '320GREELEC',
         1,
         1,
@@ -2998,7 +2981,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '3200211',
-        1,
+        3,
         '320GREELEC',
         0,
         0,
@@ -3011,7 +2994,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320022',
-        1,
+        3,
         '320GREELEC',
         2,
         2,
@@ -3024,7 +3007,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320023',
-        1,
+        3,
         '320GREELEC',
         2,
         2,
@@ -3037,7 +3020,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320024',
-        1,
+        3,
         '320GREELEC',
         1,
         1,
@@ -3050,7 +3033,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320027',
-        1,
+        3,
         '320GREELEC',
         0,
         0,
@@ -3063,7 +3046,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320029',
-        1,
+        3,
         '220GRETIND,220GRETAER,220GREVAER,320GRESAUD,320GREMECA,320GREQUIM,320GREELEC,320GREDIDP,320GREEIA,320GRETDT',
         4,
         4,
@@ -3076,7 +3059,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320030',
-        1,
+        3,
         '320GRESAUD,320GREMECA,320GREQUIM,320GREELEC,320GREEIA,320GRETDT,320GREDIDP',
         2,
         2,
@@ -3089,7 +3072,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '3200331',
-        1,
+        3,
         '320GREEIA',
         0,
         0,
@@ -3102,7 +3085,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320035',
-        1,
+        3,
         '320GREEIA',
         0,
         0,
@@ -3115,7 +3098,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320036',
-        1,
+        3,
         '320GREEIA',
         0,
         0,
@@ -3128,7 +3111,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '3200371',
-        1,
+        3,
         '320GREEIA',
         0,
         0,
@@ -3141,7 +3124,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320038',
-        1,
+        3,
         '320GREEIA',
         0,
         0,
@@ -3154,7 +3137,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320041',
-        1,
+        3,
         '320GREEIA',
         0,
         0,
@@ -3167,7 +3150,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320044',
-        1,
+        3,
         '320GREEIA',
         1,
         1,
@@ -3180,7 +3163,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320049',
-        1,
+        3,
         '320GREMECA',
         1,
         1,
@@ -3193,7 +3176,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '3200501',
-        1,
+        3,
         '320GREMECA',
         0,
         0,
@@ -3206,7 +3189,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '3200511',
-        1,
+        3,
         '320GREMECA',
         0,
         0,
@@ -3219,7 +3202,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320052',
-        1,
+        3,
         '320GREMECA',
         0,
         0,
@@ -3232,7 +3215,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320053',
-        1,
+        3,
         '320GREMECA',
         1,
         1,
@@ -3245,7 +3228,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320056',
-        1,
+        3,
         '320GREMECA',
         1,
         1,
@@ -3258,7 +3241,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320059',
-        1,
+        3,
         '320GREMECA,320GREQUIM',
         2,
         2,
@@ -3271,7 +3254,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320060',
-        1,
+        3,
         '320GREMECA,320GREQUIM',
         0,
         0,
@@ -3284,7 +3267,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320063',
-        1,
+        3,
         '320GREQUIM',
         0,
         0,
@@ -3297,7 +3280,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320064',
-        1,
+        3,
         '320GREQUIM',
         0,
         0,
@@ -3310,7 +3293,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320065',
-        1,
+        3,
         '320GREQUIM',
         1,
         1,
@@ -3323,7 +3306,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '3200661',
-        1,
+        3,
         '320GREQUIM',
         1,
         1,
@@ -3336,7 +3319,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '3200671',
-        1,
+        3,
         '320GREQUIM',
         1,
         1,
@@ -3349,7 +3332,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320070',
-        1,
+        3,
         '320GREQUIM',
         1,
         1,
@@ -3362,7 +3345,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320072',
-        1,
+        3,
         '320GREQUIM,320GRETDT',
         3,
         3,
@@ -3375,7 +3358,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320077',
-        1,
+        3,
         '320GRETDT',
         2,
         2,
@@ -3388,7 +3371,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320078',
-        1,
+        3,
         '320GRETDT',
         2,
         2,
@@ -3401,7 +3384,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320079',
-        1,
+        3,
         '320GRETDT',
         2,
         2,
@@ -3414,7 +3397,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320080',
-        1,
+        3,
         '320GRETDT',
         2,
         2,
@@ -3427,7 +3410,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320081',
-        1,
+        3,
         '320GRETDT',
         2,
         2,
@@ -3440,7 +3423,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320086',
-        1,
+        3,
         '320GRETDT',
         3,
         3,
@@ -3453,7 +3436,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320092',
-        1,
+        3,
         '320GRESAUD',
         0,
         0,
@@ -3466,7 +3449,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320093',
-        1,
+        3,
         '320GRESAUD',
         0,
         0,
@@ -3479,7 +3462,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320094',
-        1,
+        3,
         '320GRESAUD',
         0,
         0,
@@ -3492,7 +3475,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320095',
-        1,
+        3,
         '320GRESAUD',
         0,
         0,
@@ -3505,7 +3488,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '3200961',
-        1,
+        3,
         '320GRESAUD',
         1,
         1,
@@ -3518,7 +3501,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320101',
-        1,
+        3,
         '320GRESAUD',
         4,
         4,
@@ -3531,7 +3514,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320102',
-        1,
+        3,
         '320GRESAUD',
         1,
         1,
@@ -3544,7 +3527,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320103',
-        1,
+        3,
         '320GRESAUD',
         1,
         1,
@@ -3557,7 +3540,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320105',
-        1,
+        3,
         '320GRESAUD',
         0,
         0,
@@ -3570,7 +3553,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320106',
-        1,
+        3,
         '320GRESAUD',
         2,
         2,
@@ -3583,7 +3566,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320111',
-        1,
+        3,
         '320GRESAUD',
         1,
         1,
@@ -3596,7 +3579,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320113',
-        1,
+        3,
         '320GRESAUD',
         1,
         1,
@@ -3609,7 +3592,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320114',
-        1,
+        3,
         '320GRESAUD',
         1,
         1,
@@ -3622,7 +3605,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320115',
-        1,
+        3,
         '320GRESAUD',
         1,
         1,
@@ -3635,7 +3618,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320117',
-        1,
+        3,
         '320GRESAUD',
         0,
         0,
@@ -3648,7 +3631,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320121',
-        1,
+        3,
         '320GRESAUD',
         2,
         2,
@@ -3661,7 +3644,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320123',
-        1,
+        3,
         '320GRESAUD',
         2,
         2,
@@ -3674,7 +3657,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320124',
-        1,
+        3,
         '320GRESAUD',
         1,
         1,
@@ -3687,7 +3670,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320125',
-        1,
+        3,
         '320GRESAUD',
         1,
         1,
@@ -3700,7 +3683,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320129',
-        1,
+        3,
         '320GREEIA',
         1,
         1,
@@ -3713,7 +3696,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320134',
-        1,
+        3,
         '320GREDIDP',
         3,
         3,
@@ -3726,7 +3709,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320135',
-        1,
+        3,
         '320GREDIDP',
         2,
         2,
@@ -3739,7 +3722,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320140',
-        1,
+        3,
         '320GREDIDP',
         2,
         2,
@@ -3752,7 +3735,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320141',
-        1,
+        3,
         '320GREDIDP',
         2,
         2,
@@ -3765,7 +3748,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320142',
-        1,
+        3,
         '320GREDIDP',
         5,
         5,
@@ -3778,7 +3761,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320143',
-        1,
+        3,
         '320GREDIDP',
         1,
         1,
@@ -3791,7 +3774,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320144',
-        1,
+        3,
         '320GREDIDP',
         2,
         2,
@@ -3804,7 +3787,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320151',
-        1,
+        3,
         '320GREDIDP',
         4,
         4,
@@ -3817,7 +3800,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320152',
-        1,
+        3,
         '320GREDIDP',
         4,
         4,
@@ -3830,7 +3813,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320154',
-        1,
+        3,
         '320GREDIDP',
         1,
         1,
@@ -3843,7 +3826,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320157',
-        1,
+        3,
         '320GREDIDP',
         0,
         0,
@@ -3856,7 +3839,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320159',
-        1,
+        3,
         '320GREDIDP',
         2,
         2,
@@ -3869,7 +3852,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320162',
-        1,
+        3,
         '320GREELEC',
         0,
         0,
@@ -3882,7 +3865,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320163',
-        1,
+        3,
         '320GREELEC',
         5,
         5,
@@ -3895,7 +3878,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320164',
-        1,
+        3,
         '220GRETIND,220GRETAER,220GREVAER,320GRESAUD,320GREMECA,320GREQUIM,320GREELEC,320GREEIA,320GRETDT,320GREDIDP',
         2,
         2,
@@ -3908,7 +3891,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320166',
-        1,
+        3,
         '220GRETIND,220GRETAER,220GREVAER,320GRESAUD,320GREMECA,320GREQUIM,320GREELEC,320GREEIA,320GRETDT,320GREDIDP',
         2,
         2,
@@ -3921,7 +3904,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320168',
-        1,
+        3,
         '320GREELEC',
         0,
         0,
@@ -3934,7 +3917,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320171',
-        1,
+        3,
         '320GREELEC',
         0,
         0,
@@ -3947,7 +3930,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320179',
-        1,
+        3,
         '320GREMECA,320GREQUIM',
         4,
         4,
@@ -3960,7 +3943,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320180',
-        1,
+        3,
         '320GREMECA,320GREQUIM,320GRETDT',
         2,
         2,
@@ -3973,7 +3956,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320182',
-        1,
+        3,
         '320GREEIA',
         5,
         5,
@@ -3986,7 +3969,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320183',
-        1,
+        3,
         '320GREEIA',
         5,
         5,
@@ -3999,7 +3982,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320192',
-        1,
+        3,
         '220GRETIND,220GRETAER,220GREVAER,320GRESAUD,320GREMECA,320GREQUIM,320GREELEC,320GREEIA,320GRETDT,320GREDIDP',
         1,
         1,
@@ -4012,7 +3995,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320194',
-        1,
+        3,
         '320GREDIDP',
         3,
         3,
@@ -4025,7 +4008,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320505',
-        1,
+        3,
         '205METEXPA',
         4,
         4,
@@ -4038,7 +4021,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320506',
-        1,
+        3,
         '205METEXPA',
         4,
         4,
@@ -4051,7 +4034,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320507',
-        1,
+        3,
         '205METEXPA',
         4,
         4,
@@ -4064,7 +4047,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320516',
-        1,
+        3,
         '205METEXPA',
         4,
         4,
@@ -4077,7 +4060,7 @@ INSERT INTO ofertas
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
         '320524',
-        1,
+        3,
         '205METEXPA',
         4,
         4,
