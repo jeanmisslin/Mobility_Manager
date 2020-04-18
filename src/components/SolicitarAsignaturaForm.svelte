@@ -1,6 +1,8 @@
 <script>
   export let oferta;
   export let acuerdo;
+  export let active;
+  export let seleccion;
 
   import MenuSurface, { Anchor } from "@smui/menu-surface";
   import IconButton from "@smui/icon-button";
@@ -13,6 +15,8 @@
   import { MDCDialog } from "@material/dialog";
 
   let simpleDialog;
+
+  let pestaña = seleccion;
 
   let message;
   let asignacion;
@@ -67,6 +71,9 @@
     console.log("Click!!");
     asignar();
     solicitar();
+    location.reload(true);
+    active = "Asignaturas Solicitadas";
+    seleccion = pestaña;
   }
 
   function abrir() {

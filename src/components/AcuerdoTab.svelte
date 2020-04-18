@@ -52,6 +52,17 @@
 
   $: id_periodo = periodo(seleccion, periodos);
   $: acuerdo = id_acuerdo(acuerdos, id_periodo);
+
+  function ruta(codigo){
+    let ruta = "/asignaturas_recomendadas/";
+    ruta = ruta + codigo;
+    return ruta;
+  }
+
+  function salto(){
+    location.replace(ruta(acuerdo.id_acuerdo));
+  }
+
 </script>
 
 <style>
@@ -129,10 +140,8 @@
     font-size: 15px;
   }
 
-  #ofertas {
-    width: 100%;
-    height: 50px;
-    margin-top: 10px;
+  #separador {
+    height: 10px;
   }
 </style>
 
@@ -152,11 +161,10 @@
     <data>{acuerdo.estado}</data>
   </div>
   <ModificaAcuerdoForm {periodos} {acuerdo} {titulaciones} {acuerdos} />
-  <div id="ofertas">
-    <Button color="primary" variant="raised">
-      <Label><a href="/asignaturas_recomendadas/{acuerdo.id_acuerdo}">Oferta Personalizada</a></Label>
+  <div id="separador"></div>
+    <Button color="primary" variant="raised" on:click={() => salto()}>
+      Oferta Personalizada
     </Button>
-  </div>
 </div>
 
 <div id="tab">
@@ -172,8 +180,14 @@
     <TablaFiltrableComponentes
       tabla={ofertas.filter(ofer => ofer.periodo_academico === acuerdo.periodo_academico && (asignada(asignaturas, ofer) === null || asignada(asignaturas, ofer) === undefined))}
       {acuerdo}
+      {active}
+      {seleccion}
       componente="solicitar"
-      campos={[{ name: 'codigo_asignatura', nombre: 'código', show: true, filter: true, render: obj => `<a href="/asignatura/${obj.codigo_asignatura}">${obj.codigo_asignatura}</a>` }, { name: 'nombre_ingles', nombre: 'titulo', show: true, filter: true, render: obj => `<a href="${obj.plan_de_estudios_ingles}">${obj.nombre_ingles}</a>` }, { name: 'nombre_catalan', filter: true }, { name: 'nombre_castellano', filter: true }, { name: 'plazas_disponibles', nombre: 'vacantes', show: true }]} />
+      campos={[{ name: 'codigo_asignatura', nombre: 'código', show: true, filter: true, render: obj => `<a href="/asignatura/${obj.codigo_asignatura}">${obj.codigo_asignatura}</a>` }, 
+               { name: 'nombre_ingles', nombre: 'titulo', show: true, filter: true, render: obj => `<a href="${obj.plan_de_estudios_ingles}">${obj.nombre_ingles}</a>` }, 
+               { name: 'nombre_catalan', filter: true }, 
+               { name: 'nombre_castellano', filter: true }, 
+               { name: 'plazas_disponibles', nombre: 'vacantes', show: true }]} />
   {:else}
     <TablaAsignaturasSolicitadas tabla={asignaturas} {ofertas} {acuerdo} />
   {/if}

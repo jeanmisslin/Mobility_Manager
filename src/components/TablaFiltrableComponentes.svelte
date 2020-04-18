@@ -3,6 +3,8 @@
   export let tabla; // Array de objetos javascript con todos los datos
   export let componente;
   export let acuerdo;
+  export let active;
+  export let seleccion;
 
   import SolicitarAsignaturaForm from "./SolicitarAsignaturaForm.svelte";
   import ModificarEstadoAsignacionForm from "./ModificarEstadoAsignacionForm.svelte";
@@ -101,7 +103,9 @@
           <td>
             <SolicitarAsignaturaForm
               acuerdo={acuerdo.id_acuerdo}
-              oferta={obj} />
+              oferta={obj}
+              {active}
+              {seleccion} />
           </td>
         {:else if componente === 'modificar'}
           <td>

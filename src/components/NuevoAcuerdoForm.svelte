@@ -88,6 +88,17 @@
     let periodo = a + "-" + (año + 1) + " Q" + cuatrimestre;
     return periodo;
   }
+
+  function ruta(codigo){
+    let ruta = "/estudiante/";
+    ruta = ruta + codigo;
+    return ruta;
+  }
+
+  function ambas(){
+    añadiracuerdo();
+    location.reload(true);
+  }
 </script>
 
 <style>
@@ -233,7 +244,7 @@
         <Button color="secondary" variant="raised">
           <Label>Cancel</Label>
         </Button>
-        <Button color="secondary" variant="raised" on:click={añadiracuerdo}>
+        <Button color="secondary" variant="raised" on:click={() => ambas()}>
           <Label>Salvar</Label>
         </Button>
       {/if}

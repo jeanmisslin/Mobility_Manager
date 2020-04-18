@@ -80,6 +80,22 @@
         }
       });
   }
+
+  function ruta(codigo){
+    let ruta = "/estudiante/";
+    ruta = ruta + codigo;
+    return ruta;
+  }
+
+  function ambas(){
+    modificarestudiante();
+    location.reload(true);
+  }
+
+  function salto(){
+    modificarestudiante();
+    location.replace(ruta(modificaestudiante.email));
+  }
 </script>
 
 <style>
@@ -189,14 +205,20 @@
           <Button color="secondary" variant="raised">
             <Label>Cancelar</Label>
           </Button>
+        {:else if modificaestudiante.email !== modificaestudiante.estudiante
+            && !existe(modificaestudiante.email)}
+          <Button color="secondary" variant="raised">
+            <Label>Cancelar</Label>
+          </Button>
+          <Button color="secondary" variant="raised" on:click={() => salto()}>
+            Salvar
+          </Button>
         {:else}
           <Button color="secondary" variant="raised">
             <Label>Cancelar</Label>
           </Button>
-          <Button color="secondary" variant="raised" on:click={modificarestudiante}>
-            <Label>
-              <a href="/estudiante/{modificaestudiante.email}">Salvar</a>
-            </Label>
+          <Button color="secondary" variant="raised" on:click={() => ambas()}>
+              Salvar
           </Button>
         {/if}
       </Actions>
