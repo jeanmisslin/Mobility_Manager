@@ -1175,3 +1175,45 @@ INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
     'University of Zagreb',
     'Croacia'
 );
+
+INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
+    'E LEON01',
+    'Universidad de León',
+    'España'
+);
+
+INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
+    'E MADRID14',
+    'Universidad Carlos III de Madrid',
+    'España'
+);
+
+INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
+    'E LAS-PAL01',
+    'Universidad de Las Palmas de Gran Canaria',
+    'España'
+);
+
+INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
+    'E VIGO01',
+    'Universidade de Vigo',
+    'España'
+);
+
+INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
+    'E OVIEDO01',
+    'Universidad de Oviedo',
+    'España'
+);
+
+INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
+    'E MADRID05',
+    'Universidad Politécnica de Madrid',
+    'España'
+);
+
+INSERT INTO universidades (codigo_universidad, universidad, pais) VALUES(
+    'E CADIZ01',
+    'Universidad de Cadiz',
+    'España'
+);
