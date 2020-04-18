@@ -158,6 +158,9 @@
     {estudiantes.find(element => element.email === acuerdo.estudiante).apellidos},
     {estudiantes.find(element => element.email === acuerdo.estudiante).nombre}
   </div>
+  <div id="title">
+    {acuerdo.año}-{acuerdo.año+1}, Q{acuerdo.cuatrimestre}
+  </div>
   <div></div>
 </div>
 
