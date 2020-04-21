@@ -162,8 +162,8 @@
   </div>
   <ModificaAcuerdoForm {periodos} {acuerdo} {titulaciones} {acuerdos} />
   <div id="separador"></div>
-    <Button color="primary" variant="raised" on:click={() => salto()}>
-      Oferta Personalizada
+    <Button color="primary" variant="raised">
+      <a href="/asignaturas_recomendadas/{acuerdo.id_acuerdo}">Oferta Personalizada</a>
     </Button>
 </div>
 

@@ -1,13 +1,9 @@
 
-DROP TABLE IF EXISTS paises;
 DROP TABLE IF EXISTS universidades;
 DROP TABLE IF EXISTS estudiantes;
-DROP TABLE IF EXISTS ciclos;
 DROP TABLE IF EXISTS titulaciones;
-DROP TABLE IF EXISTS idiomas;
 DROP TABLE IF EXISTS asignaturas;
 DROP TABLE IF EXISTS periodos_academicos;
-DROP TABLE IF EXISTS estados;
 DROP TABLE IF EXISTS acuerdos_academicos;
 DROP TABLE IF EXISTS ofertas;
 DROP TABLE IF EXISTS asignaciones;
