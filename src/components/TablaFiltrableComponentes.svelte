@@ -5,6 +5,7 @@
   export let acuerdo;
   export let active;
   export let seleccion;
+  export let onSolicitada;
 
   import SolicitarAsignaturaForm from "./SolicitarAsignaturaForm.svelte";
   import ModificarEstadoAsignacionForm from "./ModificarEstadoAsignacionForm.svelte";
@@ -105,7 +106,9 @@
               acuerdo={acuerdo.id_acuerdo}
               oferta={obj}
               {active}
-              {seleccion} />
+              {seleccion} 
+              onSolicitada={onSolicitada}
+              />
           </td>
         {:else if componente === 'modificar'}
           <td>

@@ -16,7 +16,9 @@ export function post(req, res, next) {
                     parseInt(asignacion.acuerdo),
                     parseInt(asignacion.oferta),
                     asignacion.estado
-                ], (err) => {
+                ], function (err) {
+            const id_asignacion = this.lastID;
+            console.log("asignacionID modificado =", id_asignacion);
             if (err) {
                 jsonResponse(500, { 
                     error: `Cannot insert the new asignacion: ${err}`
@@ -25,6 +27,7 @@ export function post(req, res, next) {
             }
             jsonResponse(200, {
                 error: null,
+                id_asignacion
             })
         })
     })

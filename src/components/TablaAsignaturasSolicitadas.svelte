@@ -38,6 +38,31 @@
     }
     return false;
   }
+
+  function colorfila(obj) {
+    if (obj.plazas_disponibles <= 0 || (acuerdo.titulacion.includes('GRE') && !masterogrado(obj.oferta, ofertas))) {
+      return "red";
+    } else if (!acuerdo.titulacion.includes('GRE') && masterogrado(obj.oferta, ofertas)) {
+      return "yellow";
+    } else if (!acuerdo.titulacion.includes('GRE') && !masterogrado(obj.oferta, ofertas)) {
+      return "green";
+    } else if (acuerdo.titulacion === 'GRESEIAAT' && masterogrado(obj.oferta, ofertas)) {
+      return "green";
+    } else if (!encontrartitulacion(obj.oferta, acuerdo.titulacion, ofertas)) {
+      return "yellow";
+    } else {
+      return "green";
+    }
+  }
+
+  function modificarEstadoEnCaliente(codigo, estado) {
+    console.log("modificarEstadoEnCaliente", codigo, estado);
+    for (let i = 0; i < tabla.length; i++) {
+      if (tabla[i].codigo_asignatura === codigo) {
+        tabla[i].estado_solicitud = estado;
+      }
+    }
+  }
 </script>
 
 <style>
@@ -54,21 +79,21 @@
     padding: 3px;
   }
 
-  #green {
+  td.green {
     border: 1px solid black;
     text-align: center;
     background-color: rgb(248, 255, 248);
     padding: 3px;
   }
 
-  #yellow {
+  td.yellow {
     border: 1px solid black;
     text-align: center;
     background-color: rgb(255, 255, 230);
     padding: 3px;
   }
 
-  #red {
+  td.red {
     border: 1px solid black;
     text-align: center;
     background-color: rgb(255, 236, 236);
@@ -109,91 +134,20 @@
   {#each tablaFiltrada as obj}
     <tr>
       {#if obj.periodo_academico === acuerdo.periodo_academico}
-        {#if obj.plazas_disponibles <= 0}
-          <td id="red">
-            <a href="/asignatura/{obj.codigo_asignatura}">
-              {obj.codigo_asignatura}
-            </a>
-          </td>
-          <td id="red">{obj.nombre_ingles}</td>
-          <td id="red">{obj.plazas_disponibles}</td>
-          <td id="red">{obj.estado_solicitud}</td>
-          <td id="red">
-            <ModificarEstadoAsignacionForm asignatura={obj} {acuerdo} />
-          </td>
-        {:else if acuerdo.titulacion.includes('GRE') && !masterogrado(obj.oferta, ofertas)}
-          <td id="red">
-            <a href="/asignatura/{obj.codigo_asignatura}">
-              {obj.codigo_asignatura}
-            </a>
-          </td>
-          <td id="red">{obj.nombre_ingles}</td>
-          <td id="red">{obj.plazas_disponibles}</td>
-          <td id="red">{obj.estado_solicitud}</td>
-          <td id="red">
-            <ModificarEstadoAsignacionForm asignatura={obj} {acuerdo} />
-          </td>
-        {:else if !acuerdo.titulacion.includes('GRE') && masterogrado(obj.oferta, ofertas)}
-          <td id="yellow">
-            <a href="/asignatura/{obj.codigo_asignatura}">
-              {obj.codigo_asignatura}
-            </a>
-          </td>
-          <td id="yellow">{obj.nombre_ingles}</td>
-          <td id="yellow">{obj.plazas_disponibles}</td>
-          <td id="yellow">{obj.estado_solicitud}</td>
-          <td id="yellow">
-            <ModificarEstadoAsignacionForm asignatura={obj} {acuerdo} />
-          </td>
-        {:else if !acuerdo.titulacion.includes('GRE') && !masterogrado(obj.oferta, ofertas)}
-          <td id="green">
-            <a href="/asignatura/{obj.codigo_asignatura}">
-              {obj.codigo_asignatura}
-            </a>
-          </td>
-          <td id="green">{obj.nombre_ingles}</td>
-          <td id="green">{obj.plazas_disponibles}</td>
-          <td id="green">{obj.estado_solicitud}</td>
-          <td id="green">
-            <ModificarEstadoAsignacionForm asignatura={obj} {acuerdo} />
-          </td>
-        {:else if acuerdo.titulacion === 'GRESEIAAT' && masterogrado(obj.oferta, ofertas)}
-          <td id="green">
-            <a href="/asignatura/{obj.codigo_asignatura}">
-              {obj.codigo_asignatura}
-            </a>
-          </td>
-          <td id="green">{obj.nombre_ingles}</td>
-          <td id="green">{obj.plazas_disponibles}</td>
-          <td id="green">{obj.estado_solicitud}</td>
-          <td id="green">
-            <ModificarEstadoAsignacionForm asignatura={obj} {acuerdo} />
-          </td>
-        {:else if !encontrartitulacion(obj.oferta, acuerdo.titulacion, ofertas)}
-          <td id="yellow">
-            <a href="/asignatura/{obj.codigo_asignatura}">
-              {obj.codigo_asignatura}
-            </a>
-          </td>
-          <td id="yellow">{obj.nombre_ingles}</td>
-          <td id="yellow">{obj.plazas_disponibles}</td>
-          <td id="yellow">{obj.estado_solicitud}</td>
-          <td id="yellow">
-            <ModificarEstadoAsignacionForm asignatura={obj} {acuerdo} />
-          </td>
-        {:else}
-          <td id="green">
-            <a href="/asignatura/{obj.codigo_asignatura}">
-              {obj.codigo_asignatura}
-            </a>
-          </td>
-          <td id="green">{obj.nombre_ingles}</td>
-          <td id="green">{obj.plazas_disponibles}</td>
-          <td id="green">{obj.estado_solicitud}</td>
-          <td id="green">
-            <ModificarEstadoAsignacionForm asignatura={obj} {acuerdo} />
-          </td>
-        {/if}
+        <td class={colorfila(obj)}>
+          <a href="/asignatura/{obj.codigo_asignatura}">
+            {obj.codigo_asignatura}
+          </a>
+        </td>
+        <td class={colorfila(obj)}>{obj.nombre_ingles}</td>
+        <td class={colorfila(obj)}>{obj.plazas_disponibles}</td>
+        <td class={colorfila(obj)}>{obj.estado_solicitud}</td>
+        <td class={colorfila(obj)}>
+          <ModificarEstadoAsignacionForm 
+            asignatura={obj} 
+            {acuerdo} 
+            onModificado={modificarEstadoEnCaliente} />
+        </td>
       {/if}
     </tr>
   {/each}

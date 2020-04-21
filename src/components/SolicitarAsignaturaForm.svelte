@@ -3,6 +3,7 @@
   export let acuerdo;
   export let active;
   export let seleccion;
+  export let onSolicitada;
 
   import MenuSurface, { Anchor } from "@smui/menu-surface";
   import IconButton from "@smui/icon-button";
@@ -35,43 +36,54 @@
     periodo: oferta.periodo_academico
   };
 
-  function asignar() {
-    fetch(`nuevaasignacion.json`, {
+  async function asignar() {
+    const body = await fetch(`nuevaasignacion.json`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(asignacion)
-    })
-      .then(body => body.json())
-      .then(json => {
-        if (json.error) {
-          message = json.error;
-        } else {
-          message = "asignacion guardada";
-        }
-      });
+    });
+    const json = await body.json();
+    if (json.error) {
+      message = json.error;
+      return null;
+    } else {
+      message = "asignacion guardada";
+      return json.id_asignacion;
+    }
   }
 
-  function solicitar() {
-    fetch(`solicitarasignatura.json`, {
+  async function solicitar() {
+    const body = await fetch(`solicitarasignatura.json`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(modificacion)
-    })
-      .then(body => body.json())
-      .then(json => {
-        if (json.error) {
-          message = json.error;
-        } else {
-          message = "oferta guardada";
-        }
-      });
+    });
+    const json = await body.json();
+    if (json.error) {
+      message = json.error;
+    } else {
+      message = "oferta guardada";
+    }
   }
 
-  function ejecutarambas() {
-    console.log("Click!!");
-    asignar();
-    solicitar();
-    location.reload(true);
+  async function ejecutarambas() {
+    const id_asignacion = await asignar();
+    await solicitar();
+    console.log("id_asignacion", id_asignacion);
+
+    // location.reload(true);
+    if (onSolicitada) {
+      onSolicitada({
+        id_asignacion, 
+        codigo_asignatura: oferta.asignatura,
+        nombre_catalan: oferta.nombre_catalan,
+        nombre_castellano: oferta.nombre_castellano,
+        nombre_ingles: oferta.nombre_ingles,
+        plazas_disponibles: oferta.plazas_disponibles,
+        periodo_academico: oferta.periodo_academico,
+        estado_solicitud: "Solicitada",
+      });
+    }
     active = "Asignaturas Solicitadas";
     seleccion = pestaña;
   }

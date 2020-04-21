@@ -1,6 +1,7 @@
 <script>
   export let asignatura;
   export let acuerdo;
+  export let onModificado;
 
   import MenuSurface, { Anchor } from "@smui/menu-surface";
   import IconButton from "@smui/icon-button";
@@ -56,6 +57,7 @@
         } else {
           message = "asignacion guardada";
         }
+        onModificado(asignatura.codigo_asignatura, asignacion.estado);
       });
   }
 
