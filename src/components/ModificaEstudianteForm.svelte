@@ -81,6 +81,22 @@
       });
   }
 
+  function modificaracuerdo() {
+    fetch(`modificaacuerdoestudiante.json`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(modificaestudiante)
+    })
+      .then(body => body.json())
+      .then(json => {
+        if (json.error) {
+          message = json.error;
+        } else {
+          message = "modificacion guardada";
+        }
+      });
+  }
+
   function ruta(codigo){
     let ruta = "/estudiante/";
     ruta = ruta + codigo;
@@ -89,11 +105,13 @@
 
   function ambas(){
     modificarestudiante();
+    modificaracuerdo();
     location.reload(true);
   }
 
   function salto(){
     modificarestudiante();
+    modificaracuerdo();
     location.replace(ruta(modificaestudiante.email));
   }
 </script>
