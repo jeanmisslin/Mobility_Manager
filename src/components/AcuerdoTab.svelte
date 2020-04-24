@@ -20,13 +20,13 @@
     let periodoQ = seleccion.split("Q");
     let año = periodoA[0];
     let cuatrimestre = periodoQ[1];
-    let id_periodo = periodos.find(element => (element.año === parseInt(año)) &
+    let periodo_acuerdo = periodos.find(element => (element.año === parseInt(año)) &
         (element.cuatrimestre === parseInt(cuatrimestre)));
-    return id_periodo;
+    return periodo_acuerdo;
   }
 
-  function id_acuerdo(acuerdos, id_periodo) {
-    let acuerdo = acuerdos.find(element => element.periodo_academico === id_periodo.id_periodo);
+  function acuerdo_estudiante(acuerdos, periodo_acuerdo) {
+    let acuerdo = acuerdos.find(element => element.periodo_academico === periodo_acuerdo.id_periodo);
     return acuerdo;
   }
 
@@ -47,21 +47,22 @@
     return asignacion;
   }
 
-  let id_periodo;
+  let periodo_acuerdo;
   let acuerdo;
 
-  $: id_periodo = periodo(seleccion, periodos);
-  $: acuerdo = id_acuerdo(acuerdos, id_periodo);
+  $: periodo_acuerdo = periodo(seleccion, periodos);
+  $: acuerdo = acuerdo_estudiante(acuerdos, periodo_acuerdo);
 
-  function ruta(codigo){
-    let ruta = "/asignaturas_recomendadas/";
-    ruta = ruta + codigo;
-    return ruta;
-  }
-
-  function salto(){
-    location.replace(ruta(acuerdo.id_acuerdo));
-  }
+  function modificarAcuerdoEnCaliente(codigo, titulacion, periodo, estado) {
+    for (let i = 0; i < acuerdos.length; i++) {
+      if (acuerdos[i].id_acuerdo === codigo) {
+        periodo_acuerdo = periodo;
+        acuerdos[i].periodo_academico = periodo.id_periodo;
+        acuerdos[i].titulacion_castellano = titulacion;
+        acuerdos[i].estado = estado;
+        }
+      }
+    }
 
 </script>
 
@@ -150,7 +151,8 @@
 <div id="datos">
   <div id="campos">
     <label>Periodo</label>
-    <data>{seleccion}</data>
+    <data>{periodo_acuerdo.año + "-" + (periodo_acuerdo.año+1) + " Q" 
+         + periodo_acuerdo.cuatrimestre}</data>
   </div>
   <div id="titulacion">
     <label>Titulación</label>
@@ -160,7 +162,12 @@
     <label>Estado</label>
     <data>{acuerdo.estado}</data>
   </div>
-  <ModificaAcuerdoForm {periodos} {acuerdo} {titulaciones} {acuerdos} />
+  <ModificaAcuerdoForm 
+    {periodos} 
+    {acuerdo} 
+    {titulaciones} 
+    {acuerdos} 
+    onModificado={modificarAcuerdoEnCaliente} />
   <div id="separador"></div>
     <Button color="primary" variant="raised">
       <a href="/asignaturas_recomendadas/{acuerdo.id_acuerdo}">Oferta Personalizada</a>
