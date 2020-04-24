@@ -3,6 +3,7 @@
   export let acuerdo;
   export let titulaciones;
   export let acuerdos;
+  export let onModificado;
 
   import MenuSurface, { Anchor } from "@smui/menu-surface";
   import IconButton from "@smui/icon-button";
@@ -30,16 +31,16 @@
 
   let nombre_estudio;
   let año_periodo;
+  let periodo_anterior = acuerdo.periodo_academico;
   
   $: nombre_estudio = titulaciones.find(element => element.codigo_titulacion === acuerdo.titulacion);
-  $: año_periodo = periodos.find(element => element.id_periodo === acuerdo.periodo_academico);
+  $: año_periodo = periodos.find(element => element.id_periodo === periodo_anterior);
 
   let modificaacuerdo;
   $: modificaacuerdo = {
     id_acuerdo: acuerdo.id_acuerdo,
     estudiante: acuerdo.estudiante,
     titulacion: acuerdo.titulacion,
-    periodo_anterior: acuerdo.periodo_academico,
     periodo_academico: acuerdo.periodo_academico,
     año: año_periodo.año,
     cuatrimestre: año_periodo.cuatrimestre,
@@ -64,9 +65,14 @@
 
   $: PeriodosFiltrados = periodos.filter(e => e.año === parseInt(filtroPeriodos));
 
-  function mostrarperiodo(año, cuatrimestre) {
-    let a = año.toString();
-    let periodo = a + "-" + (año + 1) + " Q" + cuatrimestre;
+  function encontrarperiodo(id) {
+    let periodo = periodos.find(per => per.id_periodo === id);
+    return periodo;
+  }
+
+  function mostrarperiodo(p) {
+    let periodo = periodos.find(per => per.id_periodo === id);
+    let srting = periodo.año + "-" + (periodo.año+1) + " Q" + periodo.cuatrimestre;
     return periodo;
   }
 
@@ -88,6 +94,11 @@
         } else {
           message = "modificacion guardada";
         }
+        onModificado(acuerdo.id_acuerdo, 
+                     modificaacuerdo.nombre_titulacion, 
+                     encontrarperiodo(modificaacuerdo.periodo_academico), 
+                     acuerdo.estado);
+        periodo_anterior = modificaacuerdo.periodo_academico; 
       });
   }
 </script>
@@ -150,8 +161,7 @@
         {#each TitulacionesFiltradas as t}
           <Item
             on:click={() => {
-              modificaacuerdo.titulacion = t.codigo_titulacion;
-              modificaacuerdo.nombre_titulacion = t.titulacion_castellano;
+              acuerdo.titulacion = t.codigo_titulacion;
               listTitulaciones.close();
             }}>
             <Text>{t.titulacion_castellano}</Text>
@@ -231,14 +241,14 @@
         </Button>
       </div>
     </div>
-    {#if modificaacuerdo.periodo_academico !== modificaacuerdo.periodo_anterior
+    {#if modificaacuerdo.periodo_academico !== periodo_anterior
          && existe(modificaacuerdo.periodo_academico)}
         <div id="warning">{warning}</div>
     {/if}
 
     <div class="actions">
       <Actions>
-        {#if modificaacuerdo.periodo_academico !== modificaacuerdo.periodo_anterior
+        {#if modificaacuerdo.periodo_academico !== periodo_anterior
              && existe(modificaacuerdo.periodo_academico)}
           <Button color="secondary" variant="raised">
             <Label>Cancelar</Label>
