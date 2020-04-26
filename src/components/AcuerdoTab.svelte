@@ -20,13 +20,13 @@
     let periodoQ = seleccion.split("Q");
     let año = periodoA[0];
     let cuatrimestre = periodoQ[1];
-    let periodo_acuerdo = periodos.find(element => (element.año === parseInt(año)) &
+    let id_periodo = periodos.find(element => (element.año === parseInt(año)) &
         (element.cuatrimestre === parseInt(cuatrimestre)));
-    return periodo_acuerdo;
+    return id_periodo;
   }
 
-  function acuerdo_estudiante(acuerdos, periodo_acuerdo) {
-    let acuerdo = acuerdos.find(element => element.periodo_academico === periodo_acuerdo.id_periodo);
+  function id_acuerdo(acuerdos, id_periodo) {
+    let acuerdo = acuerdos.find(element => element.periodo_academico === id_periodo.id_periodo);
     return acuerdo;
   }
 
@@ -47,16 +47,16 @@
     return asignacion;
   }
 
-  let periodo_acuerdo;
+  let id_periodo;
   let acuerdo;
 
-  $: periodo_acuerdo = periodo(seleccion, periodos);
-  $: acuerdo = acuerdo_estudiante(acuerdos, periodo_acuerdo);
+  $: id_periodo = periodo(seleccion, periodos);
+  $: acuerdo = id_acuerdo(acuerdos, id_periodo);
 
   function modificarAcuerdoEnCaliente(codigo, titulacion, periodo, estado) {
     for (let i = 0; i < acuerdos.length; i++) {
       if (acuerdos[i].id_acuerdo === codigo) {
-        periodo_acuerdo = periodo;
+        id_periodo = periodo;
         acuerdos[i].periodo_academico = periodo.id_periodo;
         acuerdos[i].titulacion_castellano = titulacion;
         acuerdos[i].estado = estado;
@@ -151,8 +151,8 @@
 <div id="datos">
   <div id="campos">
     <label>Periodo</label>
-    <data>{periodo_acuerdo.año + "-" + (periodo_acuerdo.año+1) + " Q" 
-         + periodo_acuerdo.cuatrimestre}</data>
+    <data>{id_periodo.año + "-" + (id_periodo.año+1) + " Q" 
+         + id_periodo.cuatrimestre}</data>
   </div>
   <div id="titulacion">
     <label>Titulación</label>
