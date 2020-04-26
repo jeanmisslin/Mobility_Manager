@@ -53,11 +53,6 @@
 
   let active = "Datos Personales";
 
-  function mostrarperiodo(p) {
-    let periodo = p + "-" + (p + 1) + " Q" + p.cuatrimestre;
-    return periodo;
-  }
-
   function generartab(acuerdos, periodos) {
     let l = acuerdos.length;
     let pestañas = "Datos Personales";
