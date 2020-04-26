@@ -2,6 +2,7 @@
 
   export let asignatura;
   export let asignaturas;
+  export let onModificado;
 
   import MenuSurface, { Anchor } from "@smui/menu-surface";
   import IconButton from "@smui/icon-button";
@@ -69,23 +70,16 @@
         } else {
           message = "modificacion guardada";
         }
+        onModificado(modificaasignatura.codigo, 
+                     modificaasignatura.idioma, 
+                     modificaasignatura.ects,
+                     modificaasignatura.ncat,
+                     modificaasignatura.ncast,
+                     modificaasignatura.ning,
+                     modificaasignatura.pscat,
+                     modificaasignatura.pscast,
+                     modificaasignatura.psing);
       });
-  }
-
-  function ruta(codigo){
-    let ruta = "/asignatura/";
-    ruta = ruta + codigo;
-    return ruta;
-  }
-
-  function ambas(){
-    modificarasignatura();
-    location.reload(true);
-  }
-
-  function salto(){
-    modificarasignatura();
-    location.replace(ruta(modificaasignatura.codigo));
   }
 </script>
 
@@ -122,7 +116,7 @@
     <Textfield
       label="Título en Castellano"
       style="width: 100%"
-      bind:value={modificaasignatura.ncat} />
+      bind:value={modificaasignatura.ncast} />
     <Textfield
       label="Título en Inglés"
       style="width: 100%"
@@ -175,14 +169,14 @@
           <Button color="secondary" variant="raised">
             <Label>Cancelar</Label>
           </Button>
-          <Button color="secondary" variant="raised" on:click={() => salto()}>
-            Salvar
+          <Button color="secondary" variant="raised" on:click={() => modificarasignatura()}>
+            <a href="/asignatura/{modificaasignatura.codigo}">Salvar</a>
           </Button>
         {:else}
           <Button color="secondary" variant="raised">
             <Label>Cancelar</Label>
           </Button>
-          <Button color="secondary" variant="raised" on:click={() => ambas()}>
+          <Button color="secondary" variant="raised" on:click={() => modificarasignatura()}>
             Salvar
           </Button>
         {/if}
