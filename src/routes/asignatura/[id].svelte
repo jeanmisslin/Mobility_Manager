@@ -54,6 +54,18 @@
     return pestañas;
   }
 
+  function modificarAsignaturaEnCaliente (codigo, idioma, ects, tcat, tcast, ting, pcat, pcast, ping) {
+    asignatura.codigo_asignatura = codigo;
+    asignatura.idioma = idioma;
+    asignatura.ects = ects;
+    asignatura.nombre_catalan = tcat;
+    asignatura.nombre_castellano = tcast;
+    asignatura.nombre_ingles = ting;
+    asignatura.plan_de_estudios_catalan = pcat;
+    asignatura.plan_de_estudios_castellano = pcast;
+    asignatura.plan_de_estudios_ingles = ping;
+  }
+
   let tabstring = generartab(periodos);
   let tabgenerado = tabstring.split(",");
 </script>
@@ -149,7 +161,7 @@
 
 <!--- Formulario Modifica Asignatura --->
 
-  <ModificaAsignaturaForm {asignatura} {asignaturas} />
+  <ModificaAsignaturaForm {asignatura} {asignaturas} onModificado={modificarAsignaturaEnCaliente}/>
 {:else}
 
 <!--- Ofertas de la Asignatura según Periodo Académico --->
