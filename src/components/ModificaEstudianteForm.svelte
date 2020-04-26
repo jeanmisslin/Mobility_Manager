@@ -2,6 +2,7 @@
   export let estudiante;
   export let universidades;
   export let estudiantes;
+  export let onModificado;
 
   import MenuSurface, { Anchor } from "@smui/menu-surface";
   import IconButton from "@smui/icon-button";
@@ -78,6 +79,11 @@
         } else {
           message = "modificacion guardada";
         }
+        onModificado(modificaestudiante.apellidos, 
+                     modificaestudiante.nombre, 
+                     modificaestudiante.email, 
+                     estudiante.universidad,
+                     estudiante.pais);
       });
   }
 
@@ -97,22 +103,14 @@
       });
   }
 
-  function ruta(codigo){
-    let ruta = "/estudiante/";
-    ruta = ruta + codigo;
-    return ruta;
-  }
-
   function ambas(){
     modificarestudiante();
     modificaracuerdo();
-    location.reload(true);
   }
 
   function salto(){
     modificarestudiante();
     modificaracuerdo();
-    location.replace(ruta(modificaestudiante.email));
   }
 </script>
 
@@ -189,8 +187,8 @@
           <Item
             on:click={() => {
               modificaestudiante.universidad = u.codigo_universidad;
-              modificaestudiante.nombre_universidad = u.universidad;
               estudiante.universidad = u.universidad;
+              estudiante.pais = u.pais;
               listUniversidades.close();
             }}>
             <Text>{u.universidad}</Text>
@@ -229,7 +227,7 @@
             <Label>Cancelar</Label>
           </Button>
           <Button color="secondary" variant="raised" on:click={() => salto()}>
-            Salvar
+            <a href="/estudiante/{modificaestudiante.email}">Salvar</a>
           </Button>
         {:else}
           <Button color="secondary" variant="raised">
