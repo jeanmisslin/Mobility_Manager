@@ -93,14 +93,18 @@
       });
   }
 
-  function ejecutarresta() {
-    modificarasignacion();
-    restar();
+  function modificarPlazas() {
+      if (asignacion.estado === 'Concedida' && asignacion.previo !== 'Concedida') {
+          restar();
+      }
+      else if (asignacion.estado !== 'Concedida' && asignacion.previo === 'Concedida'){
+          incrementar();
+      }
   }
 
-  function ejecutarincremento() {
+  function ambas() {
     modificarasignacion();
-    incrementar();
+    modificarPlazas();
   }
 </script>
 
@@ -131,35 +135,12 @@
 
     <div class="actions">
       <Actions>
-      {#if asignacion.estado === 'Concedida' && asignacion.previo !== 'Concedida'}
         <Button color="secondary" variant="raised">
           <Label>Cancelar</Label>
         </Button>
-        <Button color="secondary" variant="raised" on:click={ejecutarresta}>
+        <Button color="secondary" variant="raised" on:click={ambas}>
           <Label>Salvar</Label>
         </Button>
-      {:else if asignacion.estado !== 'Concedida' && asignacion.previo === 'Concedida'}
-        <Button color="secondary" variant="raised">
-          <Label>Cancelar</Label>
-        </Button>
-        <Button color="secondary" variant="raised" on:click={ejecutarincremento}>
-          <Label>Salvar</Label>
-        </Button>
-      {:else if asignacion.estado !== 'Concedida' && asignacion.previo !== 'Concedida'}
-        <Button color="secondary" variant="raised">
-          <Label>Cancelar</Label>
-        </Button>
-        <Button color="secondary" variant="raised" on:click={modificarasignacion}>
-          <Label>Salvar</Label>
-        </Button>
-      {:else if asignacion.estado === 'Concedida' && asignacion.previo === 'Concedida'}
-        <Button color="secondary" variant="raised">
-          <Label>Cancelar</Label>
-        </Button>
-        <Button color="secondary" variant="raised" on:click={modificarasignacion}>
-          <Label>Salvar</Label>
-        </Button>
-      {/if}
       </Actions>
     </div>
   </Content>

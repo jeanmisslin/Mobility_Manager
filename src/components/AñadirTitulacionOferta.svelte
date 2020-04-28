@@ -1,6 +1,7 @@
 <script>
   export let titulaciones;
   export let oferta;
+  export let onModificado;
 
   import Textfield from "@smui/textfield";
   import IconButton from "@smui/icon-button";
@@ -59,6 +60,7 @@
           console.log(modificacion);
           message = "nueva oferta guardada";
         }
+        onModificado(modificacion.titulacion);
       });
   }
 

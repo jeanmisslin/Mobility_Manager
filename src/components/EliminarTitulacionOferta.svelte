@@ -1,6 +1,7 @@
 <script>
   export let elimina;
   export let oferta;
+  export let onModificado;
 
   import Dialog, { Title, Content, Actions, InitialFocus } from "@smui/dialog";
   import Button, { Group, GroupItem, Label, Icon as ButtonIcon } from "@smui/button";
@@ -47,6 +48,7 @@
         } else {
           message = "nueva oferta guardada";
         }
+        onModificado(modificacion.titulacion);
       });
   }
 </script>

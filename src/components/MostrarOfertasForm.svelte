@@ -2,7 +2,6 @@
   export let ofertas;
   export let asignatura;
   export let titulaciones;
-  export let asignaciones;
   export let periodos;
   export let seleccion;
 
@@ -66,8 +65,6 @@
     oferta={ofertas.find(element => element.asignatura === asignatura.codigo_asignatura && element.periodo_academico === id_periodo.id_periodo)} />
   <MostrarTitulacionesOfertas
     oferta={ofertas.find(element => element.asignatura === asignatura.codigo_asignatura && element.periodo_academico === id_periodo.id_periodo)}
-    {asignatura}
     periodo={id_periodo}
-    {titulaciones}
-    {asignaciones} />
+    {titulaciones} />
 {/if}

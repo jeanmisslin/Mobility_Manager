@@ -1,39 +1,19 @@
 <script>
   export let oferta;
-  export let periodo;
-  export let asignatura;
   export let titulaciones;
-  let asignaciones;
 
   import EliminarTitulacionOferta from "./EliminarTitulacionOferta.svelte";
   import AñadirTitulacionOferta from "./AñadirTitulacionOferta.svelte";
 
-  let array = oferta.titulacion.split(",");
   let titulacion;
-
-  let añadirtitulacion = {
-    asignatura: asignatura,
-    periodo: periodo,
-    titulacion: "",
-    plazas_ofertadas: oferta.plazas_ofertadas
-  };
+  let array;
+  
+  $: array = oferta.titulacion.split(",");
 
   let message;
 
-  function añadiroferta() {
-    fetch(`/asignatura/añadiroferta.json`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(añadirtitulacion)
-    })
-      .then(body => body.json())
-      .then(json => {
-        if (json.error) {
-          message = json.error;
-        } else {
-          message = "nueva oferta guardada";
-        }
-      });
+  function modificarOfertaEnCaliente(nueva) {
+    oferta.titulacion = nueva;
   }
 </script>
 
@@ -75,7 +55,7 @@
         <tr>
           <td>{t.titulacion_castellano}</td>
           <td>
-            <EliminarTitulacionOferta {oferta} elimina={a} />
+            <EliminarTitulacionOferta {oferta} elimina={a} onModificado={modificarOfertaEnCaliente} />
           </td>
         </tr>
       {/if}
@@ -83,4 +63,4 @@
   {/each}
 </table>
 
-<AñadirTitulacionOferta {titulaciones} {oferta} />
+<AñadirTitulacionOferta {titulaciones} {oferta} onModificado={modificarOfertaEnCaliente}/>
