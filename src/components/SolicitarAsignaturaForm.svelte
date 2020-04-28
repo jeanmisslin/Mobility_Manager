@@ -80,8 +80,10 @@
         nombre_castellano: oferta.nombre_castellano,
         nombre_ingles: oferta.nombre_ingles,
         plazas_disponibles: oferta.plazas_disponibles,
+        plazas_concedidas: oferta.plazas_concedidas,
         periodo_academico: oferta.periodo_academico,
         estado_solicitud: "Solicitada",
+        // TODO: Completar
       });
     }
     active = "Asignaturas Solicitadas";
