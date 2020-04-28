@@ -69,19 +69,12 @@
   async function ejecutarambas() {
     const id_asignacion = await asignar();
     await solicitar();
-    console.log("id_asignacion", id_asignacion);
 
-    // location.reload(true);
     if (onSolicitada) {
       onSolicitada({
-        id_asignacion, 
-        codigo_asignatura: oferta.asignatura,
-        nombre_catalan: oferta.nombre_catalan,
-        nombre_castellano: oferta.nombre_castellano,
-        nombre_ingles: oferta.nombre_ingles,
-        plazas_disponibles: oferta.plazas_disponibles,
-        plazas_concedidas: oferta.plazas_concedidas,
-        periodo_academico: oferta.periodo_academico,
+        id_asignacion,
+        oferta: oferta.id_oferta,
+        ...oferta, // Metemos todos los campos de oferta en este objeto!
         estado_solicitud: "Solicitada",
         // TODO: Completar
       });
