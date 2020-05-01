@@ -7,7 +7,7 @@
 
   import MostrarTitulacionesOfertas from "./MostrarTitulacionesOfertas.svelte";
   import AñadirOferta from "./AñadirOferta.svelte";
-  import ModificarPlazasOferta from "./ModificarPlazasOferta.svelte";
+  import MostrarPlazasOferta from "./MostrarPlazasOferta.svelte";
 
   let message;
 
@@ -61,7 +61,7 @@
   </div>
   </div>
 {:else}
-  <ModificarPlazasOferta
+  <MostrarPlazasOferta
     oferta={ofertas.find(element => element.asignatura === asignatura.codigo_asignatura && element.periodo_academico === id_periodo.id_periodo)} />
   <MostrarTitulacionesOfertas
     oferta={ofertas.find(element => element.asignatura === asignatura.codigo_asignatura && element.periodo_academico === id_periodo.id_periodo)}

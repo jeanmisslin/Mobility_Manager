@@ -15,7 +15,8 @@
 
   function listTitulaciones() {}
 
-  let array = oferta.titulacion.split(",");
+  let array;
+  $: array = oferta.titulacion.split(",");
 
   let message;
   let añade = "";

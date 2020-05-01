@@ -18,12 +18,10 @@
     let i;
     let modificada = "";
     for (i = 0; i != array.length; i++)
-      if (array[i] != elimina && i === 0) {
-        modificada = modificada + array[i];
-      } else if (array[i-1] === elimina && i === 1) {
-        modificada = modificada + array[i];
+      if ((i === 0 && array[i] != elimina) || (i === 1 && array[0] === elimina)) {
+          modificada = modificada + array[i];
       } else if (array[i] != elimina) {
-        modificada = modificada + "," + array[i];
+          modificada = modificada + "," + array[i];
       }
     return modificada;
   }
