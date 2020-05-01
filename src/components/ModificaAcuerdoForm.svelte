@@ -3,6 +3,7 @@
   export let acuerdo;
   export let titulaciones;
   export let acuerdos;
+  export let asignaturas;
   export let onModificado;
 
   import MenuSurface, { Anchor } from "@smui/menu-surface";
@@ -46,6 +47,12 @@
     cuatrimestre: año_periodo.cuatrimestre,
     nombre_titulacion: nombre_estudio.titulacion_castellano,
     estado: acuerdo.estado
+  };
+
+  let modificaplazas;
+  $: modificaplazas = { 
+    id_acuerdo: acuerdo.id_acuerdo,
+    oferta: ""
   };
 
   let message;
@@ -98,8 +105,76 @@
                      modificaacuerdo.nombre_titulacion, 
                      encontrarperiodo(modificaacuerdo.periodo_academico), 
                      acuerdo.estado);
-        periodo_anterior = modificaacuerdo.periodo_academico; 
+        periodo_anterior = modificaacuerdo.periodo_academico;
+        acuerdo.periodo_academico = modificaacuerdo.periodo_academico; 
       });
+  }
+
+  function eliminarplazaconcedida() {
+    fetch(`eliminaplazaconcedida.json`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(modificaplazas)
+    })
+      .then(body => body.json())
+      .then(json => {
+        if (json.error) {
+          message = json.error;
+        } else {
+          message = "oferta guardada";
+        }
+      });
+  }
+
+  function eliminarplazasolicitada() {
+    fetch(`eliminaplazasolicitada.json`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(modificaplazas)
+    })
+      .then(body => body.json())
+      .then(json => {
+        if (json.error) {
+          message = json.error;
+        } else {
+          message = "oferta guardada";
+        }
+      });
+  }
+
+  function actualizarPlazas(){
+    let asig = asignaturas.filter(asig => asignaturas.acuerdo_academico === acuerdo.id_acuerdo);
+    for(let i = 0; i < asig.length; i++){
+      modificaplazas.oferta = asig[i].id_oferta;
+      if(asig[i].estado_solicitud === "Concedida"){
+          eliminarplazaconcedida();
+        }
+        else {
+          eliminarplazasolicitada();
+        }
+    }
+  }
+
+  function eliminarAsignaciones() {
+    fetch(`eliminaasignacion.json`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(modificaacuerdo)
+    })
+      .then(body => body.json())
+      .then(json => {
+        if (json.error) {
+          message = json.error;
+        } else {
+          message = "modificacion guardada";
+        } 
+      });
+  }
+
+  function ambas() {
+    modificaracuerdo();
+    eliminarAsignaciones();
+    actualizarPlazas();
   }
 </script>
 
@@ -253,6 +328,14 @@
           <Button color="secondary" variant="raised">
             <Label>Cancelar</Label>
           </Button>
+        {:else if modificaacuerdo.periodo_academico !== periodo_anterior
+            && !existe(modificaacuerdo.periodo_academico)}
+          <Button color="secondary" variant="raised">
+            <Label>Cancelar</Label>
+          </Button>
+          <Button color="secondary" variant="raised" on:click={ambas}>
+            <Label>Salvar</Label>
+          </Button>  
         {:else}
           <Button color="secondary" variant="raised">
             <Label>Cancelar</Label>
