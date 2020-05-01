@@ -55,11 +55,13 @@
     }
   }
 
-  function modificarEstadoEnCaliente(codigo, estado) {
+  function modificarEstadoEnCaliente(codigo, estado, disponibles, concedidas) {
     console.log("modificarEstadoEnCaliente", codigo, estado);
     for (let i = 0; i < tabla.length; i++) {
       if (tabla[i].codigo_asignatura === codigo) {
         tabla[i].estado_solicitud = estado;
+        tabla[i].plazas_disponibles = disponibles;
+        tabla[i].plazas_concedidas = concedidas;
       }
     }
   }

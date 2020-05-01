@@ -37,7 +37,9 @@
     estado: asignatura.estado_solicitud
   };
 
-  let modificacion = {
+  let modificacion;
+
+  $: modificacion = {
     disponibles: asignatura.plazas_disponibles,
     concedidas: asignatura.plazas_concedidas,
     asignatura: asignatura.codigo_asignatura,
@@ -57,7 +59,11 @@
         } else {
           message = "asignacion guardada";
         }
-        onModificado(asignatura.codigo_asignatura, asignacion.estado);
+        onModificado(asignatura.codigo_asignatura, 
+                     asignacion.estado, 
+                     asignatura.plazas_disponibles,
+                     asignatura.plazas_concedidas);
+        asignacion.previo = asignacion.estado;
       });
   }
 
@@ -96,9 +102,13 @@
   function modificarPlazas() {
       if (asignacion.estado === 'Concedida' && asignacion.previo !== 'Concedida') {
           restar();
+          asignatura.plazas_concedidas = asignatura.plazas_concedidas + 1;
+          asignatura.plazas_disponibles = asignatura.plazas_disponibles - 1;
       }
       else if (asignacion.estado !== 'Concedida' && asignacion.previo === 'Concedida'){
           incrementar();
+          asignatura.plazas_concedidas = asignatura.plazas_concedidas - 1;
+          asignatura.plazas_disponibles = asignatura.plazas_disponibles + 1;
       }
   }
 
