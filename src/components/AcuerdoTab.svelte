@@ -166,7 +166,8 @@
     {periodos} 
     {acuerdo} 
     {titulaciones} 
-    {acuerdos} 
+    {acuerdos}
+    {asignaturas}
     onModificado={modificarAcuerdoEnCaliente} />
   <div id="separador"></div>
     <Button color="primary" variant="raised">
@@ -191,7 +192,6 @@
       {seleccion}
       onSolicitada={(asignaturaSolicitada) => {
         asignaturas = [...asignaturas, asignaturaSolicitada];
-        console.log(asignaturas);
         active = 'Asignaturas Solicitadas';
       }}
       componente="solicitar"
