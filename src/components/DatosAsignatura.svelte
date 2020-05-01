@@ -20,7 +20,7 @@
     flex-direction: column;
     margin-top: 20px;
     width: 100%;
-    height: 400px;
+    height: 285px;
   }
 
   #contenedorrow {
@@ -81,16 +81,18 @@
     <label>Título en Inglés</label>
     <data>{asignatura.nombre_ingles}</data>
   </div>
+  <div id="contenedorrow">
   <div id="campos">
     <label>Plan de estudios en Catalán</label>
-    <data><a href="{asignatura.plan_de_estudios_catalan}">{asignatura.plan_de_estudios_catalan}</a></data>
+    <data><a href="{asignatura.plan_de_estudios_catalan}">PDF en Catalán</a></data>
   </div>
   <div id="campos">
     <label>Plan de estudios en Castellano</label>
-    <data><a href="{asignatura.plan_de_estudios_castellano}">{asignatura.plan_de_estudios_castellano}</a></data>
+    <data><a href="{asignatura.plan_de_estudios_castellano}">PDF en Castellano</a></data>
   </div>
   <div id="campos">
     <label>Plan de estudios en Inglés</label>
-    <data><a href="{asignatura.plan_de_estudios_ingles}">{asignatura.plan_de_estudios_ingles}</a></data>
+    <data><a href="{asignatura.plan_de_estudios_ingles}">PDF en Inglés</a></data>
+  </div>
   </div>
 </div>

@@ -136,6 +136,7 @@
 
 <!------- Titulo de la pantalla ----------->
 
+  <div id="title">{asignatura.codigo_asignatura}</div>
   <div id="title">{asignatura.nombre_ingles}</div>
   <div></div>
 </div>
