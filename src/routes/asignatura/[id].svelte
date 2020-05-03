@@ -42,11 +42,20 @@
     let pestañas = "Datos Asignatura";
     let periodo;
     let pestaña;
-    for (let i = l-1; i > l-5; i--) {
+    if (l <= 4) {
+      for (let i = l-1; i >= 0; i--) {
+        periodo = periodos[i];
+      pestaña =
+        periodo.año + "-" + (periodo.año + 1) + " Q" + periodo.cuatrimestre;
+      pestañas = pestañas + ", " + pestaña;
+      }
+    } else {
+      for (let i = l-1; i > l-5; i--) {
       periodo = periodos[i];
       pestaña =
         periodo.año + "-" + (periodo.año + 1) + " Q" + periodo.cuatrimestre;
       pestañas = pestañas + ", " + pestaña;
+      }
     }
     return pestañas;
   }
