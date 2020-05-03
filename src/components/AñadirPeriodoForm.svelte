@@ -1,10 +1,7 @@
 <script>
   export let periodos;
+  export let onModificado;
 
-  import IconButton from "@smui/icon-button";
-  import Select, { Option } from "@smui/select";
-  import Textfield from "@smui/textfield";
-  import HelperText from "@smui/textfield/helper-text/index";
   import Dialog, { Title, Content, Actions, InitialFocus } from "@smui/dialog";
   import Button, { Group, GroupItem, Label, Icon as ButtonIcon } from "@smui/button";
   import List, { Item, Graphic, Text } from "@smui/list";
@@ -15,7 +12,8 @@
     return periodos[id-1];
   }
 
-  let periodo = ultimo(periodos);
+  let periodo;
+  $: periodo = ultimo(periodos);
 
   function cuatri(periodo){
     if (periodo.cuatrimestre === 2){
@@ -43,20 +41,29 @@
 
   let message;
 
-  function añadeperiodo() {
-    fetch(`nuevoperiodo.json`, {
+  async function añadeperiodo() {
+    const body = await fetch(`nuevoperiodo.json`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(nuevoperiodo)
-    })
-      .then(body => body.json())
-      .then(json => {
-        if (json.error) {
-          message = json.error;
-        } else {
-          message = "nueva periodo guardado";
-        }
-      });
+    });
+    const json = await body.json();
+    if (json.error) {
+      message = json.error;
+      return null;
+    } else {
+      message = "periodo guardado";
+      return json.id_periodo;
+    }
+  }
+
+  async function ejecutarambas() {
+    const id_periodo = await añadeperiodo();
+    nuevoperiodo.id_periodo = id_periodo;
+    if (onModificado) {
+      onModificado({...nuevoperiodo});
+      periodos = [...periodos,nuevoperiodo];
+    }
   }
 </script>
 
@@ -73,7 +80,7 @@
         <Button color="secondary" variant="raised" on:click={() => simpleDialog.close()}>
           <Label>Cancelar</Label>
         </Button>
-        <Button color="secondary" variant="raised" on:click={añadeperiodo}>
+        <Button color="secondary" variant="raised" on:click={ejecutarambas}>
           <Label>Salvar</Label>
         </Button>
       </Actions>

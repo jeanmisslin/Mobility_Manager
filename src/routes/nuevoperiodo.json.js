@@ -2,7 +2,7 @@ import { db } from '../db'
 
 export function post(req, res, next) {
     const jsonResponse = (code, obj) => {
-        res.writeHead(code, {'Content-Type': 'application/json'});
+        res.writeHead(code, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify(obj))
     }
 
@@ -14,15 +14,18 @@ export function post(req, res, next) {
                 VALUES(?, ?)`, [
                     parseInt(nuevoperiodo.año),
                     parseInt(nuevoperiodo.cuatrimestre)
-                ], (err) => {
+                ], function (err) {
+            const id_periodo = this.lastID;
+            console.log("periodoID modificado =", id_periodo);
             if (err) {
-                jsonResponse(500, { 
+                jsonResponse(500, {
                     error: `Cannot insert the new periodo: ${err}`
                 })
                 return
             }
             jsonResponse(200, {
                 error: null,
+                id_periodo
             })
         })
     })

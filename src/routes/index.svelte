@@ -28,11 +28,17 @@
   import Textfield from "@smui/textfield";
   import TablaFiltrableEstudiantes from "../components/TablaFiltrableEstudiantes.svelte";
   import NuevoEstudiante from "../components/NuevoEstudiante.svelte";
-  import AñadirPeriodo from "../components/AñadirPeriodo.svelte";
   import AñadirPeriodoForm from "../components/AñadirPeriodoForm.svelte";
   import Dialog, { Title, Content, Actions, InitialFocus } from "@smui/dialog";
   import Button, { Group, GroupItem, Label, Icon } from "@smui/button";
-  import List, { Item, Graphic, Text, PrimaryText, SecondaryText, Separator } from "@smui/list";
+  import List, {
+    Item,
+    Graphic,
+    Text,
+    PrimaryText,
+    SecondaryText,
+    Separator
+  } from "@smui/list";
   import Menu, { SelectionGroup, SelectionGroupIcon } from "@smui/menu";
   import { Anchor } from "@smui/menu-surface";
 
@@ -55,45 +61,6 @@
 
   let message;
 
-  let filtroPeriodos = "";
-
-  $: PeriodosFiltrados = periodos.filter(e => e.año === parseInt(filtroPeriodos));
-
-  function añadirestudiante() {
-    fetch(`nuevoestudiante.json`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(nuevoestudiante)
-    })
-      .then(body => body.json())
-      .then(json => {
-        if (json.error) {
-          message = json.error;
-        } else {
-          message = "nuevoestudiante saved";
-        }
-      });
-  }
-
-  function añadiracuerdo() {
-    fetch(`nuevoacuerdo.json`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        acuerdo: nuevoacuerdo,
-        estudiante: nuevoestudiante
-      })
-    })
-      .then(body => body.json())
-      .then(json => {
-        if (json.error) {
-          message = json.error;
-        } else {
-          message = "nuevoacuerdo saved";
-        }
-      });
-  }
-
   function mostrarestudiante(periodo, estudiante, acuerdos) {
     for (let i = 0; i < acuerdos.length; i++) {
       if (
@@ -104,11 +71,6 @@
       }
     }
     return false;
-  }
-
-  function añadirambos() {
-    añadirestudiante();
-    añadiracuerdo();
   }
 </script>
 
@@ -155,7 +117,7 @@
 
 <div id="cabecera">
 
-<!-- Menú con los links al resto de pantallas -->
+  <!-- Menú con los links al resto de pantallas -->
 
   <div id="menu">
     <div style="min-width: 100px;">
@@ -182,7 +144,7 @@
     </div>
   </div>
 
-<!-------- Titulo de la pantalla ----------->
+  <!-------- Titulo de la pantalla ----------->
 
   <div id="title">Estudiantes Incoming</div>
   <div />
@@ -190,22 +152,21 @@
 
 <div id="contenedor">
 
+  <!----- Formulario Añadir Periodo ---------->
 
+  <AñadirPeriodoForm
+    {periodos}
+    onModificado={nuevoperiodo => {
+      periodos = [...periodos, nuevoperiodo];
+    }} />
 
-
-<!----- Formulario Añadir Periodo ---------->
-
-  <AñadirPeriodoForm {periodos}/>
-
-<!------- Selector de Periodos ------------->
+  <!------- Selector de Periodos ------------->
 
   <Dialog
     bind:this={listPeriodos}
     aria-labelledby="list-title"
     aria-describedby="list-content">
-    <Title id="list-title">
-      Periodos Académicos
-    </Title>
+    <Title id="list-title">Periodos Académicos</Title>
     <Content component={List} id="list-content">
       <Item
         on:click={() => {
@@ -234,7 +195,8 @@
     <div class="seleccion">
       <span class="valor-seleccionado">
         {#if periodo_seleccionado.año}
-          Estudiantes: {periodo_seleccionado.año}-{periodo_seleccionado.año + 1} Q{periodo_seleccionado.cuatrimestre}
+          Estudiantes: {periodo_seleccionado.año}-{periodo_seleccionado.año + 1}
+          Q{periodo_seleccionado.cuatrimestre}
         {:else}
           <span class="empty">Todos los Estudiantes</span>
         {/if}
@@ -246,33 +208,24 @@
     </div>
   </div>
 
-<!------ Formulario Nuevo Estudiante ------->
+  <!------ Formulario Nuevo Estudiante ------->
 
-  <NuevoEstudiante {universidades} {periodos} {titulaciones} {estudiantes}/>
+  <NuevoEstudiante {universidades} {periodos} {titulaciones} {estudiantes} />
 
 </div>
 
 {#if periodo_seleccionado.id_periodo === ''}
-
-<!------ Tabla con todos los estudiantes de la Base de Datos ------->
+  <!------ Tabla con todos los estudiantes de la Base de Datos ------->
 
   <TablaFiltrableEstudiantes
     tabla={estudiantes}
-    campos={[{ name: 'apellidos', show: true, render: obj => `<a href="/estudiante/${obj.email}">${obj.apellidos}</a>`, filter: true }, 
-             { name: 'nombre', show: true, filter: true }, 
-             { name: 'universidad', show: true, filter: true }, 
-             { name: 'pais', show: true, filter: true }]} />
+    campos={[{ name: 'apellidos', show: true, render: obj => `<a href="/estudiante/${obj.email}">${obj.apellidos}</a>`, filter: true }, { name: 'nombre', show: true, filter: true }, { name: 'universidad', show: true, filter: true }, { name: 'pais', show: true, filter: true }]} />
 {:else}
-
-<!--- Tabla con los estudiantes de la Base de Datos que corresponden al Periodo seleccionado --->
+  <!--- Tabla con los estudiantes de la Base de Datos que corresponden al Periodo seleccionado --->
 
   <TablaFiltrableEstudiantes
     tabla={estudiantes.filter(est =>
       mostrarestudiante(periodo_seleccionado.id_periodo, est, acuerdos)
     )}
-    campos={[{ name: 'apellidos', show: true, render: obj => `<a href="/estudiante/${obj.email}">${obj.apellidos}</a>`, filter: true }, 
-             { name: 'nombre', show: true, filter: true }, 
-             { name: 'universidad', show: true, filter: true }, 
-             { name: 'pais', show: true, filter: true }]} />
+    campos={[{ name: 'apellidos', show: true, render: obj => `<a href="/estudiante/${obj.email}">${obj.apellidos}</a>`, filter: true }, { name: 'nombre', show: true, filter: true }, { name: 'universidad', show: true, filter: true }, { name: 'pais', show: true, filter: true }]} />
 {/if}
-
