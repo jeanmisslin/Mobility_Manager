@@ -2,6 +2,7 @@
   export let asignatura;
   export let titulaciones;
   export let periodo;
+  export let onModificado;
 
   import MenuSurface, { Anchor } from "@smui/menu-surface";
   import Select, { Option } from "@smui/select";
@@ -21,12 +22,19 @@
   let nuevaoferta
 
   $: nuevaoferta = {
+    id_oferta: "",
     asignatura: asignatura,
-    periodo: periodo,
+    periodo_academico: periodo,
     titulacion: "",
-    nombre_titulacion: "",
-    plazas_ofertadas: ""
+    plazas_ofertadas: "",
+    plazas_disponibles: "",
+    plazas_solicitadas: 0,
+    plazas_concedidas: 0
   };
+
+  let nombre_titulacion;
+
+  $: nombre_titulacion = { nombre_titulacion: "" }
 
   let plazas = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
 
@@ -43,20 +51,28 @@
     );
   });
 
-  function añadeoferta() {
-    fetch(`nuevaoferta.json`, {
+  async function añadeoferta() {
+    const body = await fetch(`nuevaoferta.json`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(nuevaoferta)
-    })
-      .then(body => body.json())
-      .then(json => {
-        if (json.error) {
-          message = json.error;
-        } else {
-          message = "nueva oferta guardada";
-        }
-      });
+    });
+    const json = await body.json();
+    if (json.error) {
+      message = json.error;
+      return null;
+    } else {
+      message = "nueva oferta guardada";
+      return json.id_oferta
+    }
+  }
+
+  async function ejecutarambas() {
+    const id_oferta = await añadeoferta();
+    nuevaoferta.id_oferta = id_oferta;
+    if (onModificado) {
+      onModificado({...nuevaoferta});
+    }
   }
 </script>
 

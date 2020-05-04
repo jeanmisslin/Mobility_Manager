@@ -15,13 +15,15 @@ export function post(req, res, next) {
                 plazas_ofertadas, plazas_disponibles, plazas_concedidas, plazas_solicitadas)
                 VALUES(?, ?, ?, ?, ?, ?, ?)`, [
                     nuevaoferta.asignatura,
-                    parseInt(nuevaoferta.periodo),
+                    parseInt(nuevaoferta.periodo_academico),
                     nuevaoferta.titulacion,
                     parseInt(nuevaoferta.plazas_ofertadas),
                     parseInt(nuevaoferta.plazas_ofertadas),
                     0,
                     0
-                ], (err) => {
+                ], function (err) {
+            const id_oferta = this.lastID;
+            console.log("periodoID modificado =", id_oferta);
             if (err) {
                 jsonResponse(500, { 
                     error: `Cannot insert the new oferta: ${err}`
@@ -30,6 +32,7 @@ export function post(req, res, next) {
             }
             jsonResponse(200, {
                 error: null,
+                id_oferta
             })
         })
     })
