@@ -1,6 +1,7 @@
 <script>
   export let universidad;
   export let universidades;
+  export let onModificado;
 
   import MenuSurface, { Anchor } from "@smui/menu-surface";
   import IconButton from "@smui/icon-button";
@@ -45,9 +46,9 @@
 
   let dialog;
 
-  let modificauniversidad = {
-    open: false,
-    id: universidad.codigo_universidad,
+  let modificauniversidad;
+  $: modificauniversidad = {
+    id: universidad.id_universidad,
     codigo_universidad: universidad.codigo_universidad,
     universidad: universidad.universidad,
     pais: universidad.pais
@@ -84,6 +85,9 @@
         } else {
           message = "modificacion guardada";
         }
+        onModificado(universidad.codigo_universidad,
+                     universidad.universidad,
+                     universidad.pais);
       });
   }
 </script>
@@ -121,11 +125,11 @@
     <Textfield
       label="Código"
       style="width: 100%"
-      bind:value={modificauniversidad.codigo_universidad} />
+      bind:value={universidad.codigo_universidad} />
     <Textfield
       label="Nombre"
       style="width: 100%"
-      bind:value={modificauniversidad.universidad} />
+      bind:value={universidad.universidad} />
   
     <!-- Esto es un separador -->
     <div style="height: 1em" />
@@ -142,7 +146,7 @@
         {#each paisesFiltrados as p}
           <Item
             on:click={() => {
-              modificauniversidad.pais = p;
+              universidad.pais = p;
               listPaises.close();
             }}>
             <Text>{p}</Text>
@@ -175,7 +179,7 @@
           </Button>
           <Button color="secondary" variant="raised" on:click={modificaruniversidad}>
             <Label>
-              <a href="/universidad/{modificauniversidad.codigo_universidad}">Salvar</a>
+              Salvar
             </Label>
           </Button>
       </Actions>

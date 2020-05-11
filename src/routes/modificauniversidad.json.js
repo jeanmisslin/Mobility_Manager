@@ -13,7 +13,7 @@ export function post(req, res, next) {
         const modificauniversidad = JSON.parse(body)
         db.run(`UPDATE universidades 
                 SET codigo_universidad = ?, universidad = ?, pais = ? 
-                WHERE universidades.codigo_universidad = ?`, [
+                WHERE universidades.id_universidad = ?`, [
                     modificauniversidad.codigo_universidad,
                     modificauniversidad.universidad,
                     modificauniversidad.pais,

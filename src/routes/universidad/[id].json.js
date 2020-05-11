@@ -9,7 +9,7 @@ export function get(req, res, next) {
         res.end(JSON.stringify(obj))
     }
 
-    db.get(`SELECT * FROM universidades WHERE codigo_universidad = ?`, [id], (err, universidad)=> {
+    db.get(`SELECT * FROM universidades WHERE id_universidad = ?`, [id], (err, universidad)=> {
         if(err) {
             console.log(err)
             jsonResponse(500, { error: `No se puede realizar la consulta: ${err}` })

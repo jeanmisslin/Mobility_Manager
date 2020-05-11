@@ -110,7 +110,7 @@
   <TablaFiltrableEstudiantes
     tabla={universidades}
     campos={[{ name: 'codigo_universidad', nombre: 'codigo', show: true, 
-               render: obj => `<a href="/universidad/${obj.codigo_universidad}">${obj.codigo_universidad}</a>`,
+               render: obj => `<a href="/universidad/${obj.id_universidad}">${obj.codigo_universidad}</a>`,
                filter: true },
              { name: 'universidad', show: true, filter: true }, 
              { name: 'pais', show: true, filter: true }]} />

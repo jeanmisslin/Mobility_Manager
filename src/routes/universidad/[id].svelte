@@ -21,6 +21,12 @@
   import Button from "@smui/button";
 
   let menu;
+
+  function modificarUniversidadEnCaliente(codigo,universidad,pais) {
+    universidad.codigo_universidad = codigo;
+    universidad.universidad = universidad;
+    universidad.pais = pais;
+  }
 </script>
 
 <style>
@@ -98,7 +104,7 @@
 
 <!------ Datos Universidad ------->
 
-  <DatosUniversidad {universidad} {universidades}/>
+  <DatosUniversidad {universidad} {universidades} onModificada={modificarUniversidadEnCaliente}/>
 
 <!--- Formulario Modifica Universidad
 
