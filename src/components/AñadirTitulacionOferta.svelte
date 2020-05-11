@@ -19,6 +19,7 @@
   $: array = oferta.titulacion.split(",");
 
   let message;
+  
   let añade = "";
 
   let modificacion = {
@@ -61,13 +62,15 @@
           console.log(modificacion);
           message = "nueva oferta guardada";
         }
-        onModificado(modificacion.titulacion);
+        onModificado({...modificacion});
       });
   }
 
   function ejecutarambas() {
     modificacion.titulacion = modificacion.titulacion + "," + añade;
     modificaoferta();
+    modificacion.nombre_titulacion = "";
+    añade = "";
   }
 </script>
 

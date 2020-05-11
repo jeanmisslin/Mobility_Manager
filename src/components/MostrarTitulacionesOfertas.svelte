@@ -1,6 +1,7 @@
 <script>
   export let oferta;
   export let titulaciones;
+  export let onModificado;
 
   import EliminarTitulacionOferta from "./EliminarTitulacionOferta.svelte";
   import AñadirTitulacionOferta from "./AñadirTitulacionOferta.svelte";
@@ -12,9 +13,6 @@
 
   let message;
 
-  function modificarOfertaEnCaliente(nueva) {
-    oferta.titulacion = nueva;
-  }
 </script>
 
 <style>
@@ -55,7 +53,7 @@
         <tr>
           <td>{t.titulacion_castellano}</td>
           <td>
-            <EliminarTitulacionOferta {oferta} elimina={a} onModificado={modificarOfertaEnCaliente} />
+            <EliminarTitulacionOferta {oferta} elimina={a} {onModificado} />
           </td>
         </tr>
       {/if}
@@ -63,4 +61,4 @@
   {/each}
 </table>
 
-<AñadirTitulacionOferta {titulaciones} {oferta} onModificado={modificarOfertaEnCaliente}/>
+<AñadirTitulacionOferta {titulaciones} {oferta} {onModificado}/>

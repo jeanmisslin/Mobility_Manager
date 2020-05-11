@@ -10,7 +10,8 @@
 
   let simpleDialog;
 
-  let array = oferta.titulacion.split(",");
+  let array;
+  $: array = oferta.titulacion.split(",");
 
   let message;
 
@@ -46,7 +47,8 @@
         } else {
           message = "nueva oferta guardada";
         }
-        onModificado(modificacion.titulacion);
+        onModificado({...modificacion});
+        console.log(modificacion.titulacion);
       });
   }
 </script>

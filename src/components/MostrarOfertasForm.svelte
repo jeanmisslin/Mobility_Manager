@@ -4,6 +4,7 @@
   export let titulaciones;
   export let periodos;
   export let seleccion;
+  export let onModificado;
 
   import MostrarTitulacionesOfertas from "./MostrarTitulacionesOfertas.svelte";
   import AñadirOferta from "./AñadirOferta.svelte";
@@ -27,6 +28,7 @@
   let id_periodo;
 
   $: id_periodo = periodo(seleccion, periodos);
+
 </script>
 
 <style>
@@ -66,5 +68,6 @@
   <MostrarTitulacionesOfertas
     oferta={ofertas.find(element => element.asignatura === asignatura.codigo_asignatura && element.periodo_academico === id_periodo.id_periodo)}
     periodo={id_periodo}
+    {onModificado}
     {titulaciones} />
 {/if}
