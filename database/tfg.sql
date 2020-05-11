@@ -10,7 +10,8 @@ DROP TABLE IF EXISTS asignaciones;
 
 
 CREATE TABLE universidades(
-    codigo_universidad TEXT PRIMARY KEY,
+    id_universidad INTEGER PRIMARY KEY,
+    codigo_universidad TEXT,
     universidad TEXT,
     pais TEXT
 );
@@ -50,7 +51,8 @@ CREATE TABLE acuerdos_academicos(
 );
 
 CREATE TABLE asignaturas(
-    codigo_asignatura TEXT PRIMARY KEY,
+    id_asignatura INTEGER PRIMARY KEY,
+    codigo_asignatura TEXT,
     nombre_catalan TEXT,
     nombre_castellano TEXT,
     nombre_ingles TEXT,
@@ -72,8 +74,7 @@ CREATE TABLE ofertas(
     plazas_solicitadas int,
     FOREIGN KEY (asignatura) REFERENCES asignaturas (codigo_asignatura),
     FOREIGN KEY (periodo_academico) REFERENCES periodos_academicos (id_periodo),
-    FOREIGN KEY (titulacion) REFERENCES titulaciones (codigo_titulacion),
-    CONSTRAINT UC_OFERTA UNIQUE (asignatura,periodo_academico,titulacion)
+    CONSTRAINT UC_OFERTA UNIQUE (asignatura,periodo_academico)
 );
 
 CREATE TABLE asignaciones(

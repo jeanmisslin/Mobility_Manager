@@ -1,7 +1,8 @@
 DROP TABLE IF EXISTS universidades;
 
 CREATE TABLE universidades(
-    codigo_universidad TEXT PRIMARY KEY,
+    id_universidad INTEGER PRIMARY KEY,
+    codigo_universidad TEXT,
     universidad TEXT,
     pais TEXT
 );

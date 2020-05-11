@@ -12,7 +12,6 @@ CREATE TABLE ofertas
     plazas_solicitadas int,
     FOREIGN KEY (asignatura) REFERENCES asignaturas (codigo_asignatura),
     FOREIGN KEY (periodo_academico) REFERENCES periodos_academicos (id_periodo),
-    FOREIGN KEY (titulacion) REFERENCES titulaciones (codigo_titulacion),
     CONSTRAINT UC_OFERTA UNIQUE (asignatura,periodo_academico)
 );
 
