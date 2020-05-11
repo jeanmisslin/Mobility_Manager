@@ -111,7 +111,7 @@
 <TablaFiltrableEstudiantes
   tabla={asignaturas}
   campos={[
-    { name: 'codigo_asignatura', nombre: 'codigo', show: true, filter: true, render: obj => `<a href="/asignatura/${obj.codigo_asignatura}">${obj.codigo_asignatura}</a>` }, 
+    { name: 'codigo_asignatura', nombre: 'codigo', show: true, filter: true, render: obj => `<a href="/asignatura/${obj.id_asignatura}">${obj.codigo_asignatura}</a>` }, 
     { name: 'nombre_ingles', nombre: 'título', show: true, filter: true, render: obj => `<a href="${obj.plan_de_estudios_ingles}">${obj.nombre_ingles}</a>` }, 
     { name: 'nombre_catalan', filter: true }, 
     { name: 'nombre_castellano', filter: true }, 

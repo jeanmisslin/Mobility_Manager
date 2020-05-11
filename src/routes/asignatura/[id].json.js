@@ -9,12 +9,25 @@ export function get(req, res, next) {
         res.end(JSON.stringify(obj))
     }
 
-    db.get(`SELECT * FROM asignaturas WHERE codigo_asignatura = ?`, [id], (err, asignatura)=> {
-        if(err) {
+    db.get(`SELECT * FROM asignaturas WHERE id_asignatura = ?`, [id], (err, asignatura) => {
+        if (err) {
             console.log(err)
-            jsonResponse(500, { error: `No se puede realizar la consulta: ${err}` })
+            jsonResponse(500, { error: `No he podido consultar la asignatura (${id}): ${err}` })
             return
         }
-        jsonResponse(200, asignatura);
+        db.all(`SELECT ofertas.*, asignaturas.codigo_asignatura, asignaturas.id_asignatura 
+                FROM ofertas, asignaturas 
+                WHERE ofertas.asignatura = asignaturas.codigo_asignatura
+                AND asignaturas.id_asignatura = ?`, [id], (err, ofertas) => {
+            if (err) {
+                console.log(err)
+                jsonResponse(500, { error: `No he podido consultar los acuerdos (${id}): ${err}` })
+                return
+            }
+            jsonResponse(200, {
+                ...asignatura,
+                ofertas,
+            });
+        })
     })
 }

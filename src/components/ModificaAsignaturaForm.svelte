@@ -25,6 +25,7 @@
   let idiomas = [`CAT`, `CAST`, `ING`, `CAT/CAST`, `CAT/ING`, `CAST/ING`, `CAT/CAST/ING`];
 
   let {
+    id_asignatura,
     codigo_asignatura,
     nombre_catalan,
     nombre_castellano,
@@ -38,7 +39,8 @@
 
   let modificaasignatura = {
     open: false,
-    id: codigo_asignatura,
+    id: id_asignatura,
+    codigo_actual: codigo_asignatura,
     codigo: codigo_asignatura,
     ncat: nombre_catalan,
     ncast: nombre_castellano,
@@ -105,7 +107,7 @@
       label="Código"
       style="width: 100%"
       bind:value={modificaasignatura.codigo} />
-    {#if modificaasignatura.codigo !== modificaasignatura.id 
+    {#if modificaasignatura.codigo !== modificaasignatura.codigo_actual 
          && existe(modificaasignatura.codigo)}
          <div id="warning">{warning}</div>
     {/if}
@@ -159,18 +161,18 @@
 
     <div class="actions">
       <Actions>
-        {#if modificaasignatura.codigo !== modificaasignatura.id 
+        {#if modificaasignatura.codigo !== modificaasignatura.codigo_actual 
              && existe(modificaasignatura.codigo)}
           <Button color="secondary" variant="raised">
             <Label>Cancelar</Label>
           </Button>
-        {:else if modificaasignatura.codigo !== modificaasignatura.id 
+        {:else if modificaasignatura.codigo !== modificaasignatura.codigo_actual 
              && !existe(modificaasignatura.codigo)}
           <Button color="secondary" variant="raised">
             <Label>Cancelar</Label>
           </Button>
           <Button color="secondary" variant="raised" on:click={() => modificarasignatura()}>
-            <a href="/asignatura/{modificaasignatura.codigo}">Salvar</a>
+            Salvar
           </Button>
         {:else}
           <Button color="secondary" variant="raised">

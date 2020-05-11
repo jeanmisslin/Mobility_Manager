@@ -14,7 +14,7 @@ export function post(req, res, next) {
         db.run(`UPDATE asignaturas 
                 SET codigo_asignatura = ?, nombre_catalan = ?, nombre_castellano = ?, nombre_ingles = ?,
                 idioma = ?, ects = ?, plan_de_estudios_catalan = ?, plan_de_estudios_castellano = ?,
-                plan_de_estudios_ingles = ? WHERE asignaturas.codigo_asignatura = ?`, [
+                plan_de_estudios_ingles = ? WHERE asignaturas.id_asignatura = ?`, [
                     modificaasignatura.codigo,
                     modificaasignatura.ncat,
                     modificaasignatura.ncast,

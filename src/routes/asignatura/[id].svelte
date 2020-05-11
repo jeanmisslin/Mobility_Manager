@@ -2,13 +2,13 @@
   export async function preload({ params, query }) {
     const id = params.id;
     let asignatura = await this.fetch(`/asignatura/${id}.json`).then(body => body.json());
-    let { ofertas } = await this.fetch(`ofertas.json`).then(body => body.json());
+    
     let { periodos } = await this.fetch(`periodos.json`).then(body => body.json());
     let { titulaciones } = await this.fetch(`titulaciones.json`).then(body => body.json());
     let { asignaturas } = await this.fetch(`../asignaturas.json`).then(body => body.json());
     return {
       asignatura,
-      ofertas,
+      
       periodos,
       asignaturas,
       titulaciones
@@ -18,7 +18,7 @@
 
 <script>
   export let asignatura;
-  export let ofertas;
+  
   export let periodos;
   export let titulaciones;
   export let asignaturas;
@@ -32,6 +32,8 @@
   import Tab, { Icon, Label } from "@smui/tab";
   import TabBar from "@smui/tab-bar";
   import Button from "@smui/button";
+
+  let { ofertas } = asignatura;
 
   let menu;
 
@@ -74,6 +76,14 @@
 
   let tabstring = generartab(periodos);
   let tabgenerado = tabstring.split(",");
+
+  function modificarOfertaEnCaliente(modificacion) {
+    for (let i = 0; i < ofertas.length; i++) {
+      if (ofertas[i].id_oferta === modificacion.oferta) {
+        ofertas[i].titulacion = modificacion.titulacion;
+      }
+    }
+  }
 </script>
 
 <style>
@@ -173,5 +183,10 @@
 
 <!--- Ofertas de la Asignatura según Periodo Académico --->
 
-  <MostrarOfertasForm {ofertas} {periodos} {asignatura} {titulaciones} seleccion={active} />
+  <MostrarOfertasForm {ofertas}
+                      {periodos} 
+                      {asignatura} 
+                      {titulaciones} 
+                      seleccion={active}
+                      onModificado={modificarOfertaEnCaliente} />
 {/if}
