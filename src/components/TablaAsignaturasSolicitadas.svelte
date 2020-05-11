@@ -77,34 +77,34 @@
 
   td {
     border: 1px solid black;
-    text-align: center;
+    text-align: left;
     padding: 3px;
   }
 
   td.green {
     border: 1px solid black;
-    text-align: center;
+    text-align: left;
     background-color: rgb(248, 255, 248);
     padding: 3px;
   }
 
   td.yellow {
     border: 1px solid black;
-    text-align: center;
+    text-align: left;
     background-color: rgb(255, 255, 230);
     padding: 3px;
   }
 
   td.red {
     border: 1px solid black;
-    text-align: center;
+    text-align: left;
     background-color: rgb(255, 236, 236);
     padding: 3px;
   }
 
   th {
     border: 1px solid black;
-    text-align: center;
+    text-align: left;
     padding: 3px;
     background-color:white;
     color: black;

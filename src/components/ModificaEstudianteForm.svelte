@@ -107,11 +107,6 @@
     modificarestudiante();
     modificaracuerdo();
   }
-
-  function salto(){
-    modificarestudiante();
-    modificaracuerdo();
-  }
 </script>
 
 <style>
@@ -226,7 +221,7 @@
           <Button color="secondary" variant="raised">
             <Label>Cancelar</Label>
           </Button>
-          <Button color="secondary" variant="raised" on:click={() => salto()}>
+          <Button color="secondary" variant="raised" on:click={() => ambas()}>
             <a href="/estudiante/{modificaestudiante.email}">Salvar</a>
           </Button>
         {:else}

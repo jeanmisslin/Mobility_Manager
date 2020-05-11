@@ -46,13 +46,13 @@
 
   td {
     border: 1px solid black;
-    text-align: center;
+    text-align: left;
     padding: 3px;
   }
 
   th {
     border: 1px solid black;
-    text-align: center;
+    text-align: left;
     padding: 3px;
     background-color: white;
     color: black;

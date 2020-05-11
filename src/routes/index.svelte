@@ -26,21 +26,14 @@
 
 <script>
   import Textfield from "@smui/textfield";
+  import Dialog, { Title, Content, Actions, InitialFocus } from "@smui/dialog";
+  import Button, { Group, GroupItem, Label, Icon } from "@smui/button";
+  import List, { Item, Graphic, Text, PrimaryText, SecondaryText, Separator } from "@smui/list";
+  import Menu, { SelectionGroup, SelectionGroupIcon } from "@smui/menu";
+  import { Anchor } from "@smui/menu-surface";
   import TablaFiltrableEstudiantes from "../components/TablaFiltrableEstudiantes.svelte";
   import NuevoEstudiante from "../components/NuevoEstudiante.svelte";
   import AñadirPeriodoForm from "../components/AñadirPeriodoForm.svelte";
-  import Dialog, { Title, Content, Actions, InitialFocus } from "@smui/dialog";
-  import Button, { Group, GroupItem, Label, Icon } from "@smui/button";
-  import List, {
-    Item,
-    Graphic,
-    Text,
-    PrimaryText,
-    SecondaryText,
-    Separator
-  } from "@smui/list";
-  import Menu, { SelectionGroup, SelectionGroupIcon } from "@smui/menu";
-  import { Anchor } from "@smui/menu-surface";
 
   export let estudiantes;
   export let universidades;
@@ -60,6 +53,9 @@
   function listPeriodos() {}
 
   let message;
+
+//La función mostrarestudiante devuelve true cuando encuentra un acuerdo académico con los 
+//mismos periodo académico y estudiante introducidos como parámetros.
 
   function mostrarestudiante(periodo, estudiante, acuerdos) {
     for (let i = 0; i < acuerdos.length; i++) {
@@ -148,7 +144,7 @@
 
   <div id="title">Estudiantes Incoming</div>
   <div />
-</div>
+  </div>
 
 <div id="contenedor">
 
@@ -156,9 +152,7 @@
 
   <AñadirPeriodoForm
     {periodos}
-    onModificado={nuevoperiodo => {
-      periodos = [...periodos, nuevoperiodo];
-    }} />
+    onModificado={nuevoperiodo => { periodos = [...periodos, nuevoperiodo];}} />
 
   <!------- Selector de Periodos ------------->
 
@@ -219,7 +213,12 @@
 
   <TablaFiltrableEstudiantes
     tabla={estudiantes}
-    campos={[{ name: 'apellidos', show: true, render: obj => `<a href="/estudiante/${obj.email}">${obj.apellidos}</a>`, filter: true }, { name: 'nombre', show: true, filter: true }, { name: 'universidad', show: true, filter: true }, { name: 'pais', show: true, filter: true }]} />
+    campos={[{ name: 'apellidos', show: true, 
+               render: obj => `<a href="/estudiante/${obj.email}">${obj.apellidos}</a>`, 
+               filter: true }, 
+             { name: 'nombre', show: true, filter: true }, 
+             { name: 'universidad', show: true, filter: true }, 
+             { name: 'pais', nombre: 'país', show: true, filter: true }]} />
 {:else}
   <!--- Tabla con los estudiantes de la Base de Datos que corresponden al Periodo seleccionado --->
 
@@ -227,5 +226,10 @@
     tabla={estudiantes.filter(est =>
       mostrarestudiante(periodo_seleccionado.id_periodo, est, acuerdos)
     )}
-    campos={[{ name: 'apellidos', show: true, render: obj => `<a href="/estudiante/${obj.email}">${obj.apellidos}</a>`, filter: true }, { name: 'nombre', show: true, filter: true }, { name: 'universidad', show: true, filter: true }, { name: 'pais', show: true, filter: true }]} />
+    campos={[{ name: 'apellidos', show: true, 
+               render: obj => `<a href="/estudiante/${obj.email}">${obj.apellidos}</a>`, 
+               filter: true }, 
+             { name: 'nombre', show: true, filter: true }, 
+             { name: 'universidad', show: true, filter: true }, 
+             { name: 'pais', nombre: 'país', show: true, filter: true }]} />
 {/if}

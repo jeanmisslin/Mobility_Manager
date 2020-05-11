@@ -13,14 +13,8 @@
 
   $: tablaFiltrada = tabla.filter(obj => {
     for (let c of campos) {
-      if (!(c.name in obj)) {
-        console.error(`${c.name} no está en ${JSON.stringify(obj)}`);
-      }
-      if (c.nombre) {
-        {
-          c.nombre.toUpperCase();
-        }
-      }
+      if (!(c.name in obj)) { console.error(`${c.name} no está en ${JSON.stringify(obj)}`); }
+      if (c.nombre) { c.nombre.toUpperCase(); }
       if (c.filter) {
         if (strIn(obj[c.name], filtro)) return true;
       }
@@ -39,13 +33,13 @@
 
   td {
     border: 1px solid black;
-    text-align: center;
+    text-align: left;
     padding: 3px;
   }
 
   th {
     border: 1px solid black;
-    text-align: center;
+    text-align: left;
     padding: 3px;
     background-color: white;
     color: black;
@@ -59,18 +53,12 @@
     margin-top: 0px;
     margin-bottom: 15px;
   }
-
-  #listado {
-    width: 100%;
-    overflow: auto;
-  }
 </style>
 
 <div id="buscador">
   <Textfield label="Buscador" style="width: 100%" bind:value={filtro} />
 </div>
 
-<div id="listado">
   <table id="tabla">
     <tr>
       {#each campos as c}
@@ -97,4 +85,4 @@
       </tr>
     {/each}
   </table>
-</div>
+

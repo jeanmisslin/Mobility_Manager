@@ -62,7 +62,6 @@
     nuevoperiodo.id_periodo = id_periodo;
     if (onModificado) {
       onModificado({...nuevoperiodo});
-      periodos = [...periodos,nuevoperiodo];
     }
   }
 </script>

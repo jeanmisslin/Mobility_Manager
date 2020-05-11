@@ -115,16 +115,9 @@
       });
   }
 
-  function ruta(codigo){
-    let ruta = "/estudiante/";
-    ruta = ruta + codigo;
-    return ruta;
-  }
-
   function añadirambos() {
     añadirestudiante();
     añadiracuerdo();
-    location.replace(ruta(nuevoestudiante.email));
   }
 </script>
 
@@ -334,9 +327,7 @@
             <Label>Cancelar</Label>
           </Button>
           <Button color="secondary" variant="raised" on:click={añadirambos}>
-            <Label>
-              Salvar
-            </Label>
+              <a href="/estudiante/{nuevoestudiante.email}">Salvar</a>
           </Button>
         {/if}
       </Actions>
