@@ -11,7 +11,7 @@ export function post(req, res, next) {
     req.on('data', data => body += data)
     req.on('end', () => {
         const nuevoestudiante = JSON.parse(body)
-        db.run(`INSERT INTO estudiantes 
+        db.run(`INSERT INTO estudiantes (email, apellidos, nombre, universidad)
                 VALUES(?, ?, ?, ?)`, [
                     nuevoestudiante.email,
                     nuevoestudiante.apellidos,

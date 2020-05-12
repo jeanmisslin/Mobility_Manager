@@ -160,7 +160,7 @@
 
 <!----- Formulario Nuevo Acuerdo ----->
 
-  <NuevoAcuerdoForm {periodos} {titulaciones} estudiante={email} acuerdos={estudiante.acuerdos} />
+  <NuevoAcuerdoForm {periodos} {titulaciones} {estudiante} acuerdos={estudiante.acuerdos} />
 {:else}
 
 <!----- Datos del Acuerdo Académico ----->

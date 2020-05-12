@@ -10,7 +10,7 @@ export function get(req, res, next) {
     }
 
     db.get(`SELECT estudiantes.*, universidades.universidad, universidades.pais, universidades.codigo_universidad 
-            FROM estudiantes, universidades WHERE estudiantes.universidad = universidades.codigo_universidad AND email = ?`, [id],
+            FROM estudiantes, universidades WHERE estudiantes.universidad = universidades.codigo_universidad AND id_estudiante = ?`, [id],
         (err, estudiante) => {
             if (err) {
                 console.log(err)

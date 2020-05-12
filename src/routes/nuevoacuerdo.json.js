@@ -13,7 +13,7 @@ export function post(req, res, next) {
         const { acuerdo, estudiante } = JSON.parse(body)
         db.run(`INSERT INTO acuerdos_academicos (estudiante, titulacion, periodo_academico, estado) 
                 VALUES(?, ?, ?, ?)`, [
-                    estudiante.email,
+                    estudiante.id_estudiante,
                     acuerdo.titulacion,
                     acuerdo.periodo_academico,
                     acuerdo.estado

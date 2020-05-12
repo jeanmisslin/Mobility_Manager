@@ -17,7 +17,7 @@ export function post(req, res, next) {
                     modificaestudiante.apellidos,
                     modificaestudiante.nombre,
                     modificaestudiante.universidad,
-                    modificaestudiante.estudiante
+                    modificaestudiante.id_estudiante
                 ], (err) => {
             if (err) {
                 jsonResponse(500, { 

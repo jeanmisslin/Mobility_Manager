@@ -37,7 +37,7 @@
   };
 
   export let nuevoestudiante = {
-    email: estudiante
+    id_estudiante: estudiante.id_estudiante
   };
 
   let warning = "El/la estudiante ya dispone de un acuerdo académico para el periodo seleccionado";

@@ -25,6 +25,7 @@
   function listTitulaciones() {}
 
   let {
+    id_estudiante,
     apellidos,
     nombre,
     universidad,
@@ -39,6 +40,7 @@
 
   export let modificaestudiante = {
     open: false,
+    id: id_estudiante,
     estudiante: email,
     email: email,
     apellidos: apellidos,
@@ -215,14 +217,6 @@
              && existe(modificaestudiante.email)}
           <Button color="secondary" variant="raised">
             <Label>Cancelar</Label>
-          </Button>
-        {:else if modificaestudiante.email !== modificaestudiante.estudiante
-            && !existe(modificaestudiante.email)}
-          <Button color="secondary" variant="raised">
-            <Label>Cancelar</Label>
-          </Button>
-          <Button color="secondary" variant="raised" on:click={() => ambas()}>
-            <a href="/estudiante/{modificaestudiante.email}">Salvar</a>
           </Button>
         {:else}
           <Button color="secondary" variant="raised">

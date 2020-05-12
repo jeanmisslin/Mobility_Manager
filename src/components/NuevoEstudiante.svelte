@@ -20,8 +20,19 @@
   function listPeriodos() {}
   function listTitulaciones() {}
 
+  function ultimo(estudiantes){
+    let l = estudiantes.length;
+    if(l === 0 || l === undefined){
+      return 1;
+    }
+    return estudiantes[l-1].id_estudiante;
+  }
+
+  let last = ultimo(estudiantes);
+
   export let nuevoestudiante = {
     open: false,
+    id_estudiante: last,
     email: "",
     apellidos: "",
     nombre: "",
@@ -327,7 +338,7 @@
             <Label>Cancelar</Label>
           </Button>
           <Button color="secondary" variant="raised" on:click={añadirambos}>
-              <a href="/estudiante/{nuevoestudiante.email}">Salvar</a>
+              <a href="/estudiante/{last}">Salvar</a>
           </Button>
         {/if}
       </Actions>
