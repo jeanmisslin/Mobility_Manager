@@ -53,14 +53,6 @@
     color: black;
     text-transform: uppercase;
   }
-
-  #menu {
-    width: 80px;
-    height: 40px;
-    margin-left: 10px;
-    align-items: center;
-  }
-
 </style>
 
 <svelte:head>

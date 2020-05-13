@@ -19,7 +19,7 @@ export function get(req, res, next) {
             }
             db.all(`SELECT a.*, p.año, p.cuatrimestre, t.titulacion_catalan, t.titulacion_castellano, t.titulacion_ingles, t.ciclo 
                   FROM acuerdos_academicos as a, periodos_academicos as p, titulaciones as t 
-                WHERE a.periodo_academico = p.id_periodo 
+                  WHERE a.periodo_academico = p.id_periodo 
                   AND a.titulacion = t.codigo_titulacion 
                   AND a.estudiante = ?`, [id],
                 (err, acuerdos) => {

@@ -17,18 +17,18 @@ export function post(req, res, next) {
                     parseInt(asignacion.oferta),
                     asignacion.estado
                 ], function (err) {
-            const id_asignacion = this.lastID;
-            console.log("asignacionID modificado =", id_asignacion);
-            if (err) {
-                jsonResponse(500, { 
-                    error: `Cannot insert the new asignacion: ${err}`
-                })
-                return
-            }
-            jsonResponse(200, {
-                error: null,
-                id_asignacion
-            })
+                    const id_asignacion = this.lastID;
+                    console.log("asignacionID modificado =", id_asignacion);
+                    if (err) {
+                        jsonResponse(500, { 
+                            error: `Cannot insert the new asignacion: ${err}`
+                        })
+                        return
+                    }
+                    jsonResponse(200, {
+                        error: null,
+                        id_asignacion
+                    })
         })
     })
 
