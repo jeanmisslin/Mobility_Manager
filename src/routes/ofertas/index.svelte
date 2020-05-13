@@ -23,6 +23,8 @@
   import List, { Item, Graphic, Text, PrimaryText, SecondaryText, Separator } from "@smui/list";
   import Menu, { SelectionGroup, SelectionGroupIcon } from "@smui/menu";
   import { Anchor } from "@smui/menu-surface";
+  import SelectorPeriodo from "../../components/SelectorPeriodo.svelte";
+  import MenuPantallas from "../../components/MenuPantallas.svelte";
 
   export let periodos;
   export let ofertas;
@@ -43,6 +45,10 @@
   let filtroPeriodos = "";
 
   $: PeriodosFiltrados = periodos.filter(e => e.año === parseInt(filtroPeriodos));
+
+  function seleccionarEnCaliente(periodo){
+    periodo_seleccionado = periodo;
+  }
 </script>
 
 <style>
@@ -66,13 +72,6 @@
     text-transform: uppercase;
   }
 
-  #menu {
-    width: 80px;
-    height: 40px;
-    margin-left: 10px;
-    align-items: center;
-  }
-
   #contenedor {
     display: flex;
     flex-direction: row;
@@ -90,30 +89,7 @@
 
 <!-- Menú con los links al resto de pantallas -->
 
-  <div id="menu">
-    <div style="min-width: 100px;">
-      <Button on:click={() => menu.setOpen(true)}>Menu</Button>
-      <Menu bind:this={menu}>
-        <List>
-          <Item>
-            <Text>
-              <a href="../">Estudiantes Incoming</a>
-            </Text>
-          </Item>
-          <Item>
-            <Text>
-              <a href="/asignaturas/">Asignaturas</a>
-            </Text>
-          </Item>
-          <Item>
-            <Text>
-              <a href="/universidades/">Universidades</a>
-            </Text>
-          </Item>
-        </List>
-      </Menu>
-    </div>
-  </div>
+<MenuPantallas menu="estudiantes incoming,asignaturas,universidades" />
 
 <!-------- Titulo de la pantalla ----------->
 
@@ -125,52 +101,8 @@
 
 <!------- Selector de Periodos ------------->
 
-  <Dialog
-    bind:this={listPeriodos}
-    aria-labelledby="list-title"
-    aria-describedby="list-content">
-    <Title id="list-title">
-      Periodos Académicos
-    </Title>
-    <Content component={List} id="list-content">
-      <Item
-        on:click={() => {
-          periodo_seleccionado.id_periodo = '';
-          periodo_seleccionado.año = '';
-          periodo_seleccionado.cuatrimestre = '';
-          listPeriodos.close();
-        }}>
-        <Text>Todos los Periodos</Text>
-      </Item>
-      {#each periodos as p}
-        <Item
-          on:click={() => {
-            periodo_seleccionado.id_periodo = p.id_periodo;
-            periodo_seleccionado.año = p.año;
-            periodo_seleccionado.cuatrimestre = p.cuatrimestre;
-            listPeriodos.close();
-          }}>
-          <Text>{p.año}-{p.año + 1} Q{p.cuatrimestre}</Text>
-        </Item>
-      {/each}
-    </Content>
-  </Dialog>
-
-  <div>
-    <div class="seleccion">
-      <span class="valor-seleccionado">
-        {#if periodo_seleccionado.año}
-          Ofertas: {periodo_seleccionado.año}-{periodo_seleccionado.año + 1} Q{periodo_seleccionado.cuatrimestre}
-        {:else}
-          <span class="empty">Todas las Ofertas</span>
-        {/if}
-      </span>
-      <Button on:click={() => listPeriodos.open()}>
-        <div class="material-icons">search</div>
-        <Label>Periodos Académicos</Label>
-      </Button>
-    </div>
-  </div>
+<SelectorPeriodo {periodos} onSeleccionado={seleccionarEnCaliente}/>
+ 
 </div>
 
 {#if periodo_seleccionado.id_periodo === ''}
@@ -179,27 +111,29 @@
 
   <TablaFiltrableEstudiantes
     tabla={ofertas}
-    campos={[{ name: 'asignatura', nombre: 'código', show: true, render: obj => `<a href="/asignatura/${obj.asignatura}">${obj.asignatura}</a>`, filter: true }, 
-             { name: 'nombre_ingles', nombre: 'título', show: true, filter: true }, 
+    campos={[{ name: 'asignatura', nombre: 'código', show: true, filter: true }, 
+             { name: 'nombre_ingles', nombre: 'título', show: true, render: obj => `<a href="/asignatura/${obj.id_asignatura}">${obj.nombre_ingles}</a>`, filter: true }, 
              { name: 'nombre_castellano', filter: true },
-             { name: 'año', show: true },
-             { name: 'cuatrimestre', nombre: 'Q', show: true},
-             { name: 'plazas_ofertadas', nombre: 'ofertadas', show: true },
-             { name: 'plazas_disponibles', nombre: 'disponibles', show: true },
-             { name: 'plazas_concedidas', nombre: 'concedidas', show: true }, 
-             { name: 'plazas_solicitadas', nombre: 'solicitadas', show: true }]} />
+             { name: 'año', show: true, centrado: true },
+             { name: 'cuatrimestre', nombre: 'Q', show: true,  centrado: true},
+             { name: 'plazas_ofertadas', nombre: 'ofertadas', show: true, centrado: true },
+             { name: 'plazas_disponibles', nombre: 'disponibles', show: true, centrado: true },
+             { name: 'plazas_concedidas', nombre: 'concedidas', show: true, centrado: true }, 
+             { name: 'plazas_solicitadas', nombre: 'solicitadas', show: true, centrado: true }
+             ]} />
 {:else}
 
 <!--- Tabla con los estudiantes de la Base de Datos que corresponden al Periodo seleccionado --->
 
   <TablaFiltrableEstudiantes
     tabla={ofertas.filter(per => per.periodo_academico === periodo_seleccionado.id_periodo)}
-    campos={[{ name: 'asignatura', nombre: 'código', show: true, render: obj => `<a href="/asignatura/${obj.asignatura}">${obj.asignatura}</a>`, filter: true }, 
-             { name: 'nombre_ingles', nombre: 'título', show: true, filter: true }, 
+    campos={[{ name: 'asignatura', nombre: 'código', show: true, filter: true }, 
+             { name: 'nombre_ingles', nombre: 'título', show: true, render: obj => `<a href="/asignatura/${obj.id_asignatura}">${obj.nombre_ingles}</a>`, filter: true }, 
              { name: 'nombre_castellano', filter: true },
-             { name: 'plazas_ofertadas', nombre: 'ofertadas', show: true },
-             { name: 'plazas_disponibles', nombre: 'disponibles', show: true },
-             { name: 'plazas_concedidas', nombre: 'concedidas', show: true }, 
-             { name: 'plazas_solicitadas', nombre: 'solicitadas', show: true }]} />
+             { name: 'plazas_ofertadas', nombre: 'ofertadas', show: true, centrado: true },
+             { name: 'plazas_disponibles', nombre: 'disponibles', show: true, centrado: true },
+             { name: 'plazas_concedidas', nombre: 'concedidas', show: true, centrado: true }, 
+             { name: 'plazas_solicitadas', nombre: 'solicitadas', show: true, centrado: true }
+             ]} />
 {/if}
 

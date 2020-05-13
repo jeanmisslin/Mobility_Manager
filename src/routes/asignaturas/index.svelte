@@ -21,6 +21,7 @@
   import { Anchor } from "@smui/menu-surface";
   import List, { Item, Graphic, Text, PrimaryText, SecondaryText, Separator } from "@smui/list";
   import Button, { Group, GroupItem, Label, Icon } from "@smui/button";
+  import MenuPantallas from "../../components/MenuPantallas.svelte";
 
   let menu;
 
@@ -52,13 +53,6 @@
     height: 40px;
     margin-top: 10px;
   }
-
-  #menu {
-    width: 80px;
-    height: 40px;
-    margin-left: 10px;
-    align-items: center;
-  }
 </style>
 
 <svelte:head>
@@ -69,30 +63,7 @@
 
   <!-- Menú con los links al resto de pantallas -->
 
-  <div id="menu">
-    <div style="min-width: 100px;">
-      <Button on:click={() => menu.setOpen(true)}>Menu</Button>
-      <Menu bind:this={menu}>
-        <List>
-          <Item>
-            <Text>
-              <a href="../">Estudiantes Incoming</a>
-            </Text>
-          </Item>
-          <Item>
-            <Text>
-              <a href="/ofertas/">Ofertas</a>
-            </Text>
-          </Item>
-          <Item>
-            <Text>
-              <a href="/universidades/">Universidades</a>
-            </Text>
-          </Item>
-        </List>
-      </Menu>
-    </div>
-  </div>
+  <MenuPantallas menu="estudiantes incoming,ofertas,universidades" />
 
   <!------- Titulo de la pantalla ----------->
 
@@ -111,8 +82,8 @@
 <TablaFiltrableEstudiantes
   tabla={asignaturas}
   campos={[
-    { name: 'codigo_asignatura', nombre: 'codigo', show: true, filter: true, render: obj => `<a href="/asignatura/${obj.id_asignatura}">${obj.codigo_asignatura}</a>` }, 
-    { name: 'nombre_ingles', nombre: 'título', show: true, filter: true, render: obj => `<a href="${obj.plan_de_estudios_ingles}">${obj.nombre_ingles}</a>` }, 
+    { name: 'codigo_asignatura', nombre: 'código', show: true, filter: true }, 
+    { name: 'nombre_ingles', nombre: 'título', show: true, filter: true, render: obj => `<a href="/asignatura/${obj.id_asignatura}">${obj.nombre_ingles}</a>` }, 
     { name: 'nombre_catalan', filter: true }, 
     { name: 'nombre_castellano', filter: true }, 
     { name: 'idioma', show: true, filter: true }, 

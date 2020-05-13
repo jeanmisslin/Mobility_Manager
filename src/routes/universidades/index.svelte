@@ -19,6 +19,7 @@
   import List, { Item, Graphic, Text, PrimaryText, SecondaryText, Separator } from "@smui/list";
   import Menu, { SelectionGroup, SelectionGroupIcon } from "@smui/menu";
   import { Anchor } from "@smui/menu-surface";
+  import MenuPantallas from "../../components/MenuPantallas.svelte";
 
   export let universidades;
 
@@ -70,30 +71,7 @@
 
 <!-- Menú con los links al resto de pantallas -->
 
-  <div id="menu">
-    <div style="min-width: 100px;">
-      <Button on:click={() => menu.setOpen(true)}>Menu</Button>
-      <Menu bind:this={menu}>
-        <List>
-          <Item>
-            <Text>
-              <a href="../">Estudiantes Incoming</a>
-            </Text>
-          </Item>
-          <Item>
-            <Text>
-              <a href="/asignaturas/">Asignaturas</a>
-            </Text>
-          </Item>
-          <Item>
-            <Text>
-              <a href="/ofertas/">Ofertas</a>
-            </Text>
-          </Item>
-        </List>
-      </Menu>
-    </div>
-  </div>
+<MenuPantallas menu="estudiantes incoming,asignaturas,ofertas" />
 
 <!-------- Titulo de la pantalla ----------->
 

@@ -2,13 +2,11 @@
   export async function preload({ params, query }) {
     const id = params.id;
     let asignatura = await this.fetch(`/asignatura/${id}.json`).then(body => body.json());
-    
     let { periodos } = await this.fetch(`periodos.json`).then(body => body.json());
     let { titulaciones } = await this.fetch(`titulaciones.json`).then(body => body.json());
     let { asignaturas } = await this.fetch(`../asignaturas.json`).then(body => body.json());
     return {
       asignatura,
-      
       periodos,
       asignaturas,
       titulaciones
@@ -32,6 +30,7 @@
   import Tab, { Icon, Label } from "@smui/tab";
   import TabBar from "@smui/tab-bar";
   import Button from "@smui/button";
+  import MenuPantallas from "../../components/MenuPantallas.svelte";
 
   let { ofertas } = asignatura;
 
@@ -62,16 +61,17 @@
     return pestañas;
   }
 
-  function modificarAsignaturaEnCaliente (codigo, idioma, ects, tcat, tcast, ting, pcat, pcast, ping) {
-    asignatura.codigo_asignatura = codigo;
-    asignatura.idioma = idioma;
-    asignatura.ects = ects;
-    asignatura.nombre_catalan = tcat;
-    asignatura.nombre_castellano = tcast;
-    asignatura.nombre_ingles = ting;
-    asignatura.plan_de_estudios_catalan = pcat;
-    asignatura.plan_de_estudios_castellano = pcast;
-    asignatura.plan_de_estudios_ingles = ping;
+  function modificarAsignaturaEnCaliente (modificacion) {
+    asignatura = modificacion;
+    /*asignatura.codigo_asignatura = modificacion.codigo;
+    asignatura.idioma = modificacion.idioma;
+    asignatura.ects = modificacion.ects;
+    asignatura.nombre_catalan = modificacion.ncat;
+    asignatura.nombre_castellano = modificacion.ncast;
+    asignatura.nombre_ingles = modificacion.ning;
+    asignatura.plan_de_estudios_catalan = modificacion.pscat;
+    asignatura.plan_de_estudios_castellano = modificacion.pscast;
+    asignatura.plan_de_estudios_ingles = modificacion.psing;*/
   }
 
   let tabstring = generartab(periodos);
@@ -106,13 +106,6 @@
     color: black;
     text-transform: uppercase;
   }
-
-  #menu {
-    width: 80px;
-    height: 40px;
-    margin-left: 10px;
-    align-items: center;
-  }
 </style>
 
 <svelte:head>
@@ -123,35 +116,7 @@
 
 <!-- Menú con los links al resto de pantallas -->
 
-<div id="menu">
-    <div style="min-width: 100px;">
-      <Button on:click={() => menu.setOpen(true)}>Menu</Button>
-      <Menu bind:this={menu}>
-        <List>
-          <Item>
-            <Text>
-              <a href="../">Estudiantes Incoming</a>
-            </Text>
-          </Item>
-          <Item>
-            <Text>
-              <a href="/asignaturas/">Asignaturas</a>
-            </Text>
-          </Item>
-          <Item>
-            <Text>
-              <a href="/ofertas/">Ofertas</a>
-            </Text>
-          </Item>
-          <Item>
-            <Text>
-              <a href="/universidades/">Universidades</a>
-            </Text>
-          </Item>
-        </List>
-      </Menu>
-    </div>
-  </div>
+<MenuPantallas menu="estudiantes incoming,asignaturas,ofertas,universidades" />
 
 <!------- Titulo de la pantalla ----------->
 

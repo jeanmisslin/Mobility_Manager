@@ -28,6 +28,7 @@
   import Tab, { Icon, Label } from "@smui/tab";
   import TabBar from "@smui/tab-bar";
   import Button from "@smui/button";
+  import MenuPantallas from "../../components/MenuPantallas.svelte";
 
   export let estudiante;
   export let universidades;
@@ -89,13 +90,6 @@
     color: black;
     text-transform: uppercase;
   }
-
-  #menu {
-    width: 80px;
-    height: 40px;
-    margin-left: 10px;
-    align-items: center;
-  }
 </style>
 
 <svelte:head>
@@ -106,35 +100,7 @@
 
 <!-- Menú con los links al resto de pantallas -->
 
-  <div id="menu">
-    <div style="min-width: 100px;">
-      <Button on:click={() => menu.setOpen(true)}>Menu</Button>
-      <Menu bind:this={menu}>
-        <List>
-          <Item>
-            <Text>
-              <a href="../">Estudiantes Incoming</a>
-            </Text>
-          </Item>
-          <Item>
-            <Text>
-              <a href="/asignaturas/">Asignaturas</a>
-            </Text>
-          </Item>
-          <Item>
-            <Text>
-              <a href="/ofertas/">Ofertas</a>
-            </Text>
-          </Item>
-          <Item>
-            <Text>
-              <a href="/universidades/">Universidades</a>
-            </Text>
-          </Item>
-        </List>
-      </Menu>
-    </div>
-  </div>
+<MenuPantallas menu="estudiantes incoming,asignaturas,ofertas,universidades" />
 
 <!------- Titulo de la pantalla ----------->
 

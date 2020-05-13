@@ -25,8 +25,6 @@
 </script>
 
 <script>
-  import Textfield from "@smui/textfield";
-  import Dialog, { Title, Content, Actions, InitialFocus } from "@smui/dialog";
   import Button, { Group, GroupItem, Label, Icon } from "@smui/button";
   import List, { Item, Graphic, Text, PrimaryText, SecondaryText, Separator } from "@smui/list";
   import Menu, { SelectionGroup, SelectionGroupIcon } from "@smui/menu";
@@ -34,6 +32,8 @@
   import TablaFiltrableEstudiantes from "../components/TablaFiltrableEstudiantes.svelte";
   import NuevoEstudiante from "../components/NuevoEstudiante.svelte";
   import AñadirPeriodoForm from "../components/AñadirPeriodoForm.svelte";
+  import SelectorPeriodo from "../components/SelectorPeriodo.svelte";
+  import MenuPantallas from "../components/MenuPantallas.svelte";
 
   export let estudiantes;
   export let universidades;
@@ -48,9 +48,6 @@
   };
 
   let menu;
-  let dialog;
-
-  function listPeriodos() {}
 
   let message;
 
@@ -60,13 +57,17 @@
   function mostrarestudiante(periodo, estudiante, acuerdos) {
     for (let i = 0; i < acuerdos.length; i++) {
       if (
-        estudiante.email === acuerdos[i].estudiante &&
+        estudiante.id_estudiante === acuerdos[i].estudiante &&
         acuerdos[i].periodo_academico === periodo
       ) {
         return true;
       }
     }
     return false;
+  }
+
+  function seleccionarEnCaliente(periodo){
+    periodo_seleccionado = periodo;
   }
 </script>
 
@@ -91,13 +92,6 @@
     text-transform: uppercase;
   }
 
-  #menu {
-    width: 80px;
-    height: 40px;
-    margin-left: 10px;
-    align-items: center;
-  }
-
   #contenedor {
     display: flex;
     flex-direction: row-reverse;
@@ -115,36 +109,13 @@
 
   <!-- Menú con los links al resto de pantallas -->
 
-  <div id="menu">
-    <div style="min-width: 100px;">
-      <Button on:click={() => menu.setOpen(true)}>Menu</Button>
-      <Menu bind:this={menu}>
-        <List>
-          <Item>
-            <Text>
-              <a href="/asignaturas/">Asignaturas</a>
-            </Text>
-          </Item>
-          <Item>
-            <Text>
-              <a href="/ofertas/">Ofertas</a>
-            </Text>
-          </Item>
-          <Item>
-            <Text>
-              <a href="/universidades/">Universidades</a>
-            </Text>
-          </Item>
-        </List>
-      </Menu>
-    </div>
-  </div>
+  <MenuPantallas menu="asignaturas,ofertas,universidades" />
 
   <!-------- Titulo de la pantalla ----------->
 
   <div id="title">Estudiantes Incoming</div>
   <div />
-  </div>
+</div>
 
 <div id="contenedor">
 
@@ -156,51 +127,7 @@
 
   <!------- Selector de Periodos ------------->
 
-  <Dialog
-    bind:this={listPeriodos}
-    aria-labelledby="list-title"
-    aria-describedby="list-content">
-    <Title id="list-title">Periodos Académicos</Title>
-    <Content component={List} id="list-content">
-      <Item
-        on:click={() => {
-          periodo_seleccionado.id_periodo = '';
-          periodo_seleccionado.año = '';
-          periodo_seleccionado.cuatrimestre = '';
-          listPeriodos.close();
-        }}>
-        <Text>Todos los Periodos</Text>
-      </Item>
-      {#each periodos as p}
-        <Item
-          on:click={() => {
-            periodo_seleccionado.id_periodo = p.id_periodo;
-            periodo_seleccionado.año = p.año;
-            periodo_seleccionado.cuatrimestre = p.cuatrimestre;
-            listPeriodos.close();
-          }}>
-          <Text>{p.año}-{p.año + 1} Q{p.cuatrimestre}</Text>
-        </Item>
-      {/each}
-    </Content>
-  </Dialog>
-
-  <div>
-    <div class="seleccion">
-      <span class="valor-seleccionado">
-        {#if periodo_seleccionado.año}
-          Estudiantes: {periodo_seleccionado.año}-{periodo_seleccionado.año + 1}
-          Q{periodo_seleccionado.cuatrimestre}
-        {:else}
-          <span class="empty">Todos los Estudiantes</span>
-        {/if}
-      </span>
-      <Button on:click={() => listPeriodos.open()}>
-        <div class="material-icons">search</div>
-        <Label>Periodos Académicos</Label>
-      </Button>
-    </div>
-  </div>
+  <SelectorPeriodo {periodos} onSeleccionado={seleccionarEnCaliente}/>
 
   <!------ Formulario Nuevo Estudiante ------->
 
@@ -214,7 +141,7 @@
   <TablaFiltrableEstudiantes
     tabla={estudiantes}
     campos={[{ name: 'apellidos', show: true, 
-               render: obj => `<a href="/estudiante/${obj.email}">${obj.apellidos}</a>`, 
+               render: obj => `<a href="/estudiante/${obj.id_estudiante}">${obj.apellidos}</a>`, 
                filter: true }, 
              { name: 'nombre', show: true, filter: true }, 
              { name: 'universidad', show: true, filter: true }, 
@@ -227,7 +154,7 @@
       mostrarestudiante(periodo_seleccionado.id_periodo, est, acuerdos)
     )}
     campos={[{ name: 'apellidos', show: true, 
-               render: obj => `<a href="/estudiante/${obj.email}">${obj.apellidos}</a>`, 
+               render: obj => `<a href="/estudiante/${obj.id_estudiante}">${obj.apellidos}</a>`, 
                filter: true }, 
              { name: 'nombre', show: true, filter: true }, 
              { name: 'universidad', show: true, filter: true }, 
