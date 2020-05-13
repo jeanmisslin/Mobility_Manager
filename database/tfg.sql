@@ -17,6 +17,7 @@ CREATE TABLE universidades(
 );
 
 CREATE TABLE estudiantes(
+    id_estudiante INTEGER PRIMARY KEY,
     email TEXT PRIMARY KEY,
     apellidos TEXT,
     nombre TEXT,
@@ -41,11 +42,11 @@ CREATE TABLE periodos_academicos(
 
 CREATE TABLE acuerdos_academicos(
     id_acuerdo INTEGER PRIMARY KEY,
-    estudiante TEXT,
+    estudiante INTEGER,
     titulacion TEXT,
     periodo_academico int,
     estado TEXT,
-    FOREIGN KEY (estudiante) REFERENCES estudiantes (email),
+    FOREIGN KEY (estudiante) REFERENCES estudiantes (id_estudiante),
     FOREIGN KEY (titulacion) REFERENCES titulaciones (codigo_titulacion),
     FOREIGN KEY (periodo_academico) REFERENCES periodos_academicos (id_periodo)
 );
