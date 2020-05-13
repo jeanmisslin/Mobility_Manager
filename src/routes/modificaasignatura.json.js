@@ -15,16 +15,16 @@ export function post(req, res, next) {
                 SET codigo_asignatura = ?, nombre_catalan = ?, nombre_castellano = ?, nombre_ingles = ?,
                 idioma = ?, ects = ?, plan_de_estudios_catalan = ?, plan_de_estudios_castellano = ?,
                 plan_de_estudios_ingles = ? WHERE asignaturas.id_asignatura = ?`, [
-                    modificaasignatura.codigo,
-                    modificaasignatura.ncat,
-                    modificaasignatura.ncast,
-                    modificaasignatura.ning,
+                    modificaasignatura.codigo_asignatura,
+                    modificaasignatura.nombre_catalan,
+                    modificaasignatura.nombre_castellano,
+                    modificaasignatura.nombre_ingles,
                     modificaasignatura.idioma,
                     Number(modificaasignatura.ects),
-                    modificaasignatura.pscat,
-                    modificaasignatura.pscast,
-                    modificaasignatura.psing,
-                    modificaasignatura.id
+                    modificaasignatura.plan_de_estudios_catalan,
+                    modificaasignatura.plan_de_estudios_castellano,
+                    modificaasignatura.plan_de_estudios_ingles,
+                    modificaasignatura.id_asignatura
                 ], (err) => {
             if (err) {
                 jsonResponse(500, { 
