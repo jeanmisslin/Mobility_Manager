@@ -3,8 +3,7 @@
   export let asignatura;
   export let asignaturas;
   export let onModificado;
-
-  import MenuSurface, { Anchor } from "@smui/menu-surface";
+  
   import IconButton from "@smui/icon-button";
   import Select, { Option } from "@smui/select";
   import Textfield from "@smui/textfield";
@@ -18,38 +17,23 @@
 
   let warning = "Ya existe una asignatura con el mismo código";
 
-  let array = [2.5,3,4.5,5,6,7,7.5,9,10,12,15,24,30];
-
-  let menuSurface;
+  let ects = [2.5,3,4.5,5,6,7,7.5,9,10,12,15,24,30];
 
   let idiomas = [`CAT`, `CAST`, `ING`, `CAT/CAST`, `CAT/ING`, `CAST/ING`, `CAT/CAST/ING`];
 
-  let {
-    id_asignatura,
-    codigo_asignatura,
-    nombre_catalan,
-    nombre_castellano,
-    nombre_ingles,
-    idioma,
-    ects,
-    plan_de_estudios_catalan,
-    plan_de_estudios_castellano,
-    plan_de_estudios_ingles
-  } = asignatura;
-
   let modificaasignatura = {
     open: false,
-    id: id_asignatura,
-    codigo_actual: codigo_asignatura,
-    codigo: codigo_asignatura,
-    ncat: nombre_catalan,
-    ncast: nombre_castellano,
-    ning: nombre_ingles,
-    idioma: idioma,
-    ects: ects,
-    pscat: plan_de_estudios_catalan,
-    pscast: plan_de_estudios_castellano,
-    psing: plan_de_estudios_ingles 
+    id_asignatura: asignatura.id_asignatura,
+    codigo_actual: asignatura.codigo_asignatura,
+    codigo_asignatura: asignatura.codigo_asignatura,
+    nombre_catalan: asignatura.nombre_catalan,
+    nombre_castellano: asignatura.nombre_castellano,
+    nombre_ingles: asignatura.nombre_ingles,
+    idioma: asignatura.idioma,
+    ects: asignatura.ects,
+    plan_de_estudios_catalan: asignatura.plan_de_estudios_catalan,
+    plan_de_estudios_castellano: asignatura.plan_de_estudios_castellano,
+    plan_de_estudios_ingles: asignatura.plan_de_estudios_ingles 
   };
 
   let message;
@@ -72,15 +56,7 @@
         } else {
           message = "modificacion guardada";
         }
-        onModificado(modificaasignatura.codigo, 
-                     modificaasignatura.idioma, 
-                     modificaasignatura.ects,
-                     modificaasignatura.ncat,
-                     modificaasignatura.ncast,
-                     modificaasignatura.ning,
-                     modificaasignatura.pscat,
-                     modificaasignatura.pscast,
-                     modificaasignatura.psing);
+        onModificado({...modificaasignatura});
       });
   }
 </script>
@@ -106,23 +82,23 @@
     <Textfield
       label="Código"
       style="width: 100%"
-      bind:value={modificaasignatura.codigo} />
-    {#if modificaasignatura.codigo !== modificaasignatura.codigo_actual 
-         && existe(modificaasignatura.codigo)}
+      bind:value={modificaasignatura.codigo_asignatura} />
+    {#if modificaasignatura.codigo_asignatura !== modificaasignatura.codigo_actual 
+         && existe(modificaasignatura.codigo_asignatura)}
          <div id="warning">{warning}</div>
     {/if}
     <Textfield
       label="Título en Catalán"
       style="width: 100%"
-      bind:value={modificaasignatura.ncat} />
+      bind:value={modificaasignatura.nombre_catalan} />
     <Textfield
       label="Título en Castellano"
       style="width: 100%"
-      bind:value={modificaasignatura.ncast} />
+      bind:value={modificaasignatura.nombre_castellano} />
     <Textfield
       label="Título en Inglés"
       style="width: 100%"
-      bind:value={modificaasignatura.ning} />
+      bind:value={modificaasignatura.nombre_ingles} />
     <Select
       style="width: 100%"
       bind:value={modificaasignatura.idioma}
@@ -139,7 +115,7 @@
       bind:value={modificaasignatura.ects}
       label="ECTS">
       <Option value="" />
-      {#each array as e}
+      {#each ects as e}
         <Option value={e} selected={modificaasignatura.ects === e}>
           {e}
         </Option>
@@ -148,31 +124,23 @@
     <Textfield
       label="Plan de estudios en Catalán"
       style="width: 100%"
-      bind:value={modificaasignatura.pscat} />
+      bind:value={modificaasignatura.plan_de_estudios_catalan} />
     <Textfield
       label="Plan de estudios en Castellano"
       style="width: 100%"
-      bind:value={modificaasignatura.pscast} />
+      bind:value={modificaasignatura.plan_de_estudios_castellano} />
     <Textfield
       label="Plan de estudios en Inglés"
       style="width: 100%"
-      bind:value={modificaasignatura.psing} />
+      bind:value={modificaasignatura.plan_de_estudios_ingles} />
     <div style="height: 1em" />
 
     <div class="actions">
       <Actions>
-        {#if modificaasignatura.codigo !== modificaasignatura.codigo_actual 
-             && existe(modificaasignatura.codigo)}
+        {#if modificaasignatura.codigo_asignatura !== modificaasignatura.codigo_actual 
+             && existe(modificaasignatura.codigo_asignatura)}
           <Button color="secondary" variant="raised">
             <Label>Cancelar</Label>
-          </Button>
-        {:else if modificaasignatura.codigo !== modificaasignatura.codigo_actual 
-             && !existe(modificaasignatura.codigo)}
-          <Button color="secondary" variant="raised">
-            <Label>Cancelar</Label>
-          </Button>
-          <Button color="secondary" variant="raised" on:click={() => modificarasignatura()}>
-            Salvar
           </Button>
         {:else}
           <Button color="secondary" variant="raised">
