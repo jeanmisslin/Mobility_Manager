@@ -54,21 +54,20 @@
 
   let active = "Datos Personales";
 
-  function generartab(acuerdos, periodos) {
-    let l = acuerdos.length;
+  function generartab(acuerdos) {
     let pestañas = "Datos Personales";
-    let periodo;
     let pestaña;
-    for (let i = 0; i < l; i++) {
-      periodo = periodos.find(element => element.id_periodo === acuerdos[i].periodo_academico);
-      pestaña = periodo.año + "-" + (periodo.año + 1) + " Q" + periodo.cuatrimestre;
+    for (let i = 0; i < acuerdos.length; i++) {
+      pestaña = acuerdos[i].año + "-" + (acuerdos[i].año + 1) + " Q" + acuerdos[i].cuatrimestre;
       pestañas = pestañas + ", " + pestaña;
     }
     return pestañas;
   }
 
-  let tabstring = generartab(acuerdos, periodos);
-  let tabgenerado = tabstring.split(",");
+  let tabstring;
+  $: tabstring = generartab(acuerdos);
+  let tabgenerado;
+  $: tabgenerado = tabstring.split(",");
 </script>
 
 <style>
@@ -126,7 +125,13 @@
 
 <!----- Formulario Nuevo Acuerdo ----->
 
-  <NuevoAcuerdoForm {periodos} {titulaciones} {estudiante} acuerdos={estudiante.acuerdos} />
+  <NuevoAcuerdoForm 
+    {periodos} 
+    {titulaciones} 
+    {estudiante} 
+    acuerdos={estudiante.acuerdos}
+    onModificado={(nuevoacuerdo) => { acuerdos = [...acuerdos, nuevoacuerdo]; }} />
+
 {:else}
 
 <!----- Datos del Acuerdo Académico ----->

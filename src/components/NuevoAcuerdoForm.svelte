@@ -3,6 +3,7 @@
   export let estudiante;
   export let titulaciones;
   export let acuerdos;
+  export let onModificado;
 
   import MenuSurface, { Anchor } from "@smui/menu-surface";
   import IconButton from "@smui/icon-button";
@@ -28,12 +29,17 @@
 
   export let nuevoacuerdo = {
     open: false,
+    id_acuerdo: "",
+    estudiante: estudiante.id_estudiante,
     titulacion: "",
     periodo_academico: "",
     estado: "Nominado/a",
     año: "",
     cuatrimestre: "",
-    nombre_titulacion: ""
+    titulacion_catalan: "",
+    titulacion_castellano: "",
+    titulacion_ingles: "",
+    ciclo: ""
   };
 
   export let nuevoestudiante = {
@@ -47,25 +53,6 @@
   function existe(a) {
     let introducido = acuerdos.find(acu => acu.periodo_academico === parseInt(a));
     return introducido;
-  }
-
-  function añadiracuerdo() {
-    fetch(`nuevoacuerdo.json`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        acuerdo: nuevoacuerdo,
-        estudiante: nuevoestudiante
-      })
-    })
-      .then(body => body.json())
-      .then(json => {
-        if (json.error) {
-          message = json.error;
-        } else {
-          message = "nuevoacuerdo saved";
-        }
-      });
   }
 
   let filtroTitulaciones = "";
@@ -89,15 +76,28 @@
     return periodo;
   }
 
-  function ruta(codigo){
-    let ruta = "/estudiante/";
-    ruta = ruta + codigo;
-    return ruta;
-  }
+  async function añadiracuerdo() {
+    const body = await fetch(`nuevoacuerdo.json`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ acuerdo: nuevoacuerdo, estudiante: nuevoestudiante})
+      });
+      const json = await body.json();
+      if (json.error) {
+          message = json.error;
+          return null;
+        } else {
+          message = "nuevoacuerdo saved";
+          return json.id_acuerdo
+        }
+      }
 
-  function ambas(){
-    añadiracuerdo();
-    location.reload(true);
+  async function ambas() {
+    const id_acuerdo = await añadiracuerdo();
+    nuevoacuerdo.id_acuerdo = id_acuerdo;
+    if (onModificado) {
+      onModificado({...nuevoacuerdo});
+    }
   }
 </script>
 
@@ -149,7 +149,10 @@
           <Item
             on:click={() => {
               nuevoacuerdo.titulacion = t.codigo_titulacion;
-              nuevoacuerdo.nombre_titulacion = t.titulacion_castellano;
+              nuevoacuerdo.titulacion_catalan = t.titulacion_catalan;
+              nuevoacuerdo.titulacion_castellano = t.titulacion_castellano;
+              nuevoacuerdo.titulacion_ingles = t.titulacion_ingles;
+              nuevoacuerdo.ciclo = t.ciclo;
               listTitulaciones.close();
             }}>
             <Text>{t.titulacion_castellano}</Text>
@@ -162,8 +165,8 @@
       Titulación:
       <div class="seleccion">
         <span class="valor-seleccionado">
-          {#if nuevoacuerdo.nombre_titulacion}
-            {nuevoacuerdo.nombre_titulacion}
+          {#if nuevoacuerdo.titulacion_castellano}
+            {nuevoacuerdo.titulacion_castellano}
           {:else}
             <span class="empty">Selecciona una titulación</span>
           {/if}
