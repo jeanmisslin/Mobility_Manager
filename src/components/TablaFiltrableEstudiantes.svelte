@@ -37,6 +37,12 @@
     padding: 3px;
   }
 
+  td.centrado {
+    border: 1px solid black;
+    text-align: center;
+    padding: 3px;
+  }
+
   th {
     border: 1px solid black;
     text-align: left;
@@ -75,11 +81,19 @@
       <tr>
         {#each campos as c}
           {#if c.show}
+          {#if c.centrado}
+            <td class = "centrado">
+              {#if c.render}
+                {@html c.render(obj)}
+              {:else}{obj[c.name]}{/if}
+            </td>
+            {:else}
             <td>
               {#if c.render}
                 {@html c.render(obj)}
               {:else}{obj[c.name]}{/if}
             </td>
+            {/if}
           {/if}
         {/each}
       </tr>
