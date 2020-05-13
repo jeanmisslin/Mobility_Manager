@@ -25,7 +25,7 @@
     if(l === 0 || l === undefined){
       return 1;
     }
-    return estudiantes[l-1].id_estudiante;
+    return estudiantes[l-1].id_estudiante+1;
   }
 
   let last = ultimo(estudiantes);

@@ -1,7 +1,6 @@
 <script>
   export let asignaturas;
 
-  import MenuSurface, { Anchor } from "@smui/menu-surface";
   import IconButton from "@smui/icon-button";
   import Select, { Option } from "@smui/select";
   import Textfield from "@smui/textfield";
@@ -16,8 +15,6 @@
   let warning = "Ya existe una asignatura con el mismo código";
 
   let ects = [2.5,3,4.5,5,6,7,7.5,9,10,12,15,24,30];
-
-  let menuSurface;
 
   let idiomas = [`CAT`, `CAST`, `ING`, `CAT/CAST`, `CAT/ING`, `CAST/ING`, `CAT/CAST/ING`];
 
@@ -40,6 +37,16 @@
     let introducido = asignaturas.find(asg => asg.codigo_asignatura === a);
     return introducido;
   }
+
+  function ultima(asignaturas){
+    let l = asignaturas.length;
+    if(l === 0 || l === undefined){
+      return 1;
+    }
+    return asignaturas[l-1].id_asignatura+1;
+  }
+
+  let last = ultima(asignaturas);
 
   function añadirasignatura() {
     fetch(`nuevaasignatura.json`, {
@@ -117,10 +124,6 @@
         </Option>
       {/each}
     </Select>
-    <!-- <Textfield
-      label="ECTS"
-      style="width: 100%"
-      bind:value={nuevaasignatura.ects} /> -->
     <Textfield
       label="Plan de estudios en Catalán"
       style="width: 100%"
@@ -152,7 +155,7 @@
             <Label>Cancelar</Label>
           </Button>
           <Button color="secondary" variant="raised" on:click={añadirasignatura}>
-            <Label>Salvar</Label>
+            <Label><a href="/asignatura/{last}">Salvar</a></Label>
           </Button>
         {/if}
       </Actions>
