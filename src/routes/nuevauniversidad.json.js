@@ -15,16 +15,19 @@ export function post(req, res, next) {
                     nuevauniversidad.codigo_universidad,
                     nuevauniversidad.universidad,
                     nuevauniversidad.pais
-                ], (err) => {
-            if (err) {
-                jsonResponse(500, { 
-                    error: `Cannot insert the new universidad: ${err}`
-                })
-                return
-            }
-            jsonResponse(200, {
-                error: null,
-            })
+                ], function (err) {
+                    const id_universidad = this.lastID;
+                    console.log("universidadID modificado =", id_universidad);
+                    if (err) {
+                        jsonResponse(500, { 
+                            error: `Cannot insert the new universidad: ${err}`
+                        })
+                        return
+                    }
+                    jsonResponse(200, {
+                        error: null,
+                        id_universidad
+                    })
         })
     })
 

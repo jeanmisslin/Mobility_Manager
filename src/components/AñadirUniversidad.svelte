@@ -1,5 +1,5 @@
 <script>
-  export let universidades;  
+  export let universidades; 
 
   import MenuSurface, { Anchor } from "@smui/menu-surface";
   import IconButton from "@smui/icon-button";
@@ -49,6 +49,7 @@
   let nuevauniversidad;
 
   $: nuevauniversidad = {
+    id_universidad: "",
     codigo_universidad: "",
     universidad: "",
     pais: ""
@@ -72,21 +73,32 @@
     return introducido;
   }
 
-  function añadiruniversidad() {
-    fetch(`nuevauniversidad.json`, {
+  function ultimo(universidades){
+    let l = universidades.length;
+    if(l === 0 || l === undefined){
+      return 1;
+    }
+    return universidades[l-1].id_universidad+1;
+  }
+
+  let last = ultimo(universidades);
+
+  async function añadiruniversidad() {
+    const body = await fetch(`nuevauniversidad.json`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(nuevauniversidad)
-    })
-      .then(body => body.json())
-      .then(json => {
-        if (json.error) {
+      });
+      const json = await body.json();
+      if (json.error) {
           message = json.error;
+          return null;
         } else {
           message = "nuevauniversidad saved";
+          return json.id_universidad
         }
-      });
-  }
+        console.log(last);
+      }
 </script>
 
 <style>
@@ -170,7 +182,7 @@
           </Button>
           <Button color="secondary" variant="raised" on:click={añadiruniversidad}>
             <Label>
-              Salvar
+              <a href="/universidad/{last}">Salvar</a>
             </Label>
           </Button>
         {/if}
