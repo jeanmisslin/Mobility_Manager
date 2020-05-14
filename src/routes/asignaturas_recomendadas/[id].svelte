@@ -59,6 +59,24 @@
       && element.oferta === o.id_oferta);
     return asignacion;
   }
+
+  function recomendadas(obj) {
+    if (acuerdo.titulacion === "GRESEIAAT" && masterogrado(obj.id_oferta, ofertas) 
+       && obj.plazas_disponibles > 0 && !asignada(obj)) { return true; }
+    else if (acuerdo.titulacion === "MUESEIAAT" && !masterogrado(obj.id_oferta, ofertas) 
+            && obj.plazas_disponibles > 0 && !asignada(obj)) { return true; }
+    else if (encontrartitulacion(acuerdo.titulacion,obj) && obj.plazas_disponibles > 0 
+            && !asignada(obj)) { return true; }
+    else return false;
+  }
+
+  function disponibles(obj) {
+    if (acuerdo.titulacion.includes('GRE') && masterogrado(obj.id_oferta, ofertas) 
+              && obj.plazas_disponibles > 0 && !asignada(obj)) { return true; }
+    else if (obj.plazas_disponibles > 0 && !asignada(obj)) { return true; }
+    else return false;
+  }
+
 </script>
 
 <style>
@@ -72,6 +90,12 @@
   td {
     border: 1px solid black;
     text-align: center;
+    padding: 3px;
+  }
+
+  td.izq {
+    border: 1px solid black;
+    text-align: left;
     padding: 3px;
   }
 
@@ -121,8 +145,8 @@
 <!------- Titulo de la pantalla ----------->
 
   <div id="title">
-    {estudiantes.find(element => element.email === acuerdo.estudiante).apellidos},
-    {estudiantes.find(element => element.email === acuerdo.estudiante).nombre}
+    {estudiantes.find(element => element.id_estudiante === acuerdo.estudiante).apellidos},
+    {estudiantes.find(element => element.id_estudiante === acuerdo.estudiante).nombre}
   </div>
   <div id="title">
     {acuerdo.año}-{acuerdo.año+1}, Q{acuerdo.cuatrimestre}
@@ -151,95 +175,29 @@
     <th>ECTS</th>
 
   </tr>
-  {#if active === 'Recomendadas'}
     {#each ofertas as obj}
-      <tr>
-        {#if obj.periodo_academico === acuerdo.periodo_academico}
-          {#if acuerdo.titulacion === "GRESEIAAT" && masterogrado(obj.id_oferta, ofertas) 
-              && obj.plazas_disponibles > 0 && !asignada(obj)}
+      {#if obj.periodo_academico === acuerdo.periodo_academico}
+        <tr>
+          {#if (active === 'Recomendadas' || active === 'Recommended') && recomendadas(obj)}
             <td>{obj.codigo_asignatura}</td>
-            <td><a href={obj.plan_de_estudios_castellano}>{obj.nombre_castellano}</a></td>
+            {#if active === 'Recomendadas'}
+              <td class="izq"><a href={obj.plan_de_estudios_castellano}>{obj.nombre_castellano}</a></td>
+            {:else if active === 'Recommended'}
+              <td class="izq"><a href={obj.plan_de_estudios_ingles}>{obj.nombre_ingles}</a></td>
+            {/if}
             <td>{obj.idioma}</td>
             <td>{obj.ects}</td>
-          {:else if acuerdo.titulacion === "MUESEIAAT" && !masterogrado(obj.id_oferta, ofertas) 
-              && obj.plazas_disponibles > 0 && !asignada(obj)}
+            {:else if (active === 'Disponibles' || active === 'Available') && disponibles(obj)}
             <td>{obj.codigo_asignatura}</td>
-            <td><a href={obj.plan_de_estudios_castellano}>{obj.nombre_castellano}</a></td>
-            <td>{obj.idioma}</td>
-            <td>{obj.ects}</td>
-          {:else if encontrartitulacion(acuerdo.titulacion,obj) && obj.plazas_disponibles > 0 
-              && !asignada(obj)}
-            <td>{obj.codigo_asignatura}</td>
-            <td><a href={obj.plan_de_estudios_castellano}>{obj.nombre_castellano}</a></td>
+            {#if active === 'Disponibles'}
+              <td class="izq"><a href={obj.plan_de_estudios_castellano}>{obj.nombre_castellano}</a></td>
+            {:else if active === 'Available'}
+              <td class="izq"><a href={obj.plan_de_estudios_ingles}>{obj.nombre_ingles}</a></td>
+            {/if}
             <td>{obj.idioma}</td>
             <td>{obj.ects}</td>
           {/if}
-        {/if}
       </tr>
+      {/if}
     {/each}
-  {:else if active === 'Recommended'}
-    {#each ofertas as obj}
-      <tr>
-        {#if obj.periodo_academico === acuerdo.periodo_academico}
-          {#if acuerdo.titulacion === "GRESEIAAT" && masterogrado(obj.id_oferta, ofertas) 
-              && obj.plazas_disponibles > 0 && !asignada(obj)}
-            <td>{obj.codigo_asignatura}</td>
-            <td><a href={obj.plan_de_estudios_ingles}>{obj.nombre_ingles}</a></td>
-            <td>{obj.idioma}</td>
-            <td>{obj.ects}</td>
-          {:else if acuerdo.titulacion === "MUESEIAAT" && !masterogrado(obj.id_oferta, ofertas) 
-              && obj.plazas_disponibles > 0 && !asignada(obj)}
-            <td>{obj.codigo_asignatura}</td>
-            <td><a href={obj.plan_de_estudios_ingles}>{obj.nombre_ingles}</a></td>
-            <td>{obj.idioma}</td>
-            <td>{obj.ects}</td>
-          {:else if encontrartitulacion(acuerdo.titulacion,obj) && obj.plazas_disponibles > 0 
-              && !asignada(obj)}
-            <td>{obj.codigo_asignatura}</td>
-            <td><a href={obj.plan_de_estudios_ingles}>{obj.nombre_ingles}</a></td>
-            <td>{obj.idioma}</td>
-            <td>{obj.ects}</td>
-          {/if}
-        {/if}
-      </tr>
-    {/each}
-  {:else if active === 'Disponibles'}
-    {#each ofertas as obj}
-      <tr>
-        {#if obj.periodo_academico === acuerdo.periodo_academico}
-          {#if acuerdo.titulacion.includes('GRE') && masterogrado(obj.id_oferta, ofertas) 
-              && obj.plazas_disponibles > 0 && !asignada(obj)}
-            <td>{obj.codigo_asignatura}</td>
-            <td><a href={obj.plan_de_estudios_castellano}>{obj.nombre_castellano}</a></td>
-            <td>{obj.idioma}</td>
-            <td>{obj.ects}</td>
-          {:else if obj.plazas_disponibles > 0 && !asignada(obj)}
-            <td>{obj.codigo_asignatura}</td>
-            <td><a href={obj.plan_de_estudios_castellano}>{obj.nombre_castellano}</a></td>
-            <td>{obj.idioma}</td>
-            <td>{obj.ects}</td>
-          {/if}
-        {/if}
-      </tr>
-    {/each}
-  {:else if active === 'Available'}
-    {#each ofertas as obj}
-      <tr>
-        {#if obj.periodo_academico === acuerdo.periodo_academico}
-          {#if acuerdo.titulacion.includes('GRE') && masterogrado(obj.id_oferta, ofertas) 
-              && obj.plazas_disponibles > 0 && !asignada(obj)}
-            <td>{obj.codigo_asignatura}</td>
-            <td><a href={obj.plan_de_estudios_ingles}>{obj.nombre_ingles}</a></td>
-            <td>{obj.idioma}</td>
-            <td>{obj.ects}</td>
-          {:else if obj.plazas_disponibles > 0 && !asignada(obj)}
-            <td>{obj.codigo_asignatura}</td>
-            <td><a href={obj.plan_de_estudios_ingles}>{obj.nombre_ingles}</a></td>
-            <td>{obj.idioma}</td>
-            <td>{obj.ects}</td>
-          {/if}
-        {/if}
-      </tr>
-    {/each}
-  {/if}
 </table>
