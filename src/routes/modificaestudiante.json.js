@@ -12,12 +12,12 @@ export function post(req, res, next) {
     req.on('end', () => {
         const modificaestudiante = JSON.parse(body)
         db.run(`UPDATE estudiantes 
-                SET email = ?, apellidos = ?, nombre = ?, universidad = ? WHERE estudiantes.email = ?`, [
+                SET email = ?, apellidos = ?, nombre = ?, universidad = ? WHERE estudiantes.id_estudiante = ?`, [
                     modificaestudiante.email,
                     modificaestudiante.apellidos,
                     modificaestudiante.nombre,
                     modificaestudiante.universidad,
-                    modificaestudiante.id_estudiante
+                    modificaestudiante.id
                 ], (err) => {
             if (err) {
                 jsonResponse(500, { 

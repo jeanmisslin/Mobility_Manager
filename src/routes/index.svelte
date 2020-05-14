@@ -131,7 +131,14 @@
 
   <!------ Formulario Nuevo Estudiante ------->
 
-  <NuevoEstudiante {universidades} {periodos} {titulaciones} {estudiantes} />
+  <NuevoEstudiante 
+    {universidades} 
+    {periodos} 
+    {titulaciones} 
+    {estudiantes} 
+    onEstudiante={(nuevoestudiante) => { estudiantes = [...estudiantes, nuevoestudiante]; }}
+    onAcuerdo={(nuevoacuerdo) => { acuerdos = [...acuerdos, nuevoacuerdo]; }}
+  />
 
 </div>
 
@@ -144,7 +151,7 @@
                render: obj => `<a href="/estudiante/${obj.id_estudiante}">${obj.apellidos}</a>`, 
                filter: true }, 
              { name: 'nombre', show: true, filter: true }, 
-             { name: 'universidad', show: true, filter: true }, 
+             { name: 'nombre_universidad', nombre: 'universidad', show: true, filter: true }, 
              { name: 'pais', nombre: 'país', show: true, filter: true }]} />
 {:else}
   <!--- Tabla con los estudiantes de la Base de Datos que corresponden al Periodo seleccionado --->
@@ -157,6 +164,6 @@
                render: obj => `<a href="/estudiante/${obj.id_estudiante}">${obj.apellidos}</a>`, 
                filter: true }, 
              { name: 'nombre', show: true, filter: true }, 
-             { name: 'universidad', show: true, filter: true }, 
+             { name: 'nombre_universidad', nombre: 'universidad', show: true, filter: true }, 
              { name: 'pais', nombre: 'país', show: true, filter: true }]} />
 {/if}
