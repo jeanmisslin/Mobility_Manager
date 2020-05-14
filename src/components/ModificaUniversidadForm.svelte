@@ -50,7 +50,7 @@
   $: modificauniversidad = {
     id: universidad.id_universidad,
     codigo_universidad: universidad.codigo_universidad,
-    universidad: universidad.universidad,
+    nombre_universidad: universidad.nombre_universidad,
     pais: universidad.pais
   };
 
@@ -86,7 +86,7 @@
           message = "modificacion guardada";
         }
         onModificado(universidad.codigo_universidad,
-                     universidad.universidad,
+                     universidad.nombre_universidad,
                      universidad.pais);
       });
   }
@@ -129,7 +129,7 @@
     <Textfield
       label="Nombre"
       style="width: 100%"
-      bind:value={universidad.universidad} />
+      bind:value={universidad.nombre_universidad} />
   
     <!-- Esto es un separador -->
     <div style="height: 1em" />

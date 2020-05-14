@@ -7,9 +7,9 @@ export function get(req, res, next) {
         res.end(JSON.stringify(obj))
     }
 
-    db.all(`SELECT estudiantes.*, universidades.universidad, universidades.pais 
+    db.all(`SELECT estudiantes.*, universidades.nombre_universidad, universidades.pais 
             FROM estudiantes, universidades
-            WHERE estudiantes.universidad = universidades.codigo_universidad`, (err, estudiantes) => {
+            WHERE estudiantes.universidad = universidades.id_universidad`, (err, estudiantes) => {
         if (err) {
             console.log(err)
             jsonResponse(500, { error: `No se pueden consultar estudiantes: ${err}` })

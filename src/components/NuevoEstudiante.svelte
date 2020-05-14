@@ -3,6 +3,8 @@
   export let periodos;
   export let titulaciones;
   export let estudiantes;
+  export let onEstudiante;
+  export let onAcuerdo;
 
   import IconButton from "@smui/icon-button";
   import Select, { Option } from "@smui/select";
@@ -20,34 +22,25 @@
   function listPeriodos() {}
   function listTitulaciones() {}
 
-  function ultimo(estudiantes){
-    let l = estudiantes.length;
-    if(l === 0 || l === undefined){
-      return 1;
-    }
-    return estudiantes[l-1].id_estudiante+1;
-  }
+  $: periodo = "";
+  $: nombre_titulacion = "";
 
-  let last = ultimo(estudiantes);
-
-  export let nuevoestudiante = {
-    open: false,
-    id_estudiante: last,
+  $: nuevoestudiante = {
+    id_estudiante: "",
     email: "",
     apellidos: "",
     nombre: "",
     universidad: "",
-    nombre_universidad: ""
+    nombre_universidad: "",
+    pais: ""
   };
 
-  export let nuevoacuerdo = {
+  $: nuevoacuerdo = {
+    id_acuerdo: "",
     estudiante: "",
     titulacion: "",
     periodo_academico: "",
-    estado: "Nominado/a",
-    año: "",
-    cuatrimestre: "",
-    nombre_titulacion: ""
+    estado: "Nominado/a"
   };
 
   let warning = "Ya existe un/a estudiante con el mismo email";
@@ -60,7 +53,7 @@
     let strIn = (a, b) => a.toLowerCase().indexOf(b.toLowerCase()) != -1;
     return (
       strIn(e.codigo_universidad, filtro) ||
-      strIn(e.universidad, filtro) ||
+      strIn(e.nombre_universidad, filtro) ||
       strIn(e.pais, filtro)
     );
   });
@@ -91,44 +84,53 @@
     return introducido;
   }
 
-  function añadirestudiante() {
-    fetch(`nuevoestudiante.json`, {
+  async function añadirestudiante() {
+    const body = await fetch(`nuevoestudiante.json`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(nuevoestudiante)
-    })
-      .then(body => body.json())
-      .then(json => {
-        if (json.error) {
-          message = json.error;
-        } else {
-          message = "nuevoestudiante saved";
-        }
-      });
+    });
+    const json = await body.json();
+    if (json.error) {
+      message = json.error;
+      return null;
+    } else {
+      message = "nuevoestudiante saved";
+      return json.id_estudiante;
+    }
   }
 
-  function añadiracuerdo() {
-    fetch(`nuevoacuerdo.json`, {
+  async function añadiracuerdo() {
+    const body = await fetch(`nuevoacuerdo.json`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         acuerdo: nuevoacuerdo,
         estudiante: nuevoestudiante
       })
-    })
-      .then(body => body.json())
-      .then(json => {
-        if (json.error) {
-          message = json.error;
-        } else {
-          message = "nuevoacuerdo saved";
-        }
-      });
+    });
+    const json = await body.json();
+    if (json.error) {
+      message = json.error;
+      return null;
+    } else {
+      message = "nuevoacuerdo saved";
+      return json.id_acuerdo;
+    }
   }
 
-  function añadirambos() {
-    añadirestudiante();
-    añadiracuerdo();
+  async function añadirambos() {
+    const id_estudiante = await añadirestudiante();
+    nuevoestudiante.id_estudiante = id_estudiante;
+    nuevoacuerdo.estudiante = id_estudiante;
+    const id_acuerdo = await añadiracuerdo();
+    nuevoacuerdo.id_acuerdo = id_acuerdo;
+    if (onEstudiante) {
+      onEstudiante({...nuevoestudiante});
+    }
+    if (onAcuerdo) {
+      onAcuerdo({...nuevoacuerdo});
+    }
   }
 </script>
 
@@ -203,11 +205,12 @@
         {#each universidadesFiltradas as u}
           <Item
             on:click={() => {
-              nuevoestudiante.universidad = u.codigo_universidad;
-              nuevoestudiante.nombre_universidad = u.universidad;
+              nuevoestudiante.universidad = u.id_universidad;
+              nuevoestudiante.nombre_universidad = u.nombre_universidad;
+              nuevoestudiante.pais = u.pais;
               listUniversidades.close();
             }}>
-            <Text>{u.universidad}</Text>
+            <Text>{u.nombre_universidad}</Text>
           </Item>
         {/each}
       </Content>
@@ -243,7 +246,7 @@
           <Item
             on:click={() => {
               nuevoacuerdo.titulacion = t.codigo_titulacion;
-              nuevoacuerdo.nombre_titulacion = t.titulacion_castellano;
+              nombre_titulacion = t.titulacion_castellano;
               listTitulaciones.close();
             }}>
             <Text>{t.titulacion_castellano}</Text>
@@ -256,8 +259,8 @@
       Titulación:
       <div class="seleccion">
         <span class="valor-seleccionado">
-          {#if nuevoacuerdo.nombre_titulacion}
-            {nuevoacuerdo.nombre_titulacion}
+          {#if nombre_titulacion}
+            {nombre_titulacion}
           {:else}
             <span class="empty">Selecciona una titulación</span>
           {/if}
@@ -284,8 +287,7 @@
           <Item
             on:click={() => {
               nuevoacuerdo.periodo_academico = p.id_periodo;
-              nuevoacuerdo.año = mostrarperiodo(p.año, p.cuatrimestre);
-              nuevoacuerdo.cuatrimestre = p.cuatrimestre;
+              periodo =  mostrarperiodo(p.año, p.cuatrimestre);
               listPeriodos.close();
             }}>
             <Text>{p.año}-{p.año + 1} Q{p.cuatrimestre}</Text>
@@ -296,8 +298,7 @@
           <Item
             on:click={() => {
               nuevoacuerdo.periodo_academico = p.id_periodo;
-              nuevoacuerdo.año = mostrarperiodo(p.año, p.cuatrimestre);
-              nuevoacuerdo.cuatrimestre = p.cuatrimestre;
+              periodo =  mostrarperiodo(p.año, p.cuatrimestre);
               listPeriodos.close();
             }}>
             <Text>{p.año}-{p.año + 1} Q{p.cuatrimestre}</Text>
@@ -311,8 +312,8 @@
       Periodo Académico:
       <div class="seleccion">
         <span class="valor-seleccionado">
-          {#if nuevoacuerdo.año}
-            {nuevoacuerdo.año}
+          {#if periodo}
+            {periodo}
           {:else}
             <span class="empty">Selecciona un periodo</span>
           {/if}        
@@ -338,7 +339,7 @@
             <Label>Cancelar</Label>
           </Button>
           <Button color="secondary" variant="raised" on:click={añadirambos}>
-              <a href="/estudiante/{last}">Salvar</a>
+              Salvar
           </Button>
         {/if}
       </Actions>

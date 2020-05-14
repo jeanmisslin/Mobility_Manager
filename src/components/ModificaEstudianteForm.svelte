@@ -29,7 +29,8 @@
     apellidos,
     nombre,
     universidad,
-    codigo_universidad,
+    nombre_universidad,
+    id_universidad,
     pais,
     email,
     titulacion,
@@ -38,14 +39,13 @@
     asignaturas
   } = estudiante;
 
-  export let modificaestudiante = {
-    open: false,
+  $: modificaestudiante = {
     id: id_estudiante,
-    estudiante: email,
+    email_actual: email,
     email: email,
     apellidos: apellidos,
     nombre: nombre,
-    universidad: codigo_universidad
+    universidad: id_universidad
   };
 
   let warning = "Ya existe un/a estudiante con el mismo email";
@@ -58,7 +58,7 @@
     let strIn = (a, b) => a.toLowerCase().indexOf(b.toLowerCase()) != -1;
     return (
       strIn(e.codigo_universidad, filtro) ||
-      strIn(e.universidad, filtro) ||
+      strIn(e.nombre_universidad, filtro) ||
       strIn(e.pais, filtro)
     );
   });
@@ -84,7 +84,8 @@
         onModificado(modificaestudiante.apellidos, 
                      modificaestudiante.nombre, 
                      modificaestudiante.email, 
-                     estudiante.universidad,
+                     modificaestudiante.universidad,
+                     estudiante.nombre_universidad,
                      estudiante.pais);
       });
   }
@@ -163,7 +164,7 @@
       input$autocomplete="email" />
     <HelperText validationMsg>No es una dirección de email válida.</HelperText>
 
-    {#if modificaestudiante.email !== modificaestudiante.estudiante 
+    {#if modificaestudiante.email !== modificaestudiante.email_actual 
          && existe(modificaestudiante.email)}
       <div id="warning">{warning}</div> 
     {/if}
@@ -183,12 +184,12 @@
         {#each universidadesFiltradas as u}
           <Item
             on:click={() => {
-              modificaestudiante.universidad = u.codigo_universidad;
-              estudiante.universidad = u.universidad;
+              modificaestudiante.universidad = u.id_universidad;
+              estudiante.nombre_universidad = u.nombre_universidad;
               estudiante.pais = u.pais;
               listUniversidades.close();
             }}>
-            <Text>{u.universidad}</Text>
+            <Text>{u.nombre_universidad}</Text>
           </Item>
         {/each}
       </Content>
@@ -198,8 +199,8 @@
       Universidad:
       <div class="seleccion">
         <span class="valor-seleccionado">
-          {#if estudiante.universidad}
-            {estudiante.universidad}
+          {#if estudiante.nombre_universidad}
+            {estudiante.nombre_universidad}
           {:else}
             <span class="empty">Selecciona una universidad</span>
           {/if}
@@ -213,7 +214,7 @@
 
     <div class="actions">
       <Actions>
-        {#if modificaestudiante.email !== modificaestudiante.estudiante 
+        {#if modificaestudiante.email !== modificaestudiante.email_actual 
              && existe(modificaestudiante.email)}
           <Button color="secondary" variant="raised">
             <Label>Cancelar</Label>

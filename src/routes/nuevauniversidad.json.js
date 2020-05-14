@@ -10,10 +10,10 @@ export function post(req, res, next) {
     req.on('data', data => body += data)
     req.on('end', () => {
         const nuevauniversidad = JSON.parse(body)
-        db.run(`INSERT INTO universidades (codigo_universidad, universidad, pais)
+        db.run(`INSERT INTO universidades (codigo_universidad, nombre_universidad, pais)
                 VALUES(?, ?, ?)`, [
                     nuevauniversidad.codigo_universidad,
-                    nuevauniversidad.universidad,
+                    nuevauniversidad.nombre_universidad,
                     nuevauniversidad.pais
                 ], function (err) {
                     const id_universidad = this.lastID;

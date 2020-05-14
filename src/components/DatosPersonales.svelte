@@ -5,11 +5,12 @@
 
   import ModificaEstudianteForm from "./ModificaEstudianteForm.svelte";
 
-  function modificarEstudianteEnCaliente(apellidos, nombre, email, universidad, pais) {
+  function modificarEstudianteEnCaliente(apellidos, nombre, email, id_universidad, nombre_universidad, pais) {
     estudiante.apellidos = apellidos;
     estudiante.nombre = nombre;
     estudiante.email = email;
-    estudiante.universidad = universidad;
+    estudiante.universidad = id_universidad;
+    estudiante.nombre_universidad = nombre_universidad; 
     estudiante.pais = pais;
     }
 
@@ -62,7 +63,7 @@
   </div>
   <div id="campos">
     <label>Universidad</label>
-    <data>{estudiante.universidad}</data>
+    <data>{estudiante.nombre_universidad}</data>
   </div>
   <div id="campos">
     <label>País</label>

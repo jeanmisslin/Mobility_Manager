@@ -51,7 +51,7 @@
   $: nuevauniversidad = {
     id_universidad: "",
     codigo_universidad: "",
-    universidad: "",
+    nombre_universidad: "",
     pais: ""
   };
 
@@ -126,7 +126,7 @@
     <Textfield
       label="Nombre"
       style="width: 100%"
-      bind:value={nuevauniversidad.universidad} />
+      bind:value={nuevauniversidad.nombre_universidad} />
   
     <!-- Esto es un separador -->
     <div style="height: 1em" />
@@ -171,7 +171,7 @@
 
     <div class="actions">
       <Actions>
-        {#if nuevauniversidad.codigo_universidad === "" || nuevauniversidad.universidad === "" 
+        {#if nuevauniversidad.codigo_universidad === "" || nuevauniversidad.nombre_universidad === "" 
              || nuevauniversidad.pais === "" || existe(nuevauniversidad.codigo_universidad)}
           <Button color="secondary" variant="raised">
             <Label>Cancelar</Label>
