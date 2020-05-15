@@ -3,14 +3,14 @@ DROP TABLE IF EXISTS ofertas;
 CREATE TABLE ofertas
 (
     id_oferta INTEGER PRIMARY KEY,
-    asignatura TEXT,
+    asignatura INTEGER,
     periodo_academico int,
     titulacion TEXT,
     plazas_ofertadas int,
     plazas_disponibles int,
     plazas_concedidas int,
     plazas_solicitadas int,
-    FOREIGN KEY (asignatura) REFERENCES asignaturas (codigo_asignatura),
+    FOREIGN KEY (asignatura) REFERENCES asignaturas (id_asignatura),
     FOREIGN KEY (periodo_academico) REFERENCES periodos_academicos (id_periodo),
     CONSTRAINT UC_OFERTA UNIQUE (asignatura,periodo_academico)
 );
@@ -19,7 +19,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205001',
+        1,
         1,
         '205MASE',
         8,
@@ -32,7 +32,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205002',
+        2,
         2,
         '205MASE',
         3,
@@ -45,7 +45,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205015',
+        3,
         1,
         '220MUAERON',
         0,
@@ -58,7 +58,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205016',
+        4,
         1,
         '220MUAERON',
         0,
@@ -71,7 +71,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205017',
+        5,
         1,
         '220MUAERON,205MASE',
         0,
@@ -84,7 +84,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205050',
+        6,
         2,
         '220MEI,205MASE,220MUAERON',
         12,
@@ -97,7 +97,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205051',
+        7,
         2,
         '220MEI,205MASE,220MUAERON',
         12,
@@ -110,7 +110,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205052',
+        8,
         1,
         '220MEI,220MUAERON,205MASE',
         5,
@@ -123,7 +123,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205053',
+        9,
         2,
         '220MEI,205MASE,220MUAERON',
         0,
@@ -136,7 +136,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205054',
+        10,
         2,
         '220MEI,205MASE,220MUAERON',
         0,
@@ -149,7 +149,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205055',
+        11,
         1,
         '220MEI,220MUAERON,205MASE',
         10,
@@ -162,7 +162,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205055',
+        11,
         2,
         '220MEI,220MUAERON,205MASE',
         10,
@@ -176,7 +176,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205056',
+        12,
         2,
         '220MEI,205MASE,220MUAERON',
         0,
@@ -189,7 +189,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205057',
+        13,
         2,
         '220MEI,220MUAERON,205MASE',
         0,
@@ -202,7 +202,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205058',
+        14,
         2,
         '220MEI,205MASE,220MUAERON',
         10,
@@ -215,7 +215,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205059',
+        15,
         2,
         '220MEI,205MASE,220MUAERON',
         10,
@@ -228,7 +228,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205060',
+        16,
         1,
         '220MEI,220MUAERON',
         4,
@@ -241,7 +241,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205061',
+        17,
         1,
         '220MEI,220MUAERON,205MASE',
         5,
@@ -254,7 +254,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205062',
+        18,
         1,
         '220MEI,220MUAERON,205MASE',
         7,
@@ -267,7 +267,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205063',
+        19,
         1,
         '220MEI,220MUAERON,205MASE',
         6,
@@ -280,7 +280,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205064',
+        20,
         2,
         '220MEI,205MASE,220MUAERON',
         3,
@@ -293,7 +293,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205065',
+        21,
         2,
         '220MUAERON,205MASE',
         4,
@@ -306,7 +306,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205066',
+        22,
         2,
         '220MEI,205MASE,220MUAERON',
         0,
@@ -319,7 +319,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205068',
+        23,
         2,
         '220MEI,205MASE,220MUAERON',
         0,
@@ -332,7 +332,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205069',
+        24,
         2,
         '220MEI,205MASE,220MUAERON',
         0,
@@ -345,7 +345,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205070',
+        25,
         2,
         '220MEI,205MASE,220MUAERON',
         0,
@@ -358,7 +358,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205071',
+        26,
         2,
         '220MUAERON,205MASE',
         0,
@@ -371,7 +371,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205077',
+        27,
         2,
         '220MEI,205MASE,220MUAERON',
         1,
@@ -384,7 +384,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205079',
+        28,
         1,
         '220MEI,220MUAERON,205MASE',
         3,
@@ -397,7 +397,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205079',
+        28,
         2,
         '220MEI,205MASE,220MUAERON',
         1,
@@ -410,7 +410,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205086',
+        29,
         1,
         '220MUESAI',
         3,
@@ -423,7 +423,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205104',
+        30,
         1,
         '205MEM',
         6,
@@ -436,7 +436,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205105',
+        31,
         1,
         '205MEM',
         6,
@@ -449,7 +449,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205106',
+        32,
         2,
         '205MEM',
         10,
@@ -462,7 +462,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205107',
+        33,
         2,
         '205MEM',
         10,
@@ -475,7 +475,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205108',
+        34,
         1,
         '205MEM',
         6,
@@ -488,7 +488,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205109',
+        35,
         1,
         '205MEM',
         9,
@@ -501,7 +501,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205110',
+        36,
         1,
         '205MEM',
         0,
@@ -514,7 +514,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205111',
+        37,
         2,
         '205MEM',
         10,
@@ -527,7 +527,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205112',
+        38,
         2,
         '205MEM',
         13,
@@ -540,7 +540,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205113',
+        39,
         1,
         '205MEM',
         6,
@@ -553,7 +553,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205114',
+        40,
         1,
         '205MEM',
         6,
@@ -566,7 +566,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205115',
+        41,
         2,
         '205MEM',
         6,
@@ -579,7 +579,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205116',
+        42,
         2,
         '205MEM',
         10,
@@ -592,7 +592,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205200',
+        43,
         2,
         '220GRETIND,220GRETAER,220GREVAER',
         8,
@@ -605,7 +605,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205201',
+        44,
         1,
         '220GRETIND,220GRETAER,220GREVAER,320GRESAUD,320GREMECA,320GREQUIM,320GREELEC,320GREDIDP,320GREEIA,320GRETDT',
         7,
@@ -618,7 +618,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205202',
+        45,
         1,
         '220GRETIND,220GRETAER,220GREVAER,320GRESAUD,320GREMECA,320GREQUIM,320GREELEC,320GREDIDP,320GREEIA,320GRETDT',
         7,
@@ -631,7 +631,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205203',
+        46,
         2,
         '220GRETIND,220GRETAER,220GREVAER',
         8,
@@ -644,7 +644,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205204',
+        47,
         2,
         '220GRETIND,220GRETAER,220GREVAER',
         0,
@@ -657,7 +657,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205205',
+        48,
         2,
         '220GRETAER,220GREVAER',
         2,
@@ -670,7 +670,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205207',
+        49,
         2,
         '220GRETAER,220GREVAER',
         2,
@@ -683,7 +683,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205208',
+        50,
         2,
         '220GRETAER,220GREVAER',
         3,
@@ -696,7 +696,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205214',
+        52,
         1,
         '220GRETIND,220GRETAER,220GREVAER,320GREMECA,320GREQUIM,320GREELEC,320GREEIA,320GRETDT,320GREDIDP',
         4,
@@ -709,7 +709,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205215',
+        53,
         1,
         '220GRETIND,220GRETAER,220GREVAER,320GRESAUD,320GREMECA,320GREQUIM,320GREELEC,320GREEIA,320GRETDT,320GREDIDP',
         4,
@@ -722,7 +722,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205219',
+        54,
         1,
         '220GRETIND,220GRETAER,220GREVAER,320GRESAUD,320GREMECA,320GREQUIM,320GREELEC,320GREEIA,320GRETDT,320GREDIDP',
         0,
@@ -735,7 +735,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205219',
+        54,
         2,
         '220GRETIND,220GRETAER,220GREVAER,320GRESAUD,320GREMECA,320GREQUIM,320GREELEC,320GREEIA,320GRETDT,320GREDIDP',
         2,
@@ -748,7 +748,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205220',
+        55,
         1,
         '220GRETIND,220GRETAER,220GREVAER,320GRESAUD,320GREMECA,320GREQUIM,320GREELEC,320GREEIA,320GRETDT,320GREDIDP',
         0,
@@ -761,7 +761,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205220',
+        55,
         2,
         '220GRETIND,220GRETAER,220GREVAER,320GRESAUD,320GREMECA,320GREQUIM,320GREELEC,320GREEIA,320GRETDT,320GREDIDP',
         1,
@@ -774,7 +774,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205250',
+        57,
         1,
         '320GREEIA',
         0,
@@ -787,7 +787,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205251',
+        58,
         1,
         '320GREDIDP',
         2,
@@ -800,7 +800,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205252',
+        59,
         1,
         '320GREQUIM,320GRETDT',
         2,
@@ -813,7 +813,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205253',
+        60,
         1,
         '320GRESAUD',
         1,
@@ -826,7 +826,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205300',
+        61,
         1,
         '220MEORSEM',
         4,
@@ -839,7 +839,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '205354',
+        62,
         1,
         '205METEXPA',
         4,
@@ -852,7 +852,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220001',
+        64,
         1,
         '220GRETAER,220GREVAER',
         2,
@@ -865,7 +865,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220001',
+        64,
         2,
         '220GRETAER,220GREVAER',
         2,
@@ -878,371 +878,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220002',
-        1,
-        '220GRETAER,220GREVAER',
-        3,
-        3,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220002',
-        2,
-        '220GRETAER,220GREVAER',
-        3,
-        3,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220003',
-        1,
-        '220GRETAER,220GREVAER',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220003',
-        2,
-        '220GRETAER,220GREVAER',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220004',
-        1,
-        '220GRETAER,220GREVAER',
-        1,
-        1,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220004',
-        2,
-        '220GRETAER,220GREVAER',
-        1,
-        1,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220005',
-        1,
-        '220GRETAER,220GREVAER',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220005',
-        2,
-        '220GRETAER,220GREVAER',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220006',
-        1,
-        '220GRETAER,220GREVAER',
-        1,
-        1,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220006',
-        2,
-        '220GRETAER,220GREVAER',
-        1,
-        1,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220007',
-        1,
-        '220GRETAER,220GREVAER',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220007',
-        2,
-        '220GRETAER,220GREVAER',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220008',
-        1,
-        '220GRETAER,220GREVAER',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220008',
-        2,
-        '220GRETAER,220GREVAER',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220009',
-        1,
-        '220GRETAER,220GREVAER',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220009',
-        2,
-        '220GRETAER,220GREVAER',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220010',
-        1,
-        '220GRETAER,220GREVAER',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220010',
-        2,
-        '220GRETAER,220GREVAER',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220011',
-        1,
-        '220GRETAER,220GREVAER',
-        1,
-        1,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220011',
-        2,
-        '220GRETAER,220GREVAER',
-        1,
-        1,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220012',
-        1,
-        '220GRETAER,220GREVAER',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220012',
-        2,
-        '220GRETAER,220GREVAER',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220013',
-        1,
-        '220GRETAER,220GREVAER',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220013',
-        2,
-        '220GRETAER,220GREVAER',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220014',
-        1,
-        '220GRETAER,220GREVAER',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220014',
-        2,
-        '220GRETAER,220GREVAER',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220015',
-        1,
-        '220GRETAER,220GREVAER',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220015',
-        2,
-        '220GRETAER,220GREVAER',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220016',
+        65,
         1,
         '220GRETAER,220GREVAER',
         3,
@@ -1255,7 +891,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220016',
+        65,
         2,
         '220GRETAER,220GREVAER',
         3,
@@ -1268,7 +904,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220017',
+        66,
         1,
         '220GRETAER,220GREVAER',
         2,
@@ -1281,7 +917,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220017',
+        66,
         2,
         '220GRETAER,220GREVAER',
         2,
@@ -1294,33 +930,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220018',
-        1,
-        '220GRETAER,220GREVAER',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220018',
-        2,
-        '220GRETAER,220GREVAER',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220019',
+        67,
         1,
         '220GRETAER,220GREVAER',
         1,
@@ -1333,7 +943,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220019',
+        67,
         2,
         '220GRETAER,220GREVAER',
         1,
@@ -1346,7 +956,293 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220020',
+        68,
+        1,
+        '220GRETAER,220GREVAER',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        68,
+        2,
+        '220GRETAER,220GREVAER',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        69,
+        1,
+        '220GRETAER,220GREVAER',
+        1,
+        1,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        69,
+        2,
+        '220GRETAER,220GREVAER',
+        1,
+        1,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        70,
+        1,
+        '220GRETAER,220GREVAER',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        70,
+        2,
+        '220GRETAER,220GREVAER',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        71,
+        1,
+        '220GRETAER,220GREVAER',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        71,
+        2,
+        '220GRETAER,220GREVAER',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        72,
+        1,
+        '220GRETAER,220GREVAER',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        72,
+        2,
+        '220GRETAER,220GREVAER',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        73,
+        1,
+        '220GRETAER,220GREVAER',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        73,
+        2,
+        '220GRETAER,220GREVAER',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        74,
+        1,
+        '220GRETAER,220GREVAER',
+        1,
+        1,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        74,
+        2,
+        '220GRETAER,220GREVAER',
+        1,
+        1,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        75,
+        1,
+        '220GRETAER,220GREVAER',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        75,
+        2,
+        '220GRETAER,220GREVAER',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        76,
+        1,
+        '220GRETAER,220GREVAER',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        76,
+        2,
+        '220GRETAER,220GREVAER',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        77,
+        1,
+        '220GRETAER,220GREVAER',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        77,
+        2,
+        '220GRETAER,220GREVAER',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        78,
+        1,
+        '220GRETAER,220GREVAER',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        78,
+        2,
+        '220GRETAER,220GREVAER',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        79,
         1,
         '220GRETAER,220GREVAER',
         3,
@@ -1359,7 +1255,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220020',
+        79,
         2,
         '220GRETAER,220GREVAER',
         3,
@@ -1372,111 +1268,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220021',
-        1,
-        '220GRETAER,220GREVAER',
-        3,
-        3,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220021',
-        2,
-        '220GRETAER,220GREVAER',
-        3,
-        3,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220022',
-        1,
-        '220GRETAER,220GREVAER',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220022',
-        2,
-        '220GRETAER,220GREVAER',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220023',
-        1,
-        '220GRETAER,220GREVAER',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220023',
-        2,
-        '220GRETAER,220GREVAER',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220024',
-        1,
-        '220GRETAER,220GREVAER',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220024',
-        2,
-        '220GRETAER,220GREVAER',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220025',
+        80,
         1,
         '220GRETAER,220GREVAER',
         2,
@@ -1489,7 +1281,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220025',
+        80,
         2,
         '220GRETAER,220GREVAER',
         2,
@@ -1502,7 +1294,215 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220026',
+        81,
+        1,
+        '220GRETAER,220GREVAER',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        81,
+        2,
+        '220GRETAER,220GREVAER',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        82,
+        1,
+        '220GRETAER,220GREVAER',
+        1,
+        1,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        82,
+        2,
+        '220GRETAER,220GREVAER',
+        1,
+        1,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        83,
+        1,
+        '220GRETAER,220GREVAER',
+        3,
+        3,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        83,
+        2,
+        '220GRETAER,220GREVAER',
+        3,
+        3,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        84,
+        1,
+        '220GRETAER,220GREVAER',
+        3,
+        3,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        84,
+        2,
+        '220GRETAER,220GREVAER',
+        3,
+        3,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        85,
+        1,
+        '220GRETAER,220GREVAER',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        85,
+        2,
+        '220GRETAER,220GREVAER',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        86,
+        1,
+        '220GRETAER,220GREVAER',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        86,
+        2,
+        '220GRETAER,220GREVAER',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        87,
+        1,
+        '220GRETAER,220GREVAER',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        87,
+        2,
+        '220GRETAER,220GREVAER',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        88,
+        1,
+        '220GRETAER,220GREVAER',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        88,
+        2,
+        '220GRETAER,220GREVAER',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        89,
         1,
         '220GRETAER,220GREVAER',
         5,
@@ -1515,7 +1515,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220026',
+        89,
         2,
         '220GRETAER,220GREVAER',
         5,
@@ -1528,7 +1528,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220027',
+        90,
         1,
         '220GRETAER,220GREVAER',
         2,
@@ -1541,7 +1541,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220027',
+        90,
         2,
         '220GRETAER,220GREVAER',
         2,
@@ -1554,7 +1554,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220028',
+        91,
         1,
         '220GRETAER,220GREVAER',
         2,
@@ -1567,7 +1567,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220028',
+        91,
         2,
         '220GRETAER,220GREVAER',
         2,
@@ -1580,7 +1580,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220029',
+        92,
         1,
         '220GREVAER',
         3,
@@ -1593,7 +1593,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220030',
+        93,
         1,
         '220GREVAER',
         2,
@@ -1606,7 +1606,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220030',
+        93,
         2,
         '220GREVAER',
         2,
@@ -1619,7 +1619,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220031',
+        94,
         1,
         '220GREVAER',
         4,
@@ -1632,7 +1632,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220031',
+        94,
         2,
         '220GREVAER',
         4,
@@ -1645,7 +1645,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220032',
+        95,
         1,
         '220GREVAER',
         4,
@@ -1658,7 +1658,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220032',
+        95,
         2,
         '220GREVAER',
         4,
@@ -1671,7 +1671,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220033',
+        96,
         1,
         '220GREVAER',
         3,
@@ -1684,7 +1684,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220033',
+        96,
         2,
         '220GREVAER',
         2,
@@ -1697,7 +1697,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220034',
+        97,
         1,
         '220GREVAER',
         2,
@@ -1710,7 +1710,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220034',
+        97,
         2,
         '220GREVAER',
         2,
@@ -1723,7 +1723,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220036',
+        98,
         2,
         '220GRETIND,220GRETAER,220GREVAER,320GREMECA,320GREDIDP',
         16,
@@ -1736,7 +1736,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220037',
+        99,
         2,
         '220GRETIND,220GRETAER,220GREVAER',
         10,
@@ -1749,7 +1749,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220038',
+        100,
         1,
         '220GRETIND,220GRETAER,220GREVAER',
         12,
@@ -1762,7 +1762,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220039',
+        101,
         1,
         '320GRESAUD,320GREMECA,320GREQUIM,320GREELEC,320GREDIDP,320GREEIA,320GRETDT,220GRETAER,220GREVAER',
         10,
@@ -1775,7 +1775,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220040',
+        102,
         1,
         '220GRETIND,220GRETAER,220GREVAER,320GRESAUD,320GREMECA,320GREQUIM,320GREELEC,320GREDIDP,320GREEIA,320GRETDT',
         9,
@@ -1788,7 +1788,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220043',
+        103,
         1,
         '220GRETIND,220GRETAER,220GREVAER,320GREMECA',
         9,
@@ -1801,7 +1801,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220043',
+        103,
         2,
         '220GRETIND,220GRETAER,220GREVAER,320GREMECA',
         0,
@@ -1814,7 +1814,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220044',
+        104,
         2,
         '220GRETIND,220GRETAER,220GREVAER',
         10,
@@ -1827,7 +1827,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220045',
+        105,
         2,
         '220GRETIND,220GRETAER,220GREVAER',
         8,
@@ -1840,7 +1840,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220047',
+        106,
         2,
         '220GRETIND,220GRETAER,220GREVAER',
         10,
@@ -1853,7 +1853,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220051',
+        107,
         1,
         '220GRETAER',
         2,
@@ -1866,7 +1866,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220052',
+        108,
         1,
         '220GRETAER',
         2,
@@ -1879,7 +1879,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220052',
+        108,
         2,
         '220GRETAER',
         2,
@@ -1892,7 +1892,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220053',
+        109,
         2,
         '220GRETAER',
         4,
@@ -1905,7 +1905,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220054',
+        110,
         1,
         '220GRETAER',
         2,
@@ -1918,7 +1918,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220054',
+        110,
         2,
         '220GRETAER',
         2,
@@ -1931,7 +1931,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220055',
+        111,
         1,
         '220GRETAER',
         4,
@@ -1944,7 +1944,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220055',
+        111,
         2,
         '220GRETAER',
         4,
@@ -1957,7 +1957,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220056',
+        112,
         1,
         '220GRETAER',
         2,
@@ -1970,7 +1970,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220056',
+        112,
         2,
         '220GRETAER',
         2,
@@ -1983,7 +1983,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220057',
+        113,
         1,
         '220GRETAER',
         5,
@@ -1996,7 +1996,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220057',
+        113,
         2,
         '220GRETAER',
         5,
@@ -2009,7 +2009,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220059',
+        114,
         2,
         '220GRETIND,220GRETAER,220GREVAER,320GREQUIM',
         10,
@@ -2022,7 +2022,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220060',
+        115,
         2,
         '220GRETIND,220GRETAER,220GREVAER',
         0,
@@ -2035,7 +2035,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220061',
+        116,
         2,
         '220GRETIND,220GRETAER,220GREVAER',
         8,
@@ -2048,7 +2048,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220062',
+        117,
         2,
         '220GRETIND,220GRETAER,220GREVAER',
         12,
@@ -2061,7 +2061,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220063',
+        118,
         2,
         '220GRETIND,220GRETAER,220GREVAER,320GRESAUD,320GREMECA,320GREQUIM,320GREELEC,320GREDIDP,320GREEIA,320GRETDT',
         12,
@@ -2074,7 +2074,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220065',
+        119,
         2,
         '220GRETIND,220GRETAER,220GREVAER',
         5,
@@ -2087,7 +2087,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220066',
+        120,
         1,
         '220GRETIND,220GRETAER,220GREVAER,320GRESAUD,320GREMECA,320GREQUIM,320GREELEC,320GREDIDP,320GREEIA,320GRETDT',
         10,
@@ -2100,7 +2100,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220067',
+        121,
         2,
         '220GRETIND,220GRETAER,220GREVAER',
         12,
@@ -2113,7 +2113,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220069',
+        122,
         1,
         '220GRETIND,220GRETAER,220GREVAER',
         0,
@@ -2126,7 +2126,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220070',
+        123,
         1,
         '220GRETIND,220GRETAER,220GREVAER',
         11,
@@ -2139,7 +2139,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220071',
+        124,
         2,
         '220GRETIND,220GRETAER,220GREVAER,320GREMECA,320GREQUIM,320GREELEC,320GREDIDP,320GREEIA,320GRETDT',
         10,
@@ -2152,7 +2152,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220072',
+        125,
         1,
         '220GRETIND,220GRETAER,220GREVAER,320GREELEC,320GREEIA',
         10,
@@ -2165,7 +2165,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220073',
+        126,
         1,
         '220GRETIND,220GRETAER,220GREVAER',
         5,
@@ -2178,7 +2178,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220074',
+        127,
         1,
         '220GRETIND,220GRETAER,220GREVAER',
         0,
@@ -2191,7 +2191,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220080',
+        128,
         1,
         '220GRETIND',
         2,
@@ -2204,7 +2204,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220080',
+        128,
         2,
         '220GRETIND',
         2,
@@ -2217,7 +2217,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220081',
+        129,
         1,
         '220GRETIND',
         2,
@@ -2230,7 +2230,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220081',
+        129,
         2,
         '220GRETIND',
         2,
@@ -2243,7 +2243,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220082',
+        130,
         1,
         '220GRETIND',
         2,
@@ -2256,7 +2256,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220082',
+        130,
         2,
         '220GRETIND',
         2,
@@ -2269,7 +2269,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220083',
+        131,
         1,
         '220GRETIND',
         2,
@@ -2282,7 +2282,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220083',
+        131,
         2,
         '220GRETIND',
         2,
@@ -2295,7 +2295,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220084',
+        132,
         1,
         '220GRETIND',
         2,
@@ -2308,7 +2308,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220084',
+        132,
         2,
         '220GRETIND',
         2,
@@ -2321,7 +2321,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220085',
+        133,
         1,
         '220GRETIND',
         2,
@@ -2334,7 +2334,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220085',
+        133,
         2,
         '220GRETIND',
         2,
@@ -2347,7 +2347,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220086',
+        134,
         1,
         '220GRETIND',
         2,
@@ -2360,7 +2360,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220086',
+        134,
         2,
         '220GRETIND',
         2,
@@ -2373,7 +2373,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220087',
+        135,
         1,
         '220GRETIND',
         2,
@@ -2386,7 +2386,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220087',
+        135,
         2,
         '220GRETIND',
         2,
@@ -2399,7 +2399,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220088',
+        136,
         1,
         '220GRETIND',
         2,
@@ -2412,7 +2412,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220088',
+        136,
         2,
         '220GRETIND',
         2,
@@ -2425,7 +2425,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220089',
+        137,
         1,
         '220GRETIND',
         2,
@@ -2438,7 +2438,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220089',
+        137,
         2,
         '220GRETIND',
         2,
@@ -2451,7 +2451,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220090',
+        138,
         1,
         '220GRETIND',
         2,
@@ -2464,7 +2464,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220090',
+        138,
         2,
         '220GRETIND',
         2,
@@ -2477,7 +2477,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220091',
+        139,
         1,
         '220GRETIND',
         2,
@@ -2490,7 +2490,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220091',
+        139,
         2,
         '220GRETIND',
         2,
@@ -2503,7 +2503,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220092',
+        140,
         1,
         '220GRETIND',
         4,
@@ -2516,7 +2516,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220092',
+        140,
         2,
         '220GRETIND',
         4,
@@ -2529,7 +2529,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220093',
+        141,
         1,
         '220GRETIND',
         2,
@@ -2542,7 +2542,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220094',
+        141,
+        2,
+        '220GRETIND',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        142,
         1,
         '220GRETIND',
         2,
@@ -2555,7 +2568,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220095',
+        142,
+        2,
+        '220GRETIND',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        143,
         1,
         '220GRETIND',
         2,
@@ -2568,7 +2594,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220096',
+        143,
+        2,
+        '220GRETIND',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        144,
         1,
         '220GRETIND',
         2,
@@ -2581,7 +2620,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220097',
+        144,
+        2,
+        '220GRETIND',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        145,
         1,
         '220GRETIND',
         2,
@@ -2594,7 +2646,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220098',
+        145,
+        2,
+        '220GRETIND',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        146,
         1,
         '220GRETIND',
         2,
@@ -2607,7 +2672,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220099',
+        146,
+        2,
+        '220GRETIND',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        147,
         1,
         '220GRETIND',
         2,
@@ -2620,7 +2698,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220100',
+        147,
+        2,
+        '220GRETIND',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        148,
         1,
         '220GRETIND',
         2,
@@ -2633,7 +2724,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220101',
+        148,
+        2,
+        '220GRETIND',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        149,
         1,
         '220GRETIND',
         3,
@@ -2646,7 +2750,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220102',
+        149,
+        2,
+        '220GRETIND',
+        3,
+        3,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        150,
         1,
         '220GRETIND',
         2,
@@ -2659,7 +2776,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220103',
+        151,
         1,
         '220GRETIND',
         1,
@@ -2672,7 +2789,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220104',
+        151,
+        2,
+        '220GRETIND',
+        1,
+        1,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        152,
         1,
         '220GRETIND',
         2,
@@ -2685,7 +2815,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220105',
+        152,
+        2,
+        '220GRETIND',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        153,
         1,
         '220GRETIND',
         7,
@@ -2698,7 +2841,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220106',
+        154,
         1,
         '220GRETIND',
         4,
@@ -2711,7 +2854,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220107',
+        154,
+        2,
+        '220GRETIND',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        155,
         1,
         '220GRETIND',
         3,
@@ -2724,7 +2880,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220108',
+        155,
+        2,
+        '220GRETIND',
+        3,
+        3,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        156,
         1,
         '220GRETIND',
         2,
@@ -2737,7 +2906,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220109',
+        156,
+        2,
+        '220GRETIND',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        157,
         1,
         '220GRETIND',
         5,
@@ -2750,7 +2932,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220110',
+        157,
+        2,
+        '220GRETIND',
+        5,
+        5,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        158,
         1,
         '220GRETIND',
         2,
@@ -2763,7 +2958,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220111',
+        158,
+        2,
+        '220GRETIND',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        159,
         1,
         '220GRETIND',
         2,
@@ -2776,7 +2984,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220112',
+        159,
+        2,
+        '220GRETIND',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        169,
         1,
         '220GRETIND',
         2,
@@ -2789,7 +3010,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220113',
+        161,
         1,
         '220GRETIND',
         4,
@@ -2802,7 +3023,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220114',
+        161,
+        2,
+        '220GRETIND',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        162,
         1,
         '220GRETIND',
         6,
@@ -2815,7 +3049,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220115',
+        162,
+        2,
+        '220GRETIND',
+        6,
+        6,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        163,
         1,
         '220GRETIND',
         5,
@@ -2828,7 +3075,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220116',
+        163,
+        2,
+        '220GRETIND',
+        5,
+        5,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        164,
         1,
         '220GRETIND',
         7,
@@ -2841,7 +3101,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220117',
+        164,
+        2,
+        '220GRETIND',
+        7,
+        7,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        165,
         1,
         '220GRETIND',
         2,
@@ -2854,7 +3127,85 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220126',
+        165,
+        2,
+        '220GRETIND',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        166,
+        2,
+        '220GRETIND',
+        1,
+        1,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        167,
+        2,
+        '220GRETIND',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        170,
+        2,
+        '220GRETIND',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        171,
+        2,
+        '220GRETIND',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        172,
+        2,
+        '220GRETIND,220GRETAER,220GREVAER',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        173,
         1,
         '220GRETIND,220GRETAER,220GREVAER',
         7,
@@ -2867,7 +3218,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220128',
+        174,
+        2,
+        '220GRETIND,220GRETAER,220GREVAER,320GRESAUD,320GREMECA,320GREQUIM,320GREELEC,320GREDIDP,320GREEIA,320GRETDT',
+        8,
+        8,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        175,
         1,
         '220GRETIND,220GRETAER,220GREVAER,320GRESAUD,320GREMECA,320GREQUIM,320GREELEC,320GREDIDP,320GREEIA,320GRETDT',
         10,
@@ -2880,7 +3244,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220129',
+        176,
         1,
         '220GRETIND,220GRETAER,220GREVAER',
         14,
@@ -2893,7 +3257,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220130',
+        177,
         1,
         '220GRETIND,220GRETAER,220GREVAER,320GREQUIM',
         7,
@@ -2906,7 +3270,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220131',
+        178,
         1,
         '220GRETIND,220GRETAER,220GREVAER,320GRESAUD,320GREMECA,320GREQUIM,320GREELEC,320GREDIDP,320GREEIA,320GRETDT',
         0,
@@ -2919,7 +3283,46 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220134',
+        178,
+        2,
+        '220GRETIND,220GRETAER,220GREVAER,320GRESAUD,320GREMECA,320GREQUIM,320GREELEC,320GREDIDP,320GREEIA,320GRETDT',
+        5,
+        5,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        179,
+        2,
+        '220GRETIND,220GRETAER,220GREVAER',
+        12,
+        12,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        180,
+        2,
+        '220GRETIND,220GRETAER,220GREVAER,320GREMECA,320GREDIDP',
+        14,
+        14,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        181,
         1,
         '220GRETIND,220GRETAER,220GREVAER,320GRESAUD,320GREMECA,320GREQUIM,320GREELEC,320GREDIDP,320GREEIA,320GRETDT',
         11,
@@ -2932,7 +3335,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220135',
+        181,
+        2,
+        '220GRETIND,220GRETAER,220GREVAER,320GRESAUD,320GREMECA,320GREQUIM,320GREELEC,320GREDIDP,320GREEIA,320GRETDT',
+        6,
+        6,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        182,
         1,
         '220GRETIND,220GRETAER,220GREVAER,320GRESAUD,320GREMECA,320GREQUIM,320GREELEC,320GREDIDP,320GRETDT',
         11,
@@ -2945,7 +3361,85 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220142',
+        183,
+        2,
+        '220GRETIND,220GRETAER,220GREVAER',
+        14,
+        14,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        184,
+        2,
+        '220GRETAER,220GREVAER',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        185,
+        2,
+        '220GRETIND',
+        10,
+        10,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        186,
+        2,
+        '220GRETAER,220GREVAER',
+        10,
+        10,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        187,
+        2,
+        '220GRETIND',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        188,
+        2,
+        '220GRETAER,220GREVAER',
+        1,
+        1,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        189,
         1,
         '220GRETIND,220GRETAER,220GREVAER,320GRESAUD,320GREMECA,320GREQUIM,320GREELEC,320GREDIDP,320GREEIA,320GRETDT',
         5,
@@ -2958,7 +3452,46 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220146',
+        190,
+        2,
+        '220GRETAER,220GREVAER',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        191,
+        2,
+        '220GRETAER,220GREVAER',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        192,
+        2,
+        '220GRETAER,220GREVAER',
+        5,
+        5,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        193,
         1,
         '220GRETIND,220GRETAER,220GREVAER,320GRESAUD,320GREMECA,320GREQUIM,320GREELEC,320GREDIDP,320GREEIA,320GRETDT',
         1,
@@ -2971,7 +3504,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220203',
+        194,
+        2,
+        '220GRETAER,220GREVAER',
+        5,
+        5,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        195,
         1,
         '220MEI',
         2,
@@ -2984,7 +3530,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220204',
+        195,
+        2,
+        '220MEI',
+        1,
+        1,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        196,
         1,
         '220MEI',
         1,
@@ -2997,7 +3556,33 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220206',
+        196,
+        2,
+        '220MEI',
+        1,
+        1,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        197,
+        2,
+        '220MEI',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        198,
         1,
         '220MEI',
         5,
@@ -3010,7 +3595,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220207',
+        198,
+        2,
+        '220MEI',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        199,
         1,
         '220MEI',
         3,
@@ -3023,7 +3621,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220208',
+        199,
+        2,
+        '220MEI',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        200,
         1,
         '220MEI',
         4,
@@ -3036,7 +3647,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220209',
+        200,
+        2,
+        '220MEI',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        201,
         1,
         '220MEI',
         4,
@@ -3049,7 +3673,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220211',
+        201,
+        2,
+        '220MEI',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        203,
         1,
         '220MEI',
         2,
@@ -3062,7 +3699,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220212',
+        204,
         1,
         '220MEI',
         2,
@@ -3075,7 +3712,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220213',
+        204,
+        2,
+        '220MEI',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        205,
         1,
         '220MEI',
         4,
@@ -3088,7 +3738,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220214',
+        205,
+        2,
+        '220MEI',
+        6,
+        6,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        206,
         1,
         '220MEI',
         4,
@@ -3101,7 +3764,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220215',
+        207,
         1,
         '220MEI',
         4,
@@ -3114,7 +3777,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220216',
+        208,
         1,
         '220MEI',
         5,
@@ -3127,7 +3790,137 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220230',
+        208,
+        2,
+        '220MEI',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        209,
+        2,
+        '220MEI,205MASE,220MUAERON',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        210,
+        2,
+        '220MEI,220MUAERON',
+        10,
+        10,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        211,
+        2,
+        '220MEI,205MASE,220MUAERON',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        212,
+        2,
+        '220MEI,205MASE,220MUAERON',
+        8,
+        8,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        213,
+        2,
+        '220MEI,205MASE,220MUAERON',
+        7,
+        7,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        214,
+        2,
+        '220MEI,205MASE,220MUAERON',
+        7,
+        7,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        215,
+        2,
+        '220MEI,205MASE,220MUAERON',
+        12,
+        12,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        216,
+        2,
+        '220MEI,205MASE,220MUAERON',
+        8,
+        8,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        217,
+        2,
+        '220MEI,205MASE,220MUAERON',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        218,
         1,
         '220MEI',
         0,
@@ -3140,7 +3933,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220236',
+        223,
         1,
         '220MEI',
         3,
@@ -3153,7 +3946,46 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220252',
+        224,
+        2,
+        '220MEI,205MASE,220MUAERON',
+        10,
+        10,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        225,
+        2,
+        '220MEI,205MASE,220MUAERON',
+        12,
+        12,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        231,
+        2,
+        '220MEI,205MASE,220MUAERON',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        234,
         1,
         '220MEI',
         2,
@@ -3166,7 +3998,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220253',
+        235,
         1,
         '220MEI',
         2,
@@ -3179,7 +4011,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220261',
+        239,
         1,
         '220MEI',
         4,
@@ -3192,7 +4024,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220262',
+        240,
         1,
         '220MEI',
         2,
@@ -3205,7 +4037,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220263',
+        241,
         1,
         '220MEI',
         4,
@@ -3218,7 +4050,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220270',
+        242,
         1,
         '220MEI',
         1,
@@ -3231,7 +4063,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220272',
+        244,
         1,
         '220MEI',
         4,
@@ -3244,7 +4076,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220273',
+        245,
         1,
         '220MEI',
         0,
@@ -3257,7 +4089,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220274',
+        246,
         1,
         '220MEI',
         2,
@@ -3270,7 +4102,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220280',
+        247,
         1,
         '220MEI',
         3,
@@ -3283,7 +4115,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220281',
+        248,
         1,
         '220MEI',
         0,
@@ -3296,7 +4128,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220282',
+        249,
         1,
         '220MEI',
         4,
@@ -3309,7 +4141,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220283',
+        250,
         1,
         '220MEI',
         2,
@@ -3322,7 +4154,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220301',
+        254,
         1,
         '220MUAERON',
         4,
@@ -3335,33 +4167,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220302',
-        1,
-        '220MUAERON',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220303',
-        1,
-        '220MUAERON',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220304',
+        255,
         1,
         '220MUAERON',
         2,
@@ -3374,7 +4180,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220305',
+        255,
+        2,
+        '220MUAERON',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        256,
         1,
         '220MUAERON',
         4,
@@ -3387,7 +4206,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220306',
+        257,
+        1,
+        '220MUAERON',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        258,
         1,
         '220MUAERON',
         4,
@@ -3400,7 +4232,46 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220308',
+        258,
+        2,
+        '220MUAERON',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        259,
+        1,
+        '220MUAERON',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        259,
+        2,
+        '220MUAERON',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        261,
         1,
         '220MUAERON',
         3,
@@ -3413,7 +4284,33 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220310',
+        261,
+        2,
+        '220MUAERON',
+        3,
+        3,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        262,
+        2,
+        '220MUAERON',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        263,
         1,
         '220MUAERON',
         4,
@@ -3426,7 +4323,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220311',
+        263,
+        2,
+        '220MUAERON',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        264,
         1,
         '220MUAERON',
         4,
@@ -3439,7 +4349,59 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220321',
+        264,
+        2,
+        '220MUAERON',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        265,
+        2,
+        '205MASE,220MUAERON',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        266,
+        2,
+        '205MASE,220MUAERON',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        267,
+        2,
+        '205MASE,220MUAERON',
+        12,
+        12,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        268,
         1,
         '220MUAERON,205MASE',
         8,
@@ -3452,7 +4414,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220322',
+        269,
         1,
         '220MUAERON,205MASE',
         8,
@@ -3465,7 +4427,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220323',
+        270,
         1,
         '220MUAERON,205MASE',
         8,
@@ -3478,7 +4440,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220324',
+        271,
         1,
         '220MUAERON,205MASE',
         8,
@@ -3491,7 +4453,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220325',
+        272,
         1,
         '220MUAERON,205MASE',
         9,
@@ -3504,7 +4466,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220330',
+        273,
         1,
         '220MUAERON,205MASE',
         0,
@@ -3517,7 +4479,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220331',
+        274,
         1,
         '220MUAERON,205MASE',
         8,
@@ -3530,7 +4492,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220332',
+        275,
         1,
         '220MUAERON,205MASE',
         8,
@@ -3543,7 +4505,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220333',
+        276,
         1,
         '220MUAERON,205MASE',
         8,
@@ -3556,7 +4518,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220334',
+        277,
         1,
         '220MUAERON,205MASE',
         0,
@@ -3569,7 +4531,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220340',
+        278,
         1,
         '220MUAERON,205MASE',
         0,
@@ -3582,7 +4544,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220341',
+        279,
         1,
         '220MUAERON,205MASE',
         2,
@@ -3595,7 +4557,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220342',
+        280,
         1,
         '220MUAERON,205MASE',
         0,
@@ -3608,7 +4570,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220343',
+        281,
         1,
         '220MUAERON,205MASE',
         0,
@@ -3621,7 +4583,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220344',
+        282,
         1,
         '220MUAERON,205MASE',
         0,
@@ -3634,7 +4596,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220350',
+        283,
         1,
         '220MUAERON,205MASE',
         0,
@@ -3647,7 +4609,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220351',
+        284,
         1,
         '220MUAERON,205MASE',
         0,
@@ -3660,20 +4622,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220352',
-        1,
-        '220MUAERON,205MASE',
-        0,
-        0,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '220353',
+        285,
         1,
         '220MUAERON,205MASE',
         8,
@@ -3686,7 +4635,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220550',
+        286,
+        2,
+        '220MUAERON',
+        3,
+        3,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        287,
         1,
         '220MEORSEM',
         4,
@@ -3699,7 +4661,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220551',
+        287,
+        2,
+        '220MEORSEM',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        288,
         1,
         '220MEORSEM',
         4,
@@ -3712,7 +4687,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220552',
+        288,
+        2,
+        '220MEORSEM',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        289,
         1,
         '220MEORSEM',
         5,
@@ -3725,7 +4713,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220553',
+        289,
+        2,
+        '220MEORSEM',
+        5,
+        5,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        290,
         1,
         '220MEORSEM',
         4,
@@ -3738,7 +4739,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220554',
+        290,
+        2,
+        '220MEORSEM',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        291,
         1,
         '220MEORSEM',
         4,
@@ -3751,7 +4765,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220555',
+        291,
+        2,
+        '220MEORSEM',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        292,
         1,
         '220MEORSEM',
         2,
@@ -3764,7 +4791,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220558',
+        292,
+        2,
+        '220MEORSEM',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        295,
         1,
         '220MEORSEM',
         5,
@@ -3777,7 +4817,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220559',
+        295,
+        2,
+        '220MEORSEM',
+        5,
+        5,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        296,
         1,
         '220MEORSEM',
         4,
@@ -3790,7 +4843,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220560',
+        296,
+        2,
+        '220MEORSEM',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        297,
         1,
         '220MEORSEM',
         4,
@@ -3803,7 +4869,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220561',
+        297,
+        2,
+        '220MEORSEM',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        298,
         1,
         '220MEORSEM',
         2,
@@ -3816,7 +4895,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220562',
+        298,
+        2,
+        '220MEORSEM',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        299,
         1,
         '220MEORSEM',
         4,
@@ -3829,7 +4921,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220563',
+        299,
+        2,
+        '220MEORSEM',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        300,
         1,
         '220MEORSEM',
         5,
@@ -3842,7 +4947,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220564',
+        300,
+        2,
+        '220MEORSEM',
+        5,
+        5,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        301,
         1,
         '220MEORSEM',
         3,
@@ -3855,7 +4973,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220565',
+        301,
+        2,
+        '220MEORSEM',
+        3,
+        3,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        302,
         1,
         '220MEORSEM',
         4,
@@ -3868,7 +4999,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220566',
+        302,
+        2,
+        '220MEORSEM',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        303,
         1,
         '220MEORSEM',
         4,
@@ -3881,7 +5025,72 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220601',
+        303,
+        2,
+        '220MEORSEM',
+        7,
+        7,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        304,
+        2,
+        '220MEORSEM',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        305,
+        2,
+        '220MEORSEM',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        306,
+        2,
+        '220MEORSEM',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        307,
+        2,
+        '220MEORSEM',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        311,
         1,
         '220MUESAI',
         2,
@@ -3894,7 +5103,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220604',
+        314,
         1,
         '220MUESAI',
         0,
@@ -3907,7 +5116,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220605',
+        315,
         1,
         '220MUESAI',
         0,
@@ -3920,7 +5129,33 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220621',
+        322,
+        2,
+        '220MUESAI',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        323,
+        2,
+        '220MUESAI',
+        3,
+        3,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        327,
         1,
         '220MUESAI',
         0,
@@ -3933,7 +5168,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220625',
+        330,
         1,
         '220MUESAI',
         0,
@@ -3946,7 +5181,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220658',
+        332,
         1,
         '220MUAERON',
         0,
@@ -3959,7 +5194,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220659',
+        333,
         1,
         '220MUAERON',
         0,
@@ -3972,7 +5207,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220660',
+        334,
         1,
         '220MUAERON',
         0,
@@ -3985,7 +5220,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220661',
+        335,
         1,
         '220MUAERON',
         0,
@@ -3998,7 +5233,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220662',
+        336,
         1,
         '220MUAERON',
         0,
@@ -4011,7 +5246,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220669',
+        337,
         1,
         '220MEORSEM',
         11,
@@ -4024,7 +5259,59 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220683',
+        338,
+        2,
+        '220MEORSEM',
+        12,
+        12,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        339,
+        2,
+        '220MEORSEM',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        340,
+        2,
+        '220MEORSEM',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        341,
+        2,
+        '220MEORSEM',
+        8,
+        8,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        342,
         1,
         '220MUAERON',
         5,
@@ -4037,7 +5324,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '220685',
+        342,
+        2,
+        '220MEORSEM',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        343,
         1,
         '220MUAERON',
         4,
@@ -4050,7 +5350,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '3200011',
+        344,
+        2,
+        '220MEORSEM',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        502,
         1,
         '320GREMECA,320GREQUIM,320GREELEC,320GREEIA,320GRETDT,320GREDIDP',
         4,
@@ -4063,7 +5376,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '3200012',
+        502,
+        2,
+        '320GREMECA,320GREQUIM,320GREELEC,320GREEIA,320GRETDT,320GREDIDP',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        503,
         1,
         '320GREMECA,320GREQUIM,320GREELEC,320GREDIDP,320GREEIA,320GRETDT',
         2,
@@ -4076,7 +5402,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320002',
+        503,
+        2,
+        '320GREMECA,320GREQUIM,320GREELEC,320GREDIDP,320GREEIA,320GRETDT',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        345,
         1,
         '320GREMECA,320GREQUIM,320GREELEC,320GREDIDP,320GREEIA,320GRETDT',
         2,
@@ -4089,7 +5428,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '3200031',
+        345,
+        2,
+        '320GREMECA,320GREQUIM,320GREELEC,320GREDIDP,320GREEIA,320GRETDT',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        504,
         1,
         '320GREMECA,320GREQUIM,320GREELEC,320GREEIA,320GRETDT,320GREDIDP',
         3,
@@ -4102,7 +5454,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '3200032',
+        504,
+        2,
+        '320GREMECA,320GREQUIM,320GREELEC,320GREEIA,320GRETDT,320GREDIDP',
+        3,
+        3,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        505,
         1,
         '320GREMECA,320GREQUIM,320GREELEC,320GREEIA,320GRETDT,320GREDIDP',
         3,
@@ -4115,7 +5480,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320004',
+        505,
+        2,
+        '320GREMECA,320GREQUIM,320GREELEC,320GREEIA,320GRETDT,320GREDIDP',
+        3,
+        3,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        346,
         1,
         '320GREMECA,320GREQUIM,320GREELEC,320GREDIDP,320GREEIA,320GRETDT',
         3,
@@ -4128,7 +5506,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320005',
+        346,
+        2,
+        '320GREMECA,320GREQUIM,320GREELEC,320GREDIDP,320GREEIA,320GRETDT',
+        3,
+        3,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        347,
         1,
         '320GREMECA,320GREQUIM,320GREELEC,320GREDIDP,320GREEIA,320GRETDT',
         4,
@@ -4141,7 +5532,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320006',
+        347,
+        2,
+        '320GREMECA,320GREQUIM,320GREELEC,320GREDIDP,320GREEIA,320GRETDT',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        348,
         1,
         '320GREMECA,320GREQUIM,320GREELEC,320GREDIDP,320GREEIA,320GRETDT',
         5,
@@ -4154,7 +5558,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320007',
+        348,
+        2,
+        '320GREMECA,320GREQUIM,320GREELEC,320GREDIDP,320GREEIA,320GRETDT',
+        5,
+        5,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        349,
         1,
         '320GREMECA,320GREQUIM,320GREELEC,320GREDIDP,320GREEIA,320GRETDT',
         2,
@@ -4167,7 +5584,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320008',
+        349,
+        2,
+        '320GREMECA,320GREQUIM,320GREELEC,320GREDIDP,320GREEIA,320GRETDT',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        350,
         1,
         '320GREMECA,320GREQUIM,320GREELEC,320GREEIA,320GRETDT',
         2,
@@ -4180,7 +5610,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320009',
+        351,
         1,
         '320GREMECA,320GREQUIM,320GREELEC,320GREEIA,320GRETDT,320GREDIDP',
         4,
@@ -4193,7 +5623,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320010',
+        351,
+        2,
+        '320GREMECA,320GREQUIM,320GREELEC,320GREDIDP,320GREEIA,320GRETDT',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        352,
         1,
         '320GREMECA,320GREQUIM,320GREELEC,320GREEIA,320GRETDT',
         2,
@@ -4206,7 +5649,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320011',
+        353,
         1,
         '320GREMECA,320GREQUIM,320GREELEC,320GREEIA,320GRETDT',
         4,
@@ -4219,7 +5662,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320012',
+        354,
         1,
         '320GREMECA,320GREQUIM,320GREELEC,320GREEIA,320GRETDT',
         3,
@@ -4232,7 +5675,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320013',
+        355,
         1,
         '320GREMECA,320GREQUIM,320GREELEC,320GREEIA,320GRETDT,320GREDIDP',
         2,
@@ -4245,7 +5688,59 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320017',
+        355,
+        2,
+        '320GREMECA,320GREQUIM,320GREELEC,320GREDIDP,320GREEIA,320GRETDT',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        356,
+        2,
+        '320GREMECA,320GREQUIM,320GREELEC,320GREEIA,320GRETDT',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        357,
+        2,
+        '320GREMECA,320GREQUIM,320GREELEC,320GREEIA,320GRETDT',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        358,
+        2,
+        '320GREMECA,320GREQUIM,320GREELEC,320GREEIA,320GRETDT',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        359,
         1,
         '320GREMECA,320GREQUIM,320GREELEC,320GREEIA,320GRETDT',
         4,
@@ -4258,7 +5753,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320018',
+        360,
         1,
         '320GREMECA,320GREQUIM,320GREELEC,320GREEIA,320GRETDT,320GREDIDP',
         8,
@@ -4271,7 +5766,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320020',
+        361,
+        2,
+        '320GREELEC',
+        1,
+        1,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        362,
         1,
         '320GREELEC',
         1,
@@ -4284,7 +5792,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '3200211',
+        506,
         1,
         '320GREELEC',
         0,
@@ -4297,7 +5805,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320022',
+        507,
+        2,
+        '320GREELEC',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        363,
         1,
         '320GREELEC',
         2,
@@ -4310,7 +5831,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320023',
+        364,
         1,
         '320GREELEC',
         2,
@@ -4323,7 +5844,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320024',
+        365,
         1,
         '320GREELEC',
         1,
@@ -4336,7 +5857,33 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320027',
+        366,
+        2,
+        '320GREELEC',
+        1,
+        1,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        367,
+        2,
+        '320GREELEC',
+        1,
+        1,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        368,
         1,
         '320GREELEC',
         0,
@@ -4349,7 +5896,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320029',
+        369,
         1,
         '220GRETIND,220GRETAER,220GREVAER,320GRESAUD,320GREMECA,320GREQUIM,320GREELEC,320GREDIDP,320GREEIA,320GRETDT',
         4,
@@ -4362,7 +5909,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320030',
+        369,
+        2,
+        '220GRETIND,220GRETAER,220GREVAER,320GRESAUD,320GREMECA,320GREQUIM,320GREELEC,320GREDIDP,320GREEIA,320GRETDT',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        370,
         1,
         '320GRESAUD,320GREMECA,320GREQUIM,320GREELEC,320GREEIA,320GRETDT,320GREDIDP',
         2,
@@ -4375,7 +5935,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '3200331',
+        371,
+        2,
+        '320GRESAUD,320GREMECA,320GREQUIM,320GREELEC,320GREDIDP,320GREEIA,320GRETDT',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        508,
         1,
         '320GREEIA',
         0,
@@ -4388,7 +5961,33 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320035',
+        509,
+        2,
+        '320GREEIA',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        372,
+        2,
+        '320GREEIA',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        373,
         1,
         '320GREEIA',
         0,
@@ -4401,7 +6000,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320036',
+        374,
         1,
         '320GREEIA',
         0,
@@ -4414,7 +6013,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '3200371',
+        510,
         1,
         '320GREEIA',
         0,
@@ -4427,7 +6026,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320038',
+        511,
+        2,
+        '320GREEIA',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        375,
         1,
         '320GREEIA',
         0,
@@ -4440,7 +6052,33 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320041',
+        376,
+        2,
+        '320GREEIA',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        377,
+        2,
+        '320GREEIA',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        378,
         1,
         '320GREEIA',
         0,
@@ -4453,7 +6091,33 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320044',
+        379,
+        2,
+        '320GREEIA',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        380,
+        2,
+        '320GREEIA',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        381,
         1,
         '320GREEIA',
         1,
@@ -4466,7 +6130,46 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320049',
+        382,
+        2,
+        '320GREEIA',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        383,
+        2,
+        '320GREEIA',
+        1,
+        1,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        384,
+        2,
+        '320GREMEC',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        385,
         1,
         '320GREMECA',
         1,
@@ -4479,7 +6182,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '3200501',
+        512,
         1,
         '320GREMECA',
         0,
@@ -4492,7 +6195,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '3200511',
+        513,
+        2,
+        '320GREMEC',
+        1,
+        1,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        514,
         1,
         '320GREMECA',
         0,
@@ -4505,7 +6221,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320052',
+        515,
+        2,
+        '320GREMEC',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        386,
         1,
         '320GREMECA',
         0,
@@ -4518,7 +6247,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320053',
+        387,
         1,
         '320GREMECA',
         1,
@@ -4531,7 +6260,33 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320056',
+        388,
+        2,
+        '320GREMEC',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        389,
+        2,
+        '320GREMEC',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        390,
         1,
         '320GREMECA',
         1,
@@ -4544,7 +6299,33 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320059',
+        391,
+        2,
+        '320GREMEC,320GREQUIM',
+        1,
+        1,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        392,
+        2,
+        '320GREMEC,320GREQUIM',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        393,
         1,
         '320GREMECA,320GREQUIM',
         2,
@@ -4557,7 +6338,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320060',
+        394,
         1,
         '320GREMECA,320GREQUIM',
         0,
@@ -4570,7 +6351,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320063',
+        395,
+        2,
+        '320GREQUIM',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        396,
         1,
         '320GREQUIM',
         0,
@@ -4583,7 +6377,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320064',
+        397,
         1,
         '320GREQUIM',
         0,
@@ -4596,7 +6390,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320065',
+        398,
         1,
         '320GREQUIM',
         1,
@@ -4609,7 +6403,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '3200661',
+        516,
         1,
         '320GREQUIM',
         1,
@@ -4622,7 +6416,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '3200671',
+        517,
+        2,
+        '320GREQUIM',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        518,
         1,
         '320GREQUIM',
         1,
@@ -4635,7 +6442,46 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320070',
+        519,
+        2,
+        '320GREQUIM',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        399,
+        2,
+        '320GREQUIM',
+        1,
+        1,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        400,
+        2,
+        '320GREQUIM',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        401,
         1,
         '320GREQUIM',
         1,
@@ -4648,7 +6494,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320072',
+        402,
+        2,
+        '220GRETIND,220GRETAER,220GREVAER,320GREQUIM',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        403,
         1,
         '320GREQUIM,320GRETDT',
         3,
@@ -4661,7 +6520,33 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320077',
+        404,
+        2,
+        '320GREQUIM,320GRETDT',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        405,
+        2,
+        '320GRETDT',
+        3,
+        3,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        406,
         1,
         '320GRETDT',
         2,
@@ -4674,7 +6559,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320078',
+        407,
         1,
         '320GRETDT',
         2,
@@ -4687,7 +6572,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320079',
+        408,
         1,
         '320GRETDT',
         2,
@@ -4700,7 +6585,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320080',
+        409,
         1,
         '320GRETDT',
         2,
@@ -4713,7 +6598,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320081',
+        410,
         1,
         '320GRETDT',
         2,
@@ -4726,7 +6611,59 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320086',
+        411,
+        2,
+        '320GRETDT',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        412,
+        2,
+        '320GRETDT',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        413,
+        2,
+        '320GRETDT',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        414,
+        2,
+        '320GRETDT',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        415,
         1,
         '320GRETDT',
         3,
@@ -4739,7 +6676,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320092',
+        416,
         1,
         '320GRESAUD',
         0,
@@ -4752,7 +6689,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320093',
+        417,
         1,
         '320GRESAUD',
         0,
@@ -4765,7 +6702,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320094',
+        418,
         1,
         '320GRESAUD',
         0,
@@ -4778,7 +6715,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320095',
+        419,
         1,
         '320GRESAUD',
         0,
@@ -4791,7 +6728,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '3200961',
+        520,
         1,
         '320GRESAUD',
         1,
@@ -4804,7 +6741,59 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320101',
+        521,
+        2,
+        '320GRESAUD',
+        1,
+        1,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        420,
+        2,
+        '320GRESAUD',
+        1,
+        1,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        421,
+        2,
+        '320GRESAUD',
+        1,
+        1,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        422,
+        2,
+        '320GRESAUD',
+        1,
+        1,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        423,
         1,
         '320GRESAUD',
         4,
@@ -4817,7 +6806,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320102',
+        424,
         1,
         '320GRESAUD',
         1,
@@ -4830,7 +6819,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320103',
+        425,
         1,
         '320GRESAUD',
         1,
@@ -4843,7 +6832,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320105',
+        426,
+        2,
+        '320GRESAUD',
+        1,
+        1,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        427,
         1,
         '320GRESAUD',
         0,
@@ -4856,7 +6858,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320106',
+        428,
         1,
         '320GRESAUD',
         2,
@@ -4869,7 +6871,59 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320111',
+        429,
+        2,
+        '320GRESAUD',
+        1,
+        1,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        430,
+        2,
+        '320GRESAUD',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        431,
+        2,
+        '320GRESAUD',
+        1,
+        1,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        432,
+        2,
+        '320GRESAUD',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        433,
         1,
         '320GRESAUD',
         1,
@@ -4882,7 +6936,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320113',
+        434,
+        2,
+        '320GRESAUD',
+        1,
+        1,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        435,
         1,
         '320GRESAUD',
         1,
@@ -4895,7 +6962,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320114',
+        436,
         1,
         '320GRESAUD',
         1,
@@ -4908,7 +6975,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320115',
+        437,
         1,
         '320GRESAUD',
         1,
@@ -4921,7 +6988,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320117',
+        438,
+        2,
+        '320GRESAUD',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        439,
         1,
         '320GRESAUD',
         0,
@@ -4934,7 +7014,46 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320121',
+        440,
+        2,
+        '320GRESAUD',
+        1,
+        1,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        441,
+        2,
+        '320GRESAUD',
+        1,
+        1,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        442,
+        2,
+        '320GRESAUD',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        443,
         1,
         '320GRESAUD',
         2,
@@ -4947,7 +7066,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320123',
+        444,
         1,
         '320GRESAUD',
         2,
@@ -4960,7 +7079,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320124',
+        445,
         1,
         '320GRESAUD',
         1,
@@ -4973,7 +7092,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320125',
+        446,
         1,
         '320GRESAUD',
         1,
@@ -4986,7 +7105,33 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320129',
+        447,
+        2,
+        '320GRESAUD',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        448,
+        2,
+        '320GREELEC',
+        1,
+        1,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        449,
         1,
         '320GREEIA',
         1,
@@ -4999,7 +7144,33 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320134',
+        450,
+        2,
+        '320GREMEC,320GREQUIM',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        451,
+        2,
+        '320GREELEC',
+        1,
+        1,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        452,
         1,
         '320GREDIDP',
         3,
@@ -5012,7 +7183,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320135',
+        453,
         1,
         '320GREDIDP',
         2,
@@ -5025,7 +7196,46 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320140',
+        454,
+        2,
+        '320GREDIDP',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        455,
+        2,
+        '320GREDIDP',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        456,
+        2,
+        '320GREDIDP',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        457,
         1,
         '320GREDIDP',
         2,
@@ -5038,7 +7248,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320141',
+        458,
         1,
         '320GREDIDP',
         2,
@@ -5051,7 +7261,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320142',
+        459,
         1,
         '320GREDIDP',
         5,
@@ -5064,7 +7274,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320143',
+        460,
         1,
         '320GREDIDP',
         1,
@@ -5077,72 +7287,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320144',
-        1,
-        '320GREDIDP',
-        2,
-        2,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320151',
-        1,
-        '320GREDIDP',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320152',
-        1,
-        '320GREDIDP',
-        4,
-        4,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320154',
-        1,
-        '320GREDIDP',
-        1,
-        1,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320157',
-        1,
-        '320GREDIDP',
-        0,
-        0,
-        0,
-        0
-);
-
-INSERT INTO ofertas
-    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
-    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
-VALUES(
-        '320159',
+        461,
         1,
         '320GREDIDP',
         2,
@@ -5155,7 +7300,176 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320162',
+        462,
+        2,
+        '320GREDIDP',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        463,
+        2,
+        '320GREDIDP',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        464,
+        2,
+        '220GRETIND,220GRETAER,220GREVAER,320GRESAUD,320GREMECA,320GREQUIM,320GREELEC,320GREDIDP,320GREEIA,320GRETDT',
+        7,
+        7,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        465,
+        2,
+        '320GREDIDP',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        466,
+        2,
+        '320GREDIDP',
+        3,
+        3,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        467,
+        1,
+        '320GREDIDP',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        468,
+        1,
+        '320GREDIDP',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        469,
+        2,
+        '320GRESAUD,320GREQUIM,320GREELEC,320GREDIDP,320GREEIA',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        470,
+        1,
+        '320GREDIDP',
+        1,
+        1,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        471,
+        2,
+        '320GREDIDP',
+        3,
+        3,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        472,
+        1,
+        '320GREDIDP',
+        0,
+        0,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        473,
+        2,
+        '320GREDIDP',
+        1,
+        1,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        474,
+        1,
+        '320GREDIDP',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        475,
         1,
         '320GREELEC',
         0,
@@ -5168,7 +7482,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320163',
+        476,
         1,
         '320GREELEC',
         5,
@@ -5181,7 +7495,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320164',
+        477,
         1,
         '220GRETIND,220GRETAER,220GREVAER,320GRESAUD,320GREMECA,320GREQUIM,320GREELEC,320GREEIA,320GRETDT,320GREDIDP',
         2,
@@ -5194,7 +7508,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320166',
+        479,
         1,
         '220GRETIND,220GRETAER,220GREVAER,320GRESAUD,320GREMECA,320GREQUIM,320GREELEC,320GREEIA,320GRETDT,320GREDIDP',
         2,
@@ -5207,7 +7521,20 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320168',
+        480,
+        2,
+        '320GREDIDP',
+        1,
+        1,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        481,
         1,
         '320GREELEC',
         0,
@@ -5220,7 +7547,33 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320171',
+        482,
+        2,
+        '320GREELEC',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        483,
+        2,
+        '320GREELEC',
+        1,
+        1,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        484,
         1,
         '320GREELEC',
         0,
@@ -5233,7 +7586,72 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320179',
+        485,
+        2,
+        '320GREELEC',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        486,
+        2,
+        '320GREEIA',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        487,
+        2,
+        '320GREMECA,320GREQUIM',
+        3,
+        3,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        488,
+        2,
+        '320GREDIDP',
+        2,
+        2,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        489,
+        2,
+        '320GRESAUD',
+        4,
+        4,
+        0,
+        0
+);
+
+INSERT INTO ofertas
+    (asignatura, periodo_academico, titulacion, plazas_ofertadas,
+    plazas_disponibles, plazas_concedidas, plazas_solicitadas)
+VALUES(
+        490,
         1,
         '320GREMECA,320GREQUIM',
         4,
@@ -5246,7 +7664,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320180',
+        491,
         1,
         '320GREMECA,320GREQUIM,320GRETDT',
         2,
@@ -5259,7 +7677,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320182',
+        493,
         1,
         '320GREEIA',
         5,
@@ -5272,7 +7690,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320183',
+        494,
         1,
         '320GREEIA',
         5,
@@ -5285,7 +7703,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320192',
+        495,
         1,
         '220GRETIND,220GRETAER,220GREVAER,320GRESAUD,320GREMECA,320GREQUIM,320GREELEC,320GREEIA,320GRETDT,320GREDIDP',
         1,
@@ -5298,7 +7716,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320194',
+        496,
         1,
         '320GREDIDP',
         3,
@@ -5311,7 +7729,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320505',
+        497,
         1,
         '205METEXPA',
         4,
@@ -5324,7 +7742,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320506',
+        498,
         1,
         '205METEXPA',
         4,
@@ -5337,7 +7755,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320507',
+        499,
         1,
         '205METEXPA',
         4,
@@ -5350,7 +7768,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320516',
+        500,
         1,
         '205METEXPA',
         4,
@@ -5363,7 +7781,7 @@ INSERT INTO ofertas
     (asignatura, periodo_academico, titulacion, plazas_ofertadas,
     plazas_disponibles, plazas_concedidas, plazas_solicitadas)
 VALUES(
-        '320524',
+        501,
         1,
         '205METEXPA',
         4,
