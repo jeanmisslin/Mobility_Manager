@@ -33,7 +33,7 @@ export function get(req, res, next) {
                             ON ac.estudiante = ? AND 
                                ac.id_acuerdo = asignaciones.acuerdo_academico AND 
                                asignaciones.oferta = ofertas.id_oferta AND 
-                               ofertas.asignatura = asignaturas.codigo_asignatura`, [id],
+                               ofertas.asignatura = asignaturas.id_asignatura`, [id],
                         (err, asignaturas) => {
                             if (err) {
                                 console.log(err)

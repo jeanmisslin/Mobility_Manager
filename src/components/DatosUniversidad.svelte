@@ -46,7 +46,7 @@
   </div>
   <div id="campos">
     <label>Nombre</label>
-    <data>{universidad.universidad}</data>
+    <data>{universidad.nombre_universidad}</data>
   </div>
   <div id="campos">
     <label>País</label>
@@ -54,4 +54,6 @@
   </div>
 </div>
 
-<ModificaUniversidadForm {universidad} {universidades} {onModificado}/>
+<ModificaUniversidadForm {universidad} 
+                         {universidades} 
+                         {onModificado}/>

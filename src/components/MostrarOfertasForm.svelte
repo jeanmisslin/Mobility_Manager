@@ -12,22 +12,22 @@
 
   let message;
 
-  function periodo(seleccion, periodos) {
+  function encontrarperiodo(seleccion, periodos) {
     let periodoA = seleccion.split("-");
     let periodoQ = seleccion.split("Q");
     let año = periodoA[0];
     let cuatrimestre = periodoQ[1];
-    let id_periodo = periodos.find(
+    let periodo = periodos.find(
       element =>
         (element.año === parseInt(año)) &
         (element.cuatrimestre === parseInt(cuatrimestre))
     );
-    return id_periodo;
+    return periodo;
   }
 
-  let id_periodo;
+  let periodo;
 
-  $: id_periodo = periodo(seleccion, periodos);
+  $: periodo = encontrarperiodo(seleccion, periodos);
 
 </script>
 
@@ -53,21 +53,21 @@
   }
 </style>
 
-{#if ofertas.find(element => element.asignatura === asignatura.codigo_asignatura && element.periodo_academico === id_periodo.id_periodo) === null || ofertas.find(element => element.asignatura === asignatura.codigo_asignatura && element.periodo_academico === id_periodo.id_periodo) === undefined}
+{#if ofertas.find(element => element.asignatura === asignatura.id_asignatura && element.periodo_academico === periodo.id_periodo) === null || ofertas.find(element => element.asignatura === asignatura.id_asignatura && element.periodo_academico === periodo.id_periodo) === undefined}
   <div id="contenedor">
   <div id="boton">
     <AñadirOferta
-      asignatura={asignatura.codigo_asignatura}
+      asignatura={asignatura.id_asignatura}
       {titulaciones}
-      periodo={id_periodo.id_periodo} />
+      periodo={periodo.id_periodo} />
   </div>
   </div>
 {:else}
   <MostrarPlazasOferta
-    oferta={ofertas.find(element => element.asignatura === asignatura.codigo_asignatura && element.periodo_academico === id_periodo.id_periodo)} />
+    oferta={ofertas.find(element => element.asignatura === asignatura.id_asignatura && element.periodo_academico === periodo.id_periodo)} />
   <MostrarTitulacionesOfertas
-    oferta={ofertas.find(element => element.asignatura === asignatura.codigo_asignatura && element.periodo_academico === id_periodo.id_periodo)}
-    periodo={id_periodo}
+    oferta={ofertas.find(element => element.asignatura === asignatura.id_asignatura && element.periodo_academico === periodo.id_periodo)}
+    {periodo}
     {onModificado}
     {titulaciones} />
 {/if}

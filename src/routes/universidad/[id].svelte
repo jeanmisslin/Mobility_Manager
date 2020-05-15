@@ -23,10 +23,10 @@
 
   let menu;
 
-  function modificarUniversidadEnCaliente(codigo,universidad,pais) {
-    universidad.codigo_universidad = codigo;
-    universidad.universidad = universidad;
-    universidad.pais = pais;
+  function modificarUniversidadEnCaliente(uni) {
+    universidad.codigo_universidad = uni.codigo_universidad;
+    universidad.nombre_universidad = uni.nombre_universidad;
+    universidad.pais = uni.pais;
   }
 </script>
 
@@ -50,13 +50,6 @@
     color: black;
     text-transform: uppercase;
   }
-
-  #menu {
-    width: 80px;
-    height: 40px;
-    margin-left: 10px;
-    align-items: center;
-  }
 </style>
 
 <svelte:head>
@@ -71,13 +64,13 @@
 
 <!------- Titulo de la pantalla ----------->
 
-  <div id="title">{universidad.universidad}</div>
+  <div id="title">{universidad.nombre_universidad}</div>
   <div></div>
 </div>
 
 <!------ Datos Universidad ------->
 
-  <DatosUniversidad {universidad} {universidades} onModificada={modificarUniversidadEnCaliente}/>
+  <DatosUniversidad {universidad} {universidades} onModificado={modificarUniversidadEnCaliente}/>
 
 <!--- Formulario Modifica Universidad
 

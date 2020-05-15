@@ -59,7 +59,6 @@
         if (json.error) {
           message = json.error;
         } else {
-          console.log(modificacion);
           message = "nueva oferta guardada";
         }
         onModificado({...modificacion});

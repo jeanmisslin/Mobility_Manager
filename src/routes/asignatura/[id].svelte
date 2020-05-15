@@ -16,7 +16,6 @@
 
 <script>
   export let asignatura;
-  
   export let periodos;
   export let titulaciones;
   export let asignaturas;
@@ -63,15 +62,6 @@
 
   function modificarAsignaturaEnCaliente (modificacion) {
     asignatura = modificacion;
-    /*asignatura.codigo_asignatura = modificacion.codigo;
-    asignatura.idioma = modificacion.idioma;
-    asignatura.ects = modificacion.ects;
-    asignatura.nombre_catalan = modificacion.ncat;
-    asignatura.nombre_castellano = modificacion.ncast;
-    asignatura.nombre_ingles = modificacion.ning;
-    asignatura.plan_de_estudios_catalan = modificacion.pscat;
-    asignatura.plan_de_estudios_castellano = modificacion.pscast;
-    asignatura.plan_de_estudios_ingles = modificacion.psing;*/
   }
 
   let tabstring = generartab(periodos);

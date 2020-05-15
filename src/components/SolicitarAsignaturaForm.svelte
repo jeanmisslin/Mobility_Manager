@@ -83,10 +83,6 @@
     seleccion = pestaña;
   }
 
-  function abrir() {
-    asignacion = { ...asignacion, open: true };
-  }
-
   function cerrar() {
     asignacion = { ...asignacion, open: false };
   }
@@ -98,7 +94,7 @@
 
 <div>
     <Dialog bind:this={simpleDialog} aria-labelledby="simple-title" aria-describedby="simple-content">
-      <Title id="simple-title">Solicitar Asignatura</Title>
+      <Title id="simple-title">Solicitar Asignatura {oferta.codigo_asignatura}</Title>
       <Actions>
         <Button color="secondary" variant="raised" on:click={cerrar}>
           <Label>NO</Label>

@@ -55,10 +55,9 @@
     }
   }
 
-  function modificarEstadoEnCaliente(codigo, estado, disponibles, concedidas) {
-    console.log("modificarEstadoEnCaliente", codigo, estado);
+  function modificarEstadoEnCaliente(id, estado, disponibles, concedidas) {
     for (let i = 0; i < tabla.length; i++) {
-      if (tabla[i].codigo_asignatura === codigo) {
+      if (tabla[i].id_asignatura === id) {
         tabla[i].estado_solicitud = estado;
         tabla[i].plazas_disponibles = disponibles;
         tabla[i].plazas_concedidas = concedidas;
@@ -137,7 +136,7 @@
     <tr>
       {#if obj.periodo_academico === acuerdo.periodo_academico}
         <td class={colorfila(obj)}>
-          <a href="/asignatura/{obj.codigo_asignatura}">
+          <a href="/asignatura/{obj.id_asignatura}">
             {obj.codigo_asignatura}
           </a>
         </td>

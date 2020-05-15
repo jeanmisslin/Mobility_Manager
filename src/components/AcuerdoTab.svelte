@@ -195,8 +195,8 @@
         active = 'Asignaturas Solicitadas';
       }}
       componente="solicitar"
-      campos={[{ name: 'codigo_asignatura', nombre: 'código', show: true, filter: true, render: obj => `<a href="/asignatura/${obj.codigo_asignatura}">${obj.codigo_asignatura}</a>` }, 
-               { name: 'nombre_ingles', nombre: 'titulo', show: true, filter: true, render: obj => `<a href="${obj.plan_de_estudios_ingles}">${obj.nombre_ingles}</a>` }, 
+      campos={[{ name: 'codigo_asignatura', nombre: 'código', show: true, filter: true }, 
+               { name: 'nombre_ingles', nombre: 'titulo', show: true, filter: true, render: obj => `<a href="/asignatura/${obj.id_asignatura}">${obj.nombre_ingles}</a>` }, 
                { name: 'nombre_catalan', filter: true }, 
                { name: 'nombre_castellano', filter: true }, 
                { name: 'plazas_disponibles', nombre: 'vacantes', show: true }]} />

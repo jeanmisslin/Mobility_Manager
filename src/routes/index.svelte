@@ -29,7 +29,7 @@
   import List, { Item, Graphic, Text, PrimaryText, SecondaryText, Separator } from "@smui/list";
   import Menu, { SelectionGroup, SelectionGroupIcon } from "@smui/menu";
   import { Anchor } from "@smui/menu-surface";
-  import TablaFiltrableEstudiantes from "../components/TablaFiltrableEstudiantes.svelte";
+  import TablaFiltrable from "../components/TablaFiltrable.svelte";
   import NuevoEstudiante from "../components/NuevoEstudiante.svelte";
   import AñadirPeriodoForm from "../components/AñadirPeriodoForm.svelte";
   import SelectorPeriodo from "../components/SelectorPeriodo.svelte";
@@ -145,7 +145,7 @@
 {#if periodo_seleccionado.id_periodo === ''}
   <!------ Tabla con todos los estudiantes de la Base de Datos ------->
 
-  <TablaFiltrableEstudiantes
+  <TablaFiltrable
     tabla={estudiantes}
     campos={[{ name: 'apellidos', show: true, 
                render: obj => `<a href="/estudiante/${obj.id_estudiante}">${obj.apellidos}</a>`, 
@@ -156,7 +156,7 @@
 {:else}
   <!--- Tabla con los estudiantes de la Base de Datos que corresponden al Periodo seleccionado --->
 
-  <TablaFiltrableEstudiantes
+  <TablaFiltrable
     tabla={estudiantes.filter(est =>
       mostrarestudiante(periodo_seleccionado.id_periodo, est, acuerdos)
     )}

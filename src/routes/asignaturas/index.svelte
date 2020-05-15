@@ -15,7 +15,7 @@
 <script>
   export let asignaturas;
 
-  import TablaFiltrableEstudiantes from "../../components/TablaFiltrableEstudiantes.svelte";
+  import TablaFiltrable from "../../components/TablaFiltrable.svelte";
   import NuevaAsignatura from "../../components/NuevaAsignatura.svelte";
   import Menu, { SelectionGroup, SelectionGroupIcon } from "@smui/menu";
   import { Anchor } from "@smui/menu-surface";
@@ -79,7 +79,7 @@
 
 <!------ Tabla con todas las asignaturas de la Base de Datos ------->
 
-<TablaFiltrableEstudiantes
+<TablaFiltrable
   tabla={asignaturas}
   campos={[
     { name: 'codigo_asignatura', nombre: 'código', show: true, filter: true }, 

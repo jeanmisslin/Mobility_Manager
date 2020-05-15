@@ -1,5 +1,6 @@
 <script>
-  export let universidades; 
+  export let universidades;
+  export let onUniversidad; 
 
   import MenuSurface, { Anchor } from "@smui/menu-surface";
   import IconButton from "@smui/icon-button";
@@ -73,16 +74,6 @@
     return introducido;
   }
 
-  function ultimo(universidades){
-    let l = universidades.length;
-    if(l === 0 || l === undefined){
-      return 1;
-    }
-    return universidades[l-1].id_universidad+1;
-  }
-
-  let last = ultimo(universidades);
-
   async function añadiruniversidad() {
     const body = await fetch(`nuevauniversidad.json`, {
       method: "POST",
@@ -97,8 +88,15 @@
           message = "nuevauniversidad saved";
           return json.id_universidad
         }
-        console.log(last);
       }
+
+  async function añadirambos() {
+    const id_universidad = await añadiruniversidad();
+    nuevauniversidad.id_universidad = id_universidad;
+    if (onUniversidad) {
+      onUniversidad({...nuevauniversidad});
+    }
+  }
 </script>
 
 <style>
@@ -182,7 +180,7 @@
           </Button>
           <Button color="secondary" variant="raised" on:click={añadiruniversidad}>
             <Label>
-              <a href="/universidad/{last}">Salvar</a>
+              Salvar
             </Label>
           </Button>
         {/if}

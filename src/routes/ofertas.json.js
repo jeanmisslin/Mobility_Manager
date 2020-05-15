@@ -9,7 +9,7 @@ export function get(req, res, next) {
 
     db.all(`SELECT ofertas.*, asignaturas.*, periodos_academicos.*
     FROM ofertas INNER JOIN asignaturas, periodos_academicos
-    ON asignaturas.codigo_asignatura = ofertas.asignatura
+    ON asignaturas.id_asignatura = ofertas.asignatura
     AND periodos_academicos.id_periodo = ofertas.periodo_academico
     ORDER BY ofertas.asignatura`, (err, ofertas) => {
         if (err) {

@@ -17,7 +17,7 @@
 
 <script>
   import Textfield from "@smui/textfield";
-  import TablaFiltrableEstudiantes from "../../components/TablaFiltrableEstudiantes.svelte";
+  import TablaFiltrable from "../../components/TablaFiltrable.svelte";
   import Dialog, { Title, Content, Actions, InitialFocus } from "@smui/dialog";
   import Button, { Group, GroupItem, Label, Icon } from "@smui/button";
   import List, { Item, Graphic, Text, PrimaryText, SecondaryText, Separator } from "@smui/list";
@@ -109,9 +109,9 @@
 
 <!------ Tabla con todos los estudiantes de la Base de Datos ------->
 
-  <TablaFiltrableEstudiantes
+  <TablaFiltrable
     tabla={ofertas}
-    campos={[{ name: 'asignatura', nombre: 'código', show: true, filter: true }, 
+    campos={[{ name: 'codigo_asignatura', nombre: 'código', show: true, filter: true }, 
              { name: 'nombre_ingles', nombre: 'título', show: true, render: obj => `<a href="/asignatura/${obj.id_asignatura}">${obj.nombre_ingles}</a>`, filter: true }, 
              { name: 'nombre_castellano', filter: true },
              { name: 'año', show: true, centrado: true },
@@ -125,9 +125,9 @@
 
 <!--- Tabla con los estudiantes de la Base de Datos que corresponden al Periodo seleccionado --->
 
-  <TablaFiltrableEstudiantes
+  <TablaFiltrable
     tabla={ofertas.filter(per => per.periodo_academico === periodo_seleccionado.id_periodo)}
-    campos={[{ name: 'asignatura', nombre: 'código', show: true, filter: true }, 
+    campos={[{ name: 'codigo_asignatura', nombre: 'código', show: true, filter: true }, 
              { name: 'nombre_ingles', nombre: 'título', show: true, render: obj => `<a href="/asignatura/${obj.id_asignatura}">${obj.nombre_ingles}</a>`, filter: true }, 
              { name: 'nombre_castellano', filter: true },
              { name: 'plazas_ofertadas', nombre: 'ofertadas', show: true, centrado: true },

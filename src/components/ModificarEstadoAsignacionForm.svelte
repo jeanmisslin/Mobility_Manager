@@ -2,7 +2,7 @@
   export let asignatura;
   export let acuerdo;
   export let onModificado;
-
+  
   import MenuSurface, { Anchor } from "@smui/menu-surface";
   import IconButton from "@smui/icon-button";
   import Select, { Option } from "@smui/select";
@@ -42,7 +42,7 @@
   $: modificacion = {
     disponibles: asignatura.plazas_disponibles,
     concedidas: asignatura.plazas_concedidas,
-    asignatura: asignatura.codigo_asignatura,
+    asignatura: asignatura.id_asignatura,
     periodo: acuerdo.periodo_academico
   };
 
@@ -59,7 +59,7 @@
         } else {
           message = "asignacion guardada";
         }
-        onModificado(asignatura.codigo_asignatura, 
+        onModificado(asignatura.id_asignatura, 
                      asignacion.estado, 
                      asignatura.plazas_disponibles,
                      asignatura.plazas_concedidas);

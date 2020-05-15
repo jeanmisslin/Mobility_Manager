@@ -48,7 +48,6 @@
           message = "nueva oferta guardada";
         }
         onModificado({...modificacion});
-        console.log(modificacion.titulacion);
       });
   }
 </script>

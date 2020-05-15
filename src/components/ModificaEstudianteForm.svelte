@@ -89,27 +89,6 @@
                      estudiante.pais);
       });
   }
-
-  function modificaracuerdo() {
-    fetch(`modificaacuerdoestudiante.json`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(modificaestudiante)
-    })
-      .then(body => body.json())
-      .then(json => {
-        if (json.error) {
-          message = json.error;
-        } else {
-          message = "modificacion guardada";
-        }
-      });
-  }
-
-  function ambas(){
-    modificarestudiante();
-    modificaracuerdo();
-  }
 </script>
 
 <style>
@@ -223,7 +202,7 @@
           <Button color="secondary" variant="raised">
             <Label>Cancelar</Label>
           </Button>
-          <Button color="secondary" variant="raised" on:click={() => ambas()}>
+          <Button color="secondary" variant="raised" on:click={() => modificarestudiante()}>
               Salvar
           </Button>
         {/if}

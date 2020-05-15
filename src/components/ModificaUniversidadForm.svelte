@@ -46,6 +46,8 @@
 
   let dialog;
 
+ let codigo_actual = universidad.codigo_universidad;
+
   let modificauniversidad;
   $: modificauniversidad = {
     id: universidad.id_universidad,
@@ -85,9 +87,7 @@
         } else {
           message = "modificacion guardada";
         }
-        onModificado(universidad.codigo_universidad,
-                     universidad.nombre_universidad,
-                     universidad.pais);
+        onModificado({...modificauniversidad});
       });
   }
 </script>

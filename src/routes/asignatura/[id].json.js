@@ -17,7 +17,7 @@ export function get(req, res, next) {
         }
         db.all(`SELECT ofertas.*, asignaturas.codigo_asignatura, asignaturas.id_asignatura 
                 FROM ofertas, asignaturas 
-                WHERE ofertas.asignatura = asignaturas.codigo_asignatura
+                WHERE ofertas.asignatura = asignaturas.id_asignatura
                 AND asignaturas.id_asignatura = ?`, [id], (err, ofertas) => {
             if (err) {
                 console.log(err)
