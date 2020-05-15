@@ -18,11 +18,11 @@ CREATE TABLE universidades(
 
 CREATE TABLE estudiantes(
     id_estudiante INTEGER PRIMARY KEY,
-    email TEXT PRIMARY KEY,
+    email TEXT,
     apellidos TEXT,
     nombre TEXT,
     universidad TEXT,
-    FOREIGN KEY (universidad) REFERENCES universidades (codigo_universidad)
+    FOREIGN KEY (universidad) REFERENCES universidades (id_universidad)
 );
 
 CREATE TABLE titulaciones(
@@ -66,14 +66,14 @@ CREATE TABLE asignaturas(
 
 CREATE TABLE ofertas(
     id_oferta INTEGER PRIMARY KEY,
-    asignatura TEXT,
+    asignatura INTEGER,
     periodo_academico int,
     titulacion TEXT,
     plazas_ofertadas int,
     plazas_disponibles int,
     plazas_concedidas int,
     plazas_solicitadas int,
-    FOREIGN KEY (asignatura) REFERENCES asignaturas (codigo_asignatura),
+    FOREIGN KEY (asignatura) REFERENCES asignaturas (id_asignatura),
     FOREIGN KEY (periodo_academico) REFERENCES periodos_academicos (id_periodo),
     CONSTRAINT UC_OFERTA UNIQUE (asignatura,periodo_academico)
 );
