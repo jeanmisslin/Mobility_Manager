@@ -11,7 +11,8 @@ CREATE TABLE asignaturas(
     ects NUMERIC,
     plan_de_estudios_catalan TEXT,
     plan_de_estudios_castellano TEXT,
-    plan_de_estudios_ingles TEXT
+    plan_de_estudios_ingles TEXT,
+    UNIQUE (codigo_asignatura)
 );
 
 INSERT INTO asignaturas

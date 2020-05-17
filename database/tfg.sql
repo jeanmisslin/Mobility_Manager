@@ -13,7 +13,8 @@ CREATE TABLE universidades(
     id_universidad INTEGER PRIMARY KEY,
     codigo_universidad TEXT,
     universidad TEXT,
-    pais TEXT
+    pais TEXT,
+    UNIQUE (codigo_universidad)
 );
 
 CREATE TABLE estudiantes(
@@ -22,7 +23,8 @@ CREATE TABLE estudiantes(
     apellidos TEXT,
     nombre TEXT,
     universidad TEXT,
-    FOREIGN KEY (universidad) REFERENCES universidades (id_universidad)
+    FOREIGN KEY (universidad) REFERENCES universidades (id_universidad),
+    UNIQUE (email)
 );
 
 CREATE TABLE titulaciones(
@@ -48,7 +50,8 @@ CREATE TABLE acuerdos_academicos(
     estado TEXT,
     FOREIGN KEY (estudiante) REFERENCES estudiantes (id_estudiante),
     FOREIGN KEY (titulacion) REFERENCES titulaciones (codigo_titulacion),
-    FOREIGN KEY (periodo_academico) REFERENCES periodos_academicos (id_periodo)
+    FOREIGN KEY (periodo_academico) REFERENCES periodos_academicos (id_periodo),
+    CONSTRAINT UC_ACUERDO UNIQUE (estudiante,periodo_academico)
 );
 
 CREATE TABLE asignaturas(
@@ -61,7 +64,8 @@ CREATE TABLE asignaturas(
     ects NUMERIC,
     plan_de_estudios_catalan TEXT,
     plan_de_estudios_castellano TEXT,
-    plan_de_estudios_ingles TEXT
+    plan_de_estudios_ingles TEXT,
+    UNIQUE (codigo_asignatura)
 );
 
 CREATE TABLE ofertas(

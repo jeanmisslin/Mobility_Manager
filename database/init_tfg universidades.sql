@@ -4,7 +4,8 @@ CREATE TABLE universidades(
     id_universidad INTEGER PRIMARY KEY,
     codigo_universidad TEXT,
     nombre_universidad TEXT,
-    pais TEXT
+    pais TEXT,
+    UNIQUE (codigo_universidad)
 );
 
 INSERT INTO universidades (codigo_universidad, nombre_universidad, pais) VALUES(
