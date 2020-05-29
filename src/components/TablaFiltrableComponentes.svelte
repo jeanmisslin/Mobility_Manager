@@ -1,14 +1,10 @@
 <script>
   export let campos; // campos que se miran al filtrar
   export let tabla; // Array de objetos javascript con todos los datos
-  export let componente;
   export let acuerdo;
-  export let active;
-  export let seleccion;
   export let onSolicitada;
 
   import SolicitarAsignaturaForm from "./SolicitarAsignaturaForm.svelte";
-  import ModificarEstadoAsignacionForm from "./ModificarEstadoAsignacionForm.svelte";
   import Textfield from "@smui/textfield";
 
   let filtro = "";
@@ -20,17 +16,8 @@
 
   $: tablaFiltrada = tabla.filter(obj => {
     for (let c of campos) {
-      if (!(c.name in obj)) {
-        console.error(`${c.name} no está en ${JSON.stringify(obj)}`);
-      }
-      if (c.nombre) {
-        {
-          c.nombre.toUpperCase();
-        }
-      }
-      if (c.filter) {
-        if (strIn(obj[c.name], filtro)) return true;
-      }
+      if (!(c.name in obj)) { console.error(`${c.name} no está en ${JSON.stringify(obj)}`); }
+      if (c.filter) { if (strIn(obj[c.name], filtro)) return true; }
     }
     return false;
   });
@@ -83,11 +70,7 @@
         </th>
       {/if}
     {/each}
-    {#if componente === 'solicitar'}
       <th>SOLICITAR</th>
-    {:else if componente === 'modificar'}
-      <th>MODIFICAR</th>
-    {/if}
   </tr>
     {#each tablaFiltrada as obj}
       <tr>
@@ -100,21 +83,13 @@
             </td>
           {/if}
         {/each}
-        {#if componente === 'solicitar'}
           <td>
             <SolicitarAsignaturaForm
               acuerdo={acuerdo.id_acuerdo}
-              oferta={obj}
-              {active}
-              {seleccion} 
+              oferta={obj} 
               onSolicitada={onSolicitada}
               />
           </td>
-        {:else if componente === 'modificar'}
-          <td>
-            <ModificarEstadoAsignacionForm asignatura={obj} {acuerdo} />
-          </td>
-        {/if}
       </tr>
     {/each}
 </table>

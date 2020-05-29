@@ -20,43 +20,30 @@
     let periodoQ = seleccion.split("Q");
     let año = periodoA[0];
     let cuatrimestre = periodoQ[1];
-    let id_periodo = periodos.find(element => (element.año === parseInt(año)) &
+    let periodo_academico = periodos.find(element => (element.año === parseInt(año)) &
         (element.cuatrimestre === parseInt(cuatrimestre)));
-    return id_periodo;
+    return periodo_academico;
   }
 
-  function id_acuerdo(acuerdos, id_periodo) {
-    let acuerdo = acuerdos.find(element => element.periodo_academico === id_periodo.id_periodo);
+  function acuerdo_academico(acuerdos, periodo_academico) {
+    let acuerdo = acuerdos.find(element => element.periodo_academico === periodo_academico.id_periodo);
     return acuerdo;
   }
 
-  function encontrartitulacion(a, t) {
-    let array = a.split(",");
-    let i;
-    for (i = 0; i != a.length; i++)
-      if (array[i] === t) {
-        return true;
-      }
-    return false;
-  }
-
-  function asignada(a, o) {
+  function asignada(o) {
     let asignacion = asignaturas.find(
       element => element.oferta === o.id_oferta
     );
     return asignacion;
   }
 
-  let id_periodo;
-  let acuerdo;
-
-  $: id_periodo = periodo(seleccion, periodos);
-  $: acuerdo = id_acuerdo(acuerdos, id_periodo);
+  $: periodo_academico = periodo(seleccion, periodos);
+  $: acuerdo = acuerdo_academico(acuerdos, periodo_academico);
 
   function modificarAcuerdoEnCaliente(codigo, titulacion, periodo, estado) {
     for (let i = 0; i < acuerdos.length; i++) {
       if (acuerdos[i].id_acuerdo === codigo) {
-        id_periodo = periodo;
+        periodo_academico = periodo;
         acuerdos[i].periodo_academico = periodo.id_periodo;
         acuerdos[i].titulacion_castellano = titulacion;
         acuerdos[i].estado = estado;
@@ -151,8 +138,8 @@
 <div id="datos">
   <div id="campos">
     <label>Periodo</label>
-    <data>{id_periodo.año + "-" + (id_periodo.año+1) + " Q" 
-         + id_periodo.cuatrimestre}</data>
+    <data>{periodo_academico.año + "-" + (periodo_academico.año+1) + " Q" 
+         + periodo_academico.cuatrimestre}</data>
   </div>
   <div id="titulacion">
     <label>Titulación</label>
@@ -186,15 +173,12 @@
 
   {#if active === 'Buscador de Asignaturas'}
     <TablaFiltrableComponentes
-      tabla={ofertas.filter(ofer => ofer.periodo_academico === acuerdo.periodo_academico && (asignada(asignaturas, ofer) === null || asignada(asignaturas, ofer) === undefined))}
+      tabla={ofertas.filter(ofer => ofer.periodo_academico === acuerdo.periodo_academico && (asignada(ofer) === null || asignada(ofer) === undefined))}
       {acuerdo}
-      {active}
-      {seleccion}
       onSolicitada={(asignaturaSolicitada) => {
         asignaturas = [...asignaturas, asignaturaSolicitada];
         active = 'Asignaturas Solicitadas';
       }}
-      componente="solicitar"
       campos={[{ name: 'codigo_asignatura', nombre: 'código', show: true, filter: true }, 
                { name: 'nombre_ingles', nombre: 'titulo', show: true, filter: true, render: obj => `<a href="/asignatura/${obj.id_asignatura}">${obj.nombre_ingles}</a>` }, 
                { name: 'nombre_catalan', filter: true }, 

@@ -14,10 +14,7 @@
   $: tablaFiltrada = tabla.filter(obj => {
     for (let c of campos) {
       if (!(c.name in obj)) { console.error(`${c.name} no está en ${JSON.stringify(obj)}`); }
-      if (c.nombre) { c.nombre.toUpperCase(); }
-      if (c.filter) {
-        if (strIn(obj[c.name], filtro)) return true;
-      }
+      if (c.filter) { if (strIn(obj[c.name], filtro)) return true; }
     }
     return false;
   });

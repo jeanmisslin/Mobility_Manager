@@ -12,23 +12,22 @@
       universidades,
       titulaciones,
       ofertas,
-      estudiantes,
-      periodos
+      periodos,
+      estudiantes
     };
   }
 </script>
 
 <script>
-  import Menu, { SelectionGroup, SelectionGroupIcon } from "@smui/menu";
-  import { Anchor } from "@smui/menu-surface";
-  import List, { Item, Separator, Text, PrimaryText, SecondaryText, Graphic } from "@smui/list";
+  
+  
+  
+  import Tab, { Icon, Label } from "@smui/tab";
+  import TabBar from "@smui/tab-bar";
+  import MenuPantallas from "../../components/MenuPantallas.svelte";
   import DatosPersonales from "../../components/DatosPersonales.svelte";
   import AcuerdoTab from "../../components/AcuerdoTab.svelte";
   import NuevoAcuerdoForm from "../../components/NuevoAcuerdoForm.svelte";
-  import Tab, { Icon, Label } from "@smui/tab";
-  import TabBar from "@smui/tab-bar";
-  import Button from "@smui/button";
-  import MenuPantallas from "../../components/MenuPantallas.svelte";
 
   export let estudiante;
   export let universidades;
@@ -50,8 +49,6 @@
     asignaturas
   } = estudiante;
 
-  let menu;
-
   let active = "Datos Personales";
 
   function generartab(acuerdos) {
@@ -61,13 +58,10 @@
       pestaña = acuerdos[i].año + "-" + (acuerdos[i].año + 1) + " Q" + acuerdos[i].cuatrimestre;
       pestañas = pestañas + ", " + pestaña;
     }
-    return pestañas;
+    return pestañas.split(",");
   }
 
-  let tabstring;
-  $: tabstring = generartab(acuerdos);
-  let tabgenerado;
-  $: tabgenerado = tabstring.split(",");
+  $: tabgenerado = generartab(acuerdos);
 </script>
 
 <style>

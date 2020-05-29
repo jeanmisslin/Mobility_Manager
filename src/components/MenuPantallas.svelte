@@ -19,16 +19,6 @@
   let rutas = generarMenu();
 </script>
 
-<style>
-  #menu {
-    width: 80px;
-    height: 40px;
-    margin-left: 10px;
-    align-items: center;
-  }
-</style>
-
-<div id="menu">
   <div style="min-width: 100px;">
     <Button on:click={() => menu.setOpen(true)}>Menu</Button>
     <Menu bind:this={menu}>
@@ -51,4 +41,4 @@
       </List>
     </Menu>
   </div>
-</div>
+

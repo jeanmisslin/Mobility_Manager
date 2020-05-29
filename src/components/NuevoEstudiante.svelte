@@ -14,13 +14,14 @@
   import Button, { Group, GroupItem, Label, Icon as ButtonIcon } from "@smui/button";
   import List, { Item, Graphic, Text } from "@smui/list";
   import { MDCDialog } from "@material/dialog";
-  import Warning from "./Warning.svelte";
-
-  let dialog;
 
   function listUniversidades() {}
   function listPeriodos() {}
   function listTitulaciones() {}
+
+  let dialog;
+  let message;
+  let warning = "Ya existe un/a estudiante con el mismo email";
 
   $: periodo = "";
   $: nombre_titulacion = "";
@@ -42,10 +43,6 @@
     periodo_academico: "",
     estado: "Nominado/a"
   };
-
-  let warning = "Ya existe un/a estudiante con el mismo email";
-
-  let message;
 
   let filtro = "";
 
@@ -73,9 +70,8 @@
 
   $: PeriodosFiltrados = periodos.filter(e => e.año === parseInt(filtroPeriodos));
 
-  function mostrarperiodo(año, cuatrimestre) {
-    let a = año.toString();
-    let periodo = a + "-" + (año + 1) + " Q" + cuatrimestre;
+  function mostrarperiodo(p) {
+    let periodo = p.año + "-" + (p.año + 1) + " Q" + p.cuatrimestre;
     return periodo;
   }
 
@@ -287,7 +283,7 @@
           <Item
             on:click={() => {
               nuevoacuerdo.periodo_academico = p.id_periodo;
-              periodo =  mostrarperiodo(p.año, p.cuatrimestre);
+              periodo =  mostrarperiodo(p);
               listPeriodos.close();
             }}>
             <Text>{p.año}-{p.año + 1} Q{p.cuatrimestre}</Text>
@@ -298,7 +294,7 @@
           <Item
             on:click={() => {
               nuevoacuerdo.periodo_academico = p.id_periodo;
-              periodo =  mostrarperiodo(p.año, p.cuatrimestre);
+              periodo =  mostrarperiodo(p);
               listPeriodos.close();
             }}>
             <Text>{p.año}-{p.año + 1} Q{p.cuatrimestre}</Text>
@@ -339,7 +335,7 @@
             <Label>Cancelar</Label>
           </Button>
           <Button color="secondary" variant="raised" on:click={añadirambos}>
-              Salvar
+            <Label>Salvar</Label>
           </Button>
         {/if}
       </Actions>

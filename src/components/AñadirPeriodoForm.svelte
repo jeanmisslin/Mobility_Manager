@@ -12,7 +12,6 @@
     return periodos[id-1];
   }
 
-  let periodo;
   $: periodo = ultimo(periodos);
 
   function cuatri(periodo){
@@ -30,8 +29,6 @@
   }
 
   let simpleDialog;
-  
-  let nuevoperiodo;
 
   $: nuevoperiodo = {
     id_periodo: "",
@@ -69,7 +66,7 @@
 <style>
 </style>
 
-<div>
+
     <Dialog bind:this={simpleDialog} aria-labelledby="simple-title" aria-describedby="simple-content">
       <Title id="simple-title">Añadir Periodo</Title>
         <Content>
@@ -86,4 +83,4 @@
     </Dialog>
 
     <Button color="primary" variant="raised" on:click={() => simpleDialog.open()}><Label>Añadir Periodo</Label></Button>
-  </div>
+  

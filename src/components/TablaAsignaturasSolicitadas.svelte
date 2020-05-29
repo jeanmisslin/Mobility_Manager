@@ -5,7 +5,6 @@
 
   import ModificarEstadoAsignacionForm from "./ModificarEstadoAsignacionForm.svelte";
   import Textfield from "@smui/textfield";
-  import DataTable, { Head, Body, Row, Cell } from "@smui/data-table";
 
   let filtro = "";
 

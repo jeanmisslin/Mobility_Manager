@@ -6,18 +6,15 @@
   export let asignaturas;
   export let onModificado;
 
-  import MenuSurface, { Anchor } from "@smui/menu-surface";
   import IconButton from "@smui/icon-button";
   import Select, { Option } from "@smui/select";
   import Textfield from "@smui/textfield";
-  import HelperText from "@smui/textfield/helper-text/index";
   import Dialog, { Title, Content, Actions, InitialFocus } from "@smui/dialog";
   import Button, { Group, GroupItem, Label, Icon as ButtonIcon } from "@smui/button";
   import List, { Item, Graphic, Text } from "@smui/list";
   import { MDCDialog } from "@material/dialog";
 
   let dialog;
-  let menuSurface;
   let warning = "El/la estudiante ya dispone de un acuerdo académico para el nuevo periodo seleccionado";
   let estados = [`Nominado/a`, `Matriculado/a`, `Eliminado`];
   let asignaciones = asignaturas.find(element => element.acuerdo_academico === acuerdo.id_acuerdo);

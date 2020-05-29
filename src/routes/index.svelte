@@ -25,10 +25,6 @@
 </script>
 
 <script>
-  import Button, { Group, GroupItem, Label, Icon } from "@smui/button";
-  import List, { Item, Graphic, Text, PrimaryText, SecondaryText, Separator } from "@smui/list";
-  import Menu, { SelectionGroup, SelectionGroupIcon } from "@smui/menu";
-  import { Anchor } from "@smui/menu-surface";
   import TablaFiltrable from "../components/TablaFiltrable.svelte";
   import NuevoEstudiante from "../components/NuevoEstudiante.svelte";
   import AñadirPeriodoForm from "../components/AñadirPeriodoForm.svelte";
@@ -47,19 +43,13 @@
     cuatrimestre: ""
   };
 
-  let menu;
-
-  let message;
-
 //La función mostrarestudiante devuelve true cuando encuentra un acuerdo académico con los 
 //mismos periodo académico y estudiante introducidos como parámetros.
 
   function mostrarestudiante(periodo, estudiante, acuerdos) {
     for (let i = 0; i < acuerdos.length; i++) {
-      if (
-        estudiante.id_estudiante === acuerdos[i].estudiante &&
-        acuerdos[i].periodo_academico === periodo
-      ) {
+      if (estudiante.id_estudiante === acuerdos[i].estudiante &&
+        acuerdos[i].periodo_academico === periodo) {
         return true;
       }
     }
@@ -83,7 +73,7 @@
     border: 1px solid black;
   }
 
-  #title {
+  #titulo {
     display: flex;
     text-align: center;
     font-weight: 500;
@@ -113,7 +103,7 @@
 
   <!-------- Titulo de la pantalla ----------->
 
-  <div id="title">Estudiantes Incoming</div>
+  <div id="titulo">Estudiantes Incoming</div>
   <div />
 </div>
 
