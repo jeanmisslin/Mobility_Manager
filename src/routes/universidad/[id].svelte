@@ -14,7 +14,6 @@
   import Menu, { SelectionGroup, SelectionGroupIcon } from "@smui/menu";
   import { Anchor } from "@smui/menu-surface";
   import List, { Item, Separator, Text, PrimaryText, SecondaryText, Graphic } from "@smui/list";
-  import MostrarOfertasForm from "../../components/MostrarOfertasForm.svelte";
   import DatosUniversidad from "../../components/DatosUniversidad.svelte";
   import Tab, { Icon, Label } from "@smui/tab";
   import TabBar from "@smui/tab-bar";
@@ -72,6 +71,6 @@
 
   <DatosUniversidad {universidad} {universidades} onModificado={modificarUniversidadEnCaliente}/>
 
-<!--- Formulario Modifica Universidad
+<!--- Formulario Modifica Universidad -->
 
-  <ModificaUniversidadForm {universidad} /> --->
+  

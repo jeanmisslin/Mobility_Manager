@@ -23,9 +23,9 @@
   import Menu, { SelectionGroup, SelectionGroupIcon } from "@smui/menu";
   import { Anchor } from "@smui/menu-surface";
   import List, { Item, Separator, Text, PrimaryText, SecondaryText, Graphic } from "@smui/list";
-  import MostrarOfertasForm from "../../components/MostrarOfertasForm.svelte";
+  import MostrarOfertas from "../../components/MostrarOfertas.svelte";
   import DatosAsignatura from "../../components/DatosAsignatura.svelte";
-  import ModificaAsignaturaForm from "../../components/ModificaAsignaturaForm.svelte";
+  import ModificaAsignatura from "../../components/ModificaAsignatura.svelte";
   import Tab, { Icon, Label } from "@smui/tab";
   import TabBar from "@smui/tab-bar";
   import Button from "@smui/button";
@@ -133,12 +133,12 @@
 
 <!--- Formulario Modifica Asignatura --->
 
-  <ModificaAsignaturaForm {asignatura} {asignaturas} onModificado={modificarAsignaturaEnCaliente}/>
+  <ModificaAsignatura {asignatura} {asignaturas} onModificado={modificarAsignaturaEnCaliente}/>
 {:else}
 
 <!--- Ofertas de la Asignatura según Periodo Académico --->
 
-  <MostrarOfertasForm {ofertas}
+  <MostrarOfertas {ofertas}
                       {periodos} 
                       {asignatura} 
                       {titulaciones} 

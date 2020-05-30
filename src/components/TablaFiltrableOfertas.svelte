@@ -4,7 +4,7 @@
   export let acuerdo;
   export let onSolicitada;
 
-  import SolicitarAsignaturaForm from "./SolicitarAsignaturaForm.svelte";
+  import SolicitarAsignatura from "./SolicitarAsignatura.svelte";
   import Textfield from "@smui/textfield";
 
   let filtro = "";
@@ -84,7 +84,7 @@
           {/if}
         {/each}
           <td>
-            <SolicitarAsignaturaForm
+            <SolicitarAsignatura
               acuerdo={acuerdo.id_acuerdo}
               oferta={obj} 
               onSolicitada={onSolicitada}

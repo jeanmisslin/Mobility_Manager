@@ -10,7 +10,7 @@
   import Button, { Group, GroupItem, Label, Icon as ButtonIcon } from "@smui/button";
   import List, { Item, Graphic, Text } from "@smui/list";
   import { MDCDialog } from "@material/dialog";
-  import ModificarPlazasOferta from "./ModificarPlazasOferta.svelte";
+  import ModificaPlazasOferta from "./ModificaPlazasOferta.svelte";
 
   let dialog;
 
@@ -67,4 +67,4 @@
     </tr>
   </table>
 
-  <ModificarPlazasOferta {oferta} onModificado={modificarPlazasEnCaliente}/>
+  <ModificaPlazasOferta {oferta} onModificado={modificarPlazasEnCaliente}/>

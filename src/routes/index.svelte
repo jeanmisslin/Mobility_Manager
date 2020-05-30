@@ -27,7 +27,7 @@
 <script>
   import TablaFiltrable from "../components/TablaFiltrable.svelte";
   import NuevoEstudiante from "../components/NuevoEstudiante.svelte";
-  import AñadirPeriodoForm from "../components/AñadirPeriodoForm.svelte";
+  import AñadirPeriodo from "../components/AñadirPeriodo.svelte";
   import SelectorPeriodo from "../components/SelectorPeriodo.svelte";
   import MenuPantallas from "../components/MenuPantallas.svelte";
 
@@ -111,7 +111,7 @@
 
   <!----- Formulario Añadir Periodo ---------->
 
-  <AñadirPeriodoForm
+  <AñadirPeriodo
     {periodos}
     onModificado={nuevoperiodo => { periodos = [...periodos, nuevoperiodo];}} />
 

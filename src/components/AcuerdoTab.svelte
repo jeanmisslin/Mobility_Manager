@@ -6,8 +6,8 @@
   export let ofertas;
   export let asignaturas;
 
-  import ModificaAcuerdoForm from "./ModificaAcuerdoForm.svelte";
-  import TablaFiltrableComponentes from "./TablaFiltrableComponentes.svelte";
+  import ModificaAcuerdo from "./ModificaAcuerdo.svelte";
+  import TablaFiltrableOfertas from "./TablaFiltrableOfertas.svelte";
   import TablaAsignaturasSolicitadas from "./TablaAsignaturasSolicitadas.svelte";
   import Tab, { Icon, Label } from "@smui/tab";
   import TabBar from "@smui/tab-bar";
@@ -149,7 +149,7 @@
     <label>Estado</label>
     <data>{acuerdo.estado}</data>
   </div>
-  <ModificaAcuerdoForm 
+  <ModificaAcuerdo 
     {periodos} 
     {acuerdo} 
     {titulaciones} 
@@ -172,7 +172,7 @@
   </div>
 
   {#if active === 'Buscador de Asignaturas'}
-    <TablaFiltrableComponentes
+    <TablaFiltrableOfertas
       tabla={ofertas.filter(ofer => ofer.periodo_academico === acuerdo.periodo_academico && (asignada(ofer) === null || asignada(ofer) === undefined))}
       {acuerdo}
       onSolicitada={(asignaturaSolicitada) => {

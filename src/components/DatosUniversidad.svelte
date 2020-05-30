@@ -3,7 +3,7 @@
   export let universidades;
   export let onModificado;
 
-  import ModificaUniversidadForm from "./ModificaUniversidadForm.svelte";
+  import ModificaUniversidad from "./ModificaUniversidad.svelte";
 
 </script>
 
@@ -54,6 +54,6 @@
   </div>
 </div>
 
-<ModificaUniversidadForm {universidad} 
+<ModificaUniversidad {universidad} 
                          {universidades} 
                          {onModificado}/>

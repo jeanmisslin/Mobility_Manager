@@ -27,7 +27,7 @@
   import MenuPantallas from "../../components/MenuPantallas.svelte";
   import DatosPersonales from "../../components/DatosPersonales.svelte";
   import AcuerdoTab from "../../components/AcuerdoTab.svelte";
-  import NuevoAcuerdoForm from "../../components/NuevoAcuerdoForm.svelte";
+  import NuevoAcuerdo from "../../components/NuevoAcuerdo.svelte";
 
   export let estudiante;
   export let universidades;
@@ -119,7 +119,7 @@
 
 <!----- Formulario Nuevo Acuerdo ----->
 
-  <NuevoAcuerdoForm 
+  <NuevoAcuerdo 
     {periodos} 
     {titulaciones} 
     {estudiante} 

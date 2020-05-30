@@ -3,7 +3,7 @@
   export let universidades;
   export let estudiantes;
 
-  import ModificaEstudianteForm from "./ModificaEstudianteForm.svelte";
+  import ModificaEstudiante from "./ModificaEstudiante.svelte";
 
   function modificarEstudianteEnCaliente(apellidos, nombre, email, id_universidad, nombre_universidad, pais) {
     estudiante.apellidos = apellidos;
@@ -71,7 +71,7 @@
   </div>
 </div>
 
-<ModificaEstudianteForm {estudiante} 
+<ModificaEstudiante {estudiante} 
                         {universidades} 
                         {estudiantes} 
                         onModificado={modificarEstudianteEnCaliente}/>

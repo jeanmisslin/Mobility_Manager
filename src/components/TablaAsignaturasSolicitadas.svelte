@@ -3,7 +3,7 @@
   export let acuerdo;
   export let ofertas;
 
-  import ModificarEstadoAsignacionForm from "./ModificarEstadoAsignacionForm.svelte";
+  import ModificaEstadoAsignacion from "./ModificaEstadoAsignacion.svelte";
   import Textfield from "@smui/textfield";
 
   let filtro = "";
@@ -143,7 +143,7 @@
         <td class={colorfila(obj)}>{obj.plazas_disponibles}</td>
         <td class={colorfila(obj)}>{obj.estado_solicitud}</td>
         <td class={colorfila(obj)}>
-          <ModificarEstadoAsignacionForm 
+          <ModificaEstadoAsignacion 
             asignatura={obj} 
             {acuerdo} 
             onModificado={modificarEstadoEnCaliente} />
