@@ -6,8 +6,8 @@
   export let seleccion;
   export let onModificado;
 
-  import MostrarTitulacionesOfertas from "./MostrarTitulacionesOfertas.svelte";
-  import AñadirOferta from "./AñadirOferta.svelte";
+  import MostrarTitulacionesOferta from "./MostrarTitulacionesOferta.svelte";
+  import NuevaOferta from "./NuevaOferta.svelte";
   import MostrarPlazasOferta from "./MostrarPlazasOferta.svelte";
 
   let message;
@@ -56,7 +56,7 @@
 {#if ofertas.find(element => element.asignatura === asignatura.id_asignatura && element.periodo_academico === periodo.id_periodo) === null || ofertas.find(element => element.asignatura === asignatura.id_asignatura && element.periodo_academico === periodo.id_periodo) === undefined}
   <div id="contenedor">
   <div id="boton">
-    <AñadirOferta
+    <NuevaOferta
       asignatura={asignatura.id_asignatura}
       {titulaciones}
       periodo={periodo.id_periodo} />
@@ -65,7 +65,7 @@
 {:else}
   <MostrarPlazasOferta
     oferta={ofertas.find(element => element.asignatura === asignatura.id_asignatura && element.periodo_academico === periodo.id_periodo)} />
-  <MostrarTitulacionesOfertas
+  <MostrarTitulacionesOferta
     oferta={ofertas.find(element => element.asignatura === asignatura.id_asignatura && element.periodo_academico === periodo.id_periodo)}
     {periodo}
     {onModificado}

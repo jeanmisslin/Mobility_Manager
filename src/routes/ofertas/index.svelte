@@ -16,35 +16,18 @@
 </script>
 
 <script>
-  import Textfield from "@smui/textfield";
-  import TablaFiltrable from "../../components/TablaFiltrable.svelte";
-  import Dialog, { Title, Content, Actions, InitialFocus } from "@smui/dialog";
-  import Button, { Group, GroupItem, Label, Icon } from "@smui/button";
-  import List, { Item, Graphic, Text, PrimaryText, SecondaryText, Separator } from "@smui/list";
-  import Menu, { SelectionGroup, SelectionGroupIcon } from "@smui/menu";
-  import { Anchor } from "@smui/menu-surface";
-  import SelectorPeriodo from "../../components/SelectorPeriodo.svelte";
-  import MenuPantallas from "../../components/MenuPantallas.svelte";
-
   export let periodos;
   export let ofertas;
+
+  import TablaFiltrable from "../../components/TablaFiltrable.svelte";
+  import SelectorPeriodo from "../../components/SelectorPeriodo.svelte";
+  import MenuPantallas from "../../components/MenuPantallas.svelte";
 
   let periodo_seleccionado = {
     id_periodo: "",
     año: "",
     cuatrimestre: ""
   };
-
-  let menu;
-  let dialog;
-
-  function listPeriodos() {}
-
-  let message;
-
-  let filtroPeriodos = "";
-
-  $: PeriodosFiltrados = periodos.filter(e => e.año === parseInt(filtroPeriodos));
 
   function seleccionarEnCaliente(periodo){
     periodo_seleccionado = periodo;
@@ -63,7 +46,7 @@
     border: 1px solid black;
   }
 
-  #title {
+  #titulo {
     display: flex;
     text-align: center;
     font-weight: 500;
@@ -93,7 +76,7 @@
 
 <!-------- Titulo de la pantalla ----------->
 
-  <div id="title">Ofertas</div>
+  <div id="titulo">Ofertas</div>
   <div />
 </div>
 

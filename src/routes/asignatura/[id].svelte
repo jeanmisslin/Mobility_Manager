@@ -20,20 +20,14 @@
   export let titulaciones;
   export let asignaturas;
 
-  import Menu, { SelectionGroup, SelectionGroupIcon } from "@smui/menu";
-  import { Anchor } from "@smui/menu-surface";
-  import List, { Item, Separator, Text, PrimaryText, SecondaryText, Graphic } from "@smui/list";
-  import MostrarOfertas from "../../components/MostrarOfertas.svelte";
+  import MostrarOferta from "../../components/MostrarOferta.svelte";
   import DatosAsignatura from "../../components/DatosAsignatura.svelte";
   import ModificaAsignatura from "../../components/ModificaAsignatura.svelte";
   import Tab, { Icon, Label } from "@smui/tab";
   import TabBar from "@smui/tab-bar";
-  import Button from "@smui/button";
   import MenuPantallas from "../../components/MenuPantallas.svelte";
 
   let { ofertas } = asignatura;
-
-  let menu;
 
   let active = "Datos Asignatura";
 
@@ -45,27 +39,24 @@
     if (l <= 4) {
       for (let i = l-1; i >= 0; i--) {
         periodo = periodos[i];
-      pestaña =
-        periodo.año + "-" + (periodo.año + 1) + " Q" + periodo.cuatrimestre;
-      pestañas = pestañas + ", " + pestaña;
+        pestaña = periodo.año + "-" + (periodo.año + 1) + " Q" + periodo.cuatrimestre;
+        pestañas = pestañas + ", " + pestaña;
       }
     } else {
       for (let i = l-1; i > l-5; i--) {
-      periodo = periodos[i];
-      pestaña =
-        periodo.año + "-" + (periodo.año + 1) + " Q" + periodo.cuatrimestre;
-      pestañas = pestañas + ", " + pestaña;
+        periodo = periodos[i];
+        pestaña = periodo.año + "-" + (periodo.año + 1) + " Q" + periodo.cuatrimestre;
+        pestañas = pestañas + ", " + pestaña;
       }
     }
-    return pestañas;
+    return pestañas.split(",");
   }
+
+  let tabgenerado = generartab(periodos);
 
   function modificarAsignaturaEnCaliente (modificacion) {
     asignatura = modificacion;
   }
-
-  let tabstring = generartab(periodos);
-  let tabgenerado = tabstring.split(",");
 
   function modificarOfertaEnCaliente(modificacion) {
     for (let i = 0; i < ofertas.length; i++) {
@@ -88,7 +79,7 @@
     border: 1px solid black;
   }
 
-  #title {
+  #titulo {
     display: flex;
     text-align: center;
     font-weight: 500;
@@ -110,8 +101,8 @@
 
 <!------- Titulo de la pantalla ----------->
 
-  <div id="title">{asignatura.codigo_asignatura}</div>
-  <div id="title">{asignatura.nombre_ingles}</div>
+  <div id="titulo">{asignatura.codigo_asignatura}</div>
+  <div id="titulo">{asignatura.nombre_ingles}</div>
   <div></div>
 </div>
 
@@ -138,10 +129,10 @@
 
 <!--- Ofertas de la Asignatura según Periodo Académico --->
 
-  <MostrarOfertas {ofertas}
-                      {periodos} 
-                      {asignatura} 
-                      {titulaciones} 
-                      seleccion={active}
-                      onModificado={modificarOfertaEnCaliente} />
+  <MostrarOferta {ofertas}
+                 {periodos} 
+                 {asignatura} 
+                 {titulaciones} 
+                  seleccion={active}
+                  onModificado={modificarOfertaEnCaliente} />
 {/if}

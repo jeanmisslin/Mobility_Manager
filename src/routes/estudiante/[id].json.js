@@ -10,14 +10,16 @@ export function get(req, res, next) {
     }
 
     db.get(`SELECT estudiantes.*, universidades.nombre_universidad, universidades.pais, universidades.id_universidad 
-            FROM estudiantes, universidades WHERE estudiantes.universidad = universidades.id_universidad AND id_estudiante = ?`, [id],
+            FROM estudiantes, universidades 
+            WHERE estudiantes.universidad = universidades.id_universidad 
+            AND id_estudiante = ?`, [id],
         (err, estudiante) => {
             if (err) {
                 console.log(err)
                 jsonResponse(500, { error: `No he podido consultar el estudiante (${id}): ${err}` })
                 return
             }
-            db.all(`SELECT a.*, p.año, p.cuatrimestre, t.titulacion_catalan, t.titulacion_castellano, t.titulacion_ingles, t.ciclo 
+            db.all(`SELECT a.*, p.*, t.* 
                   FROM acuerdos_academicos as a, periodos_academicos as p, titulaciones as t 
                   WHERE a.periodo_academico = p.id_periodo 
                   AND a.titulacion = t.codigo_titulacion 
@@ -47,6 +49,5 @@ export function get(req, res, next) {
                             });
                         })
                 })
-
         })
 }

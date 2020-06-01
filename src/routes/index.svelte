@@ -27,7 +27,7 @@
 <script>
   import TablaFiltrable from "../components/TablaFiltrable.svelte";
   import NuevoEstudiante from "../components/NuevoEstudiante.svelte";
-  import AñadirPeriodo from "../components/AñadirPeriodo.svelte";
+  import NuevoPeriodo from "../components/NuevoPeriodo.svelte";
   import SelectorPeriodo from "../components/SelectorPeriodo.svelte";
   import MenuPantallas from "../components/MenuPantallas.svelte";
 
@@ -46,7 +46,7 @@
 //La función mostrarestudiante devuelve true cuando encuentra un acuerdo académico con los 
 //mismos periodo académico y estudiante introducidos como parámetros.
 
-  function mostrarestudiante(periodo, estudiante, acuerdos) {
+  function mostrarestudiante(periodo, estudiante) {
     for (let i = 0; i < acuerdos.length; i++) {
       if (estudiante.id_estudiante === acuerdos[i].estudiante &&
         acuerdos[i].periodo_academico === periodo) {
@@ -111,7 +111,7 @@
 
   <!----- Formulario Añadir Periodo ---------->
 
-  <AñadirPeriodo
+  <NuevoPeriodo
     {periodos}
     onModificado={nuevoperiodo => { periodos = [...periodos, nuevoperiodo];}} />
 
@@ -148,7 +148,7 @@
 
   <TablaFiltrable
     tabla={estudiantes.filter(est =>
-      mostrarestudiante(periodo_seleccionado.id_periodo, est, acuerdos)
+      mostrarestudiante(periodo_seleccionado.id_periodo, est)
     )}
     campos={[{ name: 'apellidos', show: true, 
                render: obj => `<a href="/estudiante/${obj.id_estudiante}">${obj.apellidos}</a>`, 

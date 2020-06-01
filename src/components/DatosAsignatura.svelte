@@ -1,17 +1,5 @@
 <script>
   export let asignatura;
-
-  let {
-    codigo_asignatura,
-    nombre_catalan,
-    nombre_castellano,
-    nombre_ingles,
-    idioma,
-    ects,
-    plan_de_estudios_catalan,
-    plan_de_estudios_castellano,
-    plan_de_estudios_ingles
-  } = asignatura;
 </script>
 
 <style>

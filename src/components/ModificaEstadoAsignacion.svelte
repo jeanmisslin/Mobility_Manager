@@ -47,7 +47,7 @@
   };
 
   function modificarasignacion() {
-    fetch(`modificarasignacion.json`, {
+    fetch(`modificaasignacion.json`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(asignacion)

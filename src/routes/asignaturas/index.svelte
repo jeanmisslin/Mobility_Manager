@@ -1,14 +1,8 @@
 <script context="module">
   export async function preload({ params, query }) {
-    let fetch_endpoints = [
-      this.fetch(`asignaturas.json`).then(body => body.json())
-    ];
-    let [
-      { asignaturas }
-    ] = await Promise.all(fetch_endpoints);
-    return {
-      asignaturas
-    };
+    let fetch_endpoints = [ this.fetch(`asignaturas.json`).then(body => body.json()) ];
+    let [ { asignaturas } ] = await Promise.all(fetch_endpoints);
+    return { asignaturas };
   }
 </script>
 
@@ -17,14 +11,7 @@
 
   import TablaFiltrable from "../../components/TablaFiltrable.svelte";
   import NuevaAsignatura from "../../components/NuevaAsignatura.svelte";
-  import Menu, { SelectionGroup, SelectionGroupIcon } from "@smui/menu";
-  import { Anchor } from "@smui/menu-surface";
-  import List, { Item, Graphic, Text, PrimaryText, SecondaryText, Separator } from "@smui/list";
-  import Button, { Group, GroupItem, Label, Icon } from "@smui/button";
   import MenuPantallas from "../../components/MenuPantallas.svelte";
-
-  let menu;
-
 </script>
 
 <style>
@@ -32,14 +19,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 0px;
+    margin-bottom: 10px;
     height: 50px;
     width: 100%;
     background-color: white;
     border: 1px solid black;
   }
 
-  #title {
+  #titulo {
     display: flex;
     text-align: center;
     font-weight: 500;
@@ -48,11 +35,6 @@
     text-transform: uppercase;
   }
 
-  #form {
-    width: 100%;
-    height: 40px;
-    margin-top: 10px;
-  }
 </style>
 
 <svelte:head>
@@ -67,15 +49,13 @@
 
   <!------- Titulo de la pantalla ----------->
 
-  <div id="title">ASIGNATURAS</div>
+  <div id="titulo">ASIGNATURAS</div>
   <div />
 </div>
 
 <!------ Formulario Nueva Asignatura ------->
 
-<div id="form">
   <NuevaAsignatura {asignaturas} />
-</div>
 
 <!------ Tabla con todas las asignaturas de la Base de Datos ------->
 

@@ -6,7 +6,7 @@ export function get(req, res, next) {
     res.end(JSON.stringify(obj))
   }
 
-  db.all(`SELECT acuerdos_academicos.* FROM acuerdos_academicos`, (err, acuerdos) => {
+  db.all(`SELECT * FROM acuerdos_academicos`, (err, acuerdos) => {
     if (err) {
       console.log(err)
       jsonResponse(500, { error: `No se pueden consultar acuerdos: ${err}` })

@@ -19,9 +19,6 @@
 </script>
 
 <script>
-  
-  
-  
   import Tab, { Icon, Label } from "@smui/tab";
   import TabBar from "@smui/tab-bar";
   import MenuPantallas from "../../components/MenuPantallas.svelte";
@@ -76,7 +73,7 @@
     border: 1px solid black;
   }
 
-  #title {
+  #titulo {
     display: flex;
     font-weight: 500;
     font-size: 20pt;
@@ -97,7 +94,7 @@
 
 <!------- Titulo de la pantalla ----------->
 
-  <div id="title">{apellidos}, {nombre}</div>
+  <div id="titulo">{apellidos}, {nombre}</div>
   <div />
 </div>
 

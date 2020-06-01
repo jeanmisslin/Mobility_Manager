@@ -1,36 +1,17 @@
 <script context="module">
   export async function preload({ params, query }) {
-    let fetch_endpoints = [
-      this.fetch(`universidades.json`).then(body => body.json())
-    ];
-    let [
-      { universidades }
-    ] = await Promise.all(fetch_endpoints);
-    return {
-      universidades
-    };
+    let fetch_endpoints = [ this.fetch(`universidades.json`).then(body => body.json()) ];
+    let [ { universidades } ] = await Promise.all(fetch_endpoints);
+    return { universidades };
   }
 </script>
 
 <script>
-  import TablaFiltrable from "../../components/TablaFiltrable.svelte";
-  import AñadirUniversidad from "../../components/AñadirUniversidad.svelte";
-  import Button, { Group, GroupItem, Label, Icon } from "@smui/button";
-  import List, { Item, Graphic, Text, PrimaryText, SecondaryText, Separator } from "@smui/list";
-  import Menu, { SelectionGroup, SelectionGroupIcon } from "@smui/menu";
-  import { Anchor } from "@smui/menu-surface";
-  import MenuPantallas from "../../components/MenuPantallas.svelte";
-
   export let universidades;
 
-  let nuevauniversidad = {
-    codigo_universidad: "",
-    universidad: "",
-    pais: ""
-  };
-
-  let menu;
-  
+  import TablaFiltrable from "../../components/TablaFiltrable.svelte";
+  import NuevaUniversidad from "../../components/NuevaUniversidad.svelte";
+  import MenuPantallas from "../../components/MenuPantallas.svelte";
 </script>
 
 <style>
@@ -45,7 +26,7 @@
     border: 1px solid black;
   }
 
-  #title {
+  #titulo {
     display: flex;
     text-align: center;
     font-weight: 500;
@@ -67,13 +48,13 @@
 
 <!-------- Titulo de la pantalla ----------->
 
-  <div id="title">Universidades</div>
+  <div id="titulo">Universidades</div>
   <div />
 </div>
 
 <!------ Formulario Nueva Universidad ------->
 
-  <AñadirUniversidad {universidades} 
+  <NuevaUniversidad {universidades} 
   onUniversidad={(nuevauniversidad) => { universidades = [...universidades, nuevauniversidad]; }} />
 
 <!------ Tabla con todas las universidades de la Base de Datos ------->

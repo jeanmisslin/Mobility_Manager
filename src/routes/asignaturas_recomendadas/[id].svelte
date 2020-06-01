@@ -20,13 +20,8 @@
   export let asignaciones;
   export let estudiantes;
 
-  import Menu, { SelectionGroup, SelectionGroupIcon } from "@smui/menu";
-  import { Anchor } from "@smui/menu-surface";
-  import List, { Item, Separator, Text, PrimaryText, SecondaryText, Graphic } from "@smui/list";
-  import DatosAsignatura from "../../components/DatosAsignatura.svelte";
   import Tab, { Icon, Label } from "@smui/tab";
   import TabBar from "@smui/tab-bar";
-  import Button from "@smui/button";
   import MenuPantallas from "../../components/MenuPantallas.svelte";
 
   let menu;
@@ -120,7 +115,7 @@
     border: 1px solid black;
   }
 
-  #title {
+  #titulo {
     display: flex;
     text-align: center;
     font-weight: 500;
@@ -142,11 +137,11 @@
 
 <!------- Titulo de la pantalla ----------->
 
-  <div id="title">
+  <div id="titulo">
     {estudiantes.find(element => element.id_estudiante === acuerdo.estudiante).apellidos},
     {estudiantes.find(element => element.id_estudiante === acuerdo.estudiante).nombre}
   </div>
-  <div id="title">
+  <div id="titulo">
     {acuerdo.año}-{acuerdo.año+1}, Q{acuerdo.cuatrimestre}
   </div>
   <div></div>
