@@ -17,7 +17,6 @@ export function post(req, res, next) {
                     nuevauniversidad.pais
                 ], function (err) {
                     const id_universidad = this.lastID;
-                    console.log("universidadID modificado =", id_universidad);
                     if (err) {
                         jsonResponse(500, { 
                             error: `Cannot insert the new universidad: ${err}`
@@ -30,5 +29,4 @@ export function post(req, res, next) {
                     })
         })
     })
-
 }

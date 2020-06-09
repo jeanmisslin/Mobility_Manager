@@ -11,8 +11,7 @@ export function post(req, res, next) {
     req.on('data', data => body += data)
     req.on('end', () => {
         const modificacion = JSON.parse(body)
-        db.run(`UPDATE ofertas 
-                SET titulacion = ?
+        db.run(`UPDATE ofertas SET titulacion = ?
                 WHERE ofertas.id_oferta = ?`, [
                     modificacion.titulacion,
                     modificacion.oferta

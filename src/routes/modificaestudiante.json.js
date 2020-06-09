@@ -12,7 +12,8 @@ export function post(req, res, next) {
     req.on('end', () => {
         const modificaestudiante = JSON.parse(body)
         db.run(`UPDATE estudiantes 
-                SET email = ?, apellidos = ?, nombre = ?, universidad = ? WHERE estudiantes.id_estudiante = ?`, [
+                SET email = ?, apellidos = ?, nombre = ?, universidad = ? 
+                WHERE estudiantes.id_estudiante = ?`, [
                     modificaestudiante.email,
                     modificaestudiante.apellidos,
                     modificaestudiante.nombre,
@@ -30,5 +31,4 @@ export function post(req, res, next) {
             })
         })
     })
-
 }

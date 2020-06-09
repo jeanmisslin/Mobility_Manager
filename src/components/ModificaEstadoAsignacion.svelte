@@ -1,35 +1,17 @@
 <script>
   export let asignatura;
-  export let acuerdo;
   export let onModificado;
   
-  import MenuSurface, { Anchor } from "@smui/menu-surface";
   import IconButton from "@smui/icon-button";
   import Select, { Option } from "@smui/select";
-  import Textfield from "@smui/textfield";
-  import HelperText from "@smui/textfield/helper-text/index";
   import Dialog, { Title, Content, Actions, InitialFocus } from "@smui/dialog";
-  import Button, {
-    Group,
-    GroupItem,
-    Label,
-    Icon as ButtonIcon
-  } from "@smui/button";
+  import Button, { Group, GroupItem, Label, Icon as ButtonIcon } from "@smui/button";
   import List, { Item, Graphic, Text } from "@smui/list";
   import { MDCDialog } from "@material/dialog";
-  import Radio from "@smui/radio";
-
-  let estados = [
-    `Concedida`,
-    `Denegada`,
-    `Solicitada`,
-    `Descartada`,
-    `Eliminada`
-  ];
-
+  
   let dialog;
-
   let message;
+  let estados = [ `Concedida`, `Denegada`, `Solicitada`, `Descartada`, `Eliminada` ];
 
   let asignacion = {
     id: asignatura.id_asignacion,
@@ -37,13 +19,10 @@
     estado: asignatura.estado_solicitud
   };
 
-  let modificacion;
-
   $: modificacion = {
     disponibles: asignatura.plazas_disponibles,
     concedidas: asignatura.plazas_concedidas,
-    asignatura: asignatura.id_asignatura,
-    periodo: acuerdo.periodo_academico
+    oferta: asignatura.oferta
   };
 
   function modificarasignacion() {

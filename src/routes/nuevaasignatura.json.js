@@ -23,16 +23,18 @@ export function post(req, res, next) {
                     nuevaasignatura.plan_de_estudios_catalan,
                     nuevaasignatura.plan_de_estudios_castellano,
                     nuevaasignatura.plan_de_estudios_ingles
-                ], (err) => {
-            if (err) {
-                jsonResponse(500, { 
-                    error: `Cannot insert the new asignatura: ${err}`
-                })
-                return
-            }
-            jsonResponse(200, {
-                error: null,
-            })
+                ], function (err) {
+                    const id_asignatura = this.lastID;
+                    if (err) {
+                        jsonResponse(500, { 
+                             error: `Cannot insert the new asignatura: ${err}`
+                        })
+                        return
+                    }
+                    jsonResponse(200, {
+                    error: null,
+                    id_asignatura
+                    })
         })
     })
 

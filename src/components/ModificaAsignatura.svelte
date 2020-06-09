@@ -1,5 +1,4 @@
 <script>
-
   export let asignatura;
   export let asignaturas;
   export let onModificado;
@@ -7,18 +6,13 @@
   import IconButton from "@smui/icon-button";
   import Select, { Option } from "@smui/select";
   import Textfield from "@smui/textfield";
-  import HelperText from "@smui/textfield/helper-text/index";
   import Dialog, { Title, Content, Actions, InitialFocus } from "@smui/dialog";
   import Button, { Group, GroupItem, Label, Icon as ButtonIcon } from "@smui/button";
-  import List, { Item, Graphic, Text } from "@smui/list";
-  import { MDCDialog } from "@material/dialog";
 
   let dialog;
-
+  let message;
   let warning = "Ya existe una asignatura con el mismo código";
-
   let ects = [2.5,3,4.5,5,6,7,7.5,9,10,12,15,24,30];
-
   let idiomas = [`CAT`, `CAST`, `ING`, `CAT/CAST`, `CAT/ING`, `CAST/ING`, `CAT/CAST/ING`];
 
   let modificaasignatura = {
@@ -35,8 +29,6 @@
     plan_de_estudios_castellano: asignatura.plan_de_estudios_castellano,
     plan_de_estudios_ingles: asignatura.plan_de_estudios_ingles 
   };
-
-  let message;
 
   function existe(a) {
     let introducido = asignaturas.find(asg => asg.codigo_asignatura === a);

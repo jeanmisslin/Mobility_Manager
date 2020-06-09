@@ -4,9 +4,7 @@
   export let estudiantes;
   export let onModificado;
 
-  import MenuSurface, { Anchor } from "@smui/menu-surface";
   import IconButton from "@smui/icon-button";
-  import Select, { Option } from "@smui/select";
   import Textfield from "@smui/textfield";
   import HelperText from "@smui/textfield/helper-text/index";
   import Dialog, { Title, Content, Actions, InitialFocus } from "@smui/dialog";
@@ -14,15 +12,11 @@
   import List, { Item, Graphic, Text } from "@smui/list";
   import { MDCDialog } from "@material/dialog";
 
-  let dialog;
-  let ListUniversidades;
-  let ListPeriodos;
-
-  let menuSurface;
-
   function listUniversidades() {}
-  function listPeriodos() {}
-  function listTitulaciones() {}
+
+  let dialog;
+  let message;
+  let warning = "Ya existe un/a estudiante con el mismo email";
 
   let {
     id_estudiante,
@@ -47,10 +41,6 @@
     nombre: nombre,
     universidad: id_universidad
   };
-
-  let warning = "Ya existe un/a estudiante con el mismo email";
-
-  let message;
 
   let filtro = "";
 

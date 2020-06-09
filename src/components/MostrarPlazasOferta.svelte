@@ -1,23 +1,8 @@
 <script>
   export let oferta;
 
-  import MenuSurface, { Anchor } from "@smui/menu-surface";
-  import IconButton from "@smui/icon-button";
-  import Select, { Option } from "@smui/select";
-  import Textfield from "@smui/textfield";
-  import HelperText from "@smui/textfield/helper-text/index";
-  import Dialog, { Title, Content, Actions, InitialFocus } from "@smui/dialog";
-  import Button, { Group, GroupItem, Label, Icon as ButtonIcon } from "@smui/button";
-  import List, { Item, Graphic, Text } from "@smui/list";
-  import { MDCDialog } from "@material/dialog";
   import ModificaPlazasOferta from "./ModificaPlazasOferta.svelte";
-
-  let dialog;
-
-  let plazas = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
-
-  let { asignatura, plazas_ofertadas, plazas_concedidas, periodo_academico } = oferta;
-
+  
   function modificarPlazasEnCaliente(ofertadas) {
     oferta.plazas_ofertadas = ofertadas;
     oferta.plazas_disponibles = oferta.plazas_ofertadas - oferta.plazas_concedidas;

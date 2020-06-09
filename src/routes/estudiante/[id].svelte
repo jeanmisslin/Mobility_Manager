@@ -120,7 +120,6 @@
     {periodos} 
     {titulaciones} 
     {estudiante} 
-    acuerdos={estudiante.acuerdos}
     onModificado={(nuevoacuerdo) => { acuerdos = [...acuerdos, nuevoacuerdo]; }} />
 
 {:else}

@@ -14,8 +14,6 @@
   import DatosUniversidad from "../../components/DatosUniversidad.svelte";
   import MenuPantallas from "../../components/MenuPantallas.svelte";
 
-  let menu;
-
   function modificarUniversidadEnCaliente(uni) {
     universidad.codigo_universidad = uni.codigo_universidad;
     universidad.nombre_universidad = uni.nombre_universidad;
@@ -63,7 +61,7 @@
 
 <!------ Datos Universidad ------->
 
-  <DatosUniversidad {universidad} {universidades} onModificado={modificarUniversidadEnCaliente}/>
+  <DatosUniversidad {universidad} {universidades} />
 
 <!--- Formulario Modifica Universidad -->
 

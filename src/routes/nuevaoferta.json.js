@@ -23,7 +23,6 @@ export function post(req, res, next) {
                     0
                 ], function (err) {
             const id_oferta = this.lastID;
-            console.log("periodoID modificado =", id_oferta);
             if (err) {
                 jsonResponse(500, { 
                     error: `Cannot insert the new oferta: ${err}`

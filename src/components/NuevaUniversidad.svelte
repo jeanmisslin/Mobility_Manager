@@ -2,11 +2,8 @@
   export let universidades;
   export let onUniversidad; 
 
-  import MenuSurface, { Anchor } from "@smui/menu-surface";
   import IconButton from "@smui/icon-button";
-  import Select, { Option } from "@smui/select";
   import Textfield from "@smui/textfield";
-  import HelperText from "@smui/textfield/helper-text/index";
   import Dialog, { Title, Content, Actions, InitialFocus } from "@smui/dialog";
   import Button, { Group, GroupItem, Label, Icon as ButtonIcon } from "@smui/button";
   import List, { Item, Graphic, Text } from "@smui/list";
@@ -42,13 +39,11 @@
                 "Trinidad y Tobago","Túnez","Turkmenistán","Turquía","Tuvalu","Ucrania","Uganda",
                 "Uruguay","Uzbekistán","Vanuatu","Venezuela","Vietnam","Yemen","Yibuti","Zambia",
                 "Zimbabue"];
-
+  
   let dialog;
-
+  let message;
   let warning = "Ya existe una universidad con el mismo código";
   
-  let nuevauniversidad;
-
   $: nuevauniversidad = {
     id_universidad: "",
     codigo_universidad: "",
@@ -57,8 +52,6 @@
   };
 
   function listPaises() {}
-
-  let message;
 
   let filtro = "";
 
@@ -90,7 +83,7 @@
         }
       }
 
-  async function añadirambos() {
+  async function ejecutarambas() {
     const id_universidad = await añadiruniversidad();
     nuevauniversidad.id_universidad = id_universidad;
     if (onUniversidad) {
@@ -178,10 +171,8 @@
           <Button color="secondary" variant="raised">
             <Label>Cancelar</Label>
           </Button>
-          <Button color="secondary" variant="raised" on:click={añadiruniversidad}>
-            <Label>
-              Salvar
-            </Label>
+          <Button color="secondary" variant="raised" on:click={ejecutarambas}>
+            <Label>Salvar</Label>
           </Button>
         {/if}
       </Actions>

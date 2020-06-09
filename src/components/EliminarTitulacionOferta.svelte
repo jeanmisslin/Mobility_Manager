@@ -9,11 +9,9 @@
   import { MDCDialog } from "@material/dialog";
 
   let simpleDialog;
-
-  let array;
-  $: array = oferta.titulacion.split(",");
-
   let message;
+
+  $: array = oferta.titulacion.split(",");
 
   function reconstruir(array, elimina) {
     let i;
@@ -26,8 +24,6 @@
       }
     return modificada;
   }
-
-  let modificacion;
 
   $: modificacion = {
     oferta: oferta.id_oferta,

@@ -5,14 +5,8 @@
 
   import EliminarTitulacionOferta from "./EliminarTitulacionOferta.svelte";
   import AñadirTitulacionOferta from "./AñadirTitulacionOferta.svelte";
-
-  let titulacion;
-  let array;
   
   $: array = oferta.titulacion.split(",");
-
-  let message;
-
 </script>
 
 <style>

@@ -183,7 +183,7 @@
                { name: 'nombre_ingles', nombre: 'titulo', show: true, filter: true, render: obj => `<a href="/asignatura/${obj.id_asignatura}">${obj.nombre_ingles}</a>` }, 
                { name: 'nombre_catalan', filter: true }, 
                { name: 'nombre_castellano', filter: true }, 
-               { name: 'plazas_disponibles', nombre: 'vacantes', show: true }]} />
+               { name: 'plazas_disponibles', nombre: 'vacantes', show: true, centrado: true }]} />
   {:else}
     <TablaAsignaturasSolicitadas tabla={asignaturas} {ofertas} {acuerdo} />
   {/if}

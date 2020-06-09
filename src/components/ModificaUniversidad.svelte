@@ -2,12 +2,9 @@
   export let universidad;
   export let universidades;
   export let onModificado;
-
-  import MenuSurface, { Anchor } from "@smui/menu-surface";
+ 
   import IconButton from "@smui/icon-button";
-  import Select, { Option } from "@smui/select";
   import Textfield from "@smui/textfield";
-  import HelperText from "@smui/textfield/helper-text/index";
   import Dialog, { Title, Content, Actions, InitialFocus } from "@smui/dialog";
   import Button, { Group, GroupItem, Label, Icon as ButtonIcon } from "@smui/button";
   import List, { Item, Graphic, Text } from "@smui/list";
@@ -46,9 +43,8 @@
 
   let dialog;
 
- let codigo_actual = universidad.codigo_universidad;
+  let codigo_actual = universidad.codigo_universidad;
 
-  let modificauniversidad;
   $: modificauniversidad = {
     id: universidad.id_universidad,
     codigo_universidad: universidad.codigo_universidad,

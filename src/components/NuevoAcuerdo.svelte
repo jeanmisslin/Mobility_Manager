@@ -2,32 +2,27 @@
   export let periodos;
   export let estudiante;
   export let titulaciones;
-  export let acuerdos;
   export let onModificado;
 
-  import MenuSurface, { Anchor } from "@smui/menu-surface";
   import IconButton from "@smui/icon-button";
   import Select, { Option } from "@smui/select";
   import Textfield from "@smui/textfield";
-  import HelperText from "@smui/textfield/helper-text/index";
   import Dialog, { Title, Content, Actions, InitialFocus } from "@smui/dialog";
   import Button, { Group, GroupItem, Label, Icon as ButtonIcon } from "@smui/button";
   import List, { Item, Graphic, Text } from "@smui/list";
   import { MDCDialog } from "@material/dialog";
 
   let dialog;
-  let ListUniversidades;
-  let ListPeriodos;
+  let message;
+  let warning = "El/la estudiante ya dispone de un acuerdo académico para el periodo seleccionado";
 
-  let menuSurface;
-
-  function listUniversidades() {}
   function listPeriodos() {}
   function listTitulaciones() {}
 
+  let acuerdos = estudiante.acuerdos;
   let estados = [`Nominado/a`, `Matriculado/a`, `Eliminado/a`];
 
-  export let nuevoacuerdo = {
+  $: nuevoacuerdo = {
     open: false,
     id_acuerdo: "",
     estudiante: estudiante.id_estudiante,
@@ -42,13 +37,9 @@
     ciclo: ""
   };
 
-  export let nuevoestudiante = {
+  $: nuevoestudiante = {
     id_estudiante: estudiante.id_estudiante
   };
-
-  let warning = "El/la estudiante ya dispone de un acuerdo académico para el periodo seleccionado";
-
-  let message;
 
   function existe(a) {
     let introducido = acuerdos.find(acu => acu.periodo_academico === parseInt(a));
@@ -69,12 +60,6 @@
   let filtroPeriodos = "";
 
   $: PeriodosFiltrados = periodos.filter(e => e.año === parseInt(filtroPeriodos));
-
-  function mostrarperiodo(año, cuatrimestre) {
-    let a = año.toString();
-    let periodo = a + "-" + (año + 1) + " Q" + cuatrimestre;
-    return periodo;
-  }
 
   async function añadiracuerdo() {
     const body = await fetch(`nuevoacuerdo.json`, {

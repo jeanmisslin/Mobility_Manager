@@ -10,8 +10,6 @@
   import NuevaOferta from "./NuevaOferta.svelte";
   import MostrarPlazasOferta from "./MostrarPlazasOferta.svelte";
 
-  let message;
-
   function encontrarperiodo(seleccion, periodos) {
     let periodoA = seleccion.split("-");
     let periodoQ = seleccion.split("Q");
@@ -24,8 +22,6 @@
     );
     return periodo;
   }
-
-  let periodo;
 
   $: periodo = encontrarperiodo(seleccion, periodos);
 

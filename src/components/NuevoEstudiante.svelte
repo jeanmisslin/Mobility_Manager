@@ -7,7 +7,6 @@
   export let onAcuerdo;
 
   import IconButton from "@smui/icon-button";
-  import Select, { Option } from "@smui/select";
   import Textfield from "@smui/textfield";
   import HelperText from "@smui/textfield/helper-text/index";
   import Dialog, { Title, Content, Actions, InitialFocus } from "@smui/dialog";

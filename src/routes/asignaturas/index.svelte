@@ -55,7 +55,8 @@
 
 <!------ Formulario Nueva Asignatura ------->
 
-  <NuevaAsignatura {asignaturas} />
+  <NuevaAsignatura {asignaturas}
+  onAsignatura={(nuevaasignatura) => { asignaturas = [...asignaturas, nuevaasignatura]; }} />
 
 <!------ Tabla con todas las asignaturas de la Base de Datos ------->
 

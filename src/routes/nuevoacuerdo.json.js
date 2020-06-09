@@ -19,7 +19,6 @@ export function post(req, res, next) {
                     acuerdo.estado
                 ], function (err) {
                     const id_acuerdo = this.lastID;
-                    console.log("acuerdoID modificado =", id_acuerdo);
                     if (err) {
                         jsonResponse(500, { 
                             error: `Cannot insert the new acuerdo academico: ${err}`

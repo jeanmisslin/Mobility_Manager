@@ -129,7 +129,6 @@
     <th>PLAZAS</th>
     <th>ESTADO</th>
     <th>MODIFICAR</th>
-
   </tr>
   {#each tablaFiltrada as obj}
     <tr>
@@ -144,8 +143,7 @@
         <td class={colorfila(obj)}>{obj.estado_solicitud}</td>
         <td class={colorfila(obj)}>
           <ModificaEstadoAsignacion 
-            asignatura={obj} 
-            {acuerdo} 
+            asignatura={obj}  
             onModificado={modificarEstadoEnCaliente} />
         </td>
       {/if}

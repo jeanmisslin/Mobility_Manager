@@ -15,18 +15,20 @@
   import { MDCDialog } from "@material/dialog";
 
   let dialog;
+  let message;
   let warning = "El/la estudiante ya dispone de un acuerdo académico para el nuevo periodo seleccionado";
+
+  function listPeriodos() {}
+  function listTitulaciones() {}
+
   let estados = [`Nominado/a`, `Matriculado/a`, `Eliminado`];
   let asignaciones = asignaturas.find(element => element.acuerdo_academico === acuerdo.id_acuerdo);
-  let filtroTitulaciones = "";
-  let filtroPeriodos = "";
-  let message;
+  
 
   $: periodo_anterior = acuerdo.periodo_academico;
-  $: nombre_estudio = titulaciones.find(element => element.codigo_titulacion === acuerdo.titulacion);
   $: periodo = periodos.find(element => element.id_periodo === periodo_anterior);
-  $: PeriodosFiltrados = periodos.filter(e => e.año === parseInt(filtroPeriodos));
-  
+  $: estudios = titulaciones.find(element => element.codigo_titulacion === acuerdo.titulacion);
+ 
   $: modificaacuerdo = {
     id_acuerdo: acuerdo.id_acuerdo,
     estudiante: acuerdo.estudiante,
@@ -34,16 +36,11 @@
     periodo_academico: acuerdo.periodo_academico,
     año: periodo.año,
     cuatrimestre: periodo.cuatrimestre,
-    nombre_titulacion: nombre_estudio.titulacion_castellano,
+    nombre_titulacion: estudios.titulacion_castellano,
     estado: acuerdo.estado
   };
-
-  $: modificaplazas = {
-    id_oferta: "",
-    plazas_concedidas: "",
-    plazas_disponibles: "",
-    plazas_solicitadas: ""
-  };
+  
+  let filtroTitulaciones = "";
 
   $: TitulacionesFiltradas = titulaciones.filter(e => {
     let strIn = (a, b) => a.toLowerCase().indexOf(b.toLowerCase()) != -1;
@@ -54,9 +51,10 @@
     );
   });
 
-  function listPeriodos() {}
-  function listTitulaciones() {}
-  
+  let filtroPeriodos = "";
+
+  $: PeriodosFiltrados = periodos.filter(e => e.año === parseInt(filtroPeriodos));
+
   function encontrarperiodo(id) {
     let periodo = periodos.find(per => per.id_periodo === id);
     return periodo;
@@ -109,56 +107,9 @@
       });
   }
 
-  function eliminarplazaconcedida() {
-    fetch(`eliminaplazaconcedida.json`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(modificaplazas)
-    })
-      .then(body => body.json())
-      .then(json => {
-        if (json.error) {
-          message = json.error;
-        } else {
-          message = "oferta guardada";
-        }
-      });
-  }
-
-  function eliminarplazasolicitada() {
-    fetch(`eliminaplazasolicitada.json`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(modificaplazas)
-    })
-      .then(body => body.json())
-      .then(json => {
-        if (json.error) {
-          message = json.error;
-        } else {
-          message = "oferta guardada";
-        }
-      });
-  }
-
-  function actualizarPlazas() {
-    for (let i = 0; i < asignaciones.length; i++) {
-      modificaplazas.id_oferta = asignaciones[i].id_oferta;
-      modificaplazas.plazas_concedidas = asignaciones[i].plazas_concedidas;
-      modificaplazas.plazas_solicitadas = asignaciones[i].plazas_solicitadas;
-      modificaplazas.plazas_disponibles = asignaciones[i].plazas_disponibles;
-      if (asignaciones[i].estado_solicitud === "Concedida") {
-        eliminarplazaconcedida();
-      } else {
-        eliminarplazasolicitada();
-      }
-    }
-  }
-
   function ambas() {
     modificaracuerdo();
     eliminarAsignaciones();
-    actualizarPlazas();
   }
 </script>
 

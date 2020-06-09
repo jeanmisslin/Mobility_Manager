@@ -68,7 +68,7 @@
 
 
     <Dialog bind:this={simpleDialog} aria-labelledby="simple-title" aria-describedby="simple-content">
-      <Title id="simple-title">Añadir Periodo</Title>
+      <Title id="simple-title">Nuevo Periodo</Title>
         <Content>
           ¿Deseas añadir el periodo {nuevoperiodo.año}-{nuevoperiodo.año+1} Q{nuevoperiodo.cuatrimestre}?
         </Content>
@@ -82,5 +82,5 @@
       </Actions>
     </Dialog>
 
-    <Button color="primary" variant="raised" on:click={() => simpleDialog.open()}><Label>Añadir Periodo</Label></Button>
+    <Button color="primary" variant="raised" on:click={() => simpleDialog.open()}><Label>Nuevo Periodo</Label></Button>
   

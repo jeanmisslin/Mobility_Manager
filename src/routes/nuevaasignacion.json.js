@@ -18,7 +18,6 @@ export function post(req, res, next) {
                     asignacion.estado
                 ], function (err) {
                     const id_asignacion = this.lastID;
-                    console.log("asignacionID modificado =", id_asignacion);
                     if (err) {
                         jsonResponse(500, { 
                             error: `Cannot insert the new asignacion: ${err}`

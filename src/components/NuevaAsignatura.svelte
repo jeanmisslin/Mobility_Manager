@@ -1,25 +1,22 @@
 <script>
   export let asignaturas;
+  export let onAsignatura;
 
   import IconButton from "@smui/icon-button";
   import Select, { Option } from "@smui/select";
   import Textfield from "@smui/textfield";
-  import HelperText from "@smui/textfield/helper-text/index";
   import Dialog, { Title, Content, Actions, InitialFocus } from "@smui/dialog";
   import Button, { Group, GroupItem, Label, Icon as ButtonIcon } from "@smui/button";
-  import List, { Item, Graphic, Text } from "@smui/list";
-  import { MDCDialog } from "@material/dialog";
 
   let dialog;
-
+  let message;
   let warning = "Ya existe una asignatura con el mismo código";
-
   let ects = [2.5,3,4.5,5,6,7,7.5,9,10,12,15,24,30];
-
   let idiomas = [`CAT`, `CAST`, `ING`, `CAT/CAST`, `CAT/ING`, `CAST/ING`, `CAT/CAST/ING`];
 
   let nuevaasignatura = {
     open: false,
+    id_asignatura: "",
     codigo_asignatura: "",
     nombre_catalan: "",
     nombre_castellano: "",
@@ -31,37 +28,33 @@
     plan_de_estudios_ingles: ""
   };
 
-  let message;
-
   function existe(a) {
     let introducido = asignaturas.find(asg => asg.codigo_asignatura === a);
     return introducido;
   }
 
-  function ultima(asignaturas){
-    let l = asignaturas.length;
-    if(l === 0 || l === undefined){
-      return 1;
-    }
-    return asignaturas[l-1].id_asignatura+1;
-  }
-
-  let last = ultima(asignaturas);
-
-  function añadirasignatura() {
-    fetch(`nuevaasignatura.json`, {
+  async function añadirasignatura() {
+    const body = await fetch(`nuevaasignatura.json`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(nuevaasignatura)
-    })
-      .then(body => body.json())
-      .then(json => {
-        if (json.error) {
-          message = json.error;
-        } else {
-          message = "nuevaasignatura saved";
-        }
-      });
+    });
+    const json = await body.json();
+    if (json.error) {
+      message = json.error;
+      return null;
+    } else {
+      message = "nuevaasignatura saved";
+      return json.id_asignatura;
+    }
+  }
+
+  async function ejecutarambas() {
+    const id_asignatura = await añadirasignatura();
+    nuevaasignatura.id_asignatura = id_asignatura;
+    if (onAsignatura) {
+      onAsignatura({...nuevaasignatura});
+    }
   }
 </script>
 
@@ -154,8 +147,8 @@
           <Button color="secondary" variant="raised">
             <Label>Cancelar</Label>
           </Button>
-          <Button color="secondary" variant="raised" on:click={añadirasignatura}>
-            <Label><a href="/asignatura/{last}">Salvar</a></Label>
+          <Button color="secondary" variant="raised" on:click={ejecutarambas}>
+            <Label>Salvar</Label>
           </Button>
         {/if}
       </Actions>

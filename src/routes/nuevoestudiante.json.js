@@ -19,7 +19,6 @@ export function post(req, res, next) {
                     nuevoestudiante.universidad
                 ], function (err) {
                     const id_estudiante = this.lastID;
-                    console.log("estudianteID modificado =", id_estudiante);
                     if (err) {
                         jsonResponse(500, { 
                             error: `Cannot insert the new student: ${err}`
@@ -32,5 +31,4 @@ export function post(req, res, next) {
                     })
         })
     })
-
 }

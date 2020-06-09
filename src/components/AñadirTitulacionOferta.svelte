@@ -11,14 +11,11 @@
   import { MDCDialog } from "@material/dialog";
 
   let dialog;
-  let ListTitulaciones;
+  let message;
 
   function listTitulaciones() {}
 
-  let array;
   $: array = oferta.titulacion.split(",");
-
-  let message;
   
   let añade = "";
 

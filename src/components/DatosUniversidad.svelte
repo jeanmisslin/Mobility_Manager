@@ -1,10 +1,14 @@
 <script>
   export let universidad;
   export let universidades;
-  export let onModificado;
 
   import ModificaUniversidad from "./ModificaUniversidad.svelte";
 
+  function modificarUniversidadEnCaliente(uni) {
+    universidad.codigo_universidad = uni.codigo_universidad;
+    universidad.nombre_universidad = uni.nombre_universidad;
+    universidad.pais = uni.pais;
+  }
 </script>
 
 <style>
@@ -29,13 +33,13 @@
   }
 
   label {
-      color: grey;
-      font-size: 12px;
+    color: grey;
+    font-size: 12px;
   }
 
   data {
-      color: black;
-      font-size: 15px;
+    color: black;
+    font-size: 15px;
   }
 </style>
 
@@ -54,6 +58,4 @@
   </div>
 </div>
 
-<ModificaUniversidad {universidad} 
-                         {universidades} 
-                         {onModificado}/>
+<ModificaUniversidad {universidad} {universidades} onModificado={modificarUniversidadEnCaliente} />
