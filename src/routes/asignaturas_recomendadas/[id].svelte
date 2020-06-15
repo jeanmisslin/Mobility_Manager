@@ -24,8 +24,6 @@
   import TabBar from "@smui/tab-bar";
   import MenuPantallas from "../../components/MenuPantallas.svelte";
 
-  let menu;
-
   let active = "Recomendadas";
 
   function encontrartitulacion(t, o) {

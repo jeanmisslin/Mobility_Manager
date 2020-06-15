@@ -1,6 +1,5 @@
 <script>
   export let universidad;
-  export let universidades;
 
   import ModificaUniversidad from "./ModificaUniversidad.svelte";
 
@@ -58,4 +57,4 @@
   </div>
 </div>
 
-<ModificaUniversidad {universidad} {universidades} onModificado={modificarUniversidadEnCaliente} />
+<ModificaUniversidad {universidad} onModificado={modificarUniversidadEnCaliente} />

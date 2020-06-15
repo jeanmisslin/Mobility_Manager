@@ -23,7 +23,6 @@
   let estados = [`Nominado/a`, `Matriculado/a`, `Eliminado/a`];
 
   $: nuevoacuerdo = {
-    open: false,
     id_acuerdo: "",
     estudiante: estudiante.id_estudiante,
     titulacion: "",
@@ -223,19 +222,19 @@
 
     <div class="actions">
       <Actions>
-      {#if nuevoacuerdo.periodo_academico === '' || nuevoacuerdo.titulacion === ''
-           || existe(nuevoacuerdo.periodo_academico)}
-        <Button color="secondary" variant="raised">
-          <Label>Cancel</Label>
-        </Button>
-      {:else}
-        <Button color="secondary" variant="raised">
-          <Label>Cancel</Label>
-        </Button>
-        <Button color="secondary" variant="raised" on:click={() => ambas()}>
-          <Label>Salvar</Label>
-        </Button>
-      {/if}
+        {#if nuevoacuerdo.periodo_academico !== '' && nuevoacuerdo.titulacion !== ''
+            && !existe(nuevoacuerdo.periodo_academico)}
+          <Button color="secondary" variant="raised">
+            <Label>Cancel</Label>
+          </Button>
+          <Button color="secondary" variant="raised" on:click={() => ambas()}>
+            <Label>Salvar</Label>
+          </Button>
+        {:else}
+          <Button color="secondary" variant="raised">
+            <Label>Cancel</Label>
+          </Button>
+        {/if}
       </Actions>
     </div>
   </Content>

@@ -20,7 +20,7 @@
     let periodoQ = seleccion.split("Q");
     let año = periodoA[0];
     let cuatrimestre = periodoQ[1];
-    let periodo_academico = periodos.find(element => (element.año === parseInt(año)) &
+    let periodo_academico = periodos.find(element => (element.año === parseInt(año)) &&
         (element.cuatrimestre === parseInt(cuatrimestre)));
     return periodo_academico;
   }

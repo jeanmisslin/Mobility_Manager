@@ -1,8 +1,7 @@
 <script>
   export let universidad;
-  export let universidades;
   export let onModificado;
- 
+  
   import IconButton from "@smui/icon-button";
   import Textfield from "@smui/textfield";
   import Dialog, { Title, Content, Actions, InitialFocus } from "@smui/dialog";
@@ -10,6 +9,8 @@
   import List, { Item, Graphic, Text } from "@smui/list";
   import { MDCDialog } from "@material/dialog";
 
+  let dialog;
+  let message;
   let paises = ["Afganistán","Albania","Alemania","Andorra","Angola","Antigua y Barbuda",
                 "Arabia Saudita","Argelia","Argentina","Armenia","Australia","Austria",
                 "Azerbaiyán","Bahamas","Bangladés","Barbados","Baréin","Bélgica","Belice",
@@ -41,8 +42,6 @@
                 "Uruguay","Uzbekistán","Vanuatu","Venezuela","Vietnam","Yemen","Yibuti","Zambia",
                 "Zimbabue"];
 
-  let dialog;
-
   let codigo_actual = universidad.codigo_universidad;
 
   $: modificauniversidad = {
@@ -54,8 +53,6 @@
 
   function listPaises() {}
 
-  let message;
-
   let filtro = "";
 
   $: paisesFiltrados = paises.filter(e => {
@@ -64,11 +61,6 @@
       strIn(e, filtro)
     );
   });
-
-  function existe(u) {
-    let introducida = universidades.find(uni => uni.codigo_universidad === u);
-    return introducida;
-  }
 
   function modificaruniversidad() {
     fetch(`modificauniversidad.json`, {
@@ -170,7 +162,7 @@
 
     <div class="actions">
       <Actions>
-          <Button color="secondary" variant="raised">
+        <Button color="secondary" variant="raised">
             <Label>Cancelar</Label>
           </Button>
           <Button color="secondary" variant="raised" on:click={modificaruniversidad}>
