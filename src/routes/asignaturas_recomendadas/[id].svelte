@@ -136,8 +136,9 @@
 <!------- Titulo de la pantalla ----------->
 
   <div id="titulo">
+    <a href="/estudiante/{estudiantes.find(element => element.id_estudiante === acuerdo.estudiante).id_estudiante}">
     {estudiantes.find(element => element.id_estudiante === acuerdo.estudiante).apellidos},
-    {estudiantes.find(element => element.id_estudiante === acuerdo.estudiante).nombre}
+    {estudiantes.find(element => element.id_estudiante === acuerdo.estudiante).nombre}</a>
   </div>
   <div id="titulo">
     {acuerdo.año}-{acuerdo.año+1}, Q{acuerdo.cuatrimestre}
