@@ -8,7 +8,7 @@
 
   import ModificaAcuerdo from "./ModificaAcuerdo.svelte";
   import TablaFiltrableOfertas from "./TablaFiltrableOfertas.svelte";
-  import TablaAsignaturasSolicitadas from "./TablaAsignaturasSolicitadas.svelte";
+  import TablaFiltrableSolicitadas from "./TablaFiltrableSolicitadas.svelte";
   import Tab, { Icon, Label } from "@smui/tab";
   import TabBar from "@smui/tab-bar";
   import Button from "@smui/button";
@@ -185,7 +185,7 @@
                { name: 'nombre_castellano', filter: true }, 
                { name: 'plazas_disponibles', nombre: 'vacantes', show: true, centrado: true }]} />
   {:else}
-    <TablaAsignaturasSolicitadas tabla={asignaturas} {ofertas} {acuerdo} />
+    <TablaFiltrableSolicitadas tabla={asignaturas} {ofertas} {acuerdo} />
   {/if}
 
 </div>
