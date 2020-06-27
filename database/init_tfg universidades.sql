@@ -826,7 +826,7 @@ INSERT INTO universidades (codigo_universidad, nombre_universidad, pais) VALUES(
 
 INSERT INTO universidades (codigo_universidad, nombre_universidad, pais) VALUES(
     'F PARIS 342',
-    "IPSA (École Ingenieur De L'Air Et De L'Espace'",
+    "IPSA (École Ingenieur De L'Air Et De L'Espace')",
     'Francia'
 );
 
