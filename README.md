@@ -19,3 +19,5 @@ Los componentes importados por las diferentes pantallas de la aplicación se enc
 
 La pantalla Estudiates Incoming muestra un listado con los estudiantes que figuran en la base de datos, permite añadir un nuevo estudiante, permite añadir un nuevo periodo académico y permite filtrar el listado de estudiantes que se muestra por pantalla mediante un buscador y un selector de periodo académico:
 
+![Pantalla Estudiantes Incoming](https://user-images.githubusercontent.com/33695119/86127445-2b4b0980-bae0-11ea-8d93-32e9faa3c79b.JPG)
+
