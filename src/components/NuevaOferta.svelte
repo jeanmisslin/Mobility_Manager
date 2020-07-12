@@ -67,7 +67,7 @@
   aria-labelledby="dialog-title"
   aria-describedby="dialog-content">
   <Title>
-    <Label>Añadir Oferta</Label>
+    <Label>Nueva Oferta</Label>
   </Title>
   <Content>
 
@@ -142,5 +142,5 @@
 </Dialog>
 
 <Button variant="raised" on:click={() => dialog.open()}>
-  <Label>Añadir Oferta</Label>
+  <Label>Nueva Oferta</Label>
 </Button>

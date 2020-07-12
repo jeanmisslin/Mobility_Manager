@@ -82,21 +82,21 @@
   td.green {
     border: 1px solid black;
     text-align: left;
-    background-color: rgb(248, 255, 248);
+    background-color: rgb(149, 255, 149);
     padding: 3px;
   }
 
   td.yellow {
     border: 1px solid black;
     text-align: left;
-    background-color: rgb(255, 255, 230);
+    background-color: rgb(255, 255, 129);
     padding: 3px;
   }
 
   td.red {
     border: 1px solid black;
     text-align: left;
-    background-color: rgb(255, 236, 236);
+    background-color: rgb(255, 132, 132);
     padding: 3px;
   }
 
