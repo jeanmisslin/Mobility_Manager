@@ -1,8 +1,8 @@
 <script context="module">
   export async function preload({ params, query }) {
     let fetch_endpoints = [
-      this.fetch(`periodos.json`).then(body => body.json()),
-      this.fetch(`ofertas.json`).then(body => body.json())
+      this.fetch(`/endpoints/periodos.json`).then(body => body.json()),
+      this.fetch(`/endpoints/ofertas.json`).then(body => body.json())
     ];
     let [
       { periodos },

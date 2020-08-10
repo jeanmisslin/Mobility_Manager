@@ -1,6 +1,6 @@
 <script context="module">
   export async function preload({ params, query }) {
-    let fetch_endpoints = [ this.fetch(`universidades.json`).then(body => body.json()) ];
+    let fetch_endpoints = [ this.fetch(`/endpoints/universidades.json`).then(body => body.json()) ];
     let [ { universidades } ] = await Promise.all(fetch_endpoints);
     return { universidades };
   }

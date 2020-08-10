@@ -26,7 +26,7 @@
   };
 
   function modificarasignacion() {
-    fetch(`modificaasignacion.json`, {
+    fetch(`/endpoints/modificaasignacion.json`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(asignacion)
@@ -47,7 +47,7 @@
   }
 
   function restar() {
-    fetch(`restarplazadisponible.json`, {
+    fetch(`/endpoints/restarplazadisponible.json`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(modificacion)
@@ -63,7 +63,7 @@
   }
 
   function incrementar() {
-    fetch(`incrementarplazadisponible.json`, {
+    fetch(`/endpoints/incrementarplazadisponible.json`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(modificacion)

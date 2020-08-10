@@ -80,7 +80,7 @@
   }
 
   async function añadirestudiante() {
-    const body = await fetch(`nuevoestudiante.json`, {
+    const body = await fetch(`/endpoints/nuevoestudiante.json`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(nuevoestudiante)
@@ -96,7 +96,7 @@
   }
 
   async function añadiracuerdo() {
-    const body = await fetch(`nuevoacuerdo.json`, {
+    const body = await fetch(`/endpoints/nuevoacuerdo.json`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

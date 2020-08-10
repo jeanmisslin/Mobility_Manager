@@ -2,9 +2,9 @@
   export async function preload({ params, query }) {
     const id = params.id;
     let acuerdo = await this.fetch(`/asignaturas_recomendadas/${id}.json`).then(body => body.json());
-    let { ofertas } = await this.fetch(`ofertas.json`).then(body => body.json());
-    let { asignaciones } = await this.fetch(`asignaciones.json`).then(body => body.json());
-    let { estudiantes } = await this.fetch(`estudiantes.json`).then(body => body.json());
+    let { ofertas } = await this.fetch(`/endpoints/ofertas.json`).then(body => body.json());
+    let { asignaciones } = await this.fetch(`/endpoints/asignaciones.json`).then(body => body.json());
+    let { estudiantes } = await this.fetch(`/endpoints/estudiantes.json`).then(body => body.json());
     return {
       acuerdo,
       ofertas,

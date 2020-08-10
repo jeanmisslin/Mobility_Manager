@@ -61,7 +61,7 @@
   $: PeriodosFiltrados = periodos.filter(e => e.año === parseInt(filtroPeriodos));
 
   async function añadiracuerdo() {
-    const body = await fetch(`nuevoacuerdo.json`, {
+    const body = await fetch(`/endpoints/nuevoacuerdo.json`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ acuerdo: nuevoacuerdo, estudiante: nuevoestudiante})

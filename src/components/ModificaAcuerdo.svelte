@@ -68,7 +68,7 @@
   }
 
   function modificaracuerdo() {
-    fetch(`modificaacuerdo.json`, {
+    fetch(`/endpoints/modificaacuerdo.json`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(modificaacuerdo)
@@ -92,7 +92,7 @@
   }
 
   function eliminarAsignaciones() {
-    fetch(`eliminaasignacion.json`, {
+    fetch(`/endpoints/eliminaasignacion.json`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(modificaacuerdo)

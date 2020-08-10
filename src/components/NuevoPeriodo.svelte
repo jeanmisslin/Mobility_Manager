@@ -39,7 +39,7 @@
   let message;
 
   async function añadeperiodo() {
-    const body = await fetch(`nuevoperiodo.json`, {
+    const body = await fetch(`/endpoints/nuevoperiodo.json`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(nuevoperiodo)

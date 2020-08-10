@@ -68,7 +68,7 @@
   }
 
   async function añadiruniversidad() {
-    const body = await fetch(`nuevauniversidad.json`, {
+    const body = await fetch(`/endpoints/nuevauniversidad.json`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(nuevauniversidad)

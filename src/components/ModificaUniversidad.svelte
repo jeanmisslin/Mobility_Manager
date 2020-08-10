@@ -63,7 +63,7 @@
   });
 
   function modificaruniversidad() {
-    fetch(`modificauniversidad.json`, {
+    fetch(`/endpoints/modificauniversidad.json`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(modificauniversidad)

@@ -34,7 +34,7 @@
   }
 
   async function añadirasignatura() {
-    const body = await fetch(`nuevaasignatura.json`, {
+    const body = await fetch(`/endpoints/nuevaasignatura.json`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(nuevaasignatura)

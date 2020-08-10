@@ -2,9 +2,9 @@
   export async function preload({ params, query }) {
     const id = params.id;
     let asignatura = await this.fetch(`/asignatura/${id}.json`).then(body => body.json());
-    let { periodos } = await this.fetch(`periodos.json`).then(body => body.json());
-    let { titulaciones } = await this.fetch(`titulaciones.json`).then(body => body.json());
-    let { asignaturas } = await this.fetch(`../asignaturas.json`).then(body => body.json());
+    let { periodos } = await this.fetch(`/endpoints/periodos.json`).then(body => body.json());
+    let { titulaciones } = await this.fetch(`/endpoints/titulaciones.json`).then(body => body.json());
+    let { asignaturas } = await this.fetch(`../endpoints/asignaturas.json`).then(body => body.json());
     return {
       asignatura,
       periodos,

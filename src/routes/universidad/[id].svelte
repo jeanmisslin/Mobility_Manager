@@ -2,7 +2,7 @@
   export async function preload({ params, query }) {
     const id = params.id;
     let universidad = await this.fetch(`/universidad/${id}.json`).then(body => body.json());
-    let universidades = await this.fetch(`universidades.json`).then(body => body.json());
+    let universidades = await this.fetch(`/endpoints/universidades.json`).then(body => body.json());
     return { universidad, universidades };
   }
 </script>

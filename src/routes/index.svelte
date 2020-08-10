@@ -1,11 +1,11 @@
 <script context="module">
   export async function preload({ params, query }) {
     let fetch_endpoints = [
-      this.fetch(`estudiantes.json`).then(body => body.json()),
-      this.fetch(`universidades.json`).then(body => body.json()),
-      this.fetch(`titulaciones.json`).then(body => body.json()),
-      this.fetch(`periodos.json`).then(body => body.json()),
-      this.fetch(`acuerdos.json`).then(body => body.json())
+      this.fetch(`/endpoints/estudiantes.json`).then(body => body.json()),
+      this.fetch(`/endpoints/universidades.json`).then(body => body.json()),
+      this.fetch(`/endpoints/titulaciones.json`).then(body => body.json()),
+      this.fetch(`/endpoints/periodos.json`).then(body => body.json()),
+      this.fetch(`/endpoints/acuerdos.json`).then(body => body.json())
     ];
     let [
       { estudiantes },

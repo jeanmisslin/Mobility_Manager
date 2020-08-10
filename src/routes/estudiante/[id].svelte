@@ -2,11 +2,11 @@
   export async function preload({ params, query }) {
     const id = params.id;
     let estudiante = await this.fetch(`/estudiante/${id}.json`).then(body => body.json());
-    let { universidades } = await this.fetch(`universidades.json`).then(body => body.json());
-    let { titulaciones } = await this.fetch(`titulaciones.json`).then(body => body.json());
-    let { ofertas } = await this.fetch(`ofertas.json`).then(body => body.json());
-    let { periodos } = await this.fetch(`periodos.json`).then(body => body.json());
-    let { estudiantes } = await this.fetch(`estudiantes.json`).then(body => body.json());
+    let { universidades } = await this.fetch(`/endpoints/universidades.json`).then(body => body.json());
+    let { titulaciones } = await this.fetch(`/endpoints/titulaciones.json`).then(body => body.json());
+    let { ofertas } = await this.fetch(`/endpoints/ofertas.json`).then(body => body.json());
+    let { periodos } = await this.fetch(`/endpoints/periodos.json`).then(body => body.json());
+    let { estudiantes } = await this.fetch(`/endpoints/estudiantes.json`).then(body => body.json());
     return {
       estudiante,
       universidades,

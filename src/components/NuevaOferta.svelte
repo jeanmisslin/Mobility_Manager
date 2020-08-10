@@ -43,7 +43,7 @@
   });
 
   async function añadeoferta() {
-    const body = await fetch(`nuevaoferta.json`, {
+    const body = await fetch(`/endpoints/nuevaoferta.json`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(nuevaoferta)

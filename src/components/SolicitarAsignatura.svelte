@@ -24,7 +24,7 @@
   };
 
   async function asignar() {
-    const body = await fetch(`nuevaasignacion.json`, {
+    const body = await fetch(`/endpoints/nuevaasignacion.json`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(asignacion)
@@ -40,7 +40,7 @@
   }
 
   async function solicitar() {
-    const body = await fetch(`solicitarasignatura.json`, {
+    const body = await fetch(`/endpoints/solicitarasignatura.json`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(modificacion)
